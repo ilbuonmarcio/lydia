@@ -1,6 +1,7 @@
 # MarchLinux
 
 MarchLinux is a free to use Arch Linux + i3-wm install script.
+
 It is primarly designed for my own usage but free for you all to use and modify to fit your own purposes. 
 
 ## Disclaimer
