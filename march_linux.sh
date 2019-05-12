@@ -1,3 +1,16 @@
+echo "";
+echo "  __  __                _     _     _                  ";
+echo " |  \/  | __ _ _ __ ___| |__ | |   (_)_ __  _   ___  __";
+echo " | |\/| |/ _\` | '__/ __| '_ \| |   | | '_ \| | | \ \/ /";
+echo " | |  | | (_| | | | (__| | | | |___| | | | | |_| |>  < ";
+echo " |_|  |_|\__,_|_|  \___|_| |_|_____|_|_| |_|\__,_/_/\_\\";
+echo "                                                       ";
+
+echo "     Easy-to-configure archlinux+i3 install script ";
+echo "        for maximum comfort and minimum hassles ";
+echo "";
+echo "";
+
 # syncing system datetime
 timedatectl set-ntp true
 
@@ -20,7 +33,7 @@ sed -e 's/\s*\([\+0-9a-zA-Z]*\).*/\1/' << EOF | fdisk /dev/sda
   n # new partition
     # default: primary partition
     # default: partition 2
-  +4G # 4 gb for root partition
+  +8G # 8 gb for root partition
     # default: yes if asked
   n # new partition
     # default: primary partition
@@ -51,10 +64,8 @@ mount /dev/sda3 /mnt/home
 # pacstrap-ping desired disk
 pacstrap /mnt base base-devel vim grub i3-wm networkmanager i3status dmenu \
 os-prober efibootmgr ntfs-3g links xterm neofetch git zsh intel-ucode cpupower \
-xorg-server xorg-xinit ttf-dejavu ttf-liberation ttf-inconsolata ttf-fira-code noto-fonts
-
-# chromium firefox alacritty neofetch \ 
-# atom code filezilla git zsh intel-ucode cpupower nvidia nvidia-settings
+xorg-server xorg-xinit ttf-dejavu ttf-liberation ttf-inconsolata ttf-fira-code noto-fonts \
+chromium firefox code atom nvidia nvidia-settings xf86-video-intel
 
 # generating fstab
 genfstab -U /mnt >> /mnt/etc/fstab
