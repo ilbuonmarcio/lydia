@@ -135,7 +135,9 @@ arch-chroot /mnt echo "exec i3" >> /mnt/root/.xinitrc
 arch-chroot /mnt echo "exec i3" >> /mnt/home/mrcz/.xinitrc
 
 # installing yay
-arch-chroot /mnt git clone https://aur.archlinux.org/yay.git && cd yay && sudo -u mrcz makepkg -si
+arch-chroot /mnt sudo -u mrcz git clone https://aur.archlinux.org/yay.git /home/mrcz/yay_tmp_install
+arch-chroot /mnt sudo -u mrcz /bin/zsh -c "cd /home/mrcz/yay_tmp_install && yes | makepkg -si"
+arch-chroot /mnt rm -rf /home/mrcz/yay_tmp_install
 
 # installing polybar
 arch-chroot /mnt yay -S polybar --noconfirm
