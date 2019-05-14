@@ -140,8 +140,8 @@ arch-chroot /mnt sudo -u mrcz /bin/zsh -c "cd /home/mrcz/yay_tmp_install && yes 
 arch-chroot /mnt rm -rf /home/mrcz/yay_tmp_install
 
 # installing polybar
-arch-chroot /mnt yay -S polybar --noconfirm
-arch-chroot /mnt yay -S spotify --noconfirm
+arch-chroot /mnt sudo -u mrcz yay -S polybar --noconfirm
+arch-chroot /mnt sudo -u mrcz yay -S spotify --noconfirm
 
 # unmounting all mounted partitions
 umount -R /mnt
