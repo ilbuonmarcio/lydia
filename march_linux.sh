@@ -28,12 +28,12 @@ sed -e 's/\s*\([\+0-9a-zA-Z]*\).*/\1/' << EOF | fdisk /dev/sda
   n # new partition
     # default: primary partition
     # default: partition 1
-  +200M # 200 mb on boot partition
+  +500M # 500 mb on boot partition
     # default: yes if asked
   n # new partition
     # default: primary partition
     # default: partition 2
-  +8G # 8 gb for root partition
+  +80G # 80 gb for root partition
     # default: yes if asked
   n # new partition
     # default: primary partition
@@ -66,7 +66,7 @@ pacstrap /mnt base base-devel vim grub i3-wm networkmanager i3status dmenu \
 os-prober efibootmgr ntfs-3g links xterm neofetch git zsh intel-ucode cpupower \
 xorg-server xorg-xinit ttf-dejavu ttf-liberation ttf-inconsolata ttf-fira-code noto-fonts \
 chromium firefox code atom nvidia nvidia-settings xf86-video-intel flameshot \ 
-pulseaudio pasystray pamixer telegram-desktop
+pulseaudio pasystray pamixer telegram-desktop go python
 
 # generating fstab
 genfstab -U /mnt >> /mnt/etc/fstab
@@ -133,6 +133,12 @@ arch-chroot /mnt systemctl enable NetworkManager.service
 # making i3 default for startx for both root and mrcz
 arch-chroot /mnt echo "exec i3" >> /mnt/root/.xinitrc
 arch-chroot /mnt echo "exec i3" >> /mnt/home/mrcz/.xinitrc
+
+# installing yay
+arch-chroot /mnt git clone https://aur.archlinux.org/yay.git && cd yay && sudo -u mrcz makepkg -si
+
+# installing polybar
+arch-chroot /mnt yay -S polybar --noconfirm
 
 # unmounting all mounted partitions
 umount -R /mnt
