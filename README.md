@@ -15,7 +15,7 @@ THIS PIECE OF SOFTWARE IS PROVIDED AS IS, WITHOUT WARRANTIES OF ANY KIND. I AM N
 - Inside the system of choice, download the latest script from this repository with the following command:
 
 ```bash
-wget -O install.sh https://raw.githubusercontent.com/maaaybe/MarchLinux/master/march_linux.sh
+wget https://raw.githubusercontent.com/maaaybe/MarchLinux/master/install.sh
 ```
 
 - Modify it to fit your own purposes (e.g. disk to format, partitions, hostname, username)
