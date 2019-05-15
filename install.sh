@@ -147,7 +147,7 @@ arch-chroot /mnt sudo -u mrcz yay -S spotify --noconfirm
 arch-chroot /mnt sudo -u mrcz mkdir /home/mrcz/GitHub
 arch-chroot /mnt sudo -u mrcz git clone https://github.com/maaaybe/MarchLinux /home/mrcz/GitHub/MarchLinux
 arch-chroot /mnt sudo -u mrcz /bin/zsh -c "chmod 700 /home/mrcz/GitHub/MarchLinux/install_configs.sh"
-arch-chroot /mnt sudo -u mrcz /bin/zsh -c "cd /home/mrcz/GitHub/MarchLinux && ./insstall_configs.sh"
+arch-chroot /mnt sudo -u mrcz /bin/zsh -c "cd /home/mrcz/GitHub/MarchLinux && ./install_configs.sh"
 
 # unmounting all mounted partitions
 umount -R /mnt
