@@ -62,8 +62,8 @@ mount /dev/sda1 /mnt/boot
 mount /dev/sda3 /mnt/home
 
 # pacstrap-ping desired disk
-pacstrap /mnt base base-devel vim grub i3-wm networkmanager i3status dmenu \
-os-prober efibootmgr ntfs-3g links xterm neofetch git zsh intel-ucode cpupower \
+pacstrap /mnt base base-devel vim grub i3-wm networkmanager i3status rofi \
+os-prober efibootmgr ntfs-3g links alacritty neofetch git zsh intel-ucode cpupower \
 xorg-server xorg-xinit ttf-dejavu ttf-liberation ttf-inconsolata ttf-fira-code noto-fonts \
 chromium firefox code atom nvidia nvidia-settings xf86-video-intel flameshot \
 pulseaudio pasystray pamixer telegram-desktop go python
