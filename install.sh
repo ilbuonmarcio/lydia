@@ -62,7 +62,7 @@ mount /dev/sda1 /mnt/boot
 mount /dev/sda3 /mnt/home
 
 # pacstrap-ping desired disk
-pacstrap /mnt base base-devel vim grub i3-wm networkmanager i3status rofi \
+pacstrap /mnt base base-devel vim grub i3-wm networkmanager i3status rofi feh i3lock \
 os-prober efibootmgr ntfs-3g links alacritty neofetch git zsh intel-ucode cpupower \
 xorg-server xorg-xinit ttf-dejavu ttf-liberation ttf-inconsolata ttf-fira-code noto-fonts \
 chromium firefox code atom nvidia nvidia-settings xf86-video-intel flameshot \
