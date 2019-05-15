@@ -178,7 +178,7 @@ bindsym $mod+r mode "resize"
 for_window [class=".*"] border pixel 0
 
 # add wallpaper to desktops
-exec --no-startup-id feh --bg-fill ~/Pictures/Wallpaper.jpeg
+# exec --no-startup-id feh --bg-fill ~/Pictures/Wallpaper.jpeg
 
 # add lockscreen
 bindsym Control+$mod+l exec i3lock
