@@ -143,6 +143,11 @@ arch-chroot /mnt rm -rf /home/mrcz/yay_tmp_install
 arch-chroot /mnt sudo -u mrcz yay -S polybar --noconfirm
 arch-chroot /mnt sudo -u mrcz yay -S spotify --noconfirm
 
+# installing config files
+arch-chroot /mnt sudo -u mrcz mkdir ~/GitHub
+arch-chroot /mnt sudo -u mrcz git clone https://github.com/maaaybe/MarchLinux/ ~/GitHub/MarchLinux
+arch-chroot /mnt sudo -u mrcz /bin/zsh -c "chmod 700 ~/GitHub/MarchLinux/install_configs.sh && ~/GitHub/MarchLinux/install_configs.sh"
+
 # unmounting all mounted partitions
 umount -R /mnt
 
