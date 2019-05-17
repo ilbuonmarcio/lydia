@@ -66,7 +66,7 @@ pacstrap /mnt base base-devel vim grub i3-wm networkmanager i3status rofi feh i3
 os-prober efibootmgr ntfs-3g links alacritty neofetch git zsh intel-ucode cpupower \
 xorg-server xorg-xinit ttf-dejavu ttf-liberation ttf-inconsolata ttf-fira-code noto-fonts \
 chromium firefox code atom nvidia nvidia-settings xf86-video-intel flameshot \
-pulseaudio pasystray pamixer telegram-desktop go python
+pulseaudio pasystray pamixer telegram-desktop go python wget
 
 # generating fstab
 genfstab -U /mnt >> /mnt/etc/fstab
@@ -142,6 +142,12 @@ arch-chroot /mnt rm -rf /home/mrcz/yay_tmp_install
 # installing polybar
 arch-chroot /mnt sudo -u mrcz yay -S polybar --noconfirm
 arch-chroot /mnt sudo -u mrcz yay -S spotify --noconfirm
+
+# installing oh-my-zsh
+arch-chroot /mnt sudo -u mrcz /bin/zsh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+# installing pi theme for zsh
+arch-chroot /mnt sudo -u mrcz /bin/zsh -c "wget -O $ZSH_CUSTOM/themes/pi.zsh-theme https://raw.githubusercontent.com/tobyjamesthomas/pi/master/pi.zsh-theme"
 
 # installing config files
 arch-chroot /mnt sudo -u mrcz mkdir /home/mrcz/GitHub
