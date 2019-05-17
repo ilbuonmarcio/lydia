@@ -1,6 +1,6 @@
-# MarchLinux
+# mrczlnks
 
-MarchLinux is a free to use Arch Linux + i3-wm install script.
+mrczlnks is a free to use Arch Linux + i3-wm install script.
 
 It is primarly designed for my own usage but free for you all to use and modify to fit your own purposes. 
 
@@ -15,7 +15,7 @@ THIS PIECE OF SOFTWARE IS PROVIDED AS IS, WITHOUT WARRANTIES OF ANY KIND. I AM N
 - Inside the system of choice, download the latest script from this repository with the following command:
 
 ```bash
-wget https://raw.githubusercontent.com/maaaybe/MarchLinux/master/install.sh
+wget https://raw.githubusercontent.com/maaaybe/mrczlnks/master/install.sh
 ```
 
 - Modify it to fit your own purposes (e.g. disk to format, partitions, hostname, username)

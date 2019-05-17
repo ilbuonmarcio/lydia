@@ -161,9 +161,9 @@ arch-chroot /mnt sudo -u mrcz /bin/zsh -c "wget -O $ZSH_CUSTOM/themes/pi.zsh-the
 
 # installing config files
 arch-chroot /mnt sudo -u mrcz mkdir /home/mrcz/GitHub
-arch-chroot /mnt sudo -u mrcz git clone https://github.com/maaaybe/MarchLinux /home/mrcz/GitHub/MarchLinux
-arch-chroot /mnt sudo -u mrcz /bin/zsh -c "chmod 700 /home/mrcz/GitHub/MarchLinux/install_configs.sh"
-arch-chroot /mnt sudo -u mrcz /bin/zsh -c "cd /home/mrcz/GitHub/MarchLinux && ./install_configs.sh"
+arch-chroot /mnt sudo -u mrcz git clone https://github.com/maaaybe/mrczlnks /home/mrcz/GitHub/mrczlnks
+arch-chroot /mnt sudo -u mrcz /bin/zsh -c "chmod 700 /home/mrcz/GitHub/mrczlnks/install_configs.sh"
+arch-chroot /mnt sudo -u mrcz /bin/zsh -c "cd /home/mrcz/GitHub/mrczlnks && ./install_configs.sh"
 
 # unmounting all mounted partitions
 umount -R /mnt
