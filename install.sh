@@ -20,6 +20,10 @@ wget -O mirrorlist "https://www.archlinux.org/mirrorlist/?country=DE&country=IT&
 sed -ie 's/^.//g' ./mirrorlist
 mv ./mirrorlist /etc/pacman.d/mirrorlist
 
+# adding multilib to root live environment
+echo "[multilib]" >> /etc/pacman.conf
+echo "Include = /etc/pacman.d/mirrorlist" >> /etc/pacman.conf
+
 # updating mirrors
 pacman -Syyy
 
