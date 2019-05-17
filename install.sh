@@ -66,7 +66,7 @@ pacstrap /mnt base base-devel vim grub i3-wm networkmanager i3status rofi feh i3
 os-prober efibootmgr ntfs-3g links alacritty neofetch git zsh intel-ucode cpupower \
 xorg-server xorg-xinit ttf-dejavu ttf-liberation ttf-inconsolata ttf-fira-code noto-fonts \
 chromium firefox code atom nvidia nvidia-settings xf86-video-intel flameshot \
-pulseaudio pasystray pamixer telegram-desktop go python wget wine-staging
+pulseaudio pasystray pamixer telegram-desktop go python wget wine-staging openssh
 
 # generating fstab
 genfstab -U /mnt >> /mnt/etc/fstab
