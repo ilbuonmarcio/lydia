@@ -71,6 +71,13 @@ pulseaudio pasystray pamixer telegram-desktop go python wget wine-staging openss
 # generating fstab
 genfstab -U /mnt >> /mnt/etc/fstab
 
+# enabling multilib repo
+arch-chroot /mnt echo "[multilib]" >> /mnt/etc/pacman.conf
+arch-chroot /mnt echo "Include = /etc/pacman.d/mirrorlist" >> /mnt/etc/pacman.conf
+
+# updating repo status
+arch-chroot /mnt pacman -Syyy
+
 # setting right timezone
 arch-chroot /mnt ln -sf /usr/share/zoneinfo/Europe/Rome /etc/localtime
 
