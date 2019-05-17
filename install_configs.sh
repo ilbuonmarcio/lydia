@@ -5,4 +5,4 @@ mkdir ../../.config/polybar   > /dev/null
 cp -rf ./configs/i3/*         ../../.config/i3/
 cp -rf ./configs/alacritty/*  ../../.config/alacritty/
 cp -rf ./configs/polybar/*    ../../.config/polybar/
-cp -rf ./configs/zsh/.zshrc        ../../
+cp -rf ./configs/zsh/.zshrc   ../../
