@@ -44,7 +44,6 @@ chmod 700 ./install.sh
 - Hostname selection as script parameter
 - User selection as script parameter
 - GPU driver (intel, nvidia, admgpu) as script parameter
-- DE/WM (nothing, i3, gnome, deepin) as script parameter
 
 ### License
 
