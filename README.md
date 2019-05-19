@@ -43,7 +43,7 @@ chmod 700 ./install.sh
 - Disk selection as script parameter
 - Hostname selection as script parameter
 - User selection as script parameter
-- GPU driver (intel, nvidia, admgpu) as script parameter
+- GPU driver (intel, nvidia, amdgpu) as script parameter
 
 ### License
 
