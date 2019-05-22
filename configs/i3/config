@@ -184,7 +184,7 @@ client.focused #333333 #333333 #333333 #333333   #333333
 # exec --no-startup-id feh --bg-fill ~/Pictures/Wallpaper.jpeg
 
 # add lockscreen
-bindsym Control+$mod+l exec i3lock
+bindsym Control+$mod+l exec i3lock -c 000000
 
 # add audio handlers on razer keyboard audio management device
 bindsym XF86AudioRaiseVolume exec pamixer --increase 2
