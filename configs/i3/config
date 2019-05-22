@@ -196,3 +196,6 @@ exec --no-startup-id pasystray
 
 # add polybar
 exec --no-startup-id polybar example
+
+# add scrot for screenshots
+bindsym Control+$mod+p exec scrot -q 100 -z -e 'mv $f ~/Screenshots/'
