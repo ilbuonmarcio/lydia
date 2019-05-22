@@ -197,5 +197,8 @@ exec --no-startup-id pasystray
 # add polybar
 exec --no-startup-id polybar example
 
-# add scrot for screenshots
-bindsym Control+$mod+p exec scrot -q 100 -z -e 'mv $f ~/Screenshots/'
+# add maim for screenshots
+bindsym Control+$mod+p exec maim -m 1 ~/Screenshots/$(date +%s).png
+
+# add screenshots on area to clipboard
+bindsym Control+$mod+o exec maim -s | xclip -selection clipboard -t image/png
