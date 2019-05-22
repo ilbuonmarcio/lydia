@@ -67,7 +67,7 @@ pacstrap /mnt base base-devel vim grub i3-wm networkmanager i3status rofi feh i3
 os-prober efibootmgr ntfs-3g links alacritty neofetch git zsh intel-ucode cpupower \
 xorg-server xorg-xinit ttf-dejavu ttf-liberation ttf-inconsolata ttf-fira-code noto-fonts \
 chromium firefox code atom nvidia nvidia-settings xf86-video-intel flameshot \
-pulseaudio pasystray pamixer telegram-desktop go python wget openssh xorg-xrandr
+pulseaudio pasystray pamixer telegram-desktop go python wget openssh xorg-xrandr scrot
 
 # generating fstab
 genfstab -U /mnt >> /mnt/etc/fstab
@@ -158,6 +158,9 @@ arch-chroot /mnt sudo -u mrcz mkdir /home/mrcz/GitHub
 arch-chroot /mnt sudo -u mrcz git clone https://github.com/maaaybe/mrczlnks /home/mrcz/GitHub/mrczlnks
 arch-chroot /mnt sudo -u mrcz /bin/zsh -c "chmod 700 /home/mrcz/GitHub/mrczlnks/install_configs.sh"
 arch-chroot /mnt sudo -u mrcz /bin/zsh -c "cd /home/mrcz/GitHub/mrczlnks && ./install_configs.sh"
+
+# create folder for screenshots
+arch-chroot /mnt sudo -u mrcz mkdir /home/mrcz/Screenshots
 
 # unmounting all mounted partitions
 umount -R /mnt
