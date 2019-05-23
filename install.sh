@@ -153,6 +153,11 @@ arch-chroot /mnt sudo -u mrcz /bin/zsh -c "$(curl -fsSL https://raw.githubuserco
 # installing pi theme for zsh
 arch-chroot /mnt sudo -u mrcz /bin/zsh -c "wget -O /home/mrcz/.oh-my-zsh/themes/pi.zsh-theme https://raw.githubusercontent.com/tobyjamesthomas/pi/master/pi.zsh-theme"
 
+# installing vundle
+arch-chroot /mnt sudo -u mrcz mkdir /home/mrcz/.vim
+arch-chroot /mnt sudo -u mrcz mkdir /home/mrcz/.vim/bundle
+arch-chroot /mnt sudo -u mrcz git clone https://github.com/VundleVim/Vundle.vim.git /home/mrcz/.vim/bundle/Vundle.vim 
+
 # installing config files
 arch-chroot /mnt sudo -u mrcz mkdir /home/mrcz/GitHub
 arch-chroot /mnt sudo -u mrcz git clone https://github.com/maaaybe/mrczlnks /home/mrcz/GitHub/mrczlnks

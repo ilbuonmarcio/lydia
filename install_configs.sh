@@ -7,3 +7,4 @@ cp -rf ./configs/alacritty/*  ../../.config/alacritty/
 cp -rf ./configs/polybar/*    ../../.config/polybar/
 cp -rf ./configs/zsh/.zshrc   ../../
 cp -rf ./configs/Xresources/.Xresources ../../
+cp -rf ./configs/vim/.vimrc ../../
