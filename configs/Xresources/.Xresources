@@ -1,14 +1,14 @@
 ! ------------------------------------------------------------------------------
 ! rofi mrczlnks color theme
 ! ------------------------------------------------------------------------------
-rofi.location:          0 
+rofi.location:          0
 rofi.color-enabled:     true
 !                       'background', 'border'
-rofi.color-window:      argb:dc121212, argb:dc333333
+rofi.color-window:      argb:dc121212, argb:dc292929
 ! State:                'bg',          'fg',   'bgalt',       'hlbg',        'hlfg'
-rofi.color-normal:      argb:00333333, #ffffff, argb:00333333, argb:00333333, argb:ff00ff00
-rofi.color-urgent:      argb:00333333, #ffffff, argb:00333333, argb:00333333, argb:ff00ff00
-rofi.color-active:      argb:00333333, #ffffff, argb:00333333, argb:00333333, argb:ff00ff00
+rofi.color-normal:      argb:00333333, #f9f9f9, argb:00333333, argb:00333333, argb:ff00ee00
+rofi.color-urgent:      argb:00333333, #f9f9f9, argb:00333333, argb:00333333, argb:ff00ee00
+rofi.color-active:      argb:00333333, #f9f9f9, argb:00333333, argb:00333333, argb:ff00ee00
 rofi.separator-style:   dash
 rofi.fullscreen:        false
 rofi.padding:           32
