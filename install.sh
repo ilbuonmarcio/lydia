@@ -157,7 +157,12 @@ arch-chroot /mnt sudo -u mrcz /bin/zsh -c "wget -O /home/mrcz/.oh-my-zsh/themes/
 # installing vundle
 arch-chroot /mnt sudo -u mrcz mkdir /home/mrcz/.vim
 arch-chroot /mnt sudo -u mrcz mkdir /home/mrcz/.vim/bundle
-arch-chroot /mnt sudo -u mrcz git clone https://github.com/VundleVim/Vundle.vim.git /home/mrcz/.vim/bundle/Vundle.vim 
+arch-chroot /mnt sudo -u mrcz git clone https://github.com/VundleVim/Vundle.vim.git /home/mrcz/.vim/bundle/Vundle.vim
+
+# installing motivate
+arch-chroot /mnt sudo -u mrcz git clone https://github.com/mubaris/motivate.git /home/mrcz/motivate_tmp_install
+arch-chroot /mnt sudo -u mrcz /bin/zsh -c "cd /home/mrcz/motivate_tmp_install/motivate/ && sudo ./install.sh"
+arch-chroot /mnt rm -rf /home/mrcz/motivate_tmp_install
 
 # installing config files
 arch-chroot /mnt sudo -u mrcz mkdir /home/mrcz/GitHub
