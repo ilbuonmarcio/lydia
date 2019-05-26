@@ -144,9 +144,11 @@ arch-chroot /mnt sudo -u mrcz git clone https://aur.archlinux.org/yay.git /home/
 arch-chroot /mnt sudo -u mrcz /bin/zsh -c "cd /home/mrcz/yay_tmp_install && yes | makepkg -si"
 arch-chroot /mnt rm -rf /home/mrcz/yay_tmp_install
 
-# installing polybar
+# installing polybar, spotify, font-manager and fontawesome4 font
 arch-chroot /mnt sudo -u mrcz yay -S polybar --noconfirm
 arch-chroot /mnt sudo -u mrcz yay -S spotify --noconfirm
+arch-chroot /mnt sudo -u mrcz yay -S font-manager --noconfirm
+arch-chroot /mnt sudo -u mrcz yay -S otf-font-awesome-4 --noconfirm
 
 # installing oh-my-zsh
 arch-chroot /mnt sudo -u mrcz /bin/zsh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
