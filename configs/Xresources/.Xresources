@@ -19,4 +19,4 @@ rofi.yoffset:           0
 rofi.xoffset:           0
 rofi.width:             854
 rofi.opacity:           30
-rofi.font:              Fira Code Regular 14
+rofi.font:              Roboto Regular 12
