@@ -68,7 +68,7 @@ os-prober efibootmgr ntfs-3g links alacritty neofetch git zsh intel-ucode cpupow
 xorg-server xorg-xinit ttf-dejavu ttf-liberation ttf-inconsolata ttf-fira-code noto-fonts \
 chromium firefox code atom nvidia nvidia-settings xf86-video-intel flameshot \
 pulseaudio pasystray pamixer telegram-desktop go python python-pip wget openssh xorg-xrandr \
-maim imagemagick xclip cmatrix pinta xawtv light ranger
+maim imagemagick xclip cmatrix pinta xawtv light ranger ttf-roboto
 
 # generating fstab
 genfstab -U /mnt >> /mnt/etc/fstab
