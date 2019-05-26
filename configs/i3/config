@@ -190,6 +190,9 @@ bindsym Control+$mod+l exec i3lock -c 000000
 bindsym XF86AudioRaiseVolume exec pamixer --increase 2
 bindsym XF86AudioLowerVolume exec pamixer --decrease 2
 bindsym XF86AudioMute exec pamixer --toggle-mute
+bindsym XF86AudioPause exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
 
 # add monitor brightness handlers
 bindsym XF86MonBrightnessUp exec light -A 5
