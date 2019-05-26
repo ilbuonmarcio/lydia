@@ -19,7 +19,7 @@
 [colors]
 ;background = ${xrdb:color0:#222}
 background = #101010
-background-alt = #434343
+background-alt = #101010
 ;foreground = ${xrdb:color7:#222}
 foreground = #f9f9f9
 foreground-alt = #ffffff
@@ -53,7 +53,7 @@ font-3 = Roboto:pixelsize=10;antialias=true;1
 
 modules-left = i3
 modules-center = 
-modules-right = pulseaudio memory cpu temperature wlan eth battery date
+modules-right = cpu temperature memory battery wlan eth pulseaudio date
 
 tray-position = right
 tray-padding = 8
@@ -113,10 +113,22 @@ label-urgent-padding = 2
 [module/cpu]
 type = internal/cpu
 interval = 0.5
-format-prefix = "CPU: "
+format-prefix = "  "
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = ${colors.primary}
-label = %percentage-cores%
+label = %percentage-cores%% 
+
+format = <ramp-coreload>
+
+ramp-coreload-spacing = 1
+ramp-coreload-0 = ▁
+ramp-coreload-1 = ▂
+ramp-coreload-2 = ▃
+ramp-coreload-3 = ▄
+ramp-coreload-4 = ▅
+ramp-coreload-5 = ▆
+ramp-coreload-6 = ▇
+ramp-coreload-7 = █
 
 [module/memory]
 type = internal/memory
