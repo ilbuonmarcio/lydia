@@ -4,19 +4,19 @@
 rofi.location:          0
 rofi.color-enabled:     true
 !                       'background', 'border'
-rofi.color-window:      argb:dc121212, argb:dc292929
+rofi.color-window:      argb:dc0a0a0a, argb:dc252525
 ! State:                'bg',          'fg',   'bgalt',       'hlbg',        'hlfg'
 rofi.color-normal:      argb:00333333, #f9f9f9, argb:00333333, argb:00333333, argb:ff00ee00
 rofi.color-urgent:      argb:00333333, #f9f9f9, argb:00333333, argb:00333333, argb:ff00ee00
 rofi.color-active:      argb:00333333, #f9f9f9, argb:00333333, argb:00333333, argb:ff00ee00
 rofi.separator-style:   dash
 rofi.fullscreen:        false
-rofi.padding:           32
-rofi.hide-scrollbar:    false
-rofi.line-margin:       3
+rofi.padding:           12
+rofi.hide-scrollbar:    true
+rofi.line-margin:       0
 rofi.fake-transparency: false
 rofi.yoffset:           0
 rofi.xoffset:           0
 rofi.width:             854
 rofi.opacity:           30
-rofi.font:              Roboto Regular 12
+rofi.font:              Roboto Regular 10
