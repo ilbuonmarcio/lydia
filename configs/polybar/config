@@ -53,7 +53,7 @@ font-3 = Roboto:pixelsize=10;antialias=true;1
 
 modules-left = i3
 modules-center = 
-modules-right = cpu temperature memory battery wlan eth pulseaudio date
+modules-right = cpu temperature memory battery wlan eth pulseaudio date username
 
 tray-position = right
 tray-padding = 8
@@ -269,3 +269,8 @@ label-warn-foreground = #ff2222
 
 ramp-0 = 
 ramp-foreground = ${colors.foreground-alt}
+
+[module/username]
+type = custom/script
+exec = whoami
+label = %output%
