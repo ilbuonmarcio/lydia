@@ -133,7 +133,7 @@ interval = 2.5
 
 format-connected = <ramp-signal> <label-connected>
 format-connected-underline = ${colors.primary}
-label-connected = ""
+label-connected =  %local_ip%
 
 format-disconnected =
 
