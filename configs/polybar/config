@@ -53,10 +53,10 @@ font-3 = Roboto:pixelsize=10;antialias=true;1
 
 modules-left = i3
 modules-center = 
-modules-right = cpu temperature memory battery wlan eth pulseaudio date username
+modules-right = cpu temperature memory wlan eth pulseaudio date battery username
 
 tray-position = right
-tray-padding = 8
+tray-padding = 6
 tray-background = ${colors.background-alt}
 
 ;wm-restack = bspwm
