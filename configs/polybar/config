@@ -195,7 +195,7 @@ label-volume-foreground = ${colors.foreground}
 label-muted =  muted
 label-muted-foreground = #666
 
-bar-volume-width = 24
+bar-volume-width = 40
 bar-volume-foreground-0 = #001100
 bar-volume-foreground-1 = #002200
 bar-volume-foreground-2 = #003300
@@ -214,9 +214,9 @@ bar-volume-foreground-14 = #00ff00
 bar-volume-gradient = true
 bar-volume-indicator = 
 bar-volume-indicator-font = 2
-bar-volume-fill = 
+bar-volume-fill = |
 bar-volume-fill-font = 2
-bar-volume-empty = 
+bar-volume-empty = |
 bar-volume-empty-font = 2
 bar-volume-empty-foreground = #666666
 
