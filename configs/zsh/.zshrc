@@ -98,6 +98,8 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+export FILE=ranger
+export TERMINAL=alacritty
 export EDITOR=vim
 export VISUAL=vim
 export BROWSER=chromium
