@@ -19,7 +19,7 @@
 [colors]
 ;background = ${xrdb:color0:#222}
 background = #101010
-background-alt = #101010
+background-alt = #333333
 ;foreground = ${xrdb:color7:#222}
 foreground = #f9f9f9
 foreground-alt = #ffffff
@@ -52,11 +52,11 @@ font-2 = Fira Code:fontformat=truetype:size=10:antialias=true;0
 
 modules-left = i3
 modules-center = 
-modules-right = cpu temperature memory wlan eth pulseaudio date battery username
+modules-right = cpu temperature memory wlan eth pulseaudio date openports battery username
 
 tray-position = right
 tray-padding = 6
-tray-background = ${colors.background-alt}
+tray-background = ${colors.background}
 
 ;wm-restack = bspwm
 ;wm-restack = i3
@@ -273,3 +273,12 @@ ramp-foreground = ${colors.foreground-alt}
 type = custom/script
 exec = whoami
 label = %output%
+
+[module/openports]
+type = custom/script
+exec = ss -lnptuH | grep LISTEN | awk '{print $1"-"$5}' | xargs | sed -e 's/ / | /g' | sed -e 's/-/ /g'
+label = %output%
+label-underline = ${colors.primary}
+label-background = ${colors.background-alt}
+label-padding-left = 4
+label-padding-right = 4
