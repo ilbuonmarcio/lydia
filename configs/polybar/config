@@ -276,7 +276,7 @@ label = %output%
 
 [module/openports]
 type = custom/script
-exec = ss -lnptuH | grep LISTEN | awk '{print $1"-"$5}' | xargs | sed -e 's/ / | /g' | sed -e 's/-/ /g'
+exec = ss -lnptuH | grep LISTEN | awk '{print $5"-"$7}' | sed -e 's/users:(("//g' | sed -e 's/",.*//g' | awk -F"-" '{print $2"-"$1}' | xargs | sed -e 's/ / |/g' | sed -e 's/-/ /g'
 label = %output%
 label-underline = ${colors.primary}
 label-background = ${colors.background-alt}
