@@ -178,7 +178,7 @@ arch-chroot /mnt sudo -u mrcz mkdir /home/mrcz/Screenshots
 
 # create pictures folder and moving default wallpaper
 arch-chroot /mnt sudo -u mrcz mkdir /home/mrcz/Pictures
-arch-chroot /mnt sudo -u mrcz cp -r /home/mrcz/GitHub/mrczlnks/wallpapers/* /home/mrcz/Pictures/
+arch-chroot /mnt sudo -u mrcz cp -r /home/mrcz/GitHub/mrczlnks/wallpapers/ /home/mrcz/Pictures/
 
 # unmounting all mounted partitions
 umount -R /mnt
