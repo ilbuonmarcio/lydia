@@ -191,4 +191,3 @@ echo "INSTALLATION COMPLETE! enjoy :)"
 echo ""
 
 sleep 3
-reboot
