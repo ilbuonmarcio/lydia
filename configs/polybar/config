@@ -52,7 +52,7 @@ font-2 = Fira Code:fontformat=truetype:size=10:antialias=true;0
 
 modules-left = i3
 modules-center = 
-modules-right = cpu temperature memory wlan eth pulseaudio date openports battery username
+modules-right = cpu temperature memory wlan eth pulseaudio openports usersconnected username date battery
 
 tray-position = right
 tray-padding = 6
@@ -282,3 +282,13 @@ label-underline = ${colors.primary}
 label-background = ${colors.background-alt}
 label-padding-left = 4
 label-padding-right = 4
+
+[module/usersconnected]
+type = custom/script
+exec = users | wc -w
+interval = 3
+label =   %output%
+label-underline = ${colors.primary}
+label-background = ${colors.background-alt}
+label-padding-left = 2
+label-padding-right = 2
