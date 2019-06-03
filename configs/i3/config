@@ -211,3 +211,6 @@ bindsym Control+$mod+p exec maim -m 1 ~/Screenshots/$(date +%s).png
 
 # add screenshots on area to clipboard
 bindsym Control+$mod+o exec maim -s | xclip -selection clipboard -t image/png
+
+# change screen off to 30 minutes
+exec xset dpms 0 0 1800
