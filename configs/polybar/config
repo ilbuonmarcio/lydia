@@ -18,13 +18,13 @@
 
 [colors]
 ;background = ${xrdb:color0:#222}
-background = #101010
-background-alt = #333333
+background = #101421
+background-alt = #434865
 ;foreground = ${xrdb:color7:#222}
-foreground = #f9f9f9
+foreground = #fffbf6
 foreground-alt = #ffffff
 primary = #cccccc
-secondary = #dddddd
+secondary = #333333
 alert = #ffffff
 
 [bar/example]
