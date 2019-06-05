@@ -47,32 +47,20 @@ bindsym $mod+d exec rofi -show run
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
-# change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
-
-# alternatively, you can use the cursor keys:
+# change focus with the cursor keys:
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
-# move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
-
-# alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
+# move focused window with cursor keys:
+bindsym $mod+Shift+Left move left 64 px
+bindsym $mod+Shift+Down move down 64 px
+bindsym $mod+Shift+Up move up 64 px
+bindsym $mod+Shift+Right move right 64 px
 
 # split in horizontal orientation
-bindsym $mod+h split h
+bindsym $mod+b split h
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -80,16 +68,11 @@ bindsym $mod+v split v
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 
-# change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
+# change container layout (toggle split)
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
-
-# change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+bindsym $mod+space floating toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -143,32 +126,17 @@ bindsym $mod+Shift+p exec pkill -USR1 polybar
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec exit i3 # "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
-# resize window (you can also use the mouse for that)
-mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
+# resizing window 
+bindsym $mod+Control+j resize shrink width 64 px or 64 ppt
+bindsym $mod+Control+k resize grow height 64 px or 64 ppt
+bindsym $mod+Control+l resize shrink height 64 px or 64 ppt
+bindsym $mod+Control+semicolon resize grow width 64 px or 64 ppt
 
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
-
-        # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
-
-        # back to normal: Enter or Escape or $mod+r
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-        bindsym $mod+r mode "default"
-}
-
-bindsym $mod+r mode "resize"
+# resizing window, with arrows
+bindsym $mod+Control+Left resize shrink width 64 px or 64 ppt
+bindsym $mod+Control+Down resize grow height 64 px or 64 ppt
+bindsym $mod+Control+Up resize shrink height 64 px or 64 ppt
+bindsym $mod+Control+Right resize grow width 64 px or 64 ppt
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
@@ -186,7 +154,7 @@ client.focused #333333 #333333 #333333 #333333   #333333
 exec --no-startup-id feh --bg-fill ~/Pictures/wallpapers/wallpaper.png
 
 # add lockscreen
-bindsym Control+$mod+l exec i3lock -c 000000
+bindsym Shift+$mod+l exec i3lock -c 000000
 
 # add audio handlers on razer keyboard audio management device
 bindsym XF86AudioRaiseVolume exec pamixer --increase 2
@@ -213,4 +181,4 @@ bindsym Control+$mod+p exec maim -m 1 ~/Screenshots/$(date +%s).png
 bindsym Control+$mod+o exec maim -s | xclip -selection clipboard -t image/png
 
 # change screen off to 30 minutes
-exec xset dpms 0 0 1800
+exec --no-startup-id xset dpms 0 0 1800
