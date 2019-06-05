@@ -23,9 +23,9 @@ background-alt = #333333
 ;foreground = ${xrdb:color7:#222}
 foreground = #f9f9f9
 foreground-alt = #ffffff
-primary = #33cc33
-secondary = #55ff55
-alert = #ffff33
+primary = #cccccc
+secondary = #dddddd
+alert = #ffffff
 
 [bar/example]
 width = 100%
@@ -46,9 +46,9 @@ padding-right = 3
 module-margin-left = 2
 module-margin-right = 2
 
-font-0 = FontAwesome:pixelsize=10;antialias=true;1
-font-1 = Roboto:fontformat=truetype:size=10:antialias=true;0
-font-2 = Fira Code:fontformat=truetype:size=10:antialias=true;0
+font-0 = FontAwesome:pixelsize=12;antialias=true;1
+font-1 = Roboto:fontformat=truetype:size=12:antialias=true;0
+font-2 = Fira Code:fontformat=truetype:size=12:antialias=true;0
 
 modules-left = i3
 modules-center = 
@@ -195,29 +195,21 @@ label-muted =  muted
 label-muted-foreground = #666
 
 bar-volume-width = 40
-bar-volume-foreground-0 = #001100
-bar-volume-foreground-1 = #002200
-bar-volume-foreground-2 = #003300
-bar-volume-foreground-3 = #004400
-bar-volume-foreground-4 = #005500
-bar-volume-foreground-5 = #006600
-bar-volume-foreground-6 = #007700
-bar-volume-foreground-7 = #008800
-bar-volume-foreground-8 = #009900
-bar-volume-foreground-9 = #00aa00
-bar-volume-foreground-10 = #00bb00
-bar-volume-foreground-11 = #00cc00
-bar-volume-foreground-12 = #00dd00
-bar-volume-foreground-13 = #00ee00
-bar-volume-foreground-14 = #00ff00
+bar-volume-foreground-0 = #333333
+bar-volume-foreground-1 = #555555
+bar-volume-foreground-2 = #777777
+bar-volume-foreground-3 = #999999
+bar-volume-foreground-4 = #bbbbbb
+bar-volume-foreground-5 = #dddddd
+bar-volume-foreground-6 = #ffffff
 bar-volume-gradient = true
 bar-volume-indicator = 
 bar-volume-indicator-font = 2
-bar-volume-fill = |
+bar-volume-fill = "#" 
 bar-volume-fill-font = 2
-bar-volume-empty = |
+bar-volume-empty = "#"
 bar-volume-empty-font = 2
-bar-volume-empty-foreground = #666666
+bar-volume-empty-foreground = #111111
 
 [module/battery]
 type = internal/battery
