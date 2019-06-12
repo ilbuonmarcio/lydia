@@ -52,7 +52,7 @@ font-2 = Fira Code:fontformat=truetype:size=10:antialias=true;0
 
 modules-left = i3
 modules-center = 
-modules-right = cpu temperature memory wlan eth pulseaudio usersconnected username date battery
+modules-right = mountedpartitions cpu temperature memory wlan eth pulseaudio usersconnected username date battery
 
 tray-position = right
 tray-padding = 6
@@ -263,6 +263,16 @@ type = custom/script
 exec = users | wc -w
 interval = 3
 label =   %output%
+label-underline = ${colors.primary}
+label-background = ${colors.background-alt}
+label-padding-left = 2
+label-padding-right = 2
+
+[module/mountedpartitions]
+type = custom/script
+exec = lsblk | grep part | sed 's/^..//g' | awk 'NF==7 {print "["$1" "$7" "$4"]"}' | xargs
+interval = 30
+label = %output%
 label-underline = ${colors.primary}
 label-background = ${colors.background-alt}
 label-padding-left = 2
