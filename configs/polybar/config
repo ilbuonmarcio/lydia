@@ -270,7 +270,7 @@ label-padding-right = 2
 
 [module/mountedpartitions]
 type = custom/script
-exec = lsblk | grep part | sed 's/^..//g' | awk 'NF==7 {print "["$1" "$7" "$4"]"}' | xargs
+exec = df -h | sed 1d | sort | awk '{ if (substr($1,1,1) ~ /^\//) print "["$1" "$6" "$4"]"}' | xargs
 interval = 30
 label = %output%
 label-underline = ${colors.primary}
