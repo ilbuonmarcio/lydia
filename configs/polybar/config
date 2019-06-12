@@ -17,12 +17,10 @@
 ;==========================================================
 
 [colors]
-;background = ${xrdb:color0:#222}
-background = #101010
-background-alt = #343434
-;foreground = ${xrdb:color7:#222}
-foreground = #efefef
-foreground-alt = #ffffff
+background = #333349
+background-alt = #555566
+foreground = #e7e7e7
+foreground-alt = #333333
 primary = #cccccc
 secondary = #aaaaaa
 alert = #ff7799
@@ -47,8 +45,8 @@ module-margin-left = 2
 module-margin-right = 2
 
 font-0 = FontAwesome:pixelsize=10;antialias=true;1
-font-1 = Roboto:fontformat=truetype:size=10:antialias=true;0
-font-2 = Fira Code:fontformat=truetype:size=10:antialias=true;0
+font-1 = Roboto:fontformat=truetype:size=10:antialias=true;1
+font-2 = Fira Code:fontformat=truetype:size=10:antialias=true;1
 
 modules-left = i3
 modules-center = 
@@ -113,7 +111,7 @@ label-urgent-padding = 2
 type = internal/cpu
 interval = 0.5
 format-prefix = "  "
-format-prefix-foreground = ${colors.foreground-alt}
+format-prefix-foreground = ${colors.foreground}
 format-underline = ${colors.primary}
 label = %percentage-cores%% 
 
@@ -133,7 +131,7 @@ ramp-coreload-7 = █
 type = internal/memory
 interval = 1
 format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
+format-prefix-foreground = ${colors.foreground}
 format-underline = ${colors.primary}
 label = %mb_used% (%percentage_used%%) [%mb_total%]
 
@@ -154,7 +152,7 @@ ramp-signal-2 = 
 ramp-signal-3 = 
 ramp-signal-4 = 
 
-ramp-signal-foreground = ${colors.foreground-alt}
+ramp-signal-foreground = ${colors.foreground}
 
 [module/eth]
 type = internal/network
@@ -163,7 +161,7 @@ interval = 3.0
 
 format-connected-underline = ${colors.primary}
 format-connected-prefix = " "
-format-connected-prefix-foreground = ${colors.foreground-alt}
+format-connected-prefix-foreground = ${colors.foreground}
 label-connected = %local_ip% %linkspeed% %downspeed:9%/%upspeed:9%
 
 format-disconnected =
@@ -179,7 +177,7 @@ time = %H:%M:%S
 time-alt = %H:%M:%S
 
 ;; format-prefix = 
-;; format-prefix-foreground = ${colors.foreground-alt}
+;; format-prefix-foreground = ${colors.foreground}
 format-underline = ${colors.primary}
 
 label = %date% %time%
@@ -209,7 +207,7 @@ format-discharging-underline = ${self.format-charging-underline}
 label-discharging =  %percentage%%
 
 format-full-prefix = " "
-format-full-prefix-foreground = ${colors.foreground-alt}
+format-full-prefix-foreground = ${colors.foreground}
 format-full-underline = ${self.format-charging-underline}
 
 ramp-capacity-0 = a
@@ -217,14 +215,14 @@ ramp-capacity-1 = b
 ramp-capacity-2 = c
 ramp-capacity-3 = d
 ramp-capacity-4 = e
-ramp-capacity-foreground = ${colors.foreground-alt}
+ramp-capacity-foreground = ${colors.foreground}
 
 animation-charging-0 = 
 animation-charging-1 = 
 animation-charging-2 = 
 animation-charging-3 = 
 animation-charging-4 = 
-animation-charging-foreground = ${colors.foreground-alt}
+animation-charging-foreground = ${colors.foreground}
 animation-charging-framerate = 750
 
 [module/temperature]
@@ -242,7 +240,7 @@ label-warn = %temperature-c%
 label-warn-foreground = #ff2222
 
 ramp-0 = 
-ramp-foreground = ${colors.foreground-alt}
+ramp-foreground = ${colors.foreground}
 
 [module/username]
 type = custom/script
@@ -270,10 +268,10 @@ label-padding-right = 2
 
 [module/mountedpartitions]
 type = custom/script
-exec = df -h | sed 1d | sort | awk '{ if (substr($1,1,1) ~ /^\//) print "["$1" "$6" "$4"]"}' | xargs
+exec = df -h | sed 1d | sort | awk '{ if (substr($1,1,1) ~ /^\//) print "["$1" "$6" "$4"]"}' | xargs | sed 's/\]\ \[/\]\ \ \[/g'
 interval = 30
 label = %output%
 label-underline = ${colors.primary}
-label-background = ${colors.background-alt}
+label-background = ${colors.background}
 label-padding-left = 2
 label-padding-right = 2
