@@ -268,7 +268,7 @@ label-padding-right = 2
 
 [module/mountedpartitions]
 type = custom/script
-exec = df -h | sed 1d | sort | awk '{ if (substr($1,1,1) ~ /^\//) print "["$1" "$6" "$4"]"}' | xargs | sed 's/\]\ \[/\]\ \ \[/g'
+exec = df -h | sed 1d | awk '{ if (substr($1,1,1) ~ /^\//) print "["$6" "$4"]"}' | sort | xargs | sed 's/\]\ \[/\]\ \ \[/g'
 interval = 30
 label = %output%
 label-underline = ${colors.primary}
