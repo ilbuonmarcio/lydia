@@ -142,7 +142,7 @@ interval = 2.5
 
 format-connected = <ramp-signal> <label-connected>
 format-connected-underline = ${colors.primary}
-label-connected =  %local_ip% %essid% %downspeed:9% %upspeed:9%
+label-connected =  %local_ip% %downspeed:9% %upspeed:9%
 
 format-disconnected =
 
@@ -157,7 +157,7 @@ ramp-signal-foreground = ${colors.foreground}
 [module/eth]
 type = internal/network
 interface = enp7s0
-interval = 3.0
+interval = 2.5
 
 format-connected-underline = ${colors.primary}
 format-connected-prefix = " "
