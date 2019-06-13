@@ -6,6 +6,8 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
+export SHELL=zsh
+export PAGER=less
 export FILE=ranger
 export TERMINAL=alacritty
 export EDITOR=vim
