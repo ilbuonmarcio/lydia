@@ -21,3 +21,5 @@ dsac() { sudo docker stop $(sudo docker ps -a -q); }
 dkac() { sudo docker kill $(sudo docker ps -a -q); }
 drac() { sudo docker rm $(sudo docker ps -a -q); }
 drai() { sudo docker rmi $(sudo docker images -a -q); }
+
+source $HOME/.secrets
