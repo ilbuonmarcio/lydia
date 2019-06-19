@@ -27,7 +27,7 @@ alert = #ff7799
 
 [bar/example]
 width = 100%
-height = 32
+height = 40
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -44,9 +44,9 @@ padding-right = 3
 module-margin-left = 2
 module-margin-right = 2
 
-font-0 = FontAwesome:pixelsize=10;antialias=true;1
-font-1 = Roboto:fontformat=truetype:size=10:antialias=true;1
-font-2 = Fira Code:fontformat=truetype:size=10:antialias=true;1
+font-0 = FontAwesome:pixelsize=15;antialias=true;1
+font-1 = Roboto:fontformat=truetype:size=12:antialias=true;1
+font-2 = Fira Code:fontformat=truetype:size=12:antialias=true;1
 
 modules-left = i3
 modules-center = 
