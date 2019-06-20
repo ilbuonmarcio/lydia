@@ -50,7 +50,7 @@ font-2 = Fira Code:fontformat=truetype:size=10:antialias=true;1
 
 modules-left = i3
 modules-center = 
-modules-right = mountedpartitions cpu temperature memory wlan eth usersconnected username date battery pulseaudio
+modules-right = mountedpartitions cpu temperature memory wlan eth pulseaudio date usersconnected username battery
 
 tray-position = right
 tray-padding = 6
@@ -110,8 +110,6 @@ label-urgent-padding = 2
 [module/cpu]
 type = internal/cpu
 interval = 0.5
-format-prefix = "  "
-format-prefix-foreground = ${colors.foreground}
 format-underline = ${colors.primary}
 label = %percentage-cores%% 
 
@@ -230,17 +228,14 @@ type = internal/temperature
 thermal-zone = 0
 warn-temperature = 50
 
-format = <ramp> <label>
+format = <label>
 format-underline = ${colors.primary}
-format-warn = <ramp> <label-warn>
+format-warn = <label-warn>
 format-warn-underline = #ee4444
 
 label = %temperature-c%
 label-warn = %temperature-c%
 label-warn-foreground = #ff2222
-
-ramp-0 = 
-ramp-foreground = ${colors.foreground}
 
 [module/username]
 type = custom/script
