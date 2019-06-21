@@ -50,7 +50,7 @@ font-2 = Fira Code:fontformat=truetype:size=10:antialias=true;1
 
 modules-left = i3
 modules-center = 
-modules-right = mountedpartitions cpu temperature memory wlan eth pulseaudio date usersconnected username battery
+modules-right = dockerrc mountedpartitions cpu temperature memory wlan eth pulseaudio date usersconnected username battery
 
 tray-position = right
 tray-padding = 6
@@ -268,5 +268,15 @@ interval = 30
 label = %output%
 label-underline = ${colors.primary}
 label-background = ${colors.background}
+label-padding-left = 2
+label-padding-right = 2
+
+[module/dockerrc]
+type = custom/script
+exec = sudo docker ps -q | wc -l
+interval = 2
+label = %output%
+label-underline = ${colors.primary}
+label-background = ${colors.background-alt}
 label-padding-left = 2
 label-padding-right = 2
