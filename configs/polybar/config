@@ -27,7 +27,7 @@ alert = #ff7799
 
 [bar/example]
 width = 100%
-height = 32
+height = 36
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -44,17 +44,17 @@ padding-right = 3
 module-margin-left = 2
 module-margin-right = 2
 
-font-0 = FontAwesome:pixelsize=13;antialias=true;1
-font-1 = Roboto:fontformat=truetype:size=10:antialias=true;1
-font-2 = Fira Code:fontformat=truetype:size=10:antialias=true;1
+font-0 = Roboto:fontformat=truetype:size=14:antialias=true;2
+font-1 = Material Icons:size=20:antialias=true;6
+font-2 = Font Awesome 5 Brands:size=20:antialias=true;4
 
 modules-left = i3
 modules-center = 
 modules-right = dockerrc mountedpartitions cpu temperature memory wlan eth pulseaudio date usersconnected updatesavailable username battery
 
-tray-position = right
-tray-padding = 6
-tray-background = ${colors.background}
+; tray-position = right
+; tray-padding = 4
+; tray-background = ${colors.background}
 
 ;wm-restack = bspwm
 ;wm-restack = i3
@@ -109,48 +109,27 @@ label-urgent-padding = 2
 
 [module/cpu]
 type = internal/cpu
-interval = 0.5
+interval = 1
 format-underline = ${colors.primary}
-label = %percentage-cores%% 
-
-format = <ramp-coreload>
-
-ramp-coreload-spacing = 1
-ramp-coreload-0 = ▁
-ramp-coreload-1 = ▂
-ramp-coreload-2 = ▃
-ramp-coreload-3 = ▄
-ramp-coreload-4 = ▅
-ramp-coreload-5 = ▆
-ramp-coreload-6 = ▇
-ramp-coreload-7 = █
+label =  %percentage%%
+format = <label>
 
 [module/memory]
 type = internal/memory
 interval = 1
-format-prefix = " "
+format-prefix = " "
 format-prefix-foreground = ${colors.foreground}
 format-underline = ${colors.primary}
-label = %mb_used% (%percentage_used%%) [%mb_total%]
+label = %gb_used%/%gb_total% (%percentage_used%%)
 
 [module/wlan]
 type = internal/network
 interface = wlp3s0
 interval = 2.5
 
-format-connected = <ramp-signal> <label-connected>
+format-connected = <label-connected>
 format-connected-underline = ${colors.primary}
-label-connected =  %local_ip% %downspeed:9% %upspeed:9%
-
-format-disconnected =
-
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
-
-ramp-signal-foreground = ${colors.foreground}
+label-connected =  %local_ip% %downspeed:9% %upspeed:9%
 
 [module/eth]
 type = internal/network
@@ -158,11 +137,9 @@ interface = enp7s0
 interval = 2.5
 
 format-connected-underline = ${colors.primary}
-format-connected-prefix = " "
+format-connected-prefix = " "
 format-connected-prefix-foreground = ${colors.foreground}
-label-connected = %local_ip% %linkspeed% %downspeed:9%/%upspeed:9%
-
-format-disconnected =
+label-connected = %local_ip%%downspeed:9%%upspeed:9%
 
 [module/date]
 type = internal/date
@@ -174,8 +151,6 @@ date-alt = " %Y-%m-%d"
 time = %H:%M:%S
 time-alt = %H:%M:%S
 
-;; format-prefix = 
-;; format-prefix-foreground = ${colors.foreground}
 format-underline = ${colors.primary}
 
 label = %date% %time%
@@ -184,63 +159,30 @@ label = %date% %time%
 type = internal/pulseaudio
 
 format-volume = <label-volume>
-label-volume =   %percentage%%
+label-volume =   %percentage%%
 label-volume-foreground = ${colors.foreground}
 
-label-muted =  muted
+label-muted =  muted
 label-muted-foreground = #666
-
-[module/battery]
-type = internal/battery
-battery = BAT1
-adapter = ACAD
-full-at = 98
-
-format-charging = <animation-charging> <label-charging>
-format-charging-underline = #3333ff
-
-format-discharging = <label-discharging>
-format-discharging-underline = ${self.format-charging-underline}
-
-label-discharging =  %percentage%%
-
-format-full-prefix = " "
-format-full-prefix-foreground = ${colors.foreground}
-format-full-underline = ${self.format-charging-underline}
-
-ramp-capacity-0 = a
-ramp-capacity-1 = b
-ramp-capacity-2 = c
-ramp-capacity-3 = d
-ramp-capacity-4 = e
-ramp-capacity-foreground = ${colors.foreground}
-
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-3 = 
-animation-charging-4 = 
-animation-charging-foreground = ${colors.foreground}
-animation-charging-framerate = 750
 
 [module/temperature]
 type = internal/temperature
 thermal-zone = 0
-warn-temperature = 50
+warn-temperature = 60
 
 format = <label>
 format-underline = ${colors.primary}
 format-warn = <label-warn>
 format-warn-underline = #ee4444
 
-label = %temperature-c%
+label =  %temperature-c%
 label-warn = %temperature-c%
 label-warn-foreground = #ff2222
 
 [module/username]
 type = custom/script
 exec = whoami
-label = %output%
+label = %output%
 
 ; [module/openports]
 ; type = custom/script
@@ -255,7 +197,7 @@ label = %output%
 type = custom/script
 exec = users | wc -w
 interval = 3
-label =   %output%
+label = %output%
 label-underline = ${colors.primary}
 label-background = ${colors.background-alt}
 label-padding-left = 2
@@ -265,7 +207,7 @@ label-padding-right = 2
 type = custom/script
 exec = df -h | sed 1d | awk '{ if (substr($1,1,1) ~ /^\//) print "["$6" "$4"]"}' | sort | xargs | sed 's/\]\ \[/\]\ \ \[/g'
 interval = 30
-label = %output%
+label =  %output%
 label-underline = ${colors.primary}
 label-background = ${colors.background}
 label-padding-left = 2
@@ -275,7 +217,7 @@ label-padding-right = 2
 type = custom/script
 exec = sudo docker ps -q | wc -l
 interval = 2
-label = %output%
+label =  %output%
 label-underline = ${colors.primary}
 label-background = ${colors.background-alt}
 label-padding-left = 2
@@ -285,7 +227,7 @@ label-padding-right = 2
 type = custom/script
 exec = yay -Sy 1>/dev/null && yay -Qu | wc -l
 interval = 300
-label =  %output%
+label =  %output%
 label-underline = ${colors.primary}
 label-background = ${colors.background-alt}
 label-padding-left = 2
