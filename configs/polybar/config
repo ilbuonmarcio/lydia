@@ -232,4 +232,3 @@ label-underline = ${colors.primary}
 label-background = ${colors.background-alt}
 label-padding-left = 2
 label-padding-right = 2
-

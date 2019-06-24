@@ -66,7 +66,7 @@ mount /dev/sda3 /mnt/home
 pacstrap /mnt base base-devel vim grub i3-wm networkmanager i3status rofi feh i3lock \
 os-prober efibootmgr ntfs-3g links alacritty neofetch git zsh intel-ucode cpupower \
 xorg-server xorg-xinit ttf-dejavu ttf-liberation ttf-inconsolata ttf-fira-code noto-fonts \
-chromium firefox code atom nvidia nvidia-settings xf86-video-intel flameshot \
+chromium firefox code atom nvidia nvidia-settings xf86-video-intel flameshot unzip \
 pulseaudio pasystray pamixer telegram-desktop go python python-pip wget openssh xorg-xrandr \
 maim imagemagick xclip cmatrix pinta xawtv light ranger ttf-roboto playerctl papirus-icon-theme \
 obs-studio
@@ -162,6 +162,17 @@ arch-chroot /mnt sudo -u mrcz /bin/zsh -c "wget -O /home/mrcz/.oh-my-zsh/themes/
 arch-chroot /mnt sudo -u mrcz mkdir /home/mrcz/.vim
 arch-chroot /mnt sudo -u mrcz mkdir /home/mrcz/.vim/bundle
 arch-chroot /mnt sudo -u mrcz git clone https://github.com/VundleVim/Vundle.vim.git /home/mrcz/.vim/bundle/Vundle.vim
+
+# installing fonts
+arch-chroot /mnt sudo -u mrcz mkdir /home/mrcz/fonts_tmp_folder
+# font awesome 5 brands
+arch-chroot /mnt sudo -u mrcz /bin/zsh -c "cd /home/mrcz/fonts_tmp_folder && wget -O fontawesome.zip https://github.com/FortAwesome/Font-Awesome/releases/download/5.9.0/fontawesome-free-5.9.0-desktop.zip && unzip fontawesome.zip"
+arch-chroot /mnt sudo -u mrcz /bin/zsh -c "sudo cp /home/mrcz/fonts_tmp_folder/fontawesome-free-5.9.0-desktop/otfs/Font\ Awesome\ 5\ Brands-Regular-400.otf /usr/share/fonts/OTF/"
+# material icons
+arch-chroot /mnt sudo -u mrcz /bin/zsh -c "cd /home/mrcz/fonts_tmp_folder && wget -O materialicons.zip https://github.com/google/material-design-icons/releases/download/3.0.1/material-design-icons-3.0.1.zip && unzip materialicons.zip"
+arch-chroot /mnt sudo -u mrcz /bin/zsh -c "sudo cp /home/mrcz/fonts_tmp_folder/material-design-icons-3.0.1/iconfont/MaterialIcons-Regular.ttf /usr/share/fonts/TTF/"
+# removing fonts tmp folder
+arch-chroot /mnt sudo -u mrcz rm -rf /home/mrcz/fonts_tmp_folder
 
 # installing config files
 arch-chroot /mnt sudo -u mrcz mkdir /home/mrcz/GitHub
