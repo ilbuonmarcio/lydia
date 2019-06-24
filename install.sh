@@ -69,7 +69,7 @@ xorg-server xorg-xinit ttf-dejavu ttf-liberation ttf-inconsolata ttf-fira-code n
 chromium firefox code atom nvidia nvidia-settings xf86-video-intel flameshot unzip \
 pulseaudio pasystray pamixer telegram-desktop go python python-pip wget openssh xorg-xrandr \
 maim imagemagick xclip cmatrix pinta xawtv light ranger ttf-roboto playerctl papirus-icon-theme \
-obs-studio
+obs-studio docker
 
 # generating fstab
 genfstab -U /mnt >> /mnt/etc/fstab
@@ -135,6 +135,7 @@ arch-chroot /mnt echo "governor='performance'" >> /mnt/etc/default/cpupower
 # making services start at boot
 arch-chroot /mnt systemctl enable cpupower.service
 arch-chroot /mnt systemctl enable NetworkManager.service
+arch-chroot /mnt systemctl enable docker.service
 
 # making i3 default for startx for both root and mrcz
 arch-chroot /mnt echo "exec i3" >> /mnt/root/.xinitrc
@@ -184,8 +185,9 @@ arch-chroot /mnt sudo -u mrcz /bin/zsh -c "cd /home/mrcz/GitHub/mrczlnks && ./in
 # create folder for screenshots
 arch-chroot /mnt sudo -u mrcz mkdir /home/mrcz/Screenshots
 
-# create pictures folder and moving default wallpaper
+# create pictures folder, secrets folder and moving default wallpaper
 arch-chroot /mnt sudo -u mrcz mkdir /home/mrcz/Pictures
+arch-chroot /mnt sudo -u mrcz mkdir /home/mrcz/.secrets
 arch-chroot /mnt sudo -u mrcz cp -r /home/mrcz/GitHub/mrczlnks/wallpapers/ /home/mrcz/Pictures/
 
 # unmounting all mounted partitions
