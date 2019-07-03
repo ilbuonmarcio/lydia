@@ -1,10 +1,12 @@
 # mrczlnks
 
-mrczlnks is a free to use Arch Linux + i3-wm install script.
+mrczlnks is a free to use, minimalist Arch Linux i3wm-based meta-distribution install script.
 
 It is primarly designed for my own usage but free for you all to use and modify to fit your own purposes.
 
-I will not provide any support for this script because of this, so you're adivsed! :beers:
+It is specialized primarily in work and development tasks, but able to do all the cool things cool kids do these days ( ͡° ͜ʖ ͡°)
+
+I will not **_fuggin'_** provide any support for this script because of that's *my* script, and not *yours*, so you're adivsed! :beers: :kiss:
 
 ## Disclaimer
 
@@ -20,7 +22,7 @@ THIS PIECE OF SOFTWARE IS PROVIDED AS IS, WITHOUT WARRANTIES OF ANY KIND. I AM N
 wget https://raw.githubusercontent.com/maaaybe/mrczlnks/master/install.sh
 ```
 
-- Modify it to fit your own purposes (e.g. disk to format, partitions, hostname, username)
+- Modify it to fit your own purposes (I suggest you to edit the proper disk to format, right partitions, change hostname, username, purge packages you don't need and so on, or do like [zetaemme](https://github.com/zetaemme/zls) and fork this repository as a base for your own install script!)
 
 ```bash
 vim ./install.sh
@@ -38,7 +40,7 @@ chmod 700 ./install.sh
 ./install.sh
 ```
 
-Once the script finishes, you can `reboot` the live environment and remove the USB drive previously inserted, and finally start using the new desktop experience you just installed!
+Once the script finishes, you can `python detonate.py` your machine (just joking...), or just `reboot` the live environment and remove the USB drive previously inserted, and finally start using the new desktop experience you just installed!
 
 ### License
 
