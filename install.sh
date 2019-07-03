@@ -12,6 +12,8 @@ echo "        for maximum comfort and minimum hassles ";
 echo "";
 echo "";
 
+disktouse=$1
+
 # syncing system datetime
 timedatectl set-ntp true
 
@@ -24,7 +26,7 @@ mv ./mirrorlist /etc/pacman.d/mirrorlist
 pacman -Syyy
 
 # formatting disk
-sed -e 's/\s*\([\+0-9a-zA-Z]*\).*/\1/' << EOF | fdisk /dev/sda
+sed -e 's/\s*\([\+0-9a-zA-Z]*\).*/\1/' << EOF | fdisk `${disktouse}`
   g # gpt partitioning
   n # new partition
     # default: primary partition
@@ -48,28 +50,27 @@ sed -e 's/\s*\([\+0-9a-zA-Z]*\).*/\1/' << EOF | fdisk /dev/sda
 EOF
 
 # outputting partition changes
-fdisk -l /dev/sda
+fdisk -l `${disktouse}`
 
 # partition filesystem formatting
-yes | mkfs.fat -F32 /dev/sda1
-yes | mkfs.ext4 /dev/sda2
-yes | mkfs.ext4 /dev/sda3
+yes | mkfs.fat -F32 `${disktouse}1`
+yes | mkfs.ext4 `${disktouse}2`
+yes | mkfs.ext4 `${disktouse}3`
 
 # disk mount
-mount /dev/sda2 /mnt
+mount `${disktouse}2` /mnt
 mkdir /mnt/boot
 mkdir /mnt/home
-mount /dev/sda1 /mnt/boot
-mount /dev/sda3 /mnt/home
+mount `${disktouse}1` /mnt/boot
+mount `${disktouse}3` /mnt/home
 
 # pacstrap-ping desired disk
 pacstrap /mnt base base-devel vim grub i3-wm networkmanager i3status rofi feh i3lock \
-os-prober efibootmgr ntfs-3g links alacritty neofetch git zsh intel-ucode cpupower \
+os-prober efibootmgr ntfs-3g alacritty git zsh intel-ucode cpupower xf86-video-amdgpu  \
 xorg-server xorg-xinit ttf-dejavu ttf-liberation ttf-inconsolata ttf-fira-code noto-fonts \
-chromium firefox code atom nvidia nvidia-settings xf86-video-intel flameshot unzip \
+chromium firefox atom nvidia nvidia-settings xf86-video-intel unzip obs-studio docker \
 pulseaudio pasystray pamixer telegram-desktop go python python-pip wget openssh xorg-xrandr \
-maim imagemagick xclip cmatrix pinta xawtv light ranger ttf-roboto playerctl papirus-icon-theme \
-obs-studio docker
+maim imagemagick xclip cmatrix pinta light ranger ttf-roboto playerctl papirus-icon-theme \
 
 # generating fstab
 genfstab -U /mnt >> /mnt/etc/fstab
@@ -146,11 +147,9 @@ arch-chroot /mnt sudo -u mrcz git clone https://aur.archlinux.org/yay.git /home/
 arch-chroot /mnt sudo -u mrcz /bin/zsh -c "cd /home/mrcz/yay_tmp_install && yes | makepkg -si"
 arch-chroot /mnt rm -rf /home/mrcz/yay_tmp_install
 
-# installing polybar, spotify, discord, font-manager, gotop and iotop
+# installing polybar, spotify, gotop and iotop
 arch-chroot /mnt sudo -u mrcz yay -S polybar --noconfirm
 arch-chroot /mnt sudo -u mrcz yay -S spotify --noconfirm
-arch-chroot /mnt sudo -u mrcz yay -S discord --noconfirm
-arch-chroot /mnt sudo -u mrcz yay -S font-manager --noconfirm
 arch-chroot /mnt sudo -u mrcz yay -S gotop --noconfirm
 arch-chroot /mnt sudo -u mrcz yay -S iotop --noconfirm
 
