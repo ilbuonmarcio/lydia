@@ -12,8 +12,6 @@ echo "        for maximum comfort and minimum hassles ";
 echo "";
 echo "";
 
-disktouse=$1
-
 # syncing system datetime
 timedatectl set-ntp true
 
@@ -26,7 +24,7 @@ mv ./mirrorlist /etc/pacman.d/mirrorlist
 pacman -Syyy
 
 # formatting disk
-sed -e 's/\s*\([\+0-9a-zA-Z]*\).*/\1/' << EOF | fdisk `${disktouse}`
+sed -e 's/\s*\([\+0-9a-zA-Z]*\).*/\1/' << EOF | fdisk /dev/sda
   g # gpt partitioning
   n # new partition
     # default: primary partition
@@ -50,19 +48,19 @@ sed -e 's/\s*\([\+0-9a-zA-Z]*\).*/\1/' << EOF | fdisk `${disktouse}`
 EOF
 
 # outputting partition changes
-fdisk -l `${disktouse}`
+fdisk -l /dev/sda
 
 # partition filesystem formatting
-yes | mkfs.fat -F32 `${disktouse}1`
-yes | mkfs.ext4 `${disktouse}2`
-yes | mkfs.ext4 `${disktouse}3`
+yes | mkfs.fat -F32 /dev/sda1
+yes | mkfs.ext4 /dev/sda2
+yes | mkfs.ext4 /dev/sda3
 
 # disk mount
-mount `${disktouse}2` /mnt
+mount /dev/sda2 /mnt
 mkdir /mnt/boot
 mkdir /mnt/home
-mount `${disktouse}1` /mnt/boot
-mount `${disktouse}3` /mnt/home
+mount /dev/sda1 /mnt/boot
+mount /dev/sda3 /mnt/home
 
 # pacstrap-ping desired disk
 pacstrap /mnt base base-devel vim grub i3-wm networkmanager i3status rofi feh i3lock \
