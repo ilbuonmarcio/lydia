@@ -1,28 +1,8 @@
-;==========================================================
-;
-;
-;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
-;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
-;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
-;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
-;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
-;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
-;
-;
-;   To learn more about how to configure Polybar
-;   go to https://github.com/jaagr/polybar
-;
-;   The README contains alot of information
-;
-;==========================================================
-
 [colors]
-background = #0c0c0c
-background-alt = #1a1a1a
-foreground = #e7e7e7
-foreground-alt = #333333
-primary = #cccccc
-secondary = #aaaaaa
+background = #f3f3f3
+background-alt = #333333
+foreground = #2f2f2f
+foreground-alt = #ececec
 alert = #ff7799
 
 [bar/example]
@@ -33,7 +13,7 @@ background = ${colors.background}
 foreground = ${colors.foreground}
 
 line-size = 1
-line-color = ${colors.background-alt}
+line-color = ${colors.background}
 
 border-size = 0
 border-color = #3192ff
@@ -81,12 +61,12 @@ wrapping-scroll = false
 
 label-mode-padding = 2
 label-mode-foreground = #000
-label-mode-background = ${colors.primary}
+label-mode-background = ${colors.foreground}
 
 ; focused = Active workspace on focused monitor
 label-focused = %index%
-label-focused-background = ${colors.background-alt}
-label-focused-underline = ${colors.primary}
+label-focused-background = ${colors.background}
+label-focused-underline = ${colors.foreground}
 label-focused-padding = 2
 
 ; unfocused = Inactive workspace on any monitor
@@ -110,7 +90,7 @@ label-urgent-padding = 2
 [module/cpu]
 type = internal/cpu
 interval = 1
-format-underline = ${colors.primary}
+format-underline = ${colors.foreground}
 label =  %percentage%%
 format = <label>
 
@@ -119,7 +99,7 @@ type = internal/memory
 interval = 1
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground}
-format-underline = ${colors.primary}
+format-underline = ${colors.foreground}
 label = %gb_used%/%gb_total% (%percentage_used%%)
 
 [module/wlan]
@@ -128,7 +108,7 @@ interface = wlp3s0
 interval = 2.5
 
 format-connected = <label-connected>
-format-connected-underline = ${colors.primary}
+format-connected-underline = ${colors.foreground}
 label-connected =  %local_ip% %downspeed:9% %upspeed:9%
 
 [module/eth]
@@ -136,7 +116,7 @@ type = internal/network
 interface = enp7s0
 interval = 2.5
 
-format-connected-underline = ${colors.primary}
+format-connected-underline = ${colors.foreground}
 format-connected-prefix = " "
 format-connected-prefix-foreground = ${colors.foreground}
 label-connected = %local_ip%%downspeed:9%%upspeed:9%
@@ -151,7 +131,7 @@ date-alt = " %Y-%m-%d"
 time = %H:%M:%S
 time-alt = %H:%M:%S
 
-format-underline = ${colors.primary}
+format-underline = ${colors.foreground}
 
 label = %date% %time%
 
@@ -171,7 +151,7 @@ thermal-zone = 0
 warn-temperature = 60
 
 format = <label>
-format-underline = ${colors.primary}
+format-underline = ${colors.foreground}
 format-warn = <label-warn>
 format-warn-underline = #ee4444
 
@@ -188,8 +168,8 @@ label = %output%
 ; type = custom/script
 ; exec = ss -lnptuH | grep LISTEN | awk '{print $5"-"$7}' | sed -e 's/users:(("//g' | sed -e 's/",.*//g' | awk -F"-" '{print $2"-"$1}' | xargs | sed -e 's/ / |/g' | sed -e 's/-/ /g'
 ; label = %output%
-; label-underline = ${colors.primary}
-; label-background = ${colors.background-alt}
+; label-underline = ${colors.foreground}
+; label-background = ${colors.background}
 ; label-padding-left = 4
 ; label-padding-right = 4
 
@@ -198,8 +178,8 @@ type = custom/script
 exec = users | wc -w
 interval = 3
 label = %output%
-label-underline = ${colors.primary}
-label-background = ${colors.background-alt}
+label-underline = ${colors.foreground}
+label-background = ${colors.background}
 label-padding-left = 2
 label-padding-right = 2
 
@@ -208,7 +188,7 @@ type = custom/script
 exec = df -h | sed 1d | awk '{ if (substr($1,1,1) ~ /^\//) print "["$6" "$4"]"}' | sort | xargs | sed 's/\]\ \[/\]\ \ \[/g'
 interval = 30
 label =  %output%
-label-underline = ${colors.primary}
+label-underline = ${colors.foreground}
 label-background = ${colors.background}
 label-padding-left = 2
 label-padding-right = 2
@@ -218,8 +198,8 @@ type = custom/script
 exec = sudo docker ps -q | wc -l
 interval = 2
 label =  %output%
-label-underline = ${colors.primary}
-label-background = ${colors.background-alt}
+label-underline = ${colors.foreground}
+label-background = ${colors.background}
 label-padding-left = 2
 label-padding-right = 2
 
@@ -228,8 +208,8 @@ type = custom/script
 exec = yay -Sy 1>/dev/null && yay -Qu | wc -l
 interval = 300
 label =  %output%
-label-underline = ${colors.primary}
-label-background = ${colors.background-alt}
+label-underline = ${colors.foreground}
+label-background = ${colors.background}
 label-padding-left = 2
 label-padding-right = 2
 
