@@ -31,6 +31,8 @@ modules-left = i3
 modules-center = 
 modules-right = dockerrc mountedpartitions cpu temperature memory wlan eth pulseaudio date usersconnected updatesavailable battery username
 
+radius-bottom = 1
+
 ; tray-position = right
 ; tray-padding = 4
 ; tray-background = ${colors.background}

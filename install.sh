@@ -176,6 +176,9 @@ arch-chroot /mnt sudo -u mrcz /bin/zsh -c "sudo cp /home/mrcz/fonts_tmp_folder/m
 # removing fonts tmp folder
 arch-chroot /mnt sudo -u mrcz rm -rf /home/mrcz/fonts_tmp_folder
 
+# install atom theme and syntax
+arch-chroot /mnt sudo -u mrcz apm install electric-ui electric-syntax
+
 # installing config files
 arch-chroot /mnt sudo -u mrcz mkdir /home/mrcz/GitHub
 arch-chroot /mnt sudo -u mrcz git clone https://github.com/maaaybe/mrczlnks /home/mrcz/GitHub/mrczlnks
