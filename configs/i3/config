@@ -125,6 +125,10 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+p exec pkill -USR1 polybar
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec exit i3 # "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+# shutdown computer without asking anything
+bindsym $mod+Shift+x exec sudo shutdown now
+# restart computer (go to boot screen) without asking anything
+bindsym $mod+Shift+b exec sudo restart
 
 # resizing window 
 bindsym $mod+Control+j resize shrink width 64 px or 64 ppt
