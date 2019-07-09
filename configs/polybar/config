@@ -28,14 +28,14 @@ font-1 = Material Icons:size=13:antialias=true;4
 font-2 = Font Awesome 5 Brands:size=13:antialias=true;3
 
 modules-left = i3
-modules-center = 
+modules-center =
 modules-right = dockerrc mountedpartitions cpu temperature memory wlan eth usersconnected updatesavailable battery pulseaudio date username
 
 radius-bottom = 1
 
-; tray-position = right
-; tray-padding = 4
-; tray-background = ${colors.background}
+tray-position = right
+tray-padding = 4
+tray-background = ${colors.background}
 
 ;wm-restack = bspwm
 ;wm-restack = i3
