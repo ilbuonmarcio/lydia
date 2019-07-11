@@ -128,7 +128,7 @@ bindsym $mod+Shift+e exec exit i3 # "i3-nagbar -t warning -m 'You pressed the ex
 # shutdown computer without asking anything
 bindsym $mod+Shift+x exec sudo shutdown now
 # restart computer (go to boot screen) without asking anything
-bindsym $mod+Shift+b exec sudo restart
+bindsym $mod+Shift+b exec sudo reboot
 
 # resizing window 
 bindsym $mod+Control+j resize shrink width 64 px or 64 ppt

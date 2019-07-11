@@ -68,7 +68,7 @@ os-prober efibootmgr ntfs-3g alacritty git zsh intel-ucode cpupower xf86-video-a
 xorg-server xorg-xinit ttf-dejavu ttf-liberation ttf-inconsolata ttf-fira-code noto-fonts \
 chromium firefox atom nvidia nvidia-settings xf86-video-intel unzip obs-studio docker \
 pulseaudio pasystray pamixer telegram-desktop go python python-pip wget openssh xorg-xrandr \
-maim imagemagick xclip cmatrix pinta light ranger ttf-roboto playerctl papirus-icon-theme hwloc \
+maim imagemagick xclip cmatrix pinta light ranger ttf-roboto playerctl papirus-icon-theme hwloc p7zip \
 
 # generating fstab
 genfstab -U /mnt >> /mnt/etc/fstab
@@ -164,6 +164,7 @@ arch-chroot /mnt sudo -u mrcz git clone https://github.com/VundleVim/Vundle.vim.
 
 # installing fonts
 arch-chroot /mnt sudo -u mrcz mkdir /home/mrcz/fonts_tmp_folder
+arch-chroot /mnt sudo -u mrcz sudo mkdir /usr/share/fonts/OTF/
 # font awesome 5 brands
 arch-chroot /mnt sudo -u mrcz /bin/zsh -c "cd /home/mrcz/fonts_tmp_folder && wget -O fontawesome.zip https://github.com/FortAwesome/Font-Awesome/releases/download/5.9.0/fontawesome-free-5.9.0-desktop.zip && unzip fontawesome.zip"
 arch-chroot /mnt sudo -u mrcz /bin/zsh -c "sudo cp /home/mrcz/fonts_tmp_folder/fontawesome-free-5.9.0-desktop/otfs/Font\ Awesome\ 5\ Brands-Regular-400.otf /usr/share/fonts/OTF/"
