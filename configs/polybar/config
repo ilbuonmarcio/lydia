@@ -1,12 +1,12 @@
 [colors]
-background = #f3f3f3
-background-alt = #333333
-foreground = #2f2f2f
-foreground-alt = #ececec
+foreground = #f3f3f3
+foreground-alt = #333333
+background = #2a2a2a
+background-alt = #ececec
 
 [bar/example]
 width = 100%
-height = 28
+height = 26
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -27,9 +27,9 @@ font-0 = Roboto:fontformat=truetype:size=10:antialias=true;2
 font-1 = Material Icons:size=13:antialias=true;4
 font-2 = Font Awesome 5 Brands:size=13:antialias=true;3
 
-modules-left = date i3
+modules-left = i3
 modules-center =
-modules-right = dockerrc mountedpartitions cpu temperature memory wlan eth usersconnected updatesavailable battery pulseaudio username
+modules-right = dockerrc mountedpartitions cpu temperature memory wlan eth usersconnected updatesavailable battery pulseaudio username date
 
 radius-bottom = 1
 
