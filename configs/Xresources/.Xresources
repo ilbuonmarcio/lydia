@@ -4,7 +4,7 @@
 rofi.location:          0
 rofi.color-enabled:     true
 !                       'background', 'border'
-rofi.color-window:      argb:ff2f2f2f, argb:ffececec
+rofi.color-window:      argb:ff202020, argb:ff999999
 ! State:                'bg',          'fg',   'bgalt',       'hlbg',        'hlfg'
 rofi.color-normal:      argb:00e9e9e9, #f9f9f9, argb:11191919, argb:77777777, argb:ffffffff
 rofi.color-urgent:      argb:00553333, #999999, argb:00333333, argb:00888888, argb:ffffffff
