@@ -157,37 +157,30 @@ draw_bold_text_with_bright_colors: true
 colors:
   # Default colors
   primary:
-    background: '0x2f2f2f'
-    foreground: '0xdfdfdf'
+    background: '0x202020'
+    foreground: '0xdfdfdfd'
 
   # Normal colors
   normal:
-    black:   '0x2b303b'
-    red:     '0xbf616a'
-    green:   '0xa3be8c'
-    yellow:  '0xebcb8b'
-    blue:    '0x8fa1b3'
-    magenta: '0xb48ead'
-    cyan:    '0x96b5b4'
-    white:   '0xc0c5ce'
+    black:   '0x2f1e2e'
+    red:     '0xef6155'
+    green:   '0x48b685'
+    yellow:  '0xfec418'
+    blue:    '0x06b6ef'
+    magenta: '0x815ba4'
+    cyan:    '0x5bc4bf'
+    white:   '0xa39e9b'
 
   # Bright colors
   bright:
-    black:   '0x65737e'
-    red:     '0xbf616a'
-    green:   '0xa3be8c'
-    yellow:  '0xebcb8b'
-    blue:    '0x8fa1b3'
-    magenta: '0xb48ead'
-    cyan:    '0x96b5b4'
-    white:   '0xeff1f5'
-
-
-
-
-
-
-
+    black:   '0x776e71'
+    red:     '0xef6155'
+    green:   '0x48b685'
+    yellow:  '0xfec418'
+    blue:    '0x06b6ef'
+    magenta: '0x815ba4'
+    cyan:    '0x5bc4bf'
+    white:   '0xe7e9db'
 
   # Dim colors
   #
