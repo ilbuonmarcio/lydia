@@ -175,9 +175,6 @@ bindsym XF86MonBrightnessDown exec light -U 5
 # add audio daemon for GUI usage
 exec --no-startup-id pasystray
 
-# add polybar
-exec --no-startup-id polybar example
-
 # toggle polybar
 bindsym $mod+Shift+h exec ~/.scripts/toggle_polybar.sh
 
