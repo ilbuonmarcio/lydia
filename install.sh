@@ -63,7 +63,7 @@ mount /dev/sda1 /mnt/boot
 mount /dev/sda3 /mnt/home
 
 # pacstrap-ping desired disk
-pacstrap /mnt base base-devel vim grub i3-wm networkmanager i3status rofi feh i3lock linux-headers \
+pacstrap /mnt base base-devel vim grub networkmanager i3status rofi feh i3lock linux-headers \
 os-prober efibootmgr ntfs-3g alacritty git zsh intel-ucode cpupower xf86-video-amdgpu vlc \
 xorg-server xorg-xinit ttf-dejavu ttf-liberation ttf-inconsolata ttf-fira-code noto-fonts \
 chromium firefox atom nvidia nvidia-settings xf86-video-intel unzip obs-studio docker \
@@ -145,7 +145,8 @@ arch-chroot /mnt sudo -u mrcz git clone https://aur.archlinux.org/yay.git /home/
 arch-chroot /mnt sudo -u mrcz /bin/zsh -c "cd /home/mrcz/yay_tmp_install && yes | makepkg -si"
 arch-chroot /mnt rm -rf /home/mrcz/yay_tmp_install
 
-# installing polybar, spotify, gotop and iotop
+# installing i3-gaps, polybar, spotify, gotop and iotop
+arch-chroot /mnt sudo -u mrcz yay -S i3-gaps --noconfirm
 arch-chroot /mnt sudo -u mrcz yay -S polybar --noconfirm
 arch-chroot /mnt sudo -u mrcz yay -S spotify --noconfirm
 arch-chroot /mnt sudo -u mrcz yay -S gotop --noconfirm
