@@ -6,7 +6,7 @@ It is primarly designed for my own usage but free for you all to use and modify 
 
 It is specialized primarily in work and development tasks, but able to do all the cool things cool kids do these days ( ͡° ͜ʖ ͡°)
 
-I will not **_fuggin'_** provide any support for this script because of that's *my* script, and not *yours*, so you're adivsed! :beers: :kiss:
+I will not **_fuggin'_** provide any support for this script because of that's *my* script, and not *yours*, so you're advised! :beers: :kiss:
 
 ## Disclaimer
 
