@@ -2,11 +2,11 @@
 
 mrczlnks is a free to use, minimalist Arch Linux i3wm-based meta-distribution install script.
 
-It is primarly designed for my own usage but free for you all to use and modify to fit your own purposes.
-
 It is specialized primarily in work and development tasks, but able to do all the cool things cool kids do these days ( ͡° ͜ʖ ͡°)
 
-I will not **_fuggin'_** provide any support for this script because of that's *my* script, and not *yours*, so you're advised! :beers: :kiss:
+It is primarly designed for my own usage but free for you all to use and modify to fit your own purposes.
+
+I will not **_fuggin'_** provide any support for this script because that's *my* script, and not *yours*, so you're advised! :beers: :kiss:
 
 ## Disclaimer
 
