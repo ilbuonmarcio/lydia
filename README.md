@@ -1,6 +1,6 @@
 ![](logo.png)
 
-# mrczlnks - Arch Linux i3-wm-based meta-distribution install script
+# Arch Linux i3-wm-based meta-distribution install script
 
 mrczlnks is a free to use, minimalist Arch Linux i3wm-based meta-distribution install script.
 
