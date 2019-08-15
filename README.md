@@ -1,4 +1,6 @@
-# mrczlnks
+![](logo.png)
+
+# mrczlnks - Arch Linux i3-wm-based meta-distribution install script
 
 mrczlnks is a free to use, minimalist Arch Linux i3wm-based meta-distribution install script.
 
@@ -14,9 +16,9 @@ THIS PIECE OF SOFTWARE IS PROVIDED AS IS, WITHOUT WARRANTIES OF ANY KIND. I AM N
 
 ### Usage
 
-- Download the official Arch Linux .iso file from the official site download section
+- Download the official Arch Linux .iso file from the official site download section ([here](https://www.archlinux.org/download/))
 - Flash it onto an USB drive with softwares like Rufus, balenaEtcher and boot it in the system of choice
-- Inside the live environment you should now connect to the internet using either ethernet or wifi as you like (use `wifi-menu`, which is recommended for wireless networks), then download the latest script from this repository with the following command:
+- Inside the live environment you should now connect to the internet using either ethernet or wifi as you like (use `wifi-menu` or `nmcli` as your preference), then download the latest script from this repository with the following command:
 
 ```bash
 wget https://raw.githubusercontent.com/maaaybe/mrczlnks/master/install.sh
