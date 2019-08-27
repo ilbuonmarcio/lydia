@@ -67,7 +67,7 @@ pacstrap /mnt base base-devel vim grub networkmanager i3status rofi feh i3lock l
 os-prober efibootmgr ntfs-3g alacritty git zsh intel-ucode cpupower xf86-video-amdgpu vlc \
 xorg-server xorg-xinit ttf-dejavu ttf-liberation ttf-inconsolata ttf-fira-code noto-fonts \
 chromium firefox code atom nvidia nvidia-settings xf86-video-intel unzip obs-studio docker \
-pulseaudio pasystray pamixer telegram-desktop go python python-pip wget openssh xorg-xrandr \
+pulseaudio pasystray pamixer telegram-desktop go python python-pip wget openssh xorg-xrandr noto-fonts-emoji \
 maim imagemagick xclip cmatrix pinta light ranger ttf-roboto playerctl papirus-icon-theme hwloc p7zip \
 
 # generating fstab
