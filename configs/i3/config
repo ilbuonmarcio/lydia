@@ -15,7 +15,7 @@ set $mod Mod4
 # is used in the bar {} block below.
 font pango:Fira Code 11
 
-gaps inner 32
+gaps inner 16
 gaps outer 0
 smart_gaps on
 
@@ -153,7 +153,7 @@ bindsym $mod+Control+Right resize grow width 64 px or 64 ppt
 #}
 
 # remove title bars everywhere
-for_window [class=".*"] border pixel 1
+for_window [class=".*"] border pixel 0
 
 # changing focused window colours
 client.focused #333333 #333333 #333333 #333333   #333333
@@ -190,3 +190,5 @@ bindsym Control+$mod+o exec maim -s | xclip -selection clipboard -t image/png
 
 # change screen off to 30 minutes
 exec --no-startup-id xset dpms 0 0 1800
+
+exec --no-startup-id compton
