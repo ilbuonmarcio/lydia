@@ -30,7 +30,7 @@ font-1 = Material Icons:size=12:antialias=true;4
 font-2 = Font Awesome 5 Brands:size=12:antialias=true;3
 
 modules-left = 
-modules-center =
+modules-center = spotify
 modules-right = dockerrc updatesavailable mountedpartitions cpu temperature memory wlan eth battery
 
 radius-bottom = 1
@@ -287,3 +287,11 @@ animation-discharging-3 = 
 animation-discharging-4 = 
 ; Framerate in milliseconds
 animation-discharging-framerate = 500
+
+[module/spotify]
+type = custom/script
+interval = 1
+format-prefix = "  "
+format = <label>
+exec = python ~/.scripts/spotify_status.py -f '{artist}: {song}'
+format-underline = #1db954
