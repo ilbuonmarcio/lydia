@@ -1,14 +1,14 @@
 [colors]
-foreground = #f9f9f9
-foreground-alt = #333333
-background = #090909
-background-alt = #ececec
+foreground = #ffffff
+foreground-alt = #f0f0f0
+background = #2c3f66
+background-alt = #455071
 
-[bar/example]
+[bar/topbar]
 dpi = -1
 
 width = 100%
-height = 26
+height = 36
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -25,30 +25,15 @@ padding-right = 3
 module-margin-left = 2
 module-margin-right = 2
 
-font-0 = Roboto:fontformat=truetype:size=10:antialias=true;2
-font-1 = Material Icons:size=13:antialias=true;4
-font-2 = Font Awesome 5 Brands:size=13:antialias=true;3
+font-0 = Roboto Medium:fontformat=truetype:size=10:antialias=true;2
+font-1 = Material Icons:size=12:antialias=true;4
+font-2 = Font Awesome 5 Brands:size=12:antialias=true;3
 
 modules-left = i3
 modules-center =
-modules-right = dockerrc mountedpartitions cpu temperature memory wlan eth usersconnected updatesavailable battery pulseaudio username date
+modules-right = usersconnected battery pulseaudio username date
 
 radius-bottom = 1
-
-tray-position = right
-tray-padding = 4
-tray-background = ${colors.background}
-
-;wm-restack = bspwm
-;wm-restack = i3
-
-;override-redirect = true
-
-;scroll-up = bspwm-desknext
-;scroll-down = bspwm-deskprev
-
-;scroll-up = i3wm-wsnext
-;scroll-down = i3wm-wsprev
 
 cursor-click = pointer
 cursor-scroll = ns-resize
