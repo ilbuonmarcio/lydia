@@ -70,6 +70,7 @@ chromium firefox code atom nvidia nvidia-settings xf86-video-intel unzip obs-stu
 pulseaudio pasystray pamixer telegram-desktop go python python-pip wget openssh xorg-xrandr noto-fonts-emoji \
 maim imagemagick xclip cmatrix pinta light ranger ttf-roboto playerctl papirus-icon-theme hwloc p7zip compton \
 
+
 # generating fstab
 genfstab -U /mnt >> /mnt/etc/fstab
 
@@ -151,6 +152,9 @@ arch-chroot /mnt sudo -u mrcz yay -S polybar --noconfirm
 arch-chroot /mnt sudo -u mrcz yay -S spotify --noconfirm
 arch-chroot /mnt sudo -u mrcz yay -S gotop --noconfirm
 arch-chroot /mnt sudo -u mrcz yay -S iotop --noconfirm
+
+# installing better font rendering packages
+arch-chroot / mnt sudo -u mrcz yes | yay -S freetype2-infinality-remix fontconfig-infinality-remix cairo-infinality-remix
 
 # installing oh-my-zsh
 arch-chroot /mnt sudo -u mrcz /bin/zsh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
