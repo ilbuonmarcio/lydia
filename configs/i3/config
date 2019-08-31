@@ -191,4 +191,6 @@ bindsym Control+$mod+o exec maim -s | xclip -selection clipboard -t image/png
 # change screen off to 30 minutes
 exec --no-startup-id xset dpms 0 0 1800
 
+# enable polybars
+exec --no-startup-id $HOME/.scripts/toggle_polybar.sh
 exec --no-startup-id compton
