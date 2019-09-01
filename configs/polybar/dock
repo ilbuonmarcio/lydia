@@ -1,8 +1,8 @@
 [colors]
 foreground = #ffffff
 foreground-alt = #f0f0f0
-background = #2c3f66
-background-alt = #455071
+background = #404040
+background-alt = #595959
 
 [bar/dock]
 dpi = -1
