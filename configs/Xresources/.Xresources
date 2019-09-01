@@ -4,10 +4,10 @@
 rofi.location:          7
 rofi.color-enabled:     true
 !                       'background', 'border'
-rofi.color-window:      argb:ff2c3f66, argb:ff2c3f66
+rofi.color-window:      argb:ff2c2c2c, argb:ff2c2c2c
 ! State:                'bg',          'fg',   'bgalt',       'hlbg',        'hlfg'
-rofi.color-normal:      argb:ff27385b, #ffffff, argb:cc27385b, argb:ff384662, argb:ffffffff
-rofi.color-urgent:      argb:99ffffff, #ffffff, argb:99333333, argb:ff495773, argb:ffffffff
+rofi.color-normal:      argb:ff272727, #ffffff, argb:cc272727, argb:ff383838, argb:ffffffff
+rofi.color-urgent:      argb:99ffffff, #ffffff, argb:99333333, argb:ff494949, argb:ffffffff
 rofi.separator-style:   solid
 rofi.fullscreen:        false
 rofi.padding:           16
