@@ -159,7 +159,8 @@ for_window [class=".*"] border pixel 0
 client.focused #333333 #333333 #333333 #333333   #333333
 
 # add wallpaper to desktops
-exec --no-startup-id feh --bg-fill ~/Pictures/wallpapers/wallpaper.jpg
+# exec --no-startup-id feh --bg-fill ~/Pictures/wallpapers/wallpaper.jpg
+exec --no-startup-id hsetroot -solid "#202020"
 
 # add lockscreen
 bindsym Shift+$mod+l exec i3lock -c 000000
