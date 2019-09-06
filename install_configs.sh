@@ -5,6 +5,7 @@ mkdir ../../.config/kitty 2> /dev/null
 mkdir ../../.config/polybar   2> /dev/null
 mkdir ../../.config/gtk-3.0/  2> /dev/null
 mkdir ../../.config/compton/  2> /dev/null
+mkdir ../../.config/Code\ -\ OSS/ 2> /dev/null
 mkdir ../../.config/Code\ -\ OSS/User/ 2> /dev/null
 cp -rf ./configs/i3/*         ../../.config/i3/
 cp -rf ./configs/kitty/*  ../../.config/kitty/
