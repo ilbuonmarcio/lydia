@@ -63,7 +63,7 @@ mount /dev/sda1 /mnt/boot
 mount /dev/sda3 /mnt/home
 
 # pacstrap-ping desired disk
-pacstrap /mnt base base-devel vim grub networkmanager i3status rofi feh i3lock linux-headers \
+pacstrap /mnt base base-devel vim grub networkmanager i3status rofi feh linux-headers \
 os-prober efibootmgr ntfs-3g kitty git zsh intel-ucode cpupower xf86-video-amdgpu vlc \
 xorg-server xorg-xinit ttf-dejavu ttf-liberation ttf-inconsolata ttf-fira-code noto-fonts \
 chromium firefox code atom nvidia nvidia-settings xf86-video-intel unzip obs-studio docker \
@@ -152,6 +152,7 @@ arch-chroot /mnt sudo -u mrcz yay -S polybar --noconfirm
 arch-chroot /mnt sudo -u mrcz yay -S spotify --noconfirm
 arch-chroot /mnt sudo -u mrcz yay -S gotop --noconfirm
 arch-chroot /mnt sudo -u mrcz yay -S iotop --noconfirm
+arch-chroot /mnt sudo -u mrcz yay -S i3lock-fancy --noconfirm
 
 # installing better font rendering packages
 arch-chroot /mnt sudo -u mrcz yes | yay -S freetype2-infinality-remix fontconfig-infinality-remix cairo-infinality-remix
