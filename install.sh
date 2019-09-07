@@ -114,14 +114,14 @@ arch-chroot /mnt mkinitcpio -p linux
 
 # setting root password
 echo "Insert password for root: "
-arch-chroot /mnt sudo -u root /bin/zsh -c "while [[ 'NP' == $(awk '{print $2}' <(sudo passwd -S root)) ]] do; passwd; done;"
+arch-chroot /mnt sudo -u root /bin/zsh -c "while [[ 'NP' == $(awk '{print $2}' <(passwd -S root)) ]] do; passwd; done;"
 
 # making user mrcz
 arch-chroot /mnt useradd -m -G wheel -s /bin/zsh mrcz
 
 # setting mrcz password
 echo "Insert password for mrcz:"
-arch-chroot /mnt sudo -u root /bin/zsh -c "while [[ 'NP' == $(awk '{print $2}' <(sudo passwd -S mrcz)) ]] do; passwd mrcz; done;"
+arch-chroot /mnt sudo -u root /bin/zsh -c "while [[ 'NP' == $(awk '{print $2}' <(passwd -S mrcz)) ]] do; passwd mrcz; done;"
 
 # installing grub bootloader
 arch-chroot /mnt grub-install --target=x86_64-efi --efi-directory=/boot  --bootloader-id=GRUB --removable
