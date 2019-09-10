@@ -113,13 +113,13 @@ arch-chroot /mnt sed -ie 's/# %wheel ALL=(ALL) NOPASSWD: ALL/%wheel ALL=(ALL) NO
 arch-chroot /mnt mkinitcpio -p linux
 
 # setting root password
-arch-chroot / echo "Insert root password: " && read root_password && echo -e "$root_password\n$root_password" | passwd root &>/dev/null
+arch-chroot /mnt echo "Insert root password: " && read root_password && echo -e "$root_password\n$root_password" | passwd root &>/dev/null
 
 # making user mrcz
 arch-chroot /mnt useradd -m -G wheel -s /bin/zsh mrcz
 
 # setting mrcz password
-arch-chroot / echo "Insert mrcz password: " && read mrcz_password && echo -e "$mrcz_password\n$mrcz_password" | passwd mrcz &>/dev/null
+arch-chroot /mnt echo "Insert mrcz password: " && read mrcz_password && echo -e "$mrcz_password\n$mrcz_password" | passwd mrcz &>/dev/null
 
 # installing grub bootloader
 arch-chroot /mnt grub-install --target=x86_64-efi --efi-directory=/boot  --bootloader-id=GRUB --removable
