@@ -187,7 +187,7 @@ bindsym $mod+Shift+h exec ~/.scripts/toggle_polybar.sh
 bindsym Control+$mod+p exec maim -m 1 ~/Screenshots/$(date +%s).png
 
 # add screenshots on area to clipboard
-bindsym Control+$mod+o exec maim -s | xclip -selection clipboard -t image/png
+bindsym Control+$mod+o exec maim -s -o | xclip -selection clipboard -t image/png
 
 # change screen off to 30 minutes
 exec --no-startup-id xset dpms 0 0 1800
