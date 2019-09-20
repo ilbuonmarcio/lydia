@@ -153,10 +153,10 @@ bindsym $mod+Control+Right resize grow width 64 px or 64 ppt
 #}
 
 # remove title bars everywhere
-for_window [class=".*"] border pixel 0
+for_window [class=".*"] border pixel 1
 
 # changing focused window colours
-client.focused #333333 #333333 #333333 #333333   #333333
+client.focused #505050 #505050 #505050 #505050 #505050
 
 # add wallpaper to desktops
 # exec --no-startup-id feh --bg-fill ~/Pictures/wallpapers/wallpaper.jpg
