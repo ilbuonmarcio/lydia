@@ -160,7 +160,7 @@ client.focused #505050 #505050 #505050 #505050 #505050
 
 # add wallpaper to desktops
 # exec --no-startup-id feh --bg-fill ~/Pictures/wallpapers/wallpaper.jpg
-exec --no-startup-id hsetroot -solid "#101010"
+exec --no-startup-id hsetroot -solid "#090909"
 
 # add lockscreen
 bindsym Shift+$mod+l exec i3lock-fancy
