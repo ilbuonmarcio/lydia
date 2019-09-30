@@ -153,7 +153,7 @@ arch-chroot /mnt sudo -u mrcz yay -S iotop --noconfirm
 arch-chroot /mnt sudo -u mrcz yay -S i3lock-fancy --noconfirm
 
 # installing better font rendering packages
-arch-chroot /mnt sudo -u mrcz yes | yay -S freetype2-infinality-remix fontconfig-infinality-remix cairo-infinality-remix
+arch-chroot /mnt sudo -u mrcz /bin/zsh -c "yes | yay -S freetype2-infinality-remix fontconfig-infinality-remix cairo-infinality-remix"
 
 # installing oh-my-zsh
 arch-chroot /mnt sudo -u mrcz /bin/zsh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
