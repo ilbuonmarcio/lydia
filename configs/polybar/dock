@@ -31,7 +31,7 @@ font-2 = Font Awesome 5 Brands:size=12:antialias=true;3
 
 modules-left = 
 modules-center = spotify
-modules-right = dockerrc updatesavailable mountedpartitions cpu temperature memory wlan eth battery
+modules-right = dockerrc updatesavailable mountedpartitions cpu temperature memory wlan eth battery uptime
 
 radius-bottom = 1
 
@@ -295,3 +295,9 @@ format-prefix = "  "
 format = <label>
 exec = python ~/.scripts/spotify_status.py -f '{artist}: {song}'
 format-underline = #1db954
+
+[module/uptime]
+type = custom/script
+format = <label>
+interval = 30
+exec = uptime --pretty
