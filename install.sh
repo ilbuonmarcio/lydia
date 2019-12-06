@@ -187,7 +187,7 @@ arch-chroot /mnt sudo -u mrcz sudo pip3 install dbus-python
 
 # installing config files
 arch-chroot /mnt sudo -u mrcz mkdir /home/mrcz/GitHub
-arch-chroot /mnt sudo -u mrcz git clone https://github.com/maaaybe/mrczlnks /home/mrcz/GitHub/mrczlnks
+arch-chroot /mnt sudo -u mrcz git clone https://github.com/ilbuonmarcio/mrczlnks /home/mrcz/GitHub/mrczlnks
 arch-chroot /mnt sudo -u mrcz /bin/zsh -c "chmod 700 /home/mrcz/GitHub/mrczlnks/install_configs.sh"
 arch-chroot /mnt sudo -u mrcz /bin/zsh -c "cd /home/mrcz/GitHub/mrczlnks && ./install_configs.sh"
 
