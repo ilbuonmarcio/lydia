@@ -21,7 +21,7 @@ THIS PIECE OF SOFTWARE IS PROVIDED AS IS, WITHOUT WARRANTIES OF ANY KIND. I AM N
 - Inside the live environment you should now connect to the internet using either ethernet or wifi as you like (use `wifi-menu` or `nmcli` as your preference), then download the latest script from this repository with the following command:
 
 ```bash
-wget https://raw.githubusercontent.com/maaaybe/mrczlnks/master/install.sh
+wget https://raw.githubusercontent.com/ilbuonmarcio/mrczlnks/master/install.sh
 ```
 
 - Modify it to fit your own purposes (I suggest you to edit the proper disk to format, right partitions, change hostname, username, purge packages you don't need and so on, or do like [zetaemme](https://github.com/zetaemme/zls) and fork this repository as a base for your own install script!)
