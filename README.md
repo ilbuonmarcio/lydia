@@ -36,6 +36,8 @@ vim ./install.sh
 chmod 700 ./install.sh
 ```
 
+- Edit `/etc/pacman.conf` file, making sure [multilib] repository is enabled or it won't work!
+
 - Execute install.sh script and insert data when prompted
 
 ```bash
