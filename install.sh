@@ -12,6 +12,16 @@ echo "        for maximum comfort and minimum hassles ";
 echo "";
 echo "";
 
+# checks wheter there is multilib repo enabled properly or not
+IS_MULTILIB_REPO_DISABLED=$(cat /etc/pacman.conf | grep "#\[multilib\]" | wc -l)
+if [ "$IS_MULTILIB_REPO_DISABLED" == "1" ]
+then
+    echo "You need to enable [multilib] repository inside /etc/pacman.conf file before running this script, aborting installation"
+    exit -1
+fi
+echo "[multilib] repo correctly enabled, continuing"
+exit -1;
+
 # syncing system datetime
 timedatectl set-ntp true
 
