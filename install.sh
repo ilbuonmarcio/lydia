@@ -69,7 +69,7 @@ xorg-server xorg-xinit ttf-dejavu ttf-liberation ttf-inconsolata ttf-fira-code n
 chromium firefox code atom nvidia nvidia-settings xf86-video-intel unzip unrar obs-studio docker \
 pulseaudio pasystray pamixer telegram-desktop go python python-pip wget openssh xorg-xrandr noto-fonts-emoji \
 maim imagemagick xclip cmatrix pinta light ranger ttf-roboto playerctl papirus-icon-theme hwloc p7zip compton \
-hsetroot docker-compose nemo ttf-anonymous-pro linux-firmware \
+hsetroot docker-compose nemo ttf-anonymous-pro linux-firmware firewalld \
 mesa lib32-mesa vulkan-radeon lib32-vulkan-radeon libva-mesa-driver lib32-libva-mesa-driver mesa-vdpau lib32-mesa-vdpau
 
 # generating fstab
@@ -135,6 +135,7 @@ arch-chroot /mnt echo "governor='performance'" >> /mnt/etc/default/cpupower
 arch-chroot /mnt systemctl enable cpupower.service
 arch-chroot /mnt systemctl enable NetworkManager.service
 arch-chroot /mnt systemctl enable docker.service
+arch-chroot /mnt systemctl enable firewalld.service
 
 # making i3 default for startx for both root and mrcz
 arch-chroot /mnt echo "exec i3" >> /mnt/root/.xinitrc
