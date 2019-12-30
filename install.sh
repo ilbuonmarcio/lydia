@@ -20,7 +20,6 @@ then
     exit -1
 fi
 echo "[multilib] repo correctly enabled, continuing"
-exit -1;
 
 # syncing system datetime
 timedatectl set-ntp true
