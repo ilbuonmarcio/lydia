@@ -78,7 +78,7 @@ xorg-server xorg-xinit ttf-dejavu ttf-liberation ttf-inconsolata ttf-fira-code n
 chromium firefox code atom nvidia nvidia-settings xf86-video-intel unzip unrar obs-studio docker \
 pulseaudio pasystray pamixer telegram-desktop go python python-pip wget openssh xorg-xrandr noto-fonts-emoji \
 maim imagemagick xclip cmatrix pinta light ranger ttf-roboto playerctl papirus-icon-theme hwloc p7zip compton \
-hsetroot docker-compose nemo linux-firmware firewalld tree man glances ttf-cascadia-code darktable \
+hsetroot docker-compose nemo linux-firmware firewalld tree man glances ttf-cascadia-code darktable fzf \
 mesa lib32-mesa vulkan-radeon lib32-vulkan-radeon libva-mesa-driver lib32-libva-mesa-driver mesa-vdpau lib32-mesa-vdpau
 
 # generating fstab
