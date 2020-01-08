@@ -32,8 +32,14 @@ mv ./mirrorlist /etc/pacman.d/mirrorlist
 # updating mirrors
 pacman -Syyy
 
+# adding fzf for making disk selection easier
+pacman -S fzf --noconfirm
+
+# open dialog for disk selection
+sudo fdisk -l | grep 'Disk /dev/' | awk '{print $2,$3,$4}' | sed 's/,$//' | fzf | sed -e 's/\/dev\/\(.*\):/\1/' | awk '{print $1}' | read selected_disk
+
 # formatting disk
-sed -e 's/\s*\([\+0-9a-zA-Z]*\).*/\1/' << EOF | fdisk /dev/sda
+sed -e 's/\s*\([\+0-9a-zA-Z]*\).*/\1/' << EOF | fdisk /dev/${selected_disk}
   g # gpt partitioning
   n # new partition
     # default: primary partition
@@ -43,7 +49,7 @@ sed -e 's/\s*\([\+0-9a-zA-Z]*\).*/\1/' << EOF | fdisk /dev/sda
   n # new partition
     # default: primary partition
     # default: partition 2
-  +80G # 80 gb for root partition
+  +120G # 120 gb for root partition
     # default: yes if asked
   n # new partition
     # default: primary partition
@@ -57,19 +63,19 @@ sed -e 's/\s*\([\+0-9a-zA-Z]*\).*/\1/' << EOF | fdisk /dev/sda
 EOF
 
 # outputting partition changes
-fdisk -l /dev/sda
+fdisk -l /dev/${selected_disk}
 
 # partition filesystem formatting
-yes | mkfs.fat -F32 /dev/sda1
-yes | mkfs.ext4 /dev/sda2
-yes | mkfs.ext4 /dev/sda3
+yes | mkfs.fat -F32 /dev/${selected_disk}1
+yes | mkfs.ext4 /dev/${selected_disk}2
+yes | mkfs.ext4 /dev/${selected_disk}3
 
 # disk mount
-mount /dev/sda2 /mnt
+mount /dev/${selected_disk}2 /mnt
 mkdir /mnt/boot
 mkdir /mnt/home
-mount /dev/sda1 /mnt/boot
-mount /dev/sda3 /mnt/home
+mount /dev/${selected_disk}1 /mnt/boot
+mount /dev/${selected_disk}3 /mnt/home
 
 # pacstrap-ping desired disk
 pacstrap /mnt base base-devel vim grub networkmanager i3status rofi feh linux-headers \
