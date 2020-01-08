@@ -78,7 +78,7 @@ xorg-server xorg-xinit ttf-dejavu ttf-liberation ttf-inconsolata ttf-fira-code n
 chromium firefox code atom nvidia nvidia-settings xf86-video-intel unzip unrar obs-studio docker \
 pulseaudio pasystray pamixer telegram-desktop go python python-pip wget openssh xorg-xrandr noto-fonts-emoji \
 maim imagemagick xclip cmatrix pinta light ranger ttf-roboto playerctl papirus-icon-theme hwloc p7zip compton \
-hsetroot docker-compose nemo ttf-anonymous-pro linux-firmware firewalld tree man \
+hsetroot docker-compose nemo ttf-anonymous-pro linux-firmware firewalld tree man glances \
 mesa lib32-mesa vulkan-radeon lib32-vulkan-radeon libva-mesa-driver lib32-libva-mesa-driver mesa-vdpau lib32-mesa-vdpau
 
 # generating fstab
@@ -155,11 +155,10 @@ arch-chroot /mnt sudo -u mrcz git clone https://aur.archlinux.org/yay.git /home/
 arch-chroot /mnt sudo -u mrcz /bin/zsh -c "cd /home/mrcz/yay_tmp_install && yes | makepkg -si"
 arch-chroot /mnt rm -rf /home/mrcz/yay_tmp_install
 
-# installing i3-gaps, polybar, spotify, gotop and iotop
+# installing i3-gaps, polybar, spotify, iotop
 arch-chroot /mnt sudo -u mrcz yay -S i3-gaps --noconfirm
 arch-chroot /mnt sudo -u mrcz yay -S polybar --noconfirm
 arch-chroot /mnt sudo -u mrcz yay -S spotify --noconfirm
-arch-chroot /mnt sudo -u mrcz yay -S gotop --noconfirm
 arch-chroot /mnt sudo -u mrcz yay -S iotop --noconfirm
 arch-chroot /mnt sudo -u mrcz yay -S i3lock-fancy --noconfirm
 
