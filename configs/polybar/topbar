@@ -35,7 +35,11 @@ tray-background = ${colors.background-alt}
 
 modules-left = i3
 modules-center = spotify
+<<<<<<< HEAD
 modules-right = updatesavailable dockerrc mountedpartitions cpu memory usersconnected battery pulseaudio username date uptime pulseaudio
+=======
+modules-right = updatesavailable dockerrc mountedpartitions cpu memory usersconnected battery pulseaudio username date uptime
+>>>>>>> 0d84a0f76f70df51016a176acb7123c4411f8fae
 
 radius-bottom = 4
 
