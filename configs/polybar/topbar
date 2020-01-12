@@ -147,4 +147,4 @@ exec = uptime --pretty
 type = custom/script
 format = <label>
 interval = 120
-exec = ip addr | grep "inet " | grep "scope global" | awk '{print $2}' | xargs
+exec = ip addr | grep "inet " | grep "scope global" | awk '{print $2}' | xargs | sed -e 's/ / - /g'
