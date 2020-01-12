@@ -32,7 +32,8 @@ tray-background = ${colors.background-alt}
 
 modules-left = username spotify i3
 modules-center = date uptime
-modules-right = updatesavailable dockerrc mountedpartitions cpu memory interfaces
+modules-right = updatesavailable dockerrc mountedpartitions cpu memory interfaces firewalld-up
+
 radius-bottom = 0
 
 cursor-click = pointer
@@ -149,3 +150,10 @@ format = <label>
 interval = 120
 format-underline = #CCFAFA
 exec = ip addr | grep "inet " | grep "scope global" | awk '{print $2}' | xargs | sed -e 's/ / - /g'
+
+[module/firewalld-up]
+type = custom/script
+format = fw <label>
+interval = 10
+format-underline = #ef0707
+exec = sudo firewall-cmd --state
