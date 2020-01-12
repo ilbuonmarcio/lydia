@@ -30,13 +30,15 @@ font-1 = Material Icons:size=12:antialias=true;4
 font-2 = Font Awesome 5 Brands:size=12:antialias=true;3
 
 modules-left = i3
-modules-center =
-modules-right = usersconnected battery pulseaudio username date
+modules-center = spotify
+modules-right = updatesavailable dockerrc mountedpartitions cpu memory usersconnected battery pulseaudio username date uptime
 
-radius-bottom = 1
+radius-bottom = 4
 
 cursor-click = pointer
 cursor-scroll = ns-resize
+
+separator = |
 
 [module/i3]
 type = internal/i3
@@ -91,37 +93,25 @@ format-prefix-foreground = ${colors.foreground}
 format-underline = ${colors.foreground}
 label = %gb_used%/%gb_total% (%percentage_used%%)
 
-[module/wlan]
-type = internal/network
-interface = wlp3s0
-interval = 2.5
-
-format-connected = <label-connected>
-format-connected-underline = ${colors.foreground}
-label-connected =  %local_ip% %downspeed:9% %upspeed:9%
-
 [module/eth]
-type = internal/network
-interface = enp7s0
-interval = 2.5
+; type = internal/network
+; interface = enp7s0
+; interval = 2.5
 
-format-connected-underline = ${colors.foreground}
-format-connected-prefix = " "
-format-connected-prefix-foreground = ${colors.foreground}
-label-connected = %local_ip%%downspeed:9%%upspeed:9%
+; format-connected-underline = ${colors.foreground}
+; format-connected-prefix = " "
+; format-connected-prefix-foreground = ${colors.foreground}
+; label-connected = %local_ip%%downspeed:9%%upspeed:9%
 
 [module/date]
 type = internal/date
 interval = 1
 
-date = "%Y-%m-%d"
-date-alt = " %Y-%m-%d"
+date = "%d/%m/%Y"
 
 time = %H:%M:%S
-time-alt = %H:%M:%S
 
 format-underline = ${colors.foreground}
-
 label = %date% %time%
 
 [module/pulseaudio]
@@ -134,33 +124,10 @@ label-volume-foreground = ${colors.foreground}
 label-muted =  muted
 label-muted-foreground = #666
 
-[module/temperature]
-type = internal/temperature
-thermal-zone = 0
-warn-temperature = 60
-
-format = <label>
-format-underline = ${colors.foreground}
-format-warn = <label-warn>
-format-warn-underline = #ee4444
-
-label =  %temperature-c%
-label-warn = %temperature-c%
-label-warn-foreground = #ff2222
-
 [module/username]
 type = custom/script
 exec = whoami
 label = %output%
-
-; [module/openports]
-; type = custom/script
-; exec = ss -lnptuH | grep LISTEN | awk '{print $5"-"$7}' | sed -e 's/users:(("//g' | sed -e 's/",.*//g' | awk -F"-" '{print $2"-"$1}' | xargs | sed -e 's/ / |/g' | sed -e 's/-/ /g'
-; label = %output%
-; label-underline = ${colors.foreground}
-; label-background = ${colors.background}
-; label-padding-left = 4
-; label-padding-right = 4
 
 [module/usersconnected]
 type = custom/script
@@ -202,81 +169,16 @@ label-background = ${colors.background}
 label-padding-left = 2
 label-padding-right = 2
 
-[module/battery]
-type = internal/battery
-full-at = 98
-battery = BAT1
-adapter = ACAD
-poll-interval = 5
+[module/spotify]
+type = custom/script
+interval = 1
+format-prefix = "  "
+format = <label>
+exec = python ~/.scripts/spotify_status.py -f '{artist}: {song}'
+format-underline = #1db954
 
-; see "man date" for details on how to format the time string
-; NOTE: if you want to use syntax tags here you need to use %%{...}
-; Default: %H:%M:%S
-time-format = %H:%M
-
-; Available tags:
-;   <label-charging> (default)
-;   <bar-capacity>
-;   <ramp-capacity>
-;   <animation-charging>
-format-charging = <animation-charging> <label-charging>
-
-; Available tags:
-;   <label-discharging> (default)
-;   <bar-capacity>
-;   <ramp-capacity>
-;   <animation-discharging>
-format-discharging = <ramp-capacity> <label-discharging>
-
-; Available tags:
-;   <label-full> (default)
-;   <bar-capacity>
-;   <ramp-capacity>
-;format-full = <ramp-capacity> <label-full>
-
-; Available tokens:
-;   %percentage% (default) - is set to 100 if full-at is reached
-;   %percentage_raw% (unreleased)
-;   %time%
-;   %consumption% (shows current charge rate in watts)
-label-charging = Charging %percentage%%
-
-; Available tokens:
-;   %percentage% (default) - is set to 100 if full-at is reached
-;   %percentage_raw% (unreleased)
-;   %time%
-;   %consumption% (shows current discharge rate in watts)
-label-discharging = Discharging %percentage%%
-
-; Available tokens:
-;   %percentage% (default) - is set to 100 if full-at is reached
-;   %percentage_raw% (unreleased)
-label-full = Fully charged
-
-; Only applies if <ramp-capacity> is used
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-3 = 
-ramp-capacity-4 = 
-
-; Only applies if <bar-capacity> is used
-bar-capacity-width = 10
-
-; Only applies if <animation-charging> is used
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-3 = 
-animation-charging-4 = 
-; Framerate in milliseconds
-animation-charging-framerate = 750
-
-; Only applies if <animation-discharging> is used
-animation-discharging-0 = 
-animation-discharging-1 = 
-animation-discharging-2 = 
-animation-discharging-3 = 
-animation-discharging-4 = 
-; Framerate in milliseconds
-animation-discharging-framerate = 500
+[module/uptime]
+type = custom/script
+format = <label>
+interval = 30
+exec = uptime --pretty
