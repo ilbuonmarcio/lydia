@@ -16,9 +16,6 @@ foreground = ${colors.foreground}
 line-size = 2
 line-color = ${colors.background}
 
-; border-size = 0
-;border-color = #00000000
-
 padding-left = 4
 padding-right = 4
 
@@ -29,14 +26,13 @@ font-0 = Roboto:style=Regular:fontformat=truetype:size=10:antialias=true;2
 font-1 = Material Icons:size=12:antialias=true;4
 font-2 = Font Awesome 5 Brands:size=12:antialias=true;3
 
-tray-position = right
+tray-position = left
 tray-padding = 4
 tray-background = ${colors.background-alt}
 
-modules-left = i3
-modules-center = spotify
-modules-right = eth updatesavailable dockerrc mountedpartitions cpu memory usersconnected battery pulseaudio username date uptime
-
+modules-left = username spotify i3
+modules-center = date uptime
+modules-right = updatesavailable dockerrc mountedpartitions cpu memory interfaces
 radius-bottom = 0
 
 cursor-click = pointer
@@ -91,51 +87,17 @@ format-prefix-foreground = ${colors.foreground}
 format-underline = ${colors.foreground}
 label = %gb_used%/%gb_total% (%percentage_used%%)
 
-[module/eth]
-type = internal/network
-interface = eno1
-interval = 2.5
-
-format-connected-underline = ${colors.foreground}
-format-connected-prefix = " "
-format-connected-prefix-foreground = ${colors.foreground}
-label-connected = %local_ip%%downspeed:9%%upspeed:9%
-
 [module/date]
 type = internal/date
 interval = 1
-
 date = "%d/%m/%Y"
-
 time = %H:%M:%S
-
-format-underline = ${colors.foreground}
 label = %date% %time%
-
-[module/pulseaudio]
-type = internal/pulseaudio
-
-format-volume = <label-volume>
-label-volume =   %percentage%%
-label-volume-foreground = ${colors.foreground}
-
-label-muted =  muted
-label-muted-foreground = #666
 
 [module/username]
 type = custom/script
 exec = whoami
 label = %output%
-
-[module/usersconnected]
-type = custom/script
-exec = users | wc -w
-interval = 30
-label =  %output%
-label-underline = ${colors.foreground}
-label-background = ${colors.background}
-label-padding-left = 2
-label-padding-right = 2
 
 [module/mountedpartitions]
 type = custom/script
@@ -180,3 +142,9 @@ type = custom/script
 format = <label>
 interval = 30
 exec = uptime --pretty
+
+[module/interfaces]
+type = custom/script
+format = <label>
+interval = 120
+exec = ip addr | grep "inet " | grep "scope global" | awk '{print $2}' | xargs
