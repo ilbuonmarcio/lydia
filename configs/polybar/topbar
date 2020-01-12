@@ -35,13 +35,9 @@ tray-background = ${colors.background-alt}
 
 modules-left = i3
 modules-center = spotify
-<<<<<<< HEAD
-modules-right = updatesavailable dockerrc mountedpartitions cpu memory usersconnected battery pulseaudio username date uptime pulseaudio
-=======
-modules-right = updatesavailable dockerrc mountedpartitions cpu memory usersconnected battery pulseaudio username date uptime
->>>>>>> 0d84a0f76f70df51016a176acb7123c4411f8fae
+modules-right = eth updatesavailable dockerrc mountedpartitions cpu memory usersconnected battery pulseaudio username date uptime
 
-radius-bottom = 4
+radius-bottom = 0
 
 cursor-click = pointer
 cursor-scroll = ns-resize
@@ -51,65 +47,59 @@ separator = |
 [module/i3]
 type = internal/i3
 format = <label-state> <label-mode>
-index-sort = true
-wrapping-scroll = false
+index-sort = false
+wrapping-scroll = true
 
-; Only show workspaces on the same output as the bar
-;pin-workspaces = true
-
-label-mode-padding = 2
-label-mode-foreground = #000
+label-mode-padding = 3
+label-mode-foreground = #fff
 label-mode-background = ${colors.foreground}
 
-; focused = Active workspace on focused monitor
+; ; focused = Active workspace on focused monitor
 label-focused = %index%
-label-focused-background = ${colors.background}
+label-focused-background = ${colors.background-alt}
 label-focused-underline = ${colors.foreground}
-label-focused-padding = 2
+label-focused-padding = 3
 
-; unfocused = Inactive workspace on any monitor
+; ; unfocused = Inactive workspace on any monitor
 label-unfocused = %index%
-label-unfocused-padding = 2
+label-unfocused-padding = 3
 
-; visible = Active workspace on unfocused monitor
+; ; visible = Active workspace on unfocused monitor
 label-visible = %index%
 label-visible-background = ${self.label-focused-background}
 label-visible-underline = ${self.label-focused-underline}
 label-visible-padding = ${self.label-focused-padding}
 
-; urgent = Workspace with urgency hint set
+; ; urgent = Workspace with urgency hint set
 label-urgent = %index%
 label-urgent-foreground = ${colors.foreground-alt}
 label-urgent-background = ${colors.background-alt}
-label-urgent-padding = 2
-
-; Separator in between workspaces
-; label-separator = |
+label-urgent-padding = 3
 
 [module/cpu]
 type = internal/cpu
-interval = 1
+interval = 0.5
 format-underline = ${colors.foreground}
-label =  %percentage%%
+label =  %percentage-sum%%
 format = <label>
 
 [module/memory]
 type = internal/memory
 interval = 1
-format-prefix = " "
+format-prefix = " "
 format-prefix-foreground = ${colors.foreground}
 format-underline = ${colors.foreground}
 label = %gb_used%/%gb_total% (%percentage_used%%)
 
 [module/eth]
-; type = internal/network
-; interface = enp7s0
-; interval = 2.5
+type = internal/network
+interface = eno1
+interval = 2.5
 
-; format-connected-underline = ${colors.foreground}
-; format-connected-prefix = " "
-; format-connected-prefix-foreground = ${colors.foreground}
-; label-connected = %local_ip%%downspeed:9%%upspeed:9%
+format-connected-underline = ${colors.foreground}
+format-connected-prefix = " "
+format-connected-prefix-foreground = ${colors.foreground}
+label-connected = %local_ip%%downspeed:9%%upspeed:9%
 
 [module/date]
 type = internal/date
@@ -135,13 +125,13 @@ label-muted-foreground = #666
 [module/username]
 type = custom/script
 exec = whoami
-label = %output%
+label = %output%
 
 [module/usersconnected]
 type = custom/script
 exec = users | wc -w
-interval = 3
-label = %output%
+interval = 30
+label =  %output%
 label-underline = ${colors.foreground}
 label-background = ${colors.background}
 label-padding-left = 2
