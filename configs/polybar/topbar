@@ -155,11 +155,12 @@ exec = ip addr | grep "inet " | grep "scope global" | awk '{print $2}' | xargs |
 [module/firewalld-up]
 type = custom/script
 format = <label>
-interval = 5
-label-background = #ef0707
+interval = 2
+label-background = #aaef0707
 label-foreground = ${colors.foreground}
-exec = sudo firewall-cmd --state
+exec = systemctl is-active firewalld.service | cat 
 label-padding = 5
+click-left = ~/.scripts/toggle_firewalld_service.sh
 
 [module/currentapptitle]
 type = custom/script
