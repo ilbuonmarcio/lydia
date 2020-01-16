@@ -16,8 +16,8 @@ foreground = ${colors.foreground}
 line-size = 2
 line-color = ${colors.background}
 
-padding-left = 4
-padding-right = 4
+padding-left = 0
+padding-right = 0
 
 module-margin-left = 3
 module-margin-right = 3
@@ -153,10 +153,12 @@ exec = ip addr | grep "inet " | grep "scope global" | awk '{print $2}' | xargs |
 
 [module/firewalld-up]
 type = custom/script
-format = fw <label>
-interval = 10
-format-underline = #ef0707
+format = <label>
+interval = 5
+label-background = #ef0707
+label-foreground = ${colors.foreground}
 exec = sudo firewall-cmd --state
+label-padding = 5
 
 [module/currentapptitle]
 type = custom/script
