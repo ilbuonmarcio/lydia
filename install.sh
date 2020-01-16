@@ -141,6 +141,9 @@ arch-chroot /mnt sudo -u root /bin/zsh -c 'echo "Insert mrcz password: " && read
 # installing grub bootloader
 arch-chroot /mnt grub-install --target=x86_64-efi --efi-directory=/boot  --bootloader-id=GRUB --removable
 
+# adding proper resolution to grub to make it full screen and properly visible
+arch-chroot /mnt sed -ie 's/GRUB_GFXMODE=auto/GRUB_GFXMODE=2560x1440x32,auto/g' /etc/default/grub
+
 # making grub auto config
 arch-chroot /mnt grub-mkconfig -o /boot/grub/grub.cfg
 
