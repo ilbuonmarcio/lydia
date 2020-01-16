@@ -166,4 +166,4 @@ type = custom/script
 format = <label>
 interval = 0.5
 format-underline = #cc99ee
-exec = xdotool getactivewindow getwindowname
+exec = xdotool getactivewindow getwindowname 2>/dev/null
