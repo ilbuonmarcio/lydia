@@ -225,6 +225,14 @@ arch-chroot /mnt sudo -u mrcz cp -r /home/mrcz/GitHub/mrczlnks/wallpapers/ /home
 arch-chroot /mnt cp /home/mrcz/GitHub/mrczlnks/misc/issue /etc/issue
 arch-chroot /mnt cp /home/mrcz/GitHub/mrczlnks/misc/motd /etc/motd
 
+# installing plymouth
+arch-chroot /mnt sudo -u mrcz yay -S plymouth-git --noconfirm
+arch-chroot /mnt sed -ie 's/base udev/base udev plymouth/g' /etc/mkinitcpio.conf
+arch-chroot /mnt sed -ie 's/GRUB_CMDLINE_LINUX_DEFAULT=.*/GRUB_CMDLINE_LINUX_DEFAULT="quiet splash loglevel=3 rd.udev.log_priority=3 vt.global_cursor_default=0"/g' /etc/default/grub
+arch-chroot /mnt sed -ie 's/Theme=spinner/Theme=bgrt/g' /etc/plymouth/plymouthd.conf
+arch-chroot /mnt grub-mkconfig -o /boot/grub/grub.cfg
+arch-chroot /mnt mkinitcpio -p linux
+
 # unmounting all mounted partitions
 umount -R /mnt
 
