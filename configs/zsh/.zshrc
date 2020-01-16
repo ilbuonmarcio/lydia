@@ -14,6 +14,10 @@ export EDITOR=vim
 export VISUAL=vim
 export BROWSER=chromium
 
+autoload -Uz compinit promptinit
+compinit
+promptinit
+
 # docker aliases and functions
 alias dockertop='sudo docker stats --format "table {{.Name}}\t{{.CPUPerc}}\t{{.MemUsage}}\t{{.NetIO}}"'
 
