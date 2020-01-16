@@ -99,6 +99,7 @@ label = %date% %time%
 type = custom/script
 exec = whoami
 label = %output%
+label-padding-left = 4
 
 [module/mountedpartitions]
 type = custom/script
