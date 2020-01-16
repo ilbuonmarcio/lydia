@@ -4,7 +4,7 @@ echo "       _ __ ___  _ __ ___ ___| |_ __ | | _____ ";
 echo "      | '_ \` _ \| '__/ __|_  / | '_ \| |/ / __|";
 echo "      | | | | | | | | (__ / /| | | | |   <\__ \\";
 echo "      |_| |_| |_|_|  \___/___|_|_| |_|_|\_\___/";
-echo "                                         ";
+echo "                                        ";
 echo "                                                       ";
 
 echo "     Easy-to-configure archlinux+i3 install script ";
@@ -213,6 +213,9 @@ arch-chroot /mnt sudo -u mrcz mkdir /home/mrcz/Screenshots
 arch-chroot /mnt sudo -u mrcz mkdir /home/mrcz/Pictures
 arch-chroot /mnt sudo -u mrcz mkdir /home/mrcz/.secrets
 arch-chroot /mnt sudo -u mrcz cp -r /home/mrcz/GitHub/mrczlnks/wallpapers/ /home/mrcz/Pictures/
+
+# adding tty personalized header
+arch-chroot /mnt cp /home/mrcz/GitHub/mrczlnks/misc/issue /etc/issue
 
 # unmounting all mounted partitions
 umount -R /mnt
