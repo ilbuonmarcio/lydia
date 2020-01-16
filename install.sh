@@ -152,6 +152,7 @@ arch-chroot /mnt systemctl enable cpupower.service
 arch-chroot /mnt systemctl enable NetworkManager.service
 arch-chroot /mnt systemctl enable docker.service
 arch-chroot /mnt systemctl enable firewalld.service
+arch-chroot /mnt systemctl enable cronie.service
 
 # making i3 default for startx for both root and mrcz
 arch-chroot /mnt echo "exec i3" >> /mnt/root/.xinitrc
