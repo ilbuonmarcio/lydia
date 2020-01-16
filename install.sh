@@ -86,7 +86,7 @@ pulseaudio pasystray pamixer telegram-desktop go python python-pip wget openssh 
 maim imagemagick xclip cmatrix pinta light ranger ttf-roboto playerctl papirus-icon-theme hwloc p7zip compton \
 hsetroot docker-compose nemo linux-firmware firewalld tree man glances ttf-cascadia-code darktable fzf \
 mesa lib32-mesa vulkan-radeon lib32-vulkan-radeon libva-mesa-driver lib32-libva-mesa-driver mesa-vdpau lib32-mesa-vdpau \
-zsh-syntax-highlighting
+zsh-syntax-highlighting xdotool
 
 # generating fstab
 genfstab -U /mnt >> /mnt/etc/fstab

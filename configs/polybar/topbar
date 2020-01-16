@@ -31,7 +31,7 @@ tray-padding = 4
 tray-background = ${colors.background-alt}
 
 modules-left = username spotify i3
-modules-center = date uptime
+modules-center = date currentapptitle uptime
 modules-right = updatesavailable dockerrc mountedpartitions cpu memory interfaces firewalld-up
 
 radius-bottom = 0
@@ -157,3 +157,10 @@ format = fw <label>
 interval = 10
 format-underline = #ef0707
 exec = sudo firewall-cmd --state
+
+[module/currentapptitle]
+type = custom/script
+format = <label>
+interval = 0.5
+format-underline = #cc99ee
+exec = xdotool getactivewindow getwindowname
