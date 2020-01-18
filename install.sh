@@ -159,6 +159,10 @@ arch-chroot /mnt systemctl enable firewalld.service
 arch-chroot /mnt systemctl enable cronie.service
 arch-chroot /mnt systemctl enable sshd.service
 
+# enabling and starting DNS resolver via systemd-resolved
+arch-chroot /mnt systemctl enable systemd-resolved.service
+arch-chroot /mnt systemctl start systemd-resolved.service
+
 # enabling https, http as per default configuration for public zone for firewalld
 arch-chroot /mnt firewall-cmd --add-service=http --permanent
 arch-chroot /mnt firewall-cmd --add-service=https --permanent
