@@ -1,50 +1,69 @@
-![](logo.png)
+![](logo-inverse.png)
 
-# Arch Linux i3-wm-based meta-distribution install script
+# What is mrczlnks?
 
-mrczlnks is a free to use, minimalist Arch Linux i3wm-based meta-distribution install script.
+`mrczlnks` is a featureful, yet simple linux distribution (as the subtitle suggests), more specifically it's an Arch Linux installation script that is free to fork, modify to fit your own purposes and use!
 
-It is specialized primarily in work and development tasks, but able to do all the cool things cool kids do these days ( ͡° ͜ʖ ͡°)
+Due that's software needed for me personally and has no other purpose other than mine, at least for me, I will not **_fuggin'_** provide any dedicated support for this script because that's *my* script, and not directly *yours*, so you're advised! :beers: :kiss:
 
-It is primarly designed for my own usage but free for you all to use and modify to fit your own purposes.
+# WAIT A SINGLE F*****G SECOND
 
-I will not **_fuggin'_** provide any support for this script because that's *my* script, and not *yours*, so you're advised! :beers: :kiss:
+Have you really made an Arch Linux installation script? Are you a n00b dude? 
 
-## Disclaimer
+Didn't you read the documentation and the [Holy Installation Guide](https://wiki.archlinux.org/index.php/Installation_guide)? 
 
-THIS PIECE OF SOFTWARE IS PROVIDED AS IS, WITHOUT WARRANTIES OF ANY KIND. I AM NOT RESPONSIBLE FOR ANY USAGE OF THIS SCRIPT, OR ANY IMPORTANT DISK ACCIDENTALLY FORMATTED BY THIS INSTALL SCRIPT, OR YOUR ENTIRE SYSTEM EXPLODING, OR WHATEVER. REALLY. USE AT YOUR OWN RISK.
+Did you actually read that people online are complaining that these install scripts are for n00bs and people that dOn'T kNoW hOw To InStAlL aRcH lInUx?!1! Are you ONE OF THOSE PPL? RLY?!?! SCREW YOU, IMMA DO IT "THE RIGHT WAY"!!!!11
 
-### Usage
 
-- Download the official Arch Linux .iso file from the official site download section ([here](https://www.archlinux.org/download/))
-- Flash it onto an USB drive with softwares like Rufus, balenaEtcher and boot it in the system of choice
-- Inside the live environment you should now connect to the internet using either ethernet or wifi as you like (use `wifi-menu` or `nmcli` as your preference), then download the latest script from this repository with the following command:
+You now, but with a friend because you know you need mental support in doing it:
+
+![](also_you.jpg)
+
+You after you friend left bored right after you fucked up the installation for the 19th time:
+
+![](you.jpg)
+
+...that's why, mate. Still lovin' ya, don't worry :heart:
+
+## So, here is a fun Disclaimer
+
+THIS PIECE OF SOFTWARE IS PROVIDED AS IS, WITHOUT WARRANTIES OF ANY KIND. I AM NOT RESPONSIBLE FOR ANY USAGE OF THIS SCRIPT, OR ANY IMPORTANT DISK ACCIDENTALLY FORMATTED BY THIS INSTALL SCRIPT, OR YOUR ENTIRE SYSTEM EXPLODING, OR WHATEVER.
+
+REALLY. USE AT YOUR OWN RISK. xoxo
+
+## Usage
+
+- Download the official Arch Linux .iso file from the [official site download section](https://www.archlinux.org/download/)
+
+- Flash it onto an USB drive with softwares like `dd`, Rufus, balenaEtcher or whatever, stick it in the desired PC and boot the provided live environment, as per the ArchWiki installation page
+
+- Inside this live environment you should now connect to the internet using either ethernet or wifi as you like (use `wifi-menu` or `nmcli` or as your preference), then download the latest script from this repository with the following command:
 
 ```bash
 wget https://raw.githubusercontent.com/ilbuonmarcio/mrczlnks/master/install.sh
 ```
 
-- Modify it to fit your own purposes (I suggest you to edit the proper disk to format, right partitions, change hostname, username, purge packages you don't need and so on, or do like [zetaemme](https://github.com/zetaemme/zls) and fork this repository as a base for your own install script!)
+- Modify it to fit your own purposes (I suggest you to edit the partition mounts, change hostname, username, purge packages and features you don't need and so on, or do like [zetaemme](https://github.com/zetaemme/zls) and fork this repository as a base for your own Arch Linux install script!)
 
 ```bash
 vim ./install.sh
 ```
 
-- Change file permissions to make it executable
+- Change file permissions to make it executable, of course!
 
 ```bash
 chmod 700 ./install.sh
 ```
 
-- Edit `/etc/pacman.conf` file, making sure [multilib] repository is enabled or it won't work!
+- Edit `/etc/pacman.conf` file, making sure `[multilib]` repository is enabled or it won't work!
 
-- Execute install.sh script and insert data when prompted
+- Execute `install.sh` script and insert the information required when prompted
 
 ```bash
 ./install.sh
 ```
 
-Once the script finishes, you can `python detonate.py` your machine (just joking...), or just `reboot` the live environment and remove the USB drive previously inserted, and finally start using the new desktop experience you just installed!
+Once the script propmts you that it finished, you can just `reboot`, remove the USB drive previously inserted and finally start using your new distribution!
 
 ### License
 
