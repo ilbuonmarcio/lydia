@@ -1,4 +1,4 @@
-![](logo-inverse.png)
+![](logo.png)
 
 # What is mrczlnks?
 
