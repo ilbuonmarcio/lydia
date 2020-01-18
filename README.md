@@ -8,11 +8,11 @@ Due that's software needed for me personally and has no other purpose other than
 
 # WAIT A SINGLE F*****G SECOND
 
-Have you really made an Arch Linux installation script? Are you a n00b dude? 
+"Have you really made an Arch Linux installation script? Are you a n00b dude?" 
 
-Didn't you read the documentation and the [Holy Installation Guide](https://wiki.archlinux.org/index.php/Installation_guide)? 
+"Didn't you read the documentation and the [Holy Installation Guide](https://wiki.archlinux.org/index.php/Installation_guide)?" 
 
-Did you actually read that people online are complaining that these install scripts are for n00bs and people that dOn'T kNoW hOw To InStAlL aRcH lInUx?!1! Are you ONE OF THOSE PPL? RLY?!?! SCREW YOU, IMMA DO IT "THE RIGHT WAY"!!!!11
+"Did you actually read that people online are complaining that these install scripts are for n00bs and people that dOn'T kNoW hOw To InStAlL aRcH lInUx?!1! Are you ONE OF THOSE PPL? RLY?!?! SCREW YOU, IMMA DO IT "THE RIGHT WAY"!!!!1"
 
 
 ***> You now, but with a friend because you know you need mental support in doing it:***
@@ -63,7 +63,7 @@ chmod 700 ./install.sh
 ./install.sh
 ```
 
-Once the script propmts you that it finished, you can just `reboot`, remove the USB drive previously inserted and finally start using your new distribution!
+Once the script prompts you that it finished, you can just `reboot`, remove the USB drive previously inserted and finally start using your new distribution!
 
 ### License
 
