@@ -159,6 +159,10 @@ arch-chroot /mnt systemctl enable firewalld.service
 arch-chroot /mnt systemctl enable cronie.service
 arch-chroot /mnt systemctl enable sshd.service
 
+# enabling https, http as per default configuration for public zone for firewalld
+arch-chroot /mnt firewall-cmd --add-service=http --permanent
+arch-chroot /mnt firewall-cmd --add-service=https --permanent
+
 # making i3 default for startx for both root and mrcz
 arch-chroot /mnt echo "exec i3" >> /mnt/root/.xinitrc
 arch-chroot /mnt echo "exec i3" >> /mnt/home/mrcz/.xinitrc
