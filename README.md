@@ -15,11 +15,11 @@ Didn't you read the documentation and the [Holy Installation Guide](https://wiki
 Did you actually read that people online are complaining that these install scripts are for n00bs and people that dOn'T kNoW hOw To InStAlL aRcH lInUx?!1! Are you ONE OF THOSE PPL? RLY?!?! SCREW YOU, IMMA DO IT "THE RIGHT WAY"!!!!11
 
 
-You now, but with a friend because you know you need mental support in doing it:
+***> You now, but with a friend because you know you need mental support in doing it:***
 
 ![](also_you.jpg)
 
-You after you friend left bored right after you fucked up the installation for the 19th time:
+***> You after you friend left bored right after you fucked up the installation for the 19th time:***
 
 ![](you.jpg)
 
