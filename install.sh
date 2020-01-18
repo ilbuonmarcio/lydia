@@ -212,9 +212,6 @@ arch-chroot /mnt sudo -u mrcz /bin/zsh -c "sudo cp /home/mrcz/fonts_tmp_folder/m
 # removing fonts tmp folder
 arch-chroot /mnt sudo -u mrcz rm -rf /home/mrcz/fonts_tmp_folder
 
-# install atom theme and syntax
-arch-chroot /mnt sudo -u mrcz apm install electric-ui electric-syntax
-
 # install dbus-python pip package
 arch-chroot /mnt sudo -u mrcz sudo pip3 install dbus-python
 
