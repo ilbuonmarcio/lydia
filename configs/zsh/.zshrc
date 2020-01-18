@@ -9,10 +9,10 @@ source $ZSH/oh-my-zsh.sh
 export SHELL=zsh
 export PAGER=less
 export FILE=ranger
-export TERMINAL=alacritty
+export TERMINAL=kitty
 export EDITOR=vim
 export VISUAL=vim
-export BROWSER=chromium
+export BROWSER=firefox
 
 autoload -Uz compinit promptinit
 compinit
