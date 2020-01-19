@@ -31,8 +31,8 @@ tray-position = left
 tray-padding = 4
 tray-background = ${colors.background-alt}
 
-modules-left = username spotify i3
-modules-center = date currentapptitle uptime
+modules-left = i3 username date uptime spotify
+modules-center = currentapptitle
 modules-right = updatesavailable dockerrc mountedpartitions cpu memory interfaces firewalld-up
 
 radius-bottom = 0
@@ -110,7 +110,6 @@ label = %date% %time%
 type = custom/script
 exec = whoami
 label = %output%
-label-padding-left = 4
 
 [module/mountedpartitions]
 type = custom/script
