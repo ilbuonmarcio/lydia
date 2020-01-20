@@ -36,7 +36,7 @@ pacman -Syyy
 pacman -S fzf --noconfirm
 
 # open dialog for disk selection
-sudo fdisk -l | grep 'Disk /dev/' | awk '{print $2,$3,$4}' | sed 's/,$//' | fzf | sed -e 's/\/dev\/\(.*\):/\1/' | awk '{print $1}' | read selected_disk
+selected_disk=$(sudo fdisk -l | grep 'Disk /dev/' | awk '{print $2,$3,$4}' | sed 's/,$//' | fzf | sed -e 's/\/dev\/\(.*\):/\1/' | awk '{print $1}')  
 
 # formatting disk
 sed -e 's/\s*\([\+0-9a-zA-Z]*\).*/\1/' << EOF | fdisk /dev/${selected_disk}
@@ -49,12 +49,12 @@ sed -e 's/\s*\([\+0-9a-zA-Z]*\).*/\1/' << EOF | fdisk /dev/${selected_disk}
   n # new partition
     # default: primary partition
     # default: partition 2
-  +120G # 120 gb for root partition
+  +40G # 40 gb for home partition
     # default: yes if asked
   n # new partition
     # default: primary partition
     # default: partition 3
-    # default: all space left of for home partition
+    # default: all space left of for root partition
     # default: yes if asked
   t # change partition type
   1 # selecting partition 1
@@ -71,11 +71,11 @@ yes | mkfs.ext4 /dev/${selected_disk}2
 yes | mkfs.ext4 /dev/${selected_disk}3
 
 # disk mount
-mount /dev/${selected_disk}2 /mnt
+mount /dev/${selected_disk}3 /mnt
 mkdir /mnt/boot
 mkdir /mnt/home
 mount /dev/${selected_disk}1 /mnt/boot
-mount /dev/${selected_disk}3 /mnt/home
+mount /dev/${selected_disk}2 /mnt/home
 
 # pacstrap-ping desired disk
 pacstrap /mnt base base-devel vim grub networkmanager rofi feh linux-headers \
