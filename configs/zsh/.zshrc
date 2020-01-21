@@ -26,6 +26,8 @@ dkac() { sudo docker kill $(sudo docker ps -a -q); }
 drac() { sudo docker rm $(sudo docker ps -a -q); }
 drai() { sudo docker rmi $(sudo docker images -a -q); }
 
+alias tree='tree -a -I .git'
+
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 source $HOME/.secrets
