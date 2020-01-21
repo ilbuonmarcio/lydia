@@ -29,7 +29,7 @@ drai() { sudo docker rmi $(sudo docker images -a -q); }
 alias tree='tree -a -I .git'
 
 findtext() {
-    grep -R "$1" $2
+    grep -Rn "$1" $2
 }
 
 findtextfn() {
