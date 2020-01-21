@@ -28,10 +28,20 @@ drai() { sudo docker rmi $(sudo docker images -a -q); }
 
 alias tree='tree -a -I .git'
 
+findtext() {
+    grep -R "$1" $2
+}
+
+findtextfn() {
+    grep -Rl "$1" $2
+}
+
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 source $HOME/.secrets
 
+path+=("$HOME/.scripts")
+export PATH
 
 if systemctl -q is-active graphical.target && [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
   startx
