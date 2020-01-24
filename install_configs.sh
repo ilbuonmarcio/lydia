@@ -15,6 +15,8 @@ mkdir ../../.config/lxpanel/LXDE/ 2> /dev/null
 mkdir ../../.config/lxpanel/LXDE/panels/ 2> /dev/null
 mkdir ../../.config/lxsession/ 2> /dev/null
 mkdir ../../.config/lxsession/LXDE/ 2> /dev/null
+mkdir ../../.config/pcmanfm/        2> /dev/null
+mkdir ../../.config/pcmanfm/LXDE/   2> /dev/null
 
 cp -rf ./configs/i3/*         ../../.config/i3/
 cp -rf ./configs/kitty/*  ../../.config/kitty/
@@ -31,6 +33,7 @@ cp -f ./configs/lxde/panel ../../.config/lxpanel/LXDE/panels/
 cp -f ./configs/lxde/desktop.conf ../../.config/lxsession/LXDE/
 cp -rf ./configs/lxde/Nightmare ../../.themes/
 cp -rf ./configs/lxde/Stylish ../../.themes/
+cp -rf ./configs/lxde/desktop-items-0.conf ../../.config/pcmanfm/LXDE/
 
 # installing python spotify plugin interface for polybar module
 git clone https://github.com/Jvanrhijn/polybar-spotify &> /dev/null
