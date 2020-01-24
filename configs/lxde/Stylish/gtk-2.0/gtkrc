@@ -1,0 +1,4805 @@
+#
+#	Stylish  -  Xfce  -  Theme
+#
+#	Copyright (C) 2020  by TheFranKenstein
+#
+#	This program is free software: you can redistribute it and/or modify
+#	it under the terms of the GNU General Public License as published by
+#	the Free Software Foundation, either version 3 of the License, or
+#	any later version.
+#
+#	This program is distributed in the hope that it will be useful,
+#	but WITHOUT ANY WARRANTY; without even the implied warranty of
+#	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#	GNU General Public License for more details.
+#
+
+gtk_color_scheme = "base_color:#2C3034\nbg_color:#3C4044"
+gtk_color_scheme = "fg_color:#D6D6D6\ntext_color:#FFFFFF"
+gtk_color_scheme = "selected_bg_color:#808080\nselected_fg_color:#FFFFFF"
+gtk-color-scheme = "tooltip_bg_color:#1A1A1A\ntooltip_fg_color:#FFFFFF"
+gtk_color_scheme = "text-prelight:#00FF00\nlink_color:#FF83FA"
+
+gtk-auto-mnemonics		= 1 # Disables ugly lines under menu items
+gtk-enable-animations 	= 1  
+gtk-tooltip-timeout 	= 1200
+gtk-menu-popup-delay 	= 360
+
+
+#####################################################################
+style "default"
+{
+	GtkWidget::interior_focus				= 0
+	GtkWidget::focus_padding				= 0
+	GtkWidget::focus-line-width				= 0
+
+	GtkWidget::tooltip-radius				= 1
+	GtkWidget::tooltip-alpha				= 255
+	GtkWidget::new-tooltip-style			= 1
+
+	GtkButton::focus-padding				= 0
+	GtkButton::image-spacing 				= 4
+	GtkButton::icon-spacing          		= 4
+	GtkButton::child-displacement-x   		= 0
+	GtkButton::child-displacement-y    		= 0
+    GtkButton::default-border   			= { 0,0,0,0 }
+    GtkButton::default-outside_border       = { 0,0,0,0 }
+	GtkButton::inner-border	                = { 6,6,3,3 }
+	GtkButtonBox::child-min-height 			= 24
+
+	GtkNotebook::tab-overlap				= 0
+	GtkNotebook::tab-curvature			    = 2
+
+    GtkRange::trough-border     			= 0
+    GtkRange::slider-width      			= 16
+    GtkRange::stepper-size      			= 0
+
+	GtkScale::activate-slider 				= 1 # With this option set to TRUE, sliders will be drawn ACTIVE and with shadow IN while they are dragged.
+	GtkScale::trough-border 				= 0
+	GtkHScale::focus-padding                = 1
+	GtkVScale::focus-padding                = 1
+    GtkVScale::slider_length    			= 16
+    GtkVScale::slider_width     			= 16
+    GtkHScale::slider_length    			= 16
+    GtkHScale::slider_width     			= 16
+
+	GtkScale::trough-side-details			= 1
+
+    GtkScrollbar::activate-slider					= 1
+	GtkScrollbar::min-slider-length					= 60
+	GtkScrollbar::fixed-slider-length				= 1
+	GtkScrollbar::slider-width						= 12
+	GtkScrollbar::trough-border						= 2
+	GtkScrollbar::has-backward-stepper				= 0
+	GtkScrollbar::has-forward-stepper				= 0
+	GtkScrollbar::stepper-size						= 0
+	GtkScrollbar::trough-side-details				= 0
+
+	GtkScrolledWindow::scrollbar-spacing			= 1
+	GtkScrolledWindow::scrollbars-within-bevel		= 1
+
+	GtkProgressBar::min-horizontal-bar-height 		= 16
+	GtkProgressBar::min-vertical-bar-width 			= 16
+
+	GtkMenuBar::window-dragging				= 1
+    GtkMenuBar::internal-padding    		= 0
+	GtkMenuBar::shadow-type 				= GTK_SHADOW_NONE # Makes menubars flat and unified
+
+    GtkMenu::horizontal-padding   			= 1
+    GtkMenu::vertical-padding      			= 1
+
+	GtkMenuItem::arrow-scaling				= 0.8
+	GtkMenuItem::arrow-spacing      		= 4
+	GtkMenuItem::toggle-spacing        		= 8
+	GtkCheckMenuItem::indicator-size  		= 16
+	GtkMenuItem::horizontal-padding  		= 10
+    
+	GtkMenuItem::wide-separators 			= 0
+	GtkMenuItem::separator-width 			= 1
+	GtkMenuItem::separator-height 			= 1
+
+
+	GtkWidget::wide-separators              = 0
+	GtkWidget::separator-width              = 0
+	GtkWidget::separator-height             = 0
+
+	GtkToolButton::icon-spacing				= 4
+	GtkToolbar::window-dragging		        = 1
+	GtkToolbar::internal-padding 			= 6
+	GtkToolbar::space-size  				= 6		# 0 = no toolbar separators
+	GtkToolbar::button-relief    			= GTK_RELIEF_NORMAL
+
+	GtkEntry::honors-transparent-bg-hint	= 1
+	GtkEntry::state-hint            		= 1
+	GtkEntry::progress-border		        = { 0,0,0,0 }
+	GtkEntry::inner-border 					= { 4,4,3,3 }
+
+	GtkTreeView::vertical-separator			= 1
+	GtkTreeView::horizontal-separator 		= 8
+	GtkTreeView::allow-rules                = 1
+	GtkTreeView::indent-expanders			= 1
+	GtkTreeView::row_ending_details 		= 0
+
+	GtkTreeView::odd_row_color 				= @base_color
+
+	GtkTreeView::expander-size  			= 14
+	GtkTreeView::arrow-scaling				= 0.9
+
+	GtkExpander::expander-size     			= 14
+	GtkExpander::expander-spacing    		= 4
+
+	GtkSpinButton::inner-border             = { 4,4,3,3 }
+
+	GtkRadioButton::indicator_size			= 16
+	GtkCheckButton::indicator_size			= 16
+	GtkCheckButton::indicator_spacing		= 4
+
+	GtkArrow::arrow-scaling       			= 0.8
+
+    GtkComboBox::appears-as-list 			= 0
+    GtkComboBox::arrow-size 				= 11
+
+	GtkOptionMenu::focus-padding 			= 0
+	GtkOptionMenu::indicator_size			= { 14, 9 }
+	GtkOptionMenu::indicator_spacing		= { 6,6,6,6 }
+
+	GtkPaned::handle_size					= 3
+
+	GtkStatusbar::shadow_type				= GTK_SHADOW_NONE
+
+
+	GtkWidget::link-color				    = @link_color
+	GtkWidget::visited-link-color		    = mix(0.80, @link_color, "black")
+	GtkHTML::link-color				        = @link_color
+	GtkIMHtml::hyperlink-color			    = @link_color
+ 	GtkIMHtmlr::hyperlink-color 			= @link_color
+	GnomeHRef::link_color  				    = @link_color
+
+
+    GimpDockWindow::default-height      = 240
+    GimpDock::font-scale                = 0.8333
+    GimpMenuDock::minimal-width         = 200
+    GimpDockWindow::menu-preview-size   = small-toolbar
+    GimpToolPalette::tool-icon-size     = large-toolbar
+    GimpToolPalette::button-relief      = none
+    GimpDockbook::tab-border            = 0
+    GimpDockbook::tab-icon-size         = menu
+    GimpColorNotebook::tab-border       = 0
+    GimpColorNotebook::tab-icon-size    = menu
+    GimpDeviceEditor::handle-size       = 12
+    GimpDockable::content-border        = 1
+    GimpEditor::content-spacing         = 1
+    GimpEditor::button-spacing          = 1
+    GimpEditor::button-icon-size        = menu
+    GimpDataEditor::minimal-height      = 64
+    GimpFrame::label-spacing            = 2
+    GimpUnitComboBox::appears-as-list   = 0
+
+
+	xthickness = 1
+	ythickness = 1
+
+
+	bg[NORMAL] 			= @bg_color
+	bg[PRELIGHT] 		= @bg_color
+	bg[ACTIVE] 			= @selected_bg_color
+	bg[SELECTED] 		= @selected_bg_color
+	bg[INSENSITIVE] 	= @bg_color
+
+	fg[NORMAL] 		    = @text_color
+	fg[PRELIGHT] 	    = @text-prelight
+    fg[ACTIVE]        	= @selected_fg_color
+	fg[SELECTED]      	= @selected_fg_color
+	fg[INSENSITIVE] 	= "#8A8A8A"
+
+	base[NORMAL] 		= @bg_color
+	base[PRELIGHT] 		= @selected_bg_color
+    base[ACTIVE]        = @selected_bg_color
+	base[SELECTED]		= @selected_bg_color
+	base[INSENSITIVE] 	= @base_color
+
+	text[NORMAL] 		= @text_color
+	text[PRELIGHT] 		= @text-prelight
+	text[ACTIVE]      	= @selected_fg_color
+	text[SELECTED]    	= @selected_fg_color
+	text[INSENSITIVE] 	= "#8A8A8A"
+
+
+	engine "pixmap"
+	{
+
+    # Arrows
+        image
+        {
+        function		    = ARROW
+        state               = NORMAL
+        recolorable		    = TRUE
+        overlay_file		= "Arrows/arrow-up.svg"
+        overlay_border		= { 0,0,0,0 }
+        overlay_stretch		= FALSE
+        arrow_direction		= UP
+        }
+
+        image
+        {
+        function		    = ARROW
+        state			    = PRELIGHT
+        recolorable		    = TRUE
+        overlay_file		= "Arrows/arrow-up-prelight.svg"
+        overlay_border		= { 0,0,0,0 }
+        overlay_stretch		= FALSE
+        arrow_direction		= UP
+        }
+
+        image
+        {
+        function		    = ARROW
+        state			    = ACTIVE
+        recolorable		    = TRUE
+        overlay_file		= "Arrows/arrow-up-active.svg"
+        overlay_border		= { 0,0,0,0 }
+        overlay_stretch		= FALSE
+        arrow_direction		= UP
+        }
+
+        image
+        {
+        function		    = ARROW
+        state			    = INSENSITIVE
+        recolorable		    = TRUE
+        overlay_file		= "Arrows/arrow-up-insensitive.svg"
+        overlay_border		= { 0,0,0,0 }
+        overlay_stretch		= FALSE
+        arrow_direction		= UP
+        }
+
+        image
+        {
+        function		    = ARROW
+        state			    = NORMAL
+        recolorable		    = TRUE
+        overlay_file		= "Arrows/arrow-down.svg"
+        overlay_border		= { 0,0,0,0 }
+        overlay_stretch		= FALSE
+        arrow_direction		= DOWN
+        }
+
+        image
+        {
+        function		    = ARROW
+        state			    = PRELIGHT
+        recolorable		    = TRUE
+        overlay_file		= "Arrows/arrow-down-prelight.svg"
+        overlay_border		= { 0,0,0,0 }
+        overlay_stretch		= FALSE
+        arrow_direction		= DOWN
+        }
+
+        image
+        {
+        function		    = ARROW
+        state			    = ACTIVE
+        recolorable		    = TRUE
+        overlay_file		= "Arrows/arrow-down-active.svg"
+        overlay_border		= { 0,0,0,0 }
+        overlay_stretch		= FALSE
+        arrow_direction		= DOWN
+        }
+
+        image
+        {
+        function		    = ARROW
+        state			    = INSENSITIVE
+        recolorable		    = TRUE
+        overlay_file		= "Arrows/arrow-down-insensitive.svg"
+        overlay_border		= { 0,0,0,0 }
+        overlay_stretch		= FALSE
+        arrow_direction		= DOWN
+        }
+
+        image
+        {
+        function		    = ARROW
+        state               = NORMAL
+        recolorable		    = TRUE
+        overlay_file		= "Arrows/arrow-left.svg"
+        overlay_border		= { 0,0,0,0 }
+        overlay_stretch		= FALSE
+        arrow_direction		= LEFT
+        }
+
+        image
+        {
+        function		    = ARROW
+        state               = PRELIGHT
+        recolorable		    = TRUE
+        overlay_file		= "Arrows/arrow-left-prelight.svg"
+        overlay_border		= { 0,0,0,0 }
+        overlay_stretch		= FALSE
+        arrow_direction		= LEFT
+        }
+
+        image
+        {
+        function		    = ARROW
+        state               = ACTIVE
+        recolorable		    = TRUE
+        overlay_file		= "Arrows/arrow-left-active.svg"
+        overlay_border		= { 0,0,0,0 }
+        overlay_stretch		= FALSE
+        arrow_direction		= LEFT
+        }
+
+        image
+        {
+        function		    = ARROW
+        state               = INSENSITIVE
+        recolorable		    = TRUE
+        overlay_file		= "Arrows/arrow-left-insensitive.svg"
+        overlay_border		= { 0,0,0,0 }
+        overlay_stretch		= FALSE
+        arrow_direction		= LEFT
+        }
+
+        image
+        {
+        function		    = ARROW
+        state               = NORMAL
+        recolorable		    = TRUE
+        overlay_file		= "Arrows/arrow-right.svg"
+        overlay_border		= { 0,0,0,0 }
+        overlay_stretch		= FALSE
+        arrow_direction		= RIGHT
+        }
+
+        image
+        {
+        function		    = ARROW
+        state               = PRELIGHT
+        recolorable		    = TRUE
+        overlay_file		= "Arrows/arrow-right-prelight.svg"
+        overlay_border		= { 0,0,0,0 }
+        overlay_stretch		= FALSE
+        arrow_direction		= RIGHT
+        }
+
+        image
+        {
+        function		    = ARROW
+        state               = ACTIVE
+        recolorable		    = TRUE
+        overlay_file		= "Arrows/arrow-right-active.svg"
+        overlay_border		= { 0,0,0,0 }
+        overlay_stretch		= FALSE
+        arrow_direction		= RIGHT
+        }
+
+        image
+        {
+        function		    = ARROW
+        state               = INSENSITIVE
+        recolorable		    = TRUE
+        overlay_file		= "Arrows/arrow-right-insensitive.svg"
+        overlay_border		= { 0,0,0,0 }
+        overlay_stretch		= FALSE
+        arrow_direction		= RIGHT
+        }
+
+    # Option Menu Arrows
+        image
+        {
+        function		    = TAB
+        state			    = NORMAL
+        overlay_file        = "Arrows/arrow-down.svg"
+        overlay_border	    = {0,0,0,0}
+        overlay_stretch	    = FALSE
+        }
+        image
+        {
+        function		    = TAB
+        state			    = PRELIGHT
+        overlay_file        = "Arrows/arrow-down-prelight.svg"
+        overlay_border	    = {0,0,0,0}
+        overlay_stretch	    = FALSE
+        }
+        image
+        {
+        function		    = TAB
+        state			    = ACTIVE
+        overlay_file        = "Arrows/arrow-down-active.svg"
+        overlay_border	    = {0,0,0,0}
+        overlay_stretch	    = FALSE
+        }
+        image
+        {
+        function		    = TAB
+        state			    = INSENSITIVE
+        overlay_file        = "Arrows/arrow-down-insensitive.svg"
+        overlay_stretch	    = FALSE
+        }
+
+    # Expanders
+		image {
+		function        = EXPANDER
+		state           = NORMAL
+		expander_style  = COLLAPSED
+		file            = "Check-Radio/plus.svg"
+		}
+
+		image {
+		function        = EXPANDER
+		state           = NORMAL
+		expander_style  = EXPANDED
+		file            = "Check-Radio/minus.svg"
+		}
+
+		image {
+		function        = EXPANDER
+		state           = NORMAL
+		expander_style  = SEMI_EXPANDED
+		file            = "Check-Radio/minus.svg"
+		}
+
+		image {
+		function        = EXPANDER
+		state           = NORMAL
+		expander_style  = SEMI_COLLAPSED
+		file            = "Check-Radio/plus.svg"
+		}
+
+
+		image {
+		function        = EXPANDER
+		state           = PRELIGHT
+		expander_style  = COLLAPSED
+		file            = "Check-Radio/plusP.svg"
+		}
+
+		image {
+		function        = EXPANDER
+		state           = PRELIGHT
+		expander_style  = EXPANDED
+		file            = "Check-Radio/minusP.svg"
+		}
+
+		image {
+		function        = EXPANDER
+		state           = PRELIGHT
+		expander_style  = SEMI_EXPANDED
+		file            = "Check-Radio/minusP.svg"
+		}
+
+		image {
+		function        = EXPANDER
+		state           = PRELIGHT
+		expander_style  = SEMI_COLLAPSED
+		file            = "Check-Radio/plusP.svg"
+		}
+
+
+		image {
+		function        = EXPANDER
+		state           = ACTIVE
+		expander_style  = COLLAPSED
+		file            = "Check-Radio/plusS.svg"
+		}
+
+		image {
+		function        = EXPANDER
+		state           = ACTIVE
+		expander_style  = EXPANDED
+		file            = "Check-Radio/minusS.svg"
+		}
+
+		image {
+		function        = EXPANDER
+		state           = ACTIVE
+		expander_style  = SEMI_EXPANDED
+		file            = "Check-Radio/minusS.svg"
+		}
+
+		image {
+		function        = EXPANDER
+		state           = ACTIVE
+		expander_style  = SEMI_COLLAPSED
+		file            = "Check-Radio/plusS.svg"
+		}
+
+
+		image {
+		function        = EXPANDER
+		state           = SELECTED
+		expander_style  = COLLAPSED
+		file            = "Check-Radio/plusS.svg"
+		}
+
+		image {
+		function        = EXPANDER
+		state           = SELECTED
+		expander_style  = EXPANDED
+		file            = "Check-Radio/minusS.svg"
+		}
+
+		image {
+		function        = EXPANDER
+		state           = SELECTED
+		expander_style  = SEMI_EXPANDED
+		file            = "Check-Radio/minusS.svg"
+		}
+
+		image {
+		function        = EXPANDER
+		state           = SELECTED
+		expander_style  = SEMI_COLLAPSED
+		file            = "Check-Radio/plusS.svg"
+		}
+
+
+		image {
+		function		= EXPANDER
+		state			= INSENSITIVE
+		expander_style	= COLLAPSED
+		file			= "Check-Radio/plusX.svg"
+		}
+
+		image {
+		function		= EXPANDER
+		state			= INSENSITIVE
+		expander_style	= SEMI_COLLAPSED
+		file			= "Check-Radio/plusX.svg"
+		}
+
+		image {
+		function		= EXPANDER
+		state			= INSENSITIVE
+		expander_style	= SEMI_EXPANDED
+		file			= "Check-Radio/minusX.svg"
+		}
+		image {
+		function		= EXPANDER
+		state			= INSENSITIVE
+		expander_style	= EXPANDED
+		file			= "Check-Radio/minusX.svg"
+		}
+
+	# Handles
+        image
+        {
+        function			= HANDLE
+		state               = NORMAL
+        recolorable			= TRUE
+        file				= "Assets/bg.svg"
+        overlay_file		= "Assets/handle-h.svg"
+        overlay_border		= {1,1,2,3 }
+        overlay_stretch		= FALSE
+        orientation			= HORIZONTAL
+        }
+
+        image
+        {
+        function			= HANDLE
+		state               = PRELIGHT
+        recolorable			= TRUE
+        file				= "Assets/bg.svg"
+        overlay_file		= "Assets/handle-h-active.svg"
+        overlay_border		= {1,1,2,3 }
+        overlay_stretch		= FALSE
+        orientation			= HORIZONTAL
+        }
+
+        image
+        {
+        function			= HANDLE
+		state               = ACTIVE
+        recolorable			= TRUE
+        file				= "Assets/bg.svg"
+        overlay_file		= "Assets/handle-h-active.svg"
+        overlay_border		= {1,1,2,3 }
+        overlay_stretch		= FALSE
+        orientation			= HORIZONTAL
+        }
+
+        image
+        {
+        function			= HANDLE
+		state               = INSENSITIVE
+        recolorable			= TRUE
+        file				= "Assets/bg.svg"
+        overlay_file		= "Assets/handle-h.svg"
+        overlay_border		= {1,1,2,3 }
+        overlay_stretch		= FALSE
+        orientation			= HORIZONTAL
+        }
+
+
+        image
+        {
+        function			= HANDLE
+		state               = NORMAL
+        recolorable			= TRUE
+        file				= "Assets/bg.svg"
+        overlay_file		= "Assets/handle-v.svg"
+        overlay_border		= {3,2,1,1 }
+        overlay_stretch		= FALSE
+        orientation			= VERTICAL
+        }
+        
+        image
+        {
+        function			= HANDLE
+		state               = PRELIGHT
+        recolorable			= TRUE
+        file				= "Assets/bg.svg"
+        overlay_file		= "Assets/handle-v-active.svg"
+        overlay_border		= {3,2,1,1 }
+        overlay_stretch		= FALSE
+        orientation			= VERTICAL
+        }
+
+        image
+        {
+        function			= HANDLE
+		state               = ACTIVE
+        recolorable			= TRUE
+        file				= "Assets/bg.svg"
+        overlay_file		= "Assets/handle-v-active.svg"
+        overlay_border		= {3,2,1,1 }
+        overlay_stretch		= FALSE
+        orientation			= VERTICAL
+        }
+
+        image
+        {
+        function			= HANDLE
+		state               = INSENSITIVE
+        recolorable			= TRUE
+        file				= "Assets/bg.svg"
+        overlay_file		= "Assets/handle-v.svg"
+        overlay_border		= {3,2,1,1 }
+        overlay_stretch		= FALSE
+        orientation			= VERTICAL
+        }
+
+
+    # Resize
+        image
+        {
+        function		= RESIZE_GRIP
+        recolorable		= TRUE
+        detail			= "statusbar"
+        overlay_file	= "Assets/resize-grip.svg"
+        overlay_stretch	= FALSE
+        }
+
+
+    # Lines
+        image
+        {
+        function			= VLINE
+        recolorable		    = TRUE
+        file				= "Assets/null.png"
+        border			    = { 1,0,1,0 }
+        stretch			    = TRUE
+        }
+        
+        image
+        {
+        function			= HLINE
+        recolorable		    = TRUE
+        file				= "Assets/null.png"
+        border			    = { 1,0,1,0 }
+        stretch			    = TRUE
+        }
+
+
+    # Shadows
+
+        image {
+        function		    = SHADOW
+        shadow			    = IN
+        file			    = "Assets/bg.svg"
+        border			    = {1,1,1,1}
+        stretch			    = TRUE
+        overlay_file	    = "Assets/bg.svg"
+        overlay_border	    = {1,1,1,1}
+        overlay_stretch	    = TRUE
+        }
+        image {
+        function	        = SHADOW
+        shadow		        = OUT
+        file		        = "Assets/bg.svg"
+        border		        = {1,1,1,1}
+        stretch		        = TRUE
+        }
+        image {
+        function	        = SHADOW
+        shadow		        = ETCHED_IN
+        file		        = "Assets/bg.svg"
+        border		        = {1,1,1,1}
+        stretch 	        = TRUE
+        }
+        image {
+        function	        = SHADOW
+        shadow		        = ETCHED_OUT
+        file		        = "Assets/bg.svg"
+        border		        = {1,1,1,1}
+        stretch		        = TRUE
+        }
+
+        image {
+        function		    = SHADOW_GAP
+        file			    = "Assets/frame.svg"
+        border			    = {1,1,1,1}
+        stretch 		    = TRUE
+        gap_start_file	    = "Assets/frame_gap.svg"
+        gap_start_border    = {0,0,0,0}
+        gap_end_file	    = "Assets/frame_gap.svg"
+        gap_end_border	    = {0,0,0,0}
+        }
+
+
+    # Focus
+        image {
+        function        = FOCUS
+		recolorable		= TRUE
+        file		    = "Assets/null.png"
+        border	        = { 0,0,0,0 }
+        stretch         = TRUE
+        }
+	}
+}
+class "GtkWidget"       style "default"
+#####################################################################
+style "scrollbar"
+{
+
+    engine "pixmap" 
+    {
+            ########### TROUGH
+            image 
+            {
+            function		= BOX
+            detail			= "trough"
+            file			= "Scrollbars/scrollbar-trough-horizontal.svg"
+            border			= { 1,1,3,1 }
+            stretch			= TRUE
+            orientation		= HORIZONTAL
+            }
+            image 
+            {
+            function		= BOX
+            detail			= "trough"
+            file			= "Scrollbars/scrollbar-trough-vertical.svg"
+            border			= { 3,1,1,1 }
+            stretch			= TRUE
+            orientation		= VERTICAL
+            }
+
+            ########### SLIDERS HORIZONTAL
+            image 
+            {
+            function			= SLIDER
+            state           	= NORMAL
+            file				= "Scrollbars/slider.svg" 
+            border				= { 2,2,2,2 }
+            stretch				= TRUE
+            orientation			= HORIZONTAL
+            }
+            image 
+            {
+            function			= SLIDER
+            state           	= PRELIGHT
+            file				= "Scrollbars/slider-prelight.svg" 
+            border				= { 2,2,2,2 }
+            stretch				= TRUE
+            orientation			= HORIZONTAL
+            }
+            image 
+            {
+            function			= SLIDER
+            state           	= ACTIVE
+            file				= "Scrollbars/slider-active.svg" 
+            border				= { 2,2,2,2 }
+            stretch				= TRUE
+            orientation			= HORIZONTAL
+            }
+            image 
+            {
+            function			= SLIDER
+            state           	= INSENSITIVE
+            file				= "Scrollbars/slider-insensitive.svg"
+            border				= { 2,2,2,2 }
+            stretch				= TRUE
+            orientation			= HORIZONTAL
+            }
+
+            ########### SLIDERS VERTICAL
+            image 
+            {
+            function			= SLIDER
+            state           	= NORMAL
+            file				= "Scrollbars/slider.svg" 
+            border				= { 2,2,2,2 }
+            stretch				= TRUE
+            orientation			= VERTICAL
+            }
+            image 
+            {
+            function			= SLIDER
+            state           	= PRELIGHT
+            file				= "Scrollbars/slider-prelight.svg" 
+            border				= { 2,2,2,2 }
+            stretch				= TRUE
+            orientation			= VERTICAL
+            }
+            image 
+            {
+            function			= SLIDER
+            state           	= ACTIVE
+            file				= "Scrollbars/slider-active.svg" 
+            border				= { 2,2,2,2 }
+            stretch				= TRUE
+            orientation			= VERTICAL
+            }
+            image 
+            {
+            function			= SLIDER
+            state           	= INSENSITIVE
+            file				= "Scrollbars/slider-insensitive.svg"
+            border				= { 2,2,2,2 }
+            stretch				= TRUE
+            orientation			= VERTICAL
+            }
+
+            ########### STEPPERS
+			image 
+			{
+			function				= BOX
+            file				    = "Scrollbars/stepper.svg"
+            border				    = { 0,0,0,0 }
+			stretch					= TRUE
+			}
+    }
+}
+class "GtkScrollbar"       		style "scrollbar"
+#####################################################################
+style "menu"
+{
+  xthickness = 4
+  ythickness = 4
+
+        bg[NORMAL]      = @base_color
+
+	engine "pixmap"
+	{
+        image
+        {
+        function	= BOX
+        detail		= "menu"
+        file		= "Menu/menu.svg"
+		border 		= { 2,2,2,2 }
+		recolorable = FALSE
+		stretch 	= TRUE
+		}
+
+            image
+            {
+            function		= SHADOW
+            }
+
+                # buttons
+                image 
+                {
+                function	= BOX
+                state    	= NORMAL
+                file		= "Menu/normal.svg"
+				border		= { 2,2,2,2 }
+                stretch		= TRUE
+                }	
+
+                image
+                {
+                function	= BOX
+                state		= PRELIGHT
+                recolorable	= TRUE
+                file		= "Menu/prelight.svg"
+				border		= { 3,3,3,3 }
+                stretch		= TRUE
+                }
+                
+                image 
+                {
+                function	= BOX
+                state		= INSENSITIVE
+                file		= "Menu/insensitive.svg"
+				border		= { 2,2,2,2 }
+                stretch		= TRUE
+                }
+    }
+}
+class "GtkMenu"       					style "menu"
+widget_class "*<GtkMenu>*"              style "menu"
+widget "*.gtk-combobox-popup-menu*" 	style "menu"
+#####################################################################
+style "menuitem"
+{
+	xthickness	= 4
+	ythickness	= 4
+
+        bg[NORMAL]          = @base_color
+        bg[PRELIGHT]        = @selected_bg_color
+        bg[SELECTED]        = @selected_bg_color
+
+        fg[NORMAL]          = @text_color
+        fg[PRELIGHT]        = @selected_fg_color
+        fg[SELECTED]        = @selected_fg_color
+
+        text[NORMAL]        = @text_color
+        text[PRELIGHT]      = @text_color
+
+        fg[INSENSITIVE]     = "#707A85"
+        text[INSENSITIVE] 	= "#707A85"
+
+	   engine "pixmap"
+	   {
+            image
+            {
+            function			= BOX
+			recolorable 	    = FALSE
+			state			    = PRELIGHT
+            file				= "Menu/menuitem.svg"
+            border			    = { 0,0,0,0 }
+            stretch			    = TRUE
+            }
+
+
+		# Special Arrow
+			image {
+			function            = ARROW
+			state               = PRELIGHT
+			overlay_file        = "Arrows/menu-arrow-right-prelight.svg"
+			overlay_border      = { 0,0,0,0 }
+			overlay_stretch     = FALSE
+			arrow_direction     = RIGHT
+			}
+			image {
+			function            = ARROW
+			state               = PRELIGHT
+			overlay_file        = "Arrows/menu-arrow-left-prelight.svg"
+			overlay_border      = { 0,0,0,0 }
+			overlay_stretch     = FALSE
+			arrow_direction     = LEFT
+			}
+
+
+	# Check
+		image 
+		{
+		function        		= CHECK
+		recolorable     		= TRUE
+		state 			        = NORMAL
+		shadow          		= OUT
+		overlay_file    		= "Check-Radio/check1s.svg"
+		overlay_stretch 		= FALSE
+		}
+		image 
+		{
+		function        		= CHECK
+		recolorable     		= TRUE
+		state 			        = PRELIGHT
+		shadow          		= OUT
+		overlay_file    		= "Check-Radio/check1p.svg"
+		overlay_stretch 		= FALSE
+		}
+		image 
+		{
+		function        		= CHECK
+		recolorable     		= TRUE
+		state 			        = ACTIVE
+		shadow          		= OUT
+		overlay_file    		= "Check-Radio/check1s.svg"
+		overlay_stretch 		= FALSE
+		}
+		image
+		{
+		function        		= CHECK
+		recolorable     		= TRUE
+		state 			        = SELECTED
+		shadow          		= OUT
+		overlay_file    		= "Check-Radio/check1s.svg"
+		overlay_stretch 		= FALSE
+		}
+		image 
+		{
+		function        		= CHECK
+		recolorable     		= TRUE
+		state 			        = INSENSITIVE
+		shadow          		= OUT
+		overlay_file    		= "Check-Radio/check3.svg"
+		overlay_stretch 		= FALSE
+		}
+
+		image 
+		{
+		function        		= CHECK
+		recolorable     		= TRUE
+		state	 		        = NORMAL
+		shadow          		= IN
+		overlay_file    		= "Check-Radio/check2s.svg"
+		overlay_stretch	 	    = FALSE
+		}
+		image 
+		{
+		function        		= CHECK
+		recolorable     		= TRUE
+		state 		            = PRELIGHT
+		shadow          		= IN
+		overlay_file    		= "Check-Radio/check2p.svg"
+		overlay_stretch 		= FALSE
+		}
+		image 
+		{
+		function        		= CHECK
+		recolorable     		= TRUE
+		state 		            = ACTIVE
+		shadow          		= IN
+		overlay_file    		= "Check-Radio/check2s.svg"
+		overlay_stretch 		= FALSE
+		}
+		image
+		{
+		function        		= CHECK
+		recolorable     		= TRUE
+		state 		            = SELECTED
+		shadow          		= IN
+		overlay_file    		= "Check-Radio/check2s.svg"
+		overlay_stretch 		= FALSE
+		}
+		image 
+		{
+		function        		= CHECK
+		recolorable     		= TRUE
+		state 		            = INSENSITIVE
+		shadow          		= IN
+		overlay_file			= "Check-Radio/check4.svg"
+		overlay_stretch 		= FALSE
+		}
+
+	# Radio
+		image 
+		{
+		function        		= OPTION
+		state 			        = NORMAL
+		shadow          		= OUT
+		overlay_file    		= "Check-Radio/option1s.svg"
+		overlay_stretch 		= FALSE
+		}
+		image 
+		{
+		function        		= OPTION
+		state 			        = PRELIGHT
+		shadow          		= OUT
+		overlay_file    		= "Check-Radio/option1p.svg"
+		overlay_stretch 		= FALSE
+		}
+		image 
+		{
+		function        		= OPTION
+		state 			        = ACTIVE
+		shadow          		= OUT
+		overlay_file    		= "Check-Radio/option1s.svg"
+		overlay_stretch 		= FALSE
+		}
+		image
+		{
+		function        		= OPTION
+		state 			        = SELECTED
+		shadow          		= OUT
+		overlay_file    		= "Check-Radio/option1s.svg"
+		overlay_stretch 		= FALSE
+		}
+		image 
+		{
+		function        		= OPTION
+		state 			        = INSENSITIVE
+		shadow         		    = OUT
+		overlay_file    		= "Check-Radio/option3.svg"
+		overlay_stretch 		= FALSE
+		}
+		image 
+		{
+		function        		= OPTION
+		state 			        = NORMAL
+		shadow          		= IN
+		overlay_file    		= "Check-Radio/option2s.svg"
+		overlay_stretch 		= FALSE
+		}
+		image 
+		{
+		function        		= OPTION
+		state			        = PRELIGHT
+		shadow          		= IN
+		overlay_file    		= "Check-Radio/option2p.svg"
+		overlay_stretch 		= FALSE
+		}
+		image 
+		{
+		function        		= OPTION
+		state			        = ACTIVE
+		shadow          		= IN
+		overlay_file    		= "Check-Radio/option2s.svg"
+		overlay_stretch	 	    = FALSE
+		}
+		image
+		{
+		function        		= OPTION
+		state			        = SELECTED
+		shadow          		= IN
+		overlay_file    		= "Check-Radio/option2s.svg"
+		overlay_stretch	 	    = FALSE
+		}
+		image 
+		{
+		function        		= OPTION
+		state 			        = INSENSITIVE
+		shadow          		= IN
+		overlay_file    		= "Check-Radio/option4.svg"
+		overlay_stretch 		= FALSE
+		}
+
+
+        # Shadows
+            image 
+            {
+            function            = SHADOW # This fixes boxy Qt menu items
+            file                = "Assets/null.png"
+            border              = { 0,0,0,0 }
+            stretch             = TRUE
+            }
+    }
+}
+class "GtkMenuItem"           					style "menuitem"
+class "GtkTearoffMenuItem"						style "menuitem"
+class "GtkCheckMenuItem"   		            	style "menuitem"
+class "GtkRadioMenuItem"                    	style "menuitem"
+widget_class "*<GtkMenuItem>*"              	style "menuitem"
+widget "*.gtk-combobox-popup-menu.*"        	style "menuitem"
+widget_class "*<GtkMenuItem>.*.<GtkCalendar>" 	style "menuitem"
+#####################################################################
+style "separator_menu_item" {
+
+    xthickness = 0
+    ythickness = 2
+
+    engine "pixmap"
+    {
+            # menu lines
+            image
+            {
+            function			= HLINE
+            recolorable		    = TRUE
+            file				= "Menu/menuline.svg"
+            border			    = { 1,1,1,1 }
+            stretch			    = TRUE
+            }
+	}
+}
+class "GtkSeparatorMenuItem"                style "separator_menu_item"
+widget_class "*<GtkSeparatorMenuItem>*"     style "separator_menu_item"
+#####################################################################
+style "menubar"
+{
+	bg[NORMAL]          = @bg_color
+	fg[NORMAL]   		= @fg_color
+
+	bg[PRELIGHT]        = @selected_bg_color
+	fg[PRELIGHT]    	= @fg_color
+	fg[SELECTED] 		= @fg_color
+	fg[INSENSITIVE]     = "#8A8A8A"
+
+	engine "pixmap" 
+    {
+		image {
+		function 		= BOX
+		detail			= "menubar"
+		file			= "Assets/bg.svg"
+		stretch			= TRUE
+		border 			= { 0,0,0,0 }
+		}
+	}
+}
+class "GtkMenuBar"                  style "menubar"
+widget_class "*<GtkMenuBar>*"       style "menubar"
+#####################################################################
+style "menubaritem" 
+{
+	xthickness	= 4
+	ythickness	= 4
+
+	bg[NORMAL]          = @bg_color
+	fg[NORMAL]   		= @fg_color
+
+	bg[PRELIGHT]        = @selected_bg_color
+	fg[PRELIGHT]    	= @selected_fg_color
+	fg[SELECTED] 		= @selected_fg_color
+	fg[INSENSITIVE]     = "#8A8A8A"
+
+	font_name 	 = "bold"
+	
+	   engine "pixmap"
+	   {
+            image
+            {
+            function			= BOX
+            recolorable		    = TRUE
+            state			    = PRELIGHT
+            file				= "Menu/menubaritem.svg"
+            border			    = { 1,1,3,3 }
+            stretch			    = TRUE
+            }
+	}
+}
+widget_class "*<GtkMenuBar>.<GtkMenuItem>*"	    style "menubaritem"
+#####################################################################
+style "range" 
+{
+	xthickness	= 3
+	ythickness	= 3
+
+        fg[INSENSITIVE]   	= "#707A85"
+
+    engine "pixmap" 
+    {
+            image {
+            function        = BOX
+            detail          = "trough-upper"
+            file            = "Range/trough-horizontal.svg"
+            border          = { 6,6,6,6 }
+            stretch         = TRUE
+            orientation     = HORIZONTAL
+            }
+
+            image {
+            function        = BOX
+            detail          = "trough-lower"
+            file            = "Range/trough-horizontal-active.svg"
+            border          = { 6,6,6,6 }
+            stretch         = TRUE
+            orientation     = HORIZONTAL
+            }
+
+            image {
+            function        = BOX
+            detail          = "trough-upper"
+            file            = "Range/trough-vertical.svg"
+            border          = { 6,6,6,6 }
+            stretch         = TRUE
+            orientation     = VERTICAL
+            }
+
+            image {
+            function        = BOX
+            detail          = "trough-lower"
+            file            = "Range/trough-vertical-active.svg"
+            border          = { 6,6,6,6 }
+            stretch         = TRUE
+            orientation     = VERTICAL
+            }
+
+
+            image {
+            function        = BOX
+            state           = INSENSITIVE
+            detail          = "trough-upper"
+            file            = "Range/trough-horizontal-insensitive.svg"
+            border          = { 6,6,6,6 }
+            stretch         = TRUE
+            orientation     = HORIZONTAL
+            }
+
+            image {
+            function        = BOX
+            state           = INSENSITIVE
+            detail          = "trough-lower"
+            file            = "Range/trough-horizontal-insensitive.svg"
+            border          = { 6,6,6,6 }
+            stretch         = TRUE
+            orientation     = HORIZONTAL
+            }
+
+            image {
+            function        = BOX
+            state           = INSENSITIVE
+            detail          = "trough-upper"
+            file            = "Range/trough-vertical-insensitive.svg"
+            border          = { 6,6,6,6 }
+            stretch         = TRUE
+            orientation     = VERTICAL
+            }
+
+            image {
+            function        = BOX
+            state           = INSENSITIVE
+            detail          = "trough-lower"
+            file            = "Range/trough-vertical-insensitive.svg"
+            border          = { 6,6,6,6 }
+            stretch         = TRUE
+            orientation     = VERTICAL
+            }
+
+            # Horizontal
+
+            image {
+            function        = SLIDER
+            state           = NORMAL
+            file            = "Assets/null.png"
+            border          = { 0, 0, 0, 0 }
+            stretch         = TRUE
+            overlay_file    = "Range/slider.svg"
+            overlay_stretch = FALSE
+            orientation     = HORIZONTAL
+            }
+
+            image {
+            function        = SLIDER
+            state           = PRELIGHT
+            file            = "Assets/null.png"
+            border          = { 0, 0, 0, 0 }
+            stretch         = TRUE
+            overlay_file    = "Range/slider-prelight.svg"
+            overlay_stretch = FALSE
+            orientation     = HORIZONTAL
+            }
+
+            image {
+            function        = SLIDER
+            state           = ACTIVE
+            file            = "Assets/null.png"
+            border          = { 0, 0, 0, 0 }
+            stretch         = TRUE
+            overlay_file    = "Range/slider-active.svg"
+            overlay_stretch = FALSE
+            orientation     = HORIZONTAL
+            }
+
+            image {
+            function        = SLIDER
+            state           = INSENSITIVE
+            file            = "Assets/null.png"
+            border          = { 0, 0, 0, 0 }
+            stretch         = TRUE
+            overlay_file    = "Range/slider-insensitive.svg"
+            overlay_stretch = FALSE
+            orientation     = HORIZONTAL
+            }
+
+            # Vertical
+
+            image {
+            function        = SLIDER
+            state           = NORMAL
+            file            = "Assets/null.png"
+            border          = { 0, 0, 0, 0 }
+            stretch         = TRUE
+            overlay_file    = "Range/slider.svg"
+            overlay_stretch = FALSE
+            orientation     = VERTICAL
+            }
+
+            image {
+            function        = SLIDER
+            state           = PRELIGHT
+            file            = "Assets/null.png"
+            border          = { 0, 0, 0, 0 }
+            stretch         = TRUE
+            overlay_file    = "Range/slider-prelight.svg"
+            overlay_stretch = FALSE
+            orientation     = VERTICAL
+            }
+
+            image {
+            function        = SLIDER
+            state           = ACTIVE
+            file            = "Assets/null.png"
+            border          = { 0, 0, 0, 0 }
+            stretch         = TRUE
+            overlay_file    = "Range/slider-active.svg"
+            overlay_stretch = FALSE
+            orientation     = VERTICAL
+            }
+
+            image {
+            function        = SLIDER
+            state           = INSENSITIVE
+            file            = "Assets/null.png"
+            border          = { 0, 0, 0, 0 }
+            stretch         = TRUE
+            overlay_file    = "Range/slider-insensitive.svg"
+            overlay_stretch = FALSE
+            orientation     = VERTICAL
+            }
+
+                # Function below removes ugly boxes
+                image {
+                function    = BOX
+                file        = "Assets/null.png"
+                border      = { 0, 0, 0, 0 }
+                stretch     = TRUE
+                }
+    }
+}
+class "GtkRange"                style "range"
+class "GtkScale" 				style "range"
+class "GtkVScale" 				style "range"
+class "GtkHScale" 				style "range"
+widget_class "*GtkScale*"       style "range"
+widget_class "*GtkVScale*"      style "range"
+widget_class "*GtkHScale*"      style "range"
+#####################################################################
+style "progressbar"
+{
+	xthickness = 2
+	ythickness = 2
+
+			# Progressbar:
+            bg[ACTIVE]	    = @base_color			# Trough
+			fg[NORMAL] 		= @text_color
+            bg[SELECTED]	= @selected_bg_color    # Progress-Bar
+			fg[PRELIGHT] 	= @text_color
+			fg[SELECTED] 	= @text_color
+
+    engine "pixmap" 
+    {
+            image
+            {
+            function			= BOX
+            detail				= "trough"
+            file				= "ProgressBar/progressbar_trough.svg"
+            border				= { 3,3,3,3 }
+            stretch				= TRUE
+            orientation			= HORIZONTAL
+            }
+            image
+            {
+            function			= BOX
+            detail				= "bar"
+            file				= "ProgressBar/progressbar.svg"
+            stretch				= TRUE
+            border				= { 2,2,2,2 }
+            orientation			= HORIZONTAL
+            }
+            image
+            {
+            function			= BOX
+            detail				= "trough"
+            file				= "ProgressBar/progressbar_trough.svg"
+            border				= { 3,3,3,3 }
+            stretch				= TRUE
+            orientation			= VERTICAL
+            }
+            image
+            {
+            function			= BOX
+            detail				= "bar"
+            file				= "ProgressBar/progressbar.svg"
+            stretch				= TRUE
+            border				= { 2,2,2,2 }
+            orientation			= VERTICAL
+            }
+    }
+}
+widget_class "*<GtkProgressBar>" 		style "progressbar"
+widget_class "*ProgressBar*" 			style "progressbar"
+class "GtkProgressBar" 					style "progressbar"
+class "GtkBar" 							style "progressbar"
+#####################################################################
+style "entry"
+{
+    xthickness = 3
+	ythickness = 3
+
+			# Normal:
+            base[NORMAL] 		= @bg_color
+            text[NORMAL]    	= @text_color
+
+			# Selected:
+            base[SELECTED]	    = @selected_fg_color
+            text[SELECTED]	    = "black"
+
+			# Active:
+			base[ACTIVE]	    = "black"
+			text[ACTIVE]	    = @text_color
+
+			# insensitive:
+			base[INSENSITIVE]   = @bg_color
+            text[INSENSITIVE] 	= "#8A8A8A"
+
+    engine "pixmap" 
+    {
+        image {
+        function 	= SHADOW
+        detail   	= "entry"
+        state    	= NORMAL
+        shadow   	= IN
+        file     	= "Entry/entry-full.svg"
+        border   	= { 3,3,3,3 }
+        stretch  	= TRUE
+        }
+        image {
+        function 	= SHADOW
+        detail   	= "entry"
+        state    	= INSENSITIVE
+        shadow   	= IN
+        file     	= "Entry/entry-full-insensitive.svg"
+        border   	= { 3,3,3,3 }
+        stretch  	= TRUE
+        }
+        image {
+        function 	= SHADOW
+        detail   	= "entry"
+        state    	= ACTIVE
+        file     	= "Entry/entry-full-active.svg"
+        border   	= { 3,3,3,3 }
+        stretch  	= TRUE
+        }
+        
+            image {
+            function        = FLAT_BOX
+            detail          = "entry_bg"
+            state           = NORMAL
+            overlay_file    = "Entry/bg_entry.png"
+            overlay_border  = { 0,0,0,0 }
+            overlay_stretch = TRUE
+            }
+            image {
+            function        = FLAT_BOX
+            detail          = "entry_bg"
+            state           = INSENSITIVE
+            overlay_file    = "Entry/bg_entry_insensitive.png"
+            overlay_border  = { 0,0,0,0 }
+            overlay_stretch = TRUE
+            }
+            image {
+            function        = FLAT_BOX
+            detail          = "entry_bg"
+            state           = ACTIVE
+            overlay_file    = "Entry/bg_entry_active.png"
+            overlay_border  = { 0,0,0,0 }
+            overlay_stretch = TRUE
+            }
+    }
+}
+class "GtkEntry"                                                    style "entry"
+class "GtkOldEditable"                                              style "entry"
+widget_class "*<GtkNotebook>*<GtkEventBox>*<GtkEntry>"              style "entry"
+widget "*xchat-inputbox"                                            style "entry"
+widget_class "*<GtkComboBoxEntry>*<GtkEntry>"                       		style "entry"
+widget_class "*<GtkNotebook>*<GtkEventBox>*<GtkComboBoxEntry>*<GtkEntry>"   style "entry"
+widget_class "*<GtkNotebook>*<GtkComboBoxEntry>*<GtkEntry>"                 style "entry"
+#####################################################################
+style "button"
+{
+    xthickness	= 3
+    ythickness	= 3
+
+		# button
+        fg[NORMAL] 			= @text_color
+        fg[PRELIGHT] 	    = @text_color
+        fg[ACTIVE]          = @text_color
+		fg[INSENSITIVE]     = "#8A8A8A"
+
+    engine "pixmap"
+    {
+                # Default button
+                image
+                {
+                function		= BOX
+                recolorable		= TRUE
+                detail			= "buttondefault"
+                file			= "Buttons/button-default.svg"
+				border			= { 1,1,1,4 }
+                stretch			= TRUE
+                }
+
+			image 
+			{
+			function		= BOX
+            state    		= NORMAL
+			file			= "Buttons/button-normal-default.svg"		
+			border			= { 2,2,1,4 }
+			stretch			= TRUE
+			}	
+
+			image
+			{
+			function		= BOX
+			state			= PRELIGHT
+			recolorable		= TRUE
+			shadow			= OUT
+			file			= "Buttons/button-prelight.svg"
+			border			= { 2,2,1,4 }
+			stretch			= TRUE
+			}
+
+			image
+			{
+			function		= BOX
+			state			= PRELIGHT
+			recolorable		= TRUE
+			shadow			= IN
+			file			= "Buttons/button-active-prelight.svg"
+			border			= { 2,2,2,4 }
+			stretch			= TRUE
+			}
+
+			image
+			{
+			function		= BOX
+			state			= ACTIVE
+			file			= "Buttons/button-active.svg"
+			border			= { 2,2,2,4 }
+			stretch			= TRUE
+			}
+
+			image 
+			{
+			function		= BOX
+			state			= INSENSITIVE
+			file			= "Buttons/button-insensitive.svg"
+			border			= { 2,2,1,3 }
+			stretch			= TRUE
+			}
+	}
+}
+class "GtkButton"          			        style "button"
+widget_class "*.<GtkButton>.*"				style "button"
+widget_class "*Chrom*Button*"               style "button"
+widget_class "*<GtkFileChooserDefault>*<GtkToolbar>*<GtkButton>"    style "button"
+widget_class "*<GtkInfoBar>*<GtkButton>"                            style "button"
+#####################################################################
+style "PathBarButtons"
+{
+	xthickness = 2
+	ythickness = 2
+	GtkButton::inner-border	= { 4,4,0,0 }
+
+		# button
+        fg[NORMAL] 			= @text_color
+        fg[PRELIGHT] 	    = @text_color
+        fg[ACTIVE]          = @text_color
+		fg[INSENSITIVE]     = "#8A8A8A"
+
+    engine "pixmap"
+    {
+			image 
+			{
+			function		= BOX
+			state    		= NORMAL
+			file			= "Buttons/tree-button-pathbar-normal.svg"		
+			border			= { 1,1,1,3 }
+			stretch			= TRUE
+			}	
+
+			image
+			{
+			function		= BOX
+			state			= PRELIGHT
+			recolorable		= TRUE
+			shadow			= OUT
+			file			= "Buttons/tree-button-prelight.svg"
+			border			= { 1,1,1,4 }
+			stretch			= TRUE
+			}
+
+			image
+			{
+			function		= BOX
+			state			= PRELIGHT
+			recolorable		= TRUE
+			shadow			= IN
+			file			= "Buttons/tree-button-active-prelight.svg"
+			border			= { 1,1,3,4 }
+			stretch			= TRUE
+			}
+
+			image
+			{
+			function		= BOX
+			state			= ACTIVE
+			file			= "Buttons/tree-button-active.svg"
+			border			= { 1,1,3,3 }
+			stretch			= TRUE
+			}
+
+			image 
+			{
+			function		= BOX
+			state			= INSENSITIVE
+			file			= "Buttons/tree-button-insensitive.svg"
+			border			= { 1,1,1,3 }
+			stretch			= TRUE
+			}
+	}
+}
+widget_class "*<GtkFileChooserDefault>*<GtkToggleButton>"    	style "PathBarButtons"
+widget_class "*ThunarLocationButtons*"							style "PathBarButtons"
+#####################################################################
+style "link_button"
+{
+	xthickness = 3
+	ythickness = 3
+
+	# Disable the button effect, leave just the link
+	engine "pixmap" {image {function = BOX}}
+}
+class "GtkLinkButton"                       style "link_button"
+#####################################################################
+style "checkradio"
+{
+        fg[NORMAL] 		= @fg_color
+        fg[PRELIGHT]    = @text-prelight
+        fg[ACTIVE]      = @text_color
+        fg[INSENSITIVE] = "#8A8A8A"
+
+
+        # check/radio
+        base[NORMAL] 		= @selected_fg_color
+        text[NORMAL]        = @selected_bg_color
+        
+        bg[SELECTED]        = @selected_fg_color
+        text[ACTIVE] 		= @selected_bg_color
+        
+        text[PRELIGHT]	    = @text-prelight
+
+	engine "pixmap" 
+	{
+
+	# Check
+		image 
+		{
+		function        		= CHECK
+		recolorable     		= TRUE
+		state 			        = NORMAL
+		shadow          		= OUT
+		overlay_file    		= "Check-Radio/check1.svg"
+		overlay_stretch 		= FALSE
+		}
+		image 
+		{
+		function        		= CHECK
+		recolorable     		= TRUE
+		state 			        = PRELIGHT
+		shadow          		= OUT
+		overlay_file    		= "Check-Radio/check1p.svg"
+		overlay_stretch 		= FALSE
+		}
+		image 
+		{
+		function        		= CHECK
+		recolorable     		= TRUE
+		state 			        = ACTIVE
+		shadow          		= OUT
+		overlay_file    		= "Check-Radio/check1s.svg"
+		overlay_stretch 		= FALSE
+		}
+		image
+		{
+		function        		= CHECK
+		recolorable     		= TRUE
+		state 			        = SELECTED
+		shadow          		= OUT
+		overlay_file    		= "Check-Radio/check1s.svg"
+		overlay_stretch 		= FALSE
+		}
+		image 
+		{
+		function        		= CHECK
+		recolorable     		= TRUE
+		state 			        = INSENSITIVE
+		shadow          		= OUT
+		overlay_file    		= "Check-Radio/check3.svg"
+		overlay_stretch 		= FALSE
+		}
+
+		image 
+		{
+		function        		= CHECK
+		recolorable     		= TRUE
+		state	 		        = NORMAL
+		shadow          		= IN
+		overlay_file    		= "Check-Radio/check2.svg"
+		overlay_stretch	 	    = FALSE
+		}
+		image 
+		{
+		function        		= CHECK
+		recolorable     		= TRUE
+		state 		            = PRELIGHT
+		shadow          		= IN
+		overlay_file    		= "Check-Radio/check2p.svg"
+		overlay_stretch 		= FALSE
+		}
+		image 
+		{
+		function        		= CHECK
+		recolorable     		= TRUE
+		state 		            = ACTIVE
+		shadow          		= IN
+		overlay_file    		= "Check-Radio/check2s.svg"
+		overlay_stretch 		= FALSE
+		}
+		image
+		{
+		function        		= CHECK
+		recolorable     		= TRUE
+		state 		            = SELECTED
+		shadow          		= IN
+		overlay_file    		= "Check-Radio/check2s.svg"
+		overlay_stretch 		= FALSE
+		}
+		image 
+		{
+		function        		= CHECK
+		recolorable     		= TRUE
+		state 		            = INSENSITIVE
+		shadow          		= IN
+		overlay_file			= "Check-Radio/check4.svg"
+		overlay_stretch 		= FALSE
+		}
+
+	# Radio
+		image 
+		{
+		function        		= OPTION
+		state 			        = NORMAL
+		shadow          		= OUT
+		overlay_file    		= "Check-Radio/option1.svg"
+		overlay_stretch 		= FALSE
+		}
+		image 
+		{
+		function        		= OPTION
+		state 			        = PRELIGHT
+		shadow          		= OUT
+		overlay_file    		= "Check-Radio/option1p.svg"
+		overlay_stretch 		= FALSE
+		}
+		image 
+		{
+		function        		= OPTION
+		state 			        = ACTIVE
+		shadow          		= OUT
+		overlay_file    		= "Check-Radio/option1s.svg"
+		overlay_stretch 		= FALSE
+		}
+		image
+		{
+		function        		= OPTION
+		state 			        = SELECTED
+		shadow          		= OUT
+		overlay_file    		= "Check-Radio/option1s.svg"
+		overlay_stretch 		= FALSE
+		}
+		image 
+		{
+		function        		= OPTION
+		state 			        = INSENSITIVE
+		shadow         		    = OUT
+		overlay_file    		= "Check-Radio/option3.svg"
+		overlay_stretch 		= FALSE
+		}
+		image 
+		{
+		function        		= OPTION
+		state 			        = NORMAL
+		shadow          		= IN
+		overlay_file    		= "Check-Radio/option2.svg"
+		overlay_stretch 		= FALSE
+		}
+		image 
+		{
+		function        		= OPTION
+		state			        = PRELIGHT
+		shadow          		= IN
+		overlay_file    		= "Check-Radio/option2p.svg"
+		overlay_stretch 		= FALSE
+		}
+		image 
+		{
+		function        		= OPTION
+		state			        = ACTIVE
+		shadow          		= IN
+		overlay_file    		= "Check-Radio/option2s.svg"
+		overlay_stretch	 	    = FALSE
+		}
+		image
+		{
+		function        		= OPTION
+		state			        = SELECTED
+		shadow          		= IN
+		overlay_file    		= "Check-Radio/option2s.svg"
+		overlay_stretch	 	    = FALSE
+		}
+		image 
+		{
+		function        		= OPTION
+		state 			        = INSENSITIVE
+		shadow          		= IN
+		overlay_file    		= "Check-Radio/option4.svg"
+		overlay_stretch 		= FALSE
+		}
+
+            image 
+            {
+            function        	= FLAT_BOX
+            stretch				= TRUE
+            file            	= "Assets/null.png"
+            border          	= { 0,0,0,0 }
+            }
+    }
+}
+class "GtkCheckButton" 						style "checkradio"
+widget_class "*GtkCheckButton*GtkLabel*" 	style "checkradio"
+class "GtkRadioButton"     					style "checkradio"
+widget_class "*GtkRadioButton*GtkLabel*" 	style "checkradio"
+#####################################################################
+style "expanders"
+{
+        fg[NORMAL] 		= @text_color
+        fg[PRELIGHT]    = @text-prelight
+        fg[ACTIVE]      = @text_color
+        fg[INSENSITIVE] = "#8A8A8A"
+}
+class "GtkExpander" 	style "expanders"
+#####################################################################
+style "spinbutton"
+{
+	xthickness	= 4
+	ythickness 	= 3
+
+	bg[NORMAL] = @bg_color
+
+			# Normal:
+            base[NORMAL] 		= @bg_color
+            text[NORMAL]    	= @text_color
+
+			# Selected:
+            base[SELECTED]	    = @selected_fg_color
+            text[SELECTED]	    = "black"
+
+			# Active:
+			base[ACTIVE]	    = "black"
+			text[ACTIVE]	    = @text_color
+
+			# insensitive:
+			base[INSENSITIVE]   = @bg_color
+            text[INSENSITIVE] 	= "#8A8A8A"
+
+
+			# Progressbar:
+            bg[ACTIVE]	    = @base_color			# Trough
+			fg[NORMAL] 		= @text_color
+            bg[SELECTED]	= @selected_bg_color    # Progress-Bar
+			fg[PRELIGHT] 	= @text_color
+			fg[SELECTED] 	= @text_color
+
+
+	engine "pixmap"
+	{
+		image { function = ARROW }
+
+		image {
+		function 			= BOX
+		state 				= NORMAL
+		detail 				= "spinbutton_up"
+		file				= "SpinButton/spin_up.svg"
+		border				= { 1,1,1,1 }
+		stretch 			= TRUE
+        overlay_file		= "SpinButton/arrow-up.svg"
+		overlay_stretch 	= FALSE
+		}
+
+		image {
+		function 			= BOX
+		state 				= PRELIGHT
+		detail 				= "spinbutton_up"
+		file				= "SpinButton/spin_up.svg"
+		border				= { 1,1,1,1 }
+		stretch 			= TRUE
+        overlay_file		= "SpinButton/arrow-up-prelight.svg"
+		overlay_stretch 	= FALSE
+		}
+
+		image {
+		function 			= BOX
+		state 				= INSENSITIVE
+		detail 				= "spinbutton_up"
+		file				= "SpinButton/spin_up.svg"
+		border				= { 1,1,1,1 }
+		stretch 			= TRUE
+        overlay_file		= "SpinButton/arrow-up-insensitive.svg"
+		overlay_stretch 	= FALSE
+		}
+
+		image {
+		function 			= BOX
+		state 				= ACTIVE
+		detail 				= "spinbutton_up"
+		file				= "SpinButton/spin_up.svg"
+		border				= { 1,1,1,1 }
+		stretch				= TRUE
+        overlay_file		= "SpinButton/arrow-up-active.svg"
+		overlay_stretch		= FALSE
+		}
+
+
+
+		image {
+		function 			= BOX
+		state 				= NORMAL
+		detail 				= "spinbutton_down"
+		file				= "SpinButton/spin_down.svg"
+		border				= { 1,2,1,2 }
+		stretch 			= TRUE
+        overlay_file		= "SpinButton/arrow-down.svg"
+		overlay_stretch 	= FALSE
+		}
+
+		image {
+		function 			= BOX
+		state 				= PRELIGHT
+		detail 				= "spinbutton_down"
+		file				= "SpinButton/spin_down.svg"
+		border				= { 1,2,1,2 }
+		stretch 			= TRUE
+        overlay_file		= "SpinButton/arrow-down-prelight.svg"
+		overlay_stretch 	= FALSE
+		}
+
+		image {
+		function 			= BOX
+		state 				= INSENSITIVE
+		detail 				= "spinbutton_down"
+		file				= "SpinButton/spin_down.svg"
+		border				= { 1,2,1,2 }
+		stretch 			= TRUE
+        overlay_file		= "SpinButton/arrow-down-insensitive.svg"
+		overlay_stretch 	= FALSE
+		}
+
+		image {
+		function 			= BOX
+		state 				= ACTIVE
+		detail 				= "spinbutton_down"
+		file				= "SpinButton/spin_down.svg"
+		border				= { 1,2,1,2 }
+		stretch 			= TRUE
+        overlay_file		= "SpinButton/arrow-down-active.svg"
+		overlay_stretch 	= FALSE
+		}
+
+
+	# SPIN ENTRY ##############
+        image {
+        function 			= SHADOW
+        detail   			= "entry"
+        state    			= NORMAL
+		file				= "SpinButton/spin-entry.svg"
+		border				= { 4,4,3,3 }
+        stretch  			= TRUE
+        }
+        image {
+        function 			= SHADOW
+        detail   			= "entry"
+        state    			= INSENSITIVE
+		file				= "SpinButton/spin-entry-insensitive.svg"
+		border				= { 4,4,3,3 }
+        stretch  			= TRUE
+        }
+        image {
+        function 			= SHADOW
+        detail   			= "entry"
+        state    			= ACTIVE
+		file				= "SpinButton/spin-entry-active.svg"
+		border				= { 4,4,3,3 }
+        stretch  			= TRUE
+        }
+        
+            image {
+            function        = FLAT_BOX
+            detail          = "entry_bg"
+            state           = NORMAL
+            overlay_file    = "Entry/bg_entry.png"
+            overlay_border  = { 0,0,0,0 }
+            overlay_stretch = TRUE
+            }
+            image {
+            function        = FLAT_BOX
+            detail          = "entry_bg"
+            state           = INSENSITIVE
+            overlay_file    = "Entry/bg_entry_insensitive.png"
+            overlay_border  = { 0,0,0,0 }
+            overlay_stretch = TRUE
+            }
+            image {
+            function        = FLAT_BOX
+            detail          = "entry_bg"
+            state           = ACTIVE
+            overlay_file    = "Entry/bg_entry_active.png"
+            overlay_border  = { 0,0,0,0 }
+            overlay_stretch = TRUE
+            }
+    }
+}
+class "GtkSpinButton"   	 						style "spinbutton"
+widget_class "*<GtkSpinButton>" 		            style "spinbutton"
+widget_class "*<GtkSpinButton>*<GtkButton>" 		style "spinbutton"
+widget "GtkWindow.GtkFixed.GtkSpinButton"			style "spinbutton"
+###############################################################################
+style "notebook-tab" 
+{
+	bg[NORMAL] = "black"
+	bg[ACTIVE] = @bg_color
+	fg[NORMAL] = @text_color
+	fg[ACTIVE] = @fg_color
+}
+widget_class "*<GtkNotebook>.<GtkLabel>"                        style "notebook-tab"
+widget_class "*.<GtkNotebook>.<GtkLabel>"						style "notebook-tab"
+widget_class "PlumaWindow*<GtkNotebook>*PlumaTab*<GtkLabel>"	style "notebook-tab"
+widget_class "GeditWindow*<GtkNotebook>*GeditTab*<GtkLabel>"	style "notebook-tab"
+widget_class "*.<GtkNotebook>.<GtkHBox>.<GtkLabel>"				style "notebook-tab"
+widget_class "*.<GtkNotebook>.*<GtkEventBox>*<GtkLabel>" 		style "notebook-tab"
+###############################################################################
+style "notebook"
+{    
+    xthickness	= 3
+    ythickness	= 3
+
+        bg[NORMAL] = @bg_color
+        bg[ACTIVE] = shade(0.90, @bg_color)
+
+	engine "pixmap" 
+	{
+			image 
+			{
+			function			= EXTENSION
+			recolorable			= TRUE
+			state				= ACTIVE
+			file				= "Notebook/tab-normal-top.svg"
+			border				= { 1,1,1,2 }
+			stretch				= TRUE
+			gap_side		    = BOTTOM
+			}
+			image 
+			{
+			function			= EXTENSION
+			recolorable			= TRUE
+			state				= ACTIVE
+			file				= "Notebook/tab-normal-bottom.svg"
+			border				= { 1,1,2,1 }
+			stretch				= TRUE
+			gap_side		    = TOP
+			}
+			image 
+			{
+			function			= EXTENSION
+			recolorable			= TRUE
+			state				= ACTIVE
+			file				= "Notebook/tab-normal-left.svg"
+			border				= { 1,2,1,1 }
+			stretch				= TRUE
+			gap_side		    = RIGHT
+			}
+			image 
+			{
+			function			= EXTENSION
+			recolorable			= TRUE
+			state				= ACTIVE
+			file				= "Notebook/tab-normal-right.svg"
+			border				= { 2,1,1,1 }
+			stretch				= TRUE
+			gap_side		    = LEFT
+			}
+
+
+			image 
+			{
+			function			= EXTENSION
+			recolorable			= TRUE
+			file				= "Notebook/tab-active-top.svg"
+			border				= { 1,1,2,3 }
+			stretch				= TRUE
+			gap_side		    = BOTTOM
+			}
+			image 
+			{
+			function			= EXTENSION
+			recolorable			= TRUE
+			file				= "Notebook/tab-active-bottom.svg"
+			border				= { 1,1,3,2 }
+			stretch				= TRUE
+			gap_side		    = TOP
+			}
+			image 
+			{
+			function			= EXTENSION
+			recolorable			= TRUE
+			file				= "Notebook/tab-active-left.svg"
+			border				= { 2,3,1,1 }
+			stretch				= TRUE
+			gap_side		    = RIGHT
+			}
+			image 
+			{
+			function			= EXTENSION
+			recolorable			= TRUE
+			file				= "Notebook/tab-active-right.svg"
+			border				= { 3,2,1,1 }
+			stretch				= TRUE
+			gap_side		    = LEFT
+			}
+
+# How to draw boxes with a gap on one side (ie the page of a notebook)
+
+		image 
+		{
+		function			= BOX_GAP
+		file				= "Notebook/notebook-top.svg" 
+		border				= { 1,1,2,1 }
+		stretch				= TRUE
+		gap_file   			= "Notebook/border-tab-active.svg"
+		gap_border 			= {0, 0, 1, 0}
+		gap_side			= TOP
+		}
+
+		image 
+		{
+		function			= BOX_GAP
+		file				= "Notebook/notebook-bottom.svg"
+		border				= { 1,1,1,2 }
+		stretch				= TRUE
+		gap_file   			= "Notebook/border-tab-active.svg"
+		gap_border 			= {0, 0, 0, 1}
+		gap_side			= BOTTOM
+		}
+
+		image 
+		{
+		function			= BOX_GAP
+		file				= "Notebook/notebook-left.svg"
+		border				= { 2,1,1,1 }
+		stretch				= TRUE
+		gap_file   			= "Notebook/border-tab-active.svg"
+		gap_border 			= {1, 0, 0, 0}
+		gap_side			= LEFT
+		}
+
+		image 
+		{
+		function			= BOX_GAP
+		file				= "Notebook/notebook-right.svg" 
+		border				= { 1,2,1,1 }
+		stretch				= TRUE
+		gap_file   			= "Notebook/border-tab-active.svg"
+		gap_border 			= {0, 1, 0, 0}
+		gap_side			= RIGHT
+		}
+
+# How to draw the box of a notebook when it isnt attached to a tab
+
+		image 
+		{
+		function			= BOX
+		file				= "Notebook/notebook.svg"
+		border				= { 2,2,2,2 }
+		stretch				= TRUE
+		}
+    }
+}
+class "GtkNotebook"                             style "notebook"
+widget_class "*.GtkNotebook.*GtkEventBox"       style "notebook"
+widget_class "*.GtkNotebook.*GtkViewport"       style "notebook"
+widget_class "*<GtkNotebook>*<GtkDrawingArea>"  style "notebook"
+widget_class "*<GtkNotebook>*<GtkLayout>"       style "notebook"
+widget "*GimpNotebook.*"                        style "notebook"
+###############################################################################
+style "notebook_viewport"
+{
+        bg[NORMAL]   = @bg_color
+}
+widget_class "*<GtkNotebook>*<GtkScrolledWindow>*<GtkViewport>"     style "notebook_viewport"
+###############################################################################
+style "notebook_eventbox" {		#Fix GVim - Streamtuner ... >>tabs<<
+
+	bg[NORMAL] = "black"
+	bg[ACTIVE] = @bg_color
+	fg[NORMAL] = @text_color
+	fg[ACTIVE] = @fg_color
+}
+widget_class "*<GtkNotebook>*<GtkEventBox>"                         style "notebook_eventbox"
+###############################################################################
+style "notebook-close" 
+{
+    stock["gtk-close"] = {{ "Assets/close.svg", *, *, * }}
+}
+widget_class "*<GtkNotebook>*"					style "notebook-close"
+###############################################################################
+style "notebook_button" 
+{
+    xthickness	= 3
+    ythickness	= 3
+
+		# button
+        fg[NORMAL] 			= @text_color
+        fg[PRELIGHT] 	    = @text_color
+        fg[ACTIVE]          = @text_color
+		fg[INSENSITIVE]     = "#707A85"
+
+    engine "pixmap"
+    {
+			image 
+			{
+			function		= BOX
+            state    		= NORMAL
+			file			= "Buttons/notebook-button-normal.svg"		
+			border			= { 3,3,3,3 }
+			stretch			= TRUE
+			}	
+
+			image
+			{
+			function		= BOX
+			state			= PRELIGHT
+			recolorable		= TRUE
+			shadow			= OUT
+			file			= "Buttons/notebook-button-prelight.svg"
+			border			= { 4,4,4,4 }
+			stretch			= TRUE
+			}
+
+			image
+			{
+			function		= BOX
+			state			= PRELIGHT
+			recolorable		= TRUE
+			shadow			= IN
+			file			= "Buttons/notebook-button-active-prelight.svg"
+			border			= { 4,4,4,4 }
+			stretch			= TRUE
+			}
+
+			image
+			{
+			function		= BOX
+			state			= ACTIVE
+			file			= "Buttons/notebook-button-active.svg"
+			border			= { 3,3,3,3 }
+			stretch			= TRUE
+			}
+
+			image 
+			{
+			function		= BOX
+			state			= INSENSITIVE
+			file			= "Buttons/notebook-button-insensitive.svg"
+			border			= { 3,3,3,3 }
+			stretch			= TRUE
+			}
+	}
+}
+widget_class "*<GtkNotebook>*<GtkButton>"		style "notebook_button"
+###############################################################################
+style "notebook_entry"
+{
+	xthickness = 3
+	ythickness = 3
+
+	engine "pixmap" {
+
+        image {
+        function 	= SHADOW
+        detail   	= "entry"
+        state    	= NORMAL
+        shadow   	= IN
+        file     	= "Entry/entry-full.svg"
+        border   	= { 3,3,3,3 }
+        stretch  	= TRUE
+        }
+        image {
+        function 	= SHADOW
+        detail   	= "entry"
+        state    	= INSENSITIVE
+        shadow   	= IN
+        file     	= "Entry/entry-full-insensitive.svg"
+        border   	= { 3,3,3,3 }
+        stretch  	= TRUE
+        }
+        image {
+        function 	= SHADOW
+        detail   	= "entry"
+        state    	= ACTIVE
+        file     	= "Entry/entry-full-active.svg"
+        border   	= { 3,3,3,3 }
+        stretch  	= TRUE
+        }
+	}
+}
+widget_class "*<GtkNotebook>*<GtkEntry>" 					 style "notebook_entry"
+#####################################################################
+style "notebook_spinbutton"
+{
+	xthickness	= 4
+	ythickness 	= 3
+
+	bg[NORMAL] = @bg_color
+
+			# Normal:
+            base[NORMAL] 		= @bg_color
+            text[NORMAL]    	= @text_color
+
+			# Selected:
+            base[SELECTED]	    = @selected_fg_color
+            text[SELECTED]	    = "black"
+
+			# Active:
+			base[ACTIVE]	    = "black"
+			text[ACTIVE]	    = @text_color
+
+			# insensitive:
+			base[INSENSITIVE]   = @bg_color
+            text[INSENSITIVE] 	= "#8A8A8A"
+
+			# Progressbar:
+            bg[ACTIVE]	    = @base_color			# Trough
+			fg[NORMAL] 		= @text_color
+            bg[SELECTED]	= @selected_bg_color    # Progress-Bar
+			fg[PRELIGHT] 	= @text_color
+			fg[SELECTED] 	= @text_color
+
+	engine "pixmap"
+	{
+		image { function = ARROW }
+
+		image {
+		function 			= BOX
+		state 				= NORMAL
+		detail 				= "spinbutton_up"
+		file				= "SpinButton/spin_up.svg"
+		border				= { 1,1,1,1 }
+		stretch 			= TRUE
+        overlay_file		= "SpinButton/arrow-up.svg"
+		overlay_stretch 	= FALSE
+		}
+
+		image {
+		function 			= BOX
+		state 				= PRELIGHT
+		detail 				= "spinbutton_up"
+		file				= "SpinButton/spin_up.svg"
+		border				= { 1,1,1,1 }
+		stretch 			= TRUE
+        overlay_file		= "SpinButton/arrow-up-prelight.svg"
+		overlay_stretch 	= FALSE
+		}
+
+		image {
+		function 			= BOX
+		state 				= INSENSITIVE
+		detail 				= "spinbutton_up"
+		file				= "SpinButton/spin_up.svg"
+		border				= { 1,1,1,1 }
+		stretch 			= TRUE
+        overlay_file		= "SpinButton/arrow-up-insensitive.svg"
+		overlay_stretch 	= FALSE
+		}
+
+		image {
+		function 			= BOX
+		state 				= ACTIVE
+		detail 				= "spinbutton_up"
+		file				= "SpinButton/spin_up.svg"
+		border				= { 1,1,1,1 }
+		stretch				= TRUE
+        overlay_file		= "SpinButton/arrow-up-active.svg"
+		overlay_stretch		= FALSE
+		}
+
+
+
+		image {
+		function 			= BOX
+		state 				= NORMAL
+		detail 				= "spinbutton_down"
+		file				= "SpinButton/spin_down.svg"
+		border				= { 1,2,1,2 }
+		stretch 			= TRUE
+        overlay_file		= "SpinButton/arrow-down.svg"
+		overlay_stretch 	= FALSE
+		}
+
+		image {
+		function 			= BOX
+		state 				= PRELIGHT
+		detail 				= "spinbutton_down"
+		file				= "SpinButton/spin_down.svg"
+		border				= { 1,2,1,2 }
+		stretch 			= TRUE
+        overlay_file		= "SpinButton/arrow-down-prelight.svg"
+		overlay_stretch 	= FALSE
+		}
+
+		image {
+		function 			= BOX
+		state 				= INSENSITIVE
+		detail 				= "spinbutton_down"
+		file				= "SpinButton/spin_down.svg"
+		border				= { 1,2,1,2 }
+		stretch 			= TRUE
+        overlay_file		= "SpinButton/arrow-down-insensitive.svg"
+		overlay_stretch 	= FALSE
+		}
+
+		image {
+		function 			= BOX
+		state 				= ACTIVE
+		detail 				= "spinbutton_down"
+		file				= "SpinButton/spin_down.svg"
+		border				= { 1,2,1,2 }
+		stretch 			= TRUE
+        overlay_file		= "SpinButton/arrow-down-active.svg"
+		overlay_stretch 	= FALSE
+		}
+
+
+	# SPIN ENTRY ##############
+        image {
+        function 			= SHADOW
+        detail   			= "entry"
+        state    			= NORMAL
+        shadow   			= IN
+		file				= "SpinButton/spin-entry.svg"
+		border				= { 4,4,3,3 }
+        stretch  			= TRUE
+        }
+        image {
+        function 			= SHADOW
+        detail   			= "entry"
+        state    			= INSENSITIVE
+		file				= "SpinButton/spin-entry-insensitive.svg"
+		border				= { 4,4,3,3 }
+        stretch  			= TRUE
+        }
+        image {
+        function 			= SHADOW
+        detail   			= "entry"
+        state    			= ACTIVE
+		file				= "SpinButton/spin-entry-active.svg"
+		border				= { 4,4,3,3 }
+        stretch  			= TRUE
+        }
+        
+            image {
+            function        = FLAT_BOX
+            detail          = "entry_bg"
+            state           = NORMAL
+            overlay_file    = "Entry/bg_entry.png"
+            overlay_border  = { 0,0,0,0 }
+            overlay_stretch = TRUE
+            }
+            image {
+            function        = FLAT_BOX
+            detail          = "entry_bg"
+            state           = INSENSITIVE
+            overlay_file    = "Entry/bg_entry_insensitive.png"
+            overlay_border  = { 0,0,0,0 }
+            overlay_stretch = TRUE
+            }
+            image {
+            function        = FLAT_BOX
+            detail          = "entry_bg"
+            state           = ACTIVE
+            overlay_file    = "Entry/bg_entry_active.png"
+            overlay_border  = { 0,0,0,0 }
+            overlay_stretch = TRUE
+            }
+    }
+}
+widget_class "*<GtkNotebook>*<GtkSpinButton>*"		style "notebook_spinbutton"
+###############################################################################
+style "combobox"
+{
+    xthickness = 3
+	ythickness = 3
+	GtkButton::inner-border	= { 6,6,3,3 }
+
+	text[NORMAL] 		= @text_color
+	text[PRELIGHT] 		= @text-prelight
+	text[ACTIVE] 		= @text_color
+	text[INSENSITIVE]   = "#949494"
+}
+widget_class "*<GtkComboBox>" 						style "combobox"
+###############################################################################
+style "combobox_button"
+{
+    xthickness = 3
+	ythickness = 3
+	GtkButton::inner-border	= { 2,2,3,3 }
+
+		# combo
+        text[NORMAL] 		= @text_color
+        text[PRELIGHT] 	    = @text_color
+        text[ACTIVE]        = @text_color
+		text[INSENSITIVE]   = "#A8A8A8"
+
+    engine "pixmap"
+    {
+			image 
+			{
+			function		= BOX
+			state    		= NORMAL
+			file			= "Buttons/combo-button.svg"		
+			border			= { 1,2,1,3 }
+			stretch			= TRUE
+			}	
+
+			image
+			{
+			function		= BOX
+			state			= PRELIGHT
+			file			= "Buttons/combo-button-prelight.svg"		
+			border			= { 1,2,1,4 }
+			stretch			= TRUE
+			}
+
+			image
+			{
+			function		= BOX
+			state			= ACTIVE
+			file			= "Buttons/combo-button-active.svg"		
+			border			= { 1,2,2,3 }
+			stretch			= TRUE
+			}
+
+			image 
+			{
+			function		= BOX
+			state			= INSENSITIVE
+			file			= "Buttons/combo-button-insensitive.svg"		
+			border			= { 1,2,1,3 }
+			stretch			= TRUE
+			}
+	}
+}
+widget_class "*<GtkComboBox>*<GtkButton>*" 			style:highest "combobox_button"
+widget_class "*<GtkComboBoxEntry>*<GtkButton>*" 	style:highest "combobox_button"
+widget_class "*<GtkComboBox>*<GtkCellView>*"   		style "combobox_button"
+#####################################################################
+style "combobox_separator"
+{
+    xthickness = 0
+}
+widget_class "*<GtkComboBox>*<GtkSeparator>" 		style "combobox_separator"
+#####################################################################
+style "optionmenu"
+{
+    xthickness	= 3
+    ythickness	= 3
+	GtkButton::inner-border	= { 6,6,3,3 }
+
+		# button
+        fg[NORMAL] 			= @text_color
+        fg[PRELIGHT] 	    = @text_color
+        fg[ACTIVE]          = @text_color
+		fg[INSENSITIVE]     = "#8A8A8A"
+
+    engine "pixmap"
+    {
+			image 
+			{
+			function		= BOX
+            state    		= NORMAL
+			file			= "Buttons/button-normal.svg"		
+			border			= { 2,2,1,3 }
+			stretch			= TRUE
+			}	
+
+			image
+			{
+			function		= BOX
+			state			= PRELIGHT
+			recolorable		= TRUE
+			file			= "Buttons/button-prelight.svg"
+			border			= { 2,2,1,4 }
+			stretch			= TRUE
+			}
+
+			image
+			{
+			function		= BOX
+			state			= ACTIVE
+			file			= "Buttons/button-active.svg"
+			border			= { 2,2,2,4 }
+			stretch			= TRUE
+			}
+
+			image 
+			{
+			function		= BOX
+			state			= INSENSITIVE
+			file			= "Buttons/button-insensitive.svg"
+			border			= { 2,2,1,3 }
+			stretch			= TRUE
+			}
+	}
+}
+widget_class "*<GtkOptionMenu>*"        style "optionmenu"
+#####################################################################
+style "fontbox"
+{
+    bg[NORMAL]      = @bg_color
+}
+class "*Font*"                                  style:highest "fontbox"
+#####################################################################
+style "notebook_combobox"
+{
+    xthickness = 3
+	ythickness = 3
+
+		# combo
+        text[NORMAL] 		= @text_color
+        text[PRELIGHT] 	    = @text_color
+        text[ACTIVE]        = @text_color
+		text[INSENSITIVE]   = "#A8A8A8"
+
+    engine "pixmap"
+    {
+			image 
+			{
+			function		= BOX
+			state    		= NORMAL
+			file			= "Buttons/combo-button.svg"		
+			border			= { 1,2,1,3 }
+			stretch			= TRUE
+			}	
+
+			image
+			{
+			function		= BOX
+			state			= PRELIGHT
+			file			= "Buttons/combo-button-prelight.svg"		
+			border			= { 1,2,1,4 }
+			stretch			= TRUE
+			}
+
+			image
+			{
+			function		= BOX
+			state			= ACTIVE
+			file			= "Buttons/combo-button-active.svg"		
+			border			= { 1,2,2,3 }
+			stretch			= TRUE
+			}
+
+			image 
+			{
+			function		= BOX
+			state			= INSENSITIVE
+			file			= "Buttons/combo-button-insensitive.svg"		
+			border			= { 1,2,1,3 }
+			stretch			= TRUE
+			}
+	}
+}
+widget_class "*<GtkNotebook>*<GtkComboBox>"          	style "notebook_combobox"
+widget_class "*<GtkNotebook>*<GtkComboBoxEntry>"     	style "notebook_combobox"
+widget_class "*<GtkNotebook>*<GtkComboBox>*<GtkButton>" 	style:highest "notebook_combobox"
+#####################################################################
+style "toolbar"
+{
+	GtkPaned::handle_size = 5
+	
+	bg[NORMAL]          = @bg_color
+
+	engine "pixmap" 
+    {
+        image 
+        {
+        function    = BOX
+        file	    = "Assets/bg.svg"
+        border      = { 0,0,0,0 }
+        stretch	    = TRUE
+        }
+
+		# Handles
+			image
+			{
+			function			= HANDLE
+			state               = NORMAL
+			recolorable			= TRUE
+			file				= "Assets/bg.svg"
+			overlay_file		= "Assets/handle-toolbar-h.svg"
+			overlay_border		= {1,1,1,0 }
+			overlay_stretch		= FALSE
+			orientation			= HORIZONTAL
+			}
+
+			image
+			{
+			function			= HANDLE
+			state               = PRELIGHT
+			recolorable			= TRUE
+			file				= "Assets/bg.svg"
+			overlay_file		= "Assets/handle-toolbar-h-active.svg"
+			overlay_border		= {1,1,1,0 }
+			overlay_stretch		= FALSE
+			orientation			= HORIZONTAL
+			}
+
+			image
+			{
+			function			= HANDLE
+			state               = ACTIVE
+			recolorable			= TRUE
+			file				= "Assets/bg.svg"
+			overlay_file		= "Assets/handle-toolbar-h-active.svg"
+			overlay_border		= {1,1,1,0 }
+			overlay_stretch		= FALSE
+			orientation			= HORIZONTAL
+			}
+
+			image
+			{
+			function			= HANDLE
+			state               = INSENSITIVE
+			recolorable			= TRUE
+			file				= "Assets/bg.svg"
+			overlay_file		= "Assets/handle-toolbar-h.svg"
+			overlay_border		= {1,1,1,0 }
+			overlay_stretch		= FALSE
+			orientation			= HORIZONTAL
+			}
+
+
+			image
+			{
+			function			= HANDLE
+			state               = NORMAL
+			recolorable			= TRUE
+			file				= "Assets/bg.svg"
+			overlay_file		= "Assets/handle-toolbar-v.svg"
+			overlay_border		= {0,1,1,1 }
+			overlay_stretch		= FALSE
+			orientation			= VERTICAL
+			}
+			
+			image
+			{
+			function			= HANDLE
+			state               = PRELIGHT
+			recolorable			= TRUE
+			file				= "Assets/bg.svg"
+			overlay_file		= "Assets/handle-toolbar-v-active.svg"
+			overlay_border		= {0,1,1,1 }
+			overlay_stretch		= FALSE
+			orientation			= VERTICAL
+			}
+
+			image
+			{
+			function			= HANDLE
+			state               = ACTIVE
+			recolorable			= TRUE
+			file				= "Assets/bg.svg"
+			overlay_file		= "Assets/handle-toolbar-v-active.svg"
+			overlay_border		= {0,1,1,1 }
+			overlay_stretch		= FALSE
+			orientation			= VERTICAL
+			}
+
+			image
+			{
+			function			= HANDLE
+			state               = INSENSITIVE
+			recolorable			= TRUE
+			file				= "Assets/bg.svg"
+			overlay_file		= "Assets/handle-toolbar-v.svg"
+			overlay_border		= {0,1,1,1 }
+			overlay_stretch		= FALSE
+			orientation			= VERTICAL
+			}
+	}
+}
+class "*Toolbar" 			                            style "toolbar"
+class "GtkToolbar"                                      style "toolbar"
+class "*HandleBox"                                      style "toolbar"
+widget_class "*Toolbar"                                 style "toolbar"
+widget_class "*HandleBox"                               style "toolbar"
+widget_class "*<GtkFileChooserDefault>*<GtkToolbar>" 	style "toolbar"
+#####################################################################
+style "toolbar-separator"
+{
+    xthickness	= 0
+    ythickness	= 0
+
+    bg[NORMAL]	= @bg_color
+
+	engine "pixmap"
+	{
+            image
+            {
+            function		    = VLINE
+            recolorable		    = TRUE
+            file	            = "Assets/bg.svg"
+            border			    = { 0,0,0,0 }
+            stretch			    = TRUE
+            }
+            image
+            {
+            function			= HLINE
+            recolorable		    = TRUE
+            file	            = "Assets/bg.svg"
+            border			    = { 0,0,0,0 }
+            stretch			    = TRUE
+            }
+	}
+}
+widget_class "*GtkSeparatorToolItem"				style "toolbar-separator"
+#####################################################################
+style "inline_toolbar" 
+{
+    xthickness	= 1
+    ythickness	= 1
+
+	bg[NORMAL]        = @bg_color
+
+	engine "pixmap" 
+    {
+            image 
+            {
+            function    = BOX
+			file		= "Assets/frame_1.svg"
+			border		= { 3,3,3,3 }
+            stretch	    = TRUE
+            }
+	}
+}
+widget_class "*<GtkFileChooserDefault>*<GtkToolbar>" style "inline_toolbar"
+#####################################################################
+style "toolbuttons"
+{
+    xthickness	= 3
+    ythickness	= 3
+	GtkButton::inner-border	= { 4,4,3,3 }
+
+		# button
+        fg[NORMAL] 			= @text_color
+        fg[PRELIGHT] 	    = @text_color
+        fg[ACTIVE]          = @text_color
+		fg[INSENSITIVE]     = "#8A8A8A"
+
+    engine "pixmap"
+    {
+			image 
+			{
+			function		= BOX
+            state    		= NORMAL
+			file			= "Buttons/toolbar-button-normal.svg"		
+			border			= { 1,1,1,1 }
+			stretch			= TRUE
+			}	
+
+			image
+			{
+			function		= BOX
+			state			= PRELIGHT
+			recolorable		= TRUE
+			shadow			= OUT
+			file			= "Buttons/button-prelight.svg"
+			border			= { 2,2,1,4 }
+			stretch			= TRUE
+			}
+
+			image
+			{
+			function		= BOX
+			state			= PRELIGHT
+			recolorable		= TRUE
+			shadow			= IN
+			file			= "Buttons/button-active-prelight.svg"
+			border			= { 2,2,2,4 }
+			stretch			= TRUE
+			}
+
+			image
+			{
+			function		= BOX
+			state			= ACTIVE
+			file			= "Buttons/button-active.svg"
+			border			= { 2,2,2,4 }
+			stretch			= TRUE
+			}
+
+			image 
+			{
+			function		= BOX
+			state			= INSENSITIVE
+			file			= "Buttons/toolbar-button-insensitive.svg"
+			border			= { 1,1,1,1 }
+			stretch			= TRUE
+			}
+	}
+}
+widget_class "*<GtkToolbar>*<GtkButton>*"       style "toolbuttons"
+widget_class "*Chrom*Button*"                   style "toolbuttons" #style "chromium-toolbar-button"
+#####################################################################
+style "toolbar_combobox"
+{
+    xthickness = 3
+	ythickness = 3
+	GtkWidget::focus_padding = 5
+
+		# combo
+        text[NORMAL] 		= @text_color
+        text[PRELIGHT] 	    = @text_color
+        text[ACTIVE]        = @text_color
+		text[INSENSITIVE]   = "#A8A8A8"
+
+    engine "pixmap"
+    {
+			image 
+			{
+			function		= BOX
+            state    		= NORMAL
+			file			= "Buttons/button-normal.svg"		
+			border			= { 2,2,1,3 }
+			stretch			= TRUE
+			}	
+
+			image
+			{
+			function		= BOX
+			state			= PRELIGHT
+			file			= "Buttons/button-prelight.svg"
+			border			= { 2,2,1,4 }
+			stretch			= TRUE
+			}
+
+			image
+			{
+			function		= BOX
+			state			= ACTIVE
+			file			= "Buttons/button-active.svg"
+			border			= { 2,2,2,4 }
+			stretch			= TRUE
+			}
+
+			image 
+			{
+			function		= BOX
+			state			= INSENSITIVE
+			file			= "Buttons/button-insensitive.svg"
+			border			= { 2,2,1,3 }
+			stretch			= TRUE
+			}
+	}
+}
+widget_class "*<GtkToolbar>*<GtkComboBox>"          	style "toolbar_combobox"
+widget_class "*<GtkToolbar>*<GtkComboBoxEntry>"     	style "toolbar_combobox"
+widget_class "*<GtkToolbar>*<GtkComboBox>*<GtkButton>" 	style:highest "toolbar_combobox"
+###############################################################################
+style "toolbar_spinbutton"
+{
+	xthickness	= 4
+	ythickness 	= 3
+	GtkSpinButton::inner-border = { 8,8,6,6 }
+	GtkEntry::inner-border 		= { 8,8,6,6 }
+
+			# Normal:
+            base[NORMAL] 		= @bg_color
+            text[NORMAL]    	= @text_color
+
+			# Selected:
+            base[SELECTED]	    = @selected_fg_color
+            text[SELECTED]	    = "black"
+
+			# Active:
+			base[ACTIVE]	    = "black"
+			text[ACTIVE]	    = @text_color
+
+			# insensitive:
+			base[INSENSITIVE]   = @bg_color
+            text[INSENSITIVE] 	= "#8A8A8A"
+
+			# Progressbar:
+            bg[ACTIVE]	    = @base_color			# Trough
+			fg[NORMAL] 		= @text_color
+            bg[SELECTED]	= @selected_bg_color    # Progress-Bar
+			fg[PRELIGHT] 	= @text_color
+			fg[SELECTED] 	= @text_color
+
+	engine "pixmap"
+	{
+		image { function = ARROW }
+
+		image {
+		function 			= BOX
+		state 				= NORMAL
+		detail 				= "spinbutton_up"
+		file				= "SpinButton/spin_up.svg"
+		border				= { 1,1,1,1 }
+		stretch 			= TRUE
+        overlay_file		= "SpinButton/arrow-up.svg"
+		overlay_stretch 	= FALSE
+		}
+
+		image {
+		function 			= BOX
+		state 				= PRELIGHT
+		detail 				= "spinbutton_up"
+		file				= "SpinButton/spin_up.svg"
+		border				= { 1,1,1,1 }
+		stretch 			= TRUE
+        overlay_file		= "SpinButton/arrow-up-prelight.svg"
+		overlay_stretch 	= FALSE
+		}
+
+		image {
+		function 			= BOX
+		state 				= INSENSITIVE
+		detail 				= "spinbutton_up"
+		file				= "SpinButton/spin_up.svg"
+		border				= { 1,1,1,1 }
+		stretch 			= TRUE
+        overlay_file		= "SpinButton/arrow-up-insensitive.svg"
+		overlay_stretch 	= FALSE
+		}
+
+		image {
+		function 			= BOX
+		state 				= ACTIVE
+		detail 				= "spinbutton_up"
+		file				= "SpinButton/spin_up.svg"
+		border				= { 1,1,1,1 }
+		stretch				= TRUE
+        overlay_file		= "SpinButton/arrow-up-active.svg"
+		overlay_stretch		= FALSE
+		}
+
+
+
+		image {
+		function 			= BOX
+		state 				= NORMAL
+		detail 				= "spinbutton_down"
+		file				= "SpinButton/spin_down.svg"
+		border				= { 1,2,1,2 }
+		stretch 			= TRUE
+        overlay_file		= "SpinButton/arrow-down.svg"
+		overlay_stretch 	= FALSE
+		}
+
+		image {
+		function 			= BOX
+		state 				= PRELIGHT
+		detail 				= "spinbutton_down"
+		file				= "SpinButton/spin_down.svg"
+		border				= { 1,2,1,2 }
+		stretch 			= TRUE
+        overlay_file		= "SpinButton/arrow-down-prelight.svg"
+		overlay_stretch 	= FALSE
+		}
+
+		image {
+		function 			= BOX
+		state 				= INSENSITIVE
+		detail 				= "spinbutton_down"
+		file				= "SpinButton/spin_down.svg"
+		border				= { 1,2,1,2 }
+		stretch 			= TRUE
+        overlay_file		= "SpinButton/arrow-down-insensitive.svg"
+		overlay_stretch 	= FALSE
+		}
+
+		image {
+		function 			= BOX
+		state 				= ACTIVE
+		detail 				= "spinbutton_down"
+		file				= "SpinButton/spin_down.svg"
+		border				= { 1,2,1,2 }
+		stretch 			= TRUE
+        overlay_file		= "SpinButton/arrow-down-active.svg"
+		overlay_stretch 	= FALSE
+		}
+
+
+	# SPIN ENTRY ##############
+        image {
+        function 			= SHADOW
+        detail   			= "entry"
+        state    			= NORMAL
+        shadow   			= IN
+		file				= "SpinButton/spin-entry.svg"
+		border				= { 4,4,3,3 }
+        stretch  			= TRUE
+        }
+        image {
+        function 			= SHADOW
+        detail   			= "entry"
+        state    			= INSENSITIVE
+		file				= "SpinButton/spin-entry-insensitive.svg"
+		border				= { 4,4,3,3 }
+        stretch  			= TRUE
+        }
+        image {
+        function 			= SHADOW
+        detail   			= "entry"
+        state    			= ACTIVE
+		file				= "SpinButton/spin-entry-active.svg"
+		border				= { 4,4,3,3 }
+        stretch  			= TRUE
+        }
+        
+            image {
+            function        = FLAT_BOX
+            detail          = "entry_bg"
+            state           = NORMAL
+            overlay_file    = "Entry/bg_entry.png"
+            overlay_border  = { 0,0,0,0 }
+            overlay_stretch = TRUE
+            }
+            image {
+            function        = FLAT_BOX
+            detail          = "entry_bg"
+            state           = INSENSITIVE
+            overlay_file    = "Entry/bg_entry_insensitive.png"
+            overlay_border  = { 0,0,0,0 }
+            overlay_stretch = TRUE
+            }
+            image {
+            function        = FLAT_BOX
+            detail          = "entry_bg"
+            state           = ACTIVE
+            overlay_file    = "Entry/bg_entry_active.png"
+            overlay_border  = { 0,0,0,0 }
+            overlay_stretch = TRUE
+            }
+    }
+}
+widget_class "*<GtkToolbar>*<GtkSpinButton>" 		style "toolbar_spinbutton"
+###############################################################################
+style "standalone_entry"
+{
+    xthickness = 3
+	ythickness = 3
+
+	engine "pixmap" {
+
+		image {
+		function        	= FLAT_BOX
+		detail          	= "entry_bg"
+		state           	= NORMAL
+		file    			= "Entry/bg_entry.png"
+		border  			= { 0,0,0,0 }
+		stretch 			= TRUE
+		}
+		image {
+		function        	= FLAT_BOX
+		detail          	= "entry_bg"
+		state           	= ACTIVE
+		file    			= "Entry/bg_entry.png"
+		border  			= { 0,0,0,0 }
+		stretch 			= TRUE
+		}
+
+
+			image {
+			function 		= SHADOW
+			detail   		= "entry"
+			state    		= NORMAL
+			shadow   		= IN
+			file     		= "Entry/entry-full.svg"
+			border   		= { 3,3,3,3 }
+			stretch  		= TRUE
+			}
+			image {
+			function 		= SHADOW
+			detail   		= "entry"
+			state    		= ACTIVE
+			file     		= "Entry/entry-full-active.svg"
+			border   		= { 3,3,3,3 }
+			stretch  		= TRUE
+			}
+	}
+}
+widget_class "<GtkEntry>"                                    style "standalone_entry"
+#####################################################################
+style "treeview"
+{
+        base[NORMAL]    	= @base_color
+        text[NORMAL]    	= @fg_color
+
+        base[ACTIVE]        = @selected_bg_color
+        text[ACTIVE] 		= shade(0.98,@selected_fg_color)
+        
+        base[SELECTED]      = @selected_bg_color
+        text[SELECTED] 		= shade(0.98,@selected_fg_color)
+
+        base[INSENSITIVE]   = @base_color
+        text[INSENSITIVE]   = "#707A85"
+
+    engine "pixmap"
+    {
+        image 
+        {
+        function    = FLAT_BOX
+		state 		= NORMAL
+        file	    = "Assets/base.svg"
+        border      = { 0,0,0,0 }
+        stretch	    = TRUE
+        }
+        image 
+        {
+        function    = FLAT_BOX
+		state 		= INSENSITIVE
+        file	    = "Assets/base.svg"
+        border      = { 0,0,0,0 }
+        stretch	    = TRUE
+        }
+
+	# Check
+		image 
+		{
+		function        		= CHECK
+		recolorable     		= TRUE
+		state 			        = NORMAL
+		shadow          		= OUT
+		overlay_file    		= "Check-Radio/check1.svg"
+		overlay_stretch 		= FALSE
+		}
+		image 
+		{
+		function        		= CHECK
+		recolorable     		= TRUE
+		state 			        = PRELIGHT
+		shadow          		= OUT
+		overlay_file    		= "Check-Radio/check1p.svg"
+		overlay_stretch 		= FALSE
+		}
+		image 
+		{
+		function        		= CHECK
+		recolorable     		= TRUE
+		state 			        = ACTIVE
+		shadow          		= OUT
+		overlay_file    		= "Check-Radio/check1s.svg"
+		overlay_stretch 		= FALSE
+		}
+		image
+		{
+		function        		= CHECK
+		recolorable     		= TRUE
+		state 			        = SELECTED
+		shadow          		= OUT
+		overlay_file    		= "Check-Radio/check1s.svg"
+		overlay_stretch 		= FALSE
+		}
+		image 
+		{
+		function        		= CHECK
+		recolorable     		= TRUE
+		state 			        = INSENSITIVE
+		shadow          		= OUT
+		overlay_file    		= "Check-Radio/check3.svg"
+		overlay_stretch 		= FALSE
+		}
+
+		image 
+		{
+		function        		= CHECK
+		recolorable     		= TRUE
+		state	 		        = NORMAL
+		shadow          		= IN
+		overlay_file    		= "Check-Radio/check2.svg"
+		overlay_stretch	 	    = FALSE
+		}
+		image 
+		{
+		function        		= CHECK
+		recolorable     		= TRUE
+		state 		            = PRELIGHT
+		shadow          		= IN
+		overlay_file    		= "Check-Radio/check2p.svg"
+		overlay_stretch 		= FALSE
+		}
+		image 
+		{
+		function        		= CHECK
+		recolorable     		= TRUE
+		state 		            = ACTIVE
+		shadow          		= IN
+		overlay_file    		= "Check-Radio/check2s.svg"
+		overlay_stretch 		= FALSE
+		}
+		image
+		{
+		function        		= CHECK
+		recolorable     		= TRUE
+		state 		            = SELECTED
+		shadow          		= IN
+		overlay_file    		= "Check-Radio/check2s.svg"
+		overlay_stretch 		= FALSE
+		}
+		image 
+		{
+		function        		= CHECK
+		recolorable     		= TRUE
+		state 		            = INSENSITIVE
+		shadow          		= IN
+		overlay_file			= "Check-Radio/check4.svg"
+		overlay_stretch 		= FALSE
+		}
+
+	# Radio
+		image 
+		{
+		function        		= OPTION
+		state 			        = NORMAL
+		shadow          		= OUT
+		overlay_file    		= "Check-Radio/option1.svg"
+		overlay_stretch 		= FALSE
+		}
+		image 
+		{
+		function        		= OPTION
+		state 			        = PRELIGHT
+		shadow          		= OUT
+		overlay_file    		= "Check-Radio/option1p.svg"
+		overlay_stretch 		= FALSE
+		}
+		image 
+		{
+		function        		= OPTION
+		state 			        = ACTIVE
+		shadow          		= OUT
+		overlay_file    		= "Check-Radio/option1s.svg"
+		overlay_stretch 		= FALSE
+		}
+		image
+		{
+		function        		= OPTION
+		state 			        = SELECTED
+		shadow          		= OUT
+		overlay_file    		= "Check-Radio/option1s.svg"
+		overlay_stretch 		= FALSE
+		}
+		image 
+		{
+		function        		= OPTION
+		state 			        = INSENSITIVE
+		shadow         		    = OUT
+		overlay_file    		= "Check-Radio/option3.svg"
+		overlay_stretch 		= FALSE
+		}
+		image 
+		{
+		function        		= OPTION
+		state 			        = NORMAL
+		shadow          		= IN
+		overlay_file    		= "Check-Radio/option2.svg"
+		overlay_stretch 		= FALSE
+		}
+		image 
+		{
+		function        		= OPTION
+		state			        = PRELIGHT
+		shadow          		= IN
+		overlay_file    		= "Check-Radio/option2p.svg"
+		overlay_stretch 		= FALSE
+		}
+		image 
+		{
+		function        		= OPTION
+		state			        = ACTIVE
+		shadow          		= IN
+		overlay_file    		= "Check-Radio/option2s.svg"
+		overlay_stretch	 	    = FALSE
+		}
+		image
+		{
+		function        		= OPTION
+		state			        = SELECTED
+		shadow          		= IN
+		overlay_file    		= "Check-Radio/option2s.svg"
+		overlay_stretch	 	    = FALSE
+		}
+		image 
+		{
+		function        		= OPTION
+		state 			        = INSENSITIVE
+		shadow          		= IN
+		overlay_file    		= "Check-Radio/option4.svg"
+		overlay_stretch 		= FALSE
+		}
+
+    # Expanders
+		image {
+		function        = EXPANDER
+		state           = NORMAL
+		expander_style  = COLLAPSED
+		file            = "Check-Radio/plusS.svg"
+		}
+
+		image {
+		function        = EXPANDER
+		state           = NORMAL
+		expander_style  = EXPANDED
+		file            = "Check-Radio/minusS.svg"
+		}
+
+		image {
+		function        = EXPANDER
+		state           = NORMAL
+		expander_style  = SEMI_EXPANDED
+		file            = "Check-Radio/minusS.svg"
+		}
+
+		image {
+		function        = EXPANDER
+		state           = NORMAL
+		expander_style  = SEMI_COLLAPSED
+		file            = "Check-Radio/plusS.svg"
+		}
+
+
+		image {
+		function        = EXPANDER
+		state           = PRELIGHT
+		expander_style  = COLLAPSED
+		file            = "Check-Radio/plusP.svg"
+		}
+
+		image {
+		function        = EXPANDER
+		state           = PRELIGHT
+		expander_style  = EXPANDED
+		file            = "Check-Radio/minusP.svg"
+		}
+
+		image {
+		function        = EXPANDER
+		state           = PRELIGHT
+		expander_style  = SEMI_EXPANDED
+		file            = "Check-Radio/minusP.svg"
+		}
+
+		image {
+		function        = EXPANDER
+		state           = PRELIGHT
+		expander_style  = SEMI_COLLAPSED
+		file            = "Check-Radio/plusP.svg"
+		}
+
+
+		image {
+		function        = EXPANDER
+		state           = ACTIVE
+		expander_style  = COLLAPSED
+		file            = "Check-Radio/plusS.svg"
+		}
+
+		image {
+		function        = EXPANDER
+		state           = ACTIVE
+		expander_style  = EXPANDED
+		file            = "Check-Radio/minusS.svg"
+		}
+
+		image {
+		function        = EXPANDER
+		state           = ACTIVE
+		expander_style  = SEMI_EXPANDED
+		file            = "Check-Radio/minusS.svg"
+		}
+
+		image {
+		function        = EXPANDER
+		state           = ACTIVE
+		expander_style  = SEMI_COLLAPSED
+		file            = "Check-Radio/plusS.svg"
+		}
+
+
+		image {
+		function        = EXPANDER
+		state           = SELECTED
+		expander_style  = COLLAPSED
+		file            = "Check-Radio/plusS.svg"
+		}
+
+		image {
+		function        = EXPANDER
+		state           = SELECTED
+		expander_style  = EXPANDED
+		file            = "Check-Radio/minusS.svg"
+		}
+
+		image {
+		function        = EXPANDER
+		state           = SELECTED
+		expander_style  = SEMI_EXPANDED
+		file            = "Check-Radio/minusS.svg"
+		}
+
+		image {
+		function        = EXPANDER
+		state           = SELECTED
+		expander_style  = SEMI_COLLAPSED
+		file            = "Check-Radio/plusS.svg"
+		}
+
+
+		image {
+		function		= EXPANDER
+		state			= INSENSITIVE
+		expander_style	= COLLAPSED
+		file			= "Check-Radio/plusX.svg"
+		}
+
+		image {
+		function		= EXPANDER
+		state			= INSENSITIVE
+		expander_style	= SEMI_COLLAPSED
+		file			= "Check-Radio/plusX.svg"
+		}
+
+		image {
+		function		= EXPANDER
+		state			= INSENSITIVE
+		expander_style	= SEMI_EXPANDED
+		file			= "Check-Radio/minusX.svg"
+		}
+		image {
+		function		= EXPANDER
+		state			= INSENSITIVE
+		expander_style	= EXPANDED
+		file			= "Check-Radio/minusX.svg"
+		}
+    }
+}
+widget_class "*<GtkTreeView>" 			style "treeview"
+###############################################################################
+style "treeview_header"
+{
+    xthickness	= 3
+    ythickness	= 3
+
+		# button
+        fg[NORMAL] 			= @text_color
+        fg[PRELIGHT] 	    = @text_color
+        fg[ACTIVE]          = @text_color
+		fg[INSENSITIVE]     = "#8A8A8A"
+
+    engine "pixmap"
+    {
+			image 
+			{
+			function		= BOX
+			state    		= NORMAL
+			file			= "Buttons/tree-button-normal.svg"		
+			border			= { 1,2,1,3 }
+			stretch			= TRUE
+			}	
+
+			image
+			{
+			function		= BOX
+			state			= PRELIGHT
+			recolorable		= TRUE
+			shadow			= OUT
+			file			= "Buttons/tree-button-prelight.svg"
+			border			= { 1,1,1,4 }
+			stretch			= TRUE
+			}
+
+			image
+			{
+			function		= BOX
+			state			= PRELIGHT
+			recolorable		= TRUE
+			shadow			= IN
+			file			= "Buttons/tree-button-active-prelight.svg"
+			border			= { 1,1,3,4 }
+			stretch			= TRUE
+			}
+
+			image
+			{
+			function		= BOX
+			state			= ACTIVE
+			file			= "Buttons/tree-button-active.svg"
+			border			= { 1,1,3,3 }
+			stretch			= TRUE
+			}
+
+			image 
+			{
+			function		= BOX
+			state			= INSENSITIVE
+			file			= "Buttons/tree-button-insensitive.svg"
+			border			= { 1,1,1,3 }
+			stretch			= TRUE
+			}
+    }
+}
+widget_class "*<GtkTreeView>*<GtkButton>*" 									style:rc "treeview_header"
+widget_class "*<GtkCList>*<GtkButton>*"    									style:rc "treeview_header"
+widget_class "*<GtkEventBox>*<GtkTreeView>*<GtkButton>*" 					style "treeview_header"
+widget_class "*<GtkNotebook>*<GtkTreeView>*<GtkButton>*"        			style "treeview_header"
+widget_class "*<GtkNotebook>*<GtkEventBox>*<GtkTreeView>*<GtkButton>*" 		style "treeview_header"
+###############################################################################
+style "tooltips"
+{
+	xthickness = 20
+	ythickness = 10
+
+	bg[NORMAL]      = @tooltip_bg_color
+	bg[SELECTED]    = "#848484"
+    
+	fg[NORMAL]      = @tooltip_fg_color
+}
+class "*GtkTooltips*"				    style "tooltips"
+widget "gtk-tooltip*"                   style "tooltips"
+widget_class "*Tooltips*"			    style "tooltips"
+###############################################################################
+style "statusbar"
+{
+    xthickness      = 3
+    ythickness      = 3
+}
+class "GtkStatusbar" 					style "statusbar"
+widget_class "*<GtkStatusbar>*"  		style "statusbar"
+###############################################################################
+style "scrolled_window"
+{
+    xthickness      = 3
+    ythickness      = 3
+
+	engine "pixmap"
+	{
+        image {
+        function		    = SHADOW
+        file			    = "Assets/frame_1.svg"
+        border			    = { 3,3,3,3 }
+        stretch			    = TRUE
+        }
+	}
+}
+class "GtkScrolledWindow"		style "scrolled_window"
+###############################################################################
+style "panel"
+{
+	GtkButton::inner-border	= { 1,1,1,1 }
+	xthickness = 3
+	ythickness = 3
+
+		bg[NORMAL]          = @bg_color
+
+		fg[NORMAL] 		    = @fg_color
+		fg[PRELIGHT] 		= @text_color
+		fg[ACTIVE]          = @text_color
+		fg[INSENSITIVE] 	= "#8A8A8A"
+
+    engine "pixmap"
+    {
+		#panel-shadows-remove
+			image 
+			{
+			function = SHADOW
+			}
+
+		#panel-lines-remove
+			image
+			{
+			function		= VLINE
+			recolorable		= TRUE
+			file			= "Assets/null.png"
+			border			= { 0, 1, 0, 0 }
+			stretch			= TRUE
+			}
+			image
+			{
+			function		= HLINE
+			recolorable		= TRUE
+			file			= "Assets/null.png"
+			border			= { 0, 0, 0, 1 }
+			stretch			= TRUE
+			}
+
+		#panel-handles-remove
+            image
+            {
+            function			= HANDLE
+            state               = NORMAL
+            recolorable			= TRUE
+            file				= "Assets/null.png"
+            overlay_file		= "Assets/null.png"
+            overlay_border		= {0,1,1,1 }
+            overlay_stretch		= FALSE
+            orientation			= VERTICAL
+            }
+            
+            image
+            {
+            function			= HANDLE
+            state               = PRELIGHT
+            recolorable			= TRUE
+            file				= "Assets/null.png"
+            overlay_file		= "Assets/null.png"
+            overlay_border		= {0,1,1,1 }
+            overlay_stretch		= FALSE
+            orientation			= VERTICAL
+            }
+
+            image
+            {
+            function			= HANDLE
+            state               = ACTIVE
+            recolorable			= TRUE
+            file				= "Assets/null.png"
+            overlay_file		= "Assets/null.png"
+            overlay_border		= {0,1,1,1 }
+            overlay_stretch		= FALSE
+            orientation			= VERTICAL
+            }
+
+            image
+            {
+            function			= HANDLE
+            state               = INSENSITIVE
+            recolorable			= TRUE
+            file				= "Assets/null.png"
+            overlay_file		= "Assets/null.png"
+            overlay_border		= {0,1,1,1 }
+            overlay_stretch		= FALSE
+            orientation			= VERTICAL
+            }
+
+        # buttons:
+			image 
+			{
+			function		= BOX
+            state    		= NORMAL
+			file			= "Assets/bg.svg"		
+			border			= { 0,0,0,0 }
+			stretch			= TRUE
+			}	
+
+			image
+			{
+			function		= BOX
+			state			= PRELIGHT
+			recolorable		= TRUE
+			shadow			= OUT
+			file			= "Buttons/panel-button-prelight.svg"		
+			border			= { 3,3,3,3 }
+			stretch			= TRUE
+			}
+			
+			image
+			{
+			function		= BOX
+			state			= PRELIGHT
+			recolorable		= TRUE
+			shadow			= IN
+			file			= "Buttons/panel-button-active-prelight.svg"		
+			border			= { 3,3,3,3 }
+			stretch			= TRUE
+			}
+
+			image
+			{
+			function		= BOX
+			state			= ACTIVE
+			file			= "Buttons/panel-button-active.svg"		
+			border			= { 3,3,3,3 }
+			stretch			= TRUE
+			}
+
+			image 
+			{
+			function		= BOX
+			state			= INSENSITIVE
+			file			= "Assets/bg.svg"		
+			border			= { 0,0,0,0 }
+			stretch			= TRUE
+			}
+	}
+}
+class "*Mail*" 							style "panel"
+class "*notif*" 						style "panel"
+class "*Notif*" 						style "panel"
+class "PanelToplevel*" 					style "panel"
+widget_class "*Mail*" 					style "panel"
+widget_class "*notif*" 					style "panel"
+widget_class "*Notif*" 					style "panel"
+widget_class "*Tray*" 					style "panel"
+widget_class "*tray*" 					style "panel"
+class "*Panel*Applet*" 					style "panel"
+widget_class "*Panel*GtkToggleButton" 	style "panel"
+widget_class "*Panel*GtkButton" 		style "panel"
+widget_class "*.Panel*Button*GtkLabel" 	style "panel"
+widget_class "*.Panel*GtkLabel" 		style "panel"
+widget "*PanelWidget*" 					style "panel"
+widget "*PanelApplet*" 					style "panel"
+# THANKS TO merlwiz79 FOR THESE FIXES
+widget_class "*Netstatus*" 				style "panel"
+widget_class "*Tomboy*Tray*" 			style "panel"
+widget "*fast-user-switch*" 			style "panel"
+widget_class "*PanelToplevel*" 			style "panel"
+#class "Xfce*Panel*" 					style "panel"
+widget_class "*Xfce*Panel*" 			style "panel"
+widget_class "*PanelApplet*" 			style "panel"
+widget_class "*PanelWidget*" 			style "panel"
+widget "*Xfce*Panel*" 					style "panel"
+class "*Xfce*Panel*" 					style "panel"
+
+
+style "panelbar" = "panel"
+{
+}
+class "*Panel*MenuBar*"					style "panelbar"
+widget_class "*Panel*MenuBar*" 			style "panelbar"
+widget_class "*Panel*MenuBar*Item*" 	style:highest "panelbar"
+
+
+style "panelbuttons"
+{
+	GtkButton::inner-border	= { 3,3,1,1 }
+	xthickness = 3
+	ythickness = 3
+
+		# button
+        fg[NORMAL] 			= @fg_color
+        fg[PRELIGHT] 	    = @text_color
+        fg[ACTIVE]          = @text_color
+		fg[INSENSITIVE]     = "#707A85"
+
+    engine "pixmap"
+    {
+			image 
+			{
+			function		= BOX
+			state    		= NORMAL
+			file			= "Buttons/panel-button-normal.svg"		
+			border			= { 3,3,3,3 }
+			stretch			= TRUE
+			}	
+
+			image
+			{
+			function		= BOX
+			state			= PRELIGHT
+			recolorable		= TRUE
+			shadow			= OUT
+			file			= "Buttons/panel-button-prelight.svg"		
+			border			= { 3,3,3,3 }
+			stretch			= TRUE
+			}
+
+			image
+			{
+			function		= BOX
+			state			= PRELIGHT
+			recolorable		= TRUE
+			shadow			= IN
+			file			= "Buttons/panel-button-active-prelight.svg"		
+			border			= { 3,3,3,3 }
+			stretch			= TRUE
+			}
+
+			image
+			{
+			function		= BOX
+			state			= ACTIVE
+			file			= "Buttons/panel-button-active.svg"		
+			border			= { 3,3,3,3 }
+			stretch			= TRUE
+			}
+
+			image 
+			{
+			function		= BOX
+			state			= INSENSITIVE
+			file			= "Buttons/panel-button-insensitive.svg"		
+			border			= { 3,3,3,3 }
+			stretch			= TRUE
+			}
+	}
+}
+#widget_class 	"*Panel*GtkButton" 					style "panelbuttons"  
+widget "*tasklist*" 								style "panelbuttons"
+widget_class "*Tasklist*" 					style:highest "panelbuttons"
+widget_class "*XfceActionsPlugin*XfceArrowButton*"	style "panelbuttons"
+widget_class "*Xfce*Panel*.GtkToggleButton"			style "panelbuttons"
+widget_class "*Xfce*NetkTasklist*GtkToggleButton"	style "panelbuttons"
+# paneltogglebuttons #
+widget_class "*PanelToplevel*Button" 		style "panelbuttons"
+widget_class "*Panel*GtkToggleButton" 		style "panelbuttons"
+widget_class "*Xfce*Panel*Button*" 			style "panelbuttons"
+
+
+# XFCE panel theming.
+style "clock" = "panel"      # panel clock font bigger
+{
+	xthickness = 3
+	ythickness = 3
+	GtkButton::inner-border	= { 2,2,2,2 }
+
+    fg[NORMAL] = @fg_color
+
+    font_name = "Bold 14"
+}
+widget "*clock*"     style "clock"
+
+
+# Panel
+style "xfce-panel-window-style"
+{
+  # Time in miliseconds before the panel will unhide on an enter event
+  XfcePanelWindow::popup-delay = 450
+ 
+  # Time in miliseconds before the panel will hide on a leave event
+  XfcePanelWindow::popdown-delay = 350
+ 
+  # Size of autohide window in pixels
+  XfcePanelWindow::autohide-size = 1
+}
+class "XfcePanelWindow" style "xfce-panel-window-style"
+###############################################################################
+style "xfce-header"
+{
+	base[NORMAL]	  	= @bg_color
+}
+widget_class "*XfceHeading*"			style "xfce-header"
+#####################################################################
+style "frame-title" 
+{
+	xthickness = 0
+	ythickness = 0
+
+	fg[NORMAL] = @text_color
+}
+widget_class "*.<GtkFrame>.<GtkLabel>" style "frame-title"
+###############################################################################
+style "workspace-switcher" = "panel" 
+{
+	bg[ACTIVE]      = @selected_bg_color
+	bg[SELECTED]    = @selected_bg_color
+}
+widget "*Pager*" style "workspace-switcher"
+
+
+style "xfdesktop-windowlist" 
+{
+	bg[NORMAL]          = @bg_color
+}
+widget_class "*XfceDesktop*" style "xfdesktop-windowlist"
+
+
+style "xfdesktop-icon-view" 
+{
+  ## background colors
+  base[NORMAL] 		= @base_color
+  fg[NORMAL] 		= @text_color
+
+  base[ACTIVE] 		= @selected_bg_color
+  fg[ACTIVE] 		= @selected_fg_color
+
+  base[SELECTED] 	= @selected_bg_color
+  fg[SELECTED] 		= @selected_fg_color
+
+  ## whether or not unselected icon text gets truncated (...)
+  # XfdesktopIconVIew::ellipsize-icon-labels = 1
+
+  ## text shadow to be painted with the icon labels
+  XfdesktopIconView::shadow-x-offset 			= 1
+  XfdesktopIconView::shadow-y-offset 			= 1
+  XfdesktopIconView::shadow-color 				= shade(0.50, @selected_fg_color)
+  XfdesktopIconView::selected-shadow-x-offset 	= 1
+  XfdesktopIconView::selected-shadow-y-offset 	= 1
+  XfdesktopIconView::selected-shadow-color 		= shade(0.50, @selected_fg_color)
+  
+  ## opacity of text background (0 - 255, 0 = transparent)
+  XfdesktopIconView::label-alpha 				= 225
+  XfdesktopIconView::selected-label-alpha 		= 225
+  XfdesktopIconVIew::ellipsize-icon-labels 		= 1
+
+  ## spacing and sizing of icons on the grid
+  #XfdesktopIconVIew::cell-spacing = 6
+  #XfdesktopIconView::cell-padding = 2
+  XfdesktopIconView::cell-text-width-proportion = 4.0
+
+        engine "murrine" {
+        #############
+        textstyle = 0
+        #############
+		animation			= TRUE
+		arrowstyle			= 1	# Estilo flechas -> triangulos
+		border_shades       = {0.92, 0.92}
+		colorize_scrollbar	= FALSE
+		contrast			= 0.20
+        focus_color         = @text-prelight
+		default_button_color = @selected_bg_color
+		glowstyle			= 4 # 0 = top, 1 = bottom, 2 = top and bottom, 3 = horizontal, 4 = centered glow
+        glow_shade          = 1.02
+		gradient_shades		= {1.00, 0.99, 0.99, 1.00}
+		highlight_shade		= 1.0
+		lightborderstyle	= 1 # 0 = top side, 1 = all sides
+		lightborder_shade	= 1.0
+        menubaritemstyle    = 0 #menuitem look
+        prelight_shade      = 1.0
+        progressbarstyle    = 0 # 0 = no stripes
+        reliefstyle         = 0 # flat
+        rgba                = TRUE #rgba enabled
+		roundness			= 0
+        separatorstyle      = 1 # smooth separator
+		shadow_shades		= {1.0, 1.0}
+        trough_border_shades = { 0.90, 0.90 }
+		trough_shades		= { 1.10, 1.10 }
+		}
+}
+widget_class "*XfdesktopIconView*" 			style "xfdesktop-icon-view"
+
+style "xfwm-tabwin" 
+{
+  Xfwm4TabwinWidget::border-width 		= 1
+  Xfwm4TabwinWidget::border-alpha 		= 1.0
+  Xfwm4TabwinWidget::icon-size 			= 64
+  Xfwm4TabwinWidget::alpha 				= 1.0
+  Xfwm4TabwinWidget::border-radius 		= 2
+
+	bg[NORMAL]      = @bg_color
+	fg[NORMAL]      = @text_color
+    
+	bg[SELECTED]    = @selected_bg_color
+	fg[SELECTED]    = @selected_fg_color
+
+        engine "murrine" {
+        #############
+        textstyle = 0
+        #############
+		animation			= TRUE
+		arrowstyle			= 1	# Estilo flechas -> triangulos
+		border_shades       = {0.92, 0.92}
+		colorize_scrollbar	= FALSE
+		contrast			= 0.20
+        focus_color         = @text-prelight
+		default_button_color = @selected_bg_color
+		glowstyle			= 4 # 0 = top, 1 = bottom, 2 = top and bottom, 3 = horizontal, 4 = centered glow
+        glow_shade          = 1.02
+		gradient_shades		= {1.00, 0.99, 0.99, 1.00}
+		highlight_shade		= 1.0
+		lightborderstyle	= 1 # 0 = top side, 1 = all sides
+		lightborder_shade	= 1.0
+        menubaritemstyle    = 0 #menuitem look
+        prelight_shade      = 1.0
+        progressbarstyle    = 0 # 0 = no stripes
+        reliefstyle         = 0 # flat
+        rgba                = TRUE #rgba enabled
+		roundness			= 0
+        separatorstyle      = 1 # smooth separator
+		shadow_shades		= {1.0, 1.0}
+        trough_border_shades = { 0.90, 0.90 }
+		trough_shades		= { 1.10, 1.10 }
+		}
+}
+widget "xfwm4-tabwin*" 						style "xfwm-tabwin"
+
+style "xfwm-tabwin-button"
+{
+	font_name = "bold"
+	bg[SELECTED] = @selected_bg_color
+	fg[SELECTED] = @selected_fg_color
+}
+widget "xfwm4-tabwin*GtkButton*" 			style "xfwm-tabwin-button"
+###############################################################################
+# logout window
+
+style "xfsm-logout"
+{
+	xthickness = 5
+	ythickness = 5
+
+	GtkDialog::content-area-border 	= 30
+	GtkDialog::content-area-spacing = 0
+	GtkDialog::action-area-spacing 	= 0
+
+	bg[NORMAL]      = @bg_color
+
+	bg[SELECTED]	= @selected_bg_color	    # Border around the dialog
+
+	fg[NORMAL]      = @fg_color
+
+	text[NORMAL]    = @text_color
+
+	engine "pixmap"
+	{
+			image 
+			{
+			function		= HLINE
+			recolorable		= TRUE
+			file			= "Assets/logoutline.png"
+			border			= { 2,2,1,1 }
+			stretch			= TRUE
+			}
+	}
+}
+widget_class "*XfsmLogoutDialog*"	style "xfsm-logout"
+
+
+style "xfsm-label"
+{
+	xthickness = 0
+	ythickness = 0
+
+	fg[NORMAL] 		= @fg_color
+	font_name       = "bold 14"
+}
+widget_class "*XfsmLogoutDialog*GtkVBox.GtkVBox.GtkLabel"	style "xfsm-label"
+
+
+style "xfsm-button" = "button"
+{
+	xthickness = 5
+	ythickness = 5
+
+	GtkButton::child-displacement-x = 0
+	GtkButton::child-displacement-y = 0
+	GtkButton::inner-border	        = { 8,8,6,6 }
+
+	font_name = "bold"
+}
+widget_class "*XfsmLogoutDialog*GtkButton*"	style "xfsm-button"
+#####################################################################
+style "chrome-gtk-frame" {
+	ChromeGtkFrame::frame-color = @bg_color
+	ChromeGtkFrame::inactive-frame-color = @bg_color
+
+	ChromeGtkFrame::frame-gradient-size = 0
+	ChromeGtkFrame::frame-gradient-color = @bg_color
+
+	ChromeGtkFrame::incognito-frame-color = @bg_color
+	ChromeGtkFrame::incognito-inactive-frame-color = @bg_color
+
+	ChromeGtkFrame::incognito-frame-gradient-size = 0
+	ChromeGtkFrame::incognito-frame-gradient-color = @bg_color
+
+	ChromeGtkFrame::scrollbar-trough-color = @bg_color
+	ChromeGtkFrame::scrollbar-slider-normal-color =	mix (0.21, @fg_color, @bg_color)
+	ChromeGtkFrame::scrollbar-slider-prelight-color =	mix (0.31, @fg_color, @bg_color)
+}
+class "ChromeGtkFrame" style "chrome-gtk-frame"
+###############################################################################
+# Thunar
+
+style "thunar-slim" {
+    xthickness = 0
+    ythickness = 0
+}
+widget_class "ThunarWindow*View"    					style "thunar-slim"
+widget_class "ThunarWindow*Pane"    					style "thunar-slim"
+
+
+style "thunar-handle" 
+{ 
+	GtkPaned::handle_size = 3
+}
+widget_class "*ThunarWindow*.<GtkHPaned>"               style "thunar-handle"
+
+
+style "sidepane"
+{
+    xthickness = 0
+    ythickness = 0
+
+	GtkTreeView::vertical-separator    = 3
+	GtkTreeView::horizontal-separator  = 10
+
+	GtkTreeView::odd_row_color  = @bg_color
+	GtkTreeView::even_row_color = @bg_color
+
+        base[NORMAL]    	= @bg_color
+        text[NORMAL]    	= @text_color
+
+        base[ACTIVE]        = @selected_bg_color
+        text[ACTIVE]        = @selected_fg_color
+        
+        base[SELECTED]      = @selected_bg_color
+        text[SELECTED]      = @selected_fg_color
+
+        base[INSENSITIVE]   = @bg_color
+		text[INSENSITIVE] 	= "#8A8A8A"
+
+	engine "pixmap" 
+    {
+		image {
+		function 			= FLAT_BOX
+		state    			= NORMAL
+		border				= {0,0,0,0}
+		stretch         	= TRUE
+		file				= "Assets/bg.svg"
+		}
+
+            image {
+			function 			= FLAT_BOX
+			state    			= SELECTED
+			border				= {1,1,1,2}
+			stretch         	= TRUE
+			file				= "Assets/sidebar-selected.svg"
+			}
+
+		image {
+		function 			= FLAT_BOX
+		state    			= INSENSITIVE
+		border				= {0,0,0,0}
+		stretch         	= TRUE
+		file				= "Assets/bg.svg"
+		}
+	}
+}
+widget_class "*ThunarShortcutsView*"		style "sidepane"
+widget_class "*ThunarTreeView*"				style "sidepane"
+widget "*SidebarContent"	                style "sidepane"
+
+
+style "thunar-frame" 
+{
+  xthickness = 1
+  ythickness = 1
+}
+widget_class "*ThunarWindow*.<GtkScrolledWindow>"       style "thunar-frame"
+###############################################################################
+style "calendar"
+{
+	GtkWidget::focus_padding = 4
+
+	xthickness = 2
+	ythickness = 2
+
+		base[NORMAL]    	= @base_color
+		text[NORMAL]    	= @text_color
+
+		bg[NORMAL]			= @base_color
+		fg[NORMAL]			= @text_color
+    
+		bg[PRELIGHT]		= @selected_bg_color
+    
+		base[SELECTED]		= @selected_bg_color
+		text[SELECTED]		= @selected_fg_color
+
+		base[ACTIVE]        = @selected_bg_color
+		text[ACTIVE] 		= @selected_fg_color
+
+		fg[INSENSITIVE]		= "#707A85"
+		text[INSENSITIVE] 	= "#707A85"
+
+
+	engine "pixmap"
+	{
+            image
+            {
+            function 		= SHADOW
+            file		    = "Assets/null.png"
+            border		    = {0,0,0,0}
+            stretch			= TRUE
+            }
+
+				image
+				{
+				function		    = ARROW
+				state               = PRELIGHT
+				recolorable		    = TRUE
+				overlay_file		= "Arrows/arrow-left.svg"
+				overlay_border		= { 0,0,0,0 }
+				overlay_stretch		= FALSE
+				arrow_direction		= LEFT
+				}
+
+				image
+				{
+				function		    = ARROW
+				state               = PRELIGHT
+				recolorable		    = TRUE
+				overlay_file		= "Arrows/arrow-right.svg"
+				overlay_border		= { 0,0,0,0 }
+				overlay_stretch		= FALSE
+				arrow_direction		= RIGHT
+				}
+	}
+}
+class "GtkCalendar" style "calendar"
+widget_class "*GtkCalendar*"	style "calendar"
+###############################################################################
+style "spinner"
+{
+	GtkSpinner::cycle-duration	= 1000	# Allowed values: >= 500	Default value: 1000
+	GtkSpinner::num-steps		= 20	# Allowed values: >= 1		Default value: 12
+
+	fg[NORMAL] 					= @selected_fg_color
+	fg[INSENSITIVE] 			= "#999999"
+}
+class "GtkSpinner"    style "spinner"
+###############################################################################
+# gimp
+
+style "gimp_toolbox_frame"
+{
+		engine "pixmap" {image {function = SHADOW}}
+}
+widget_class "*<GimpToolbox>*<GtkFrame>" style "gimp_toolbox_frame"
+
+
+style "Gimp-default"
+{
+        bg_pixmap[NORMAL]   = "Assets/bg.svg"
+
+        base[NORMAL] 		= @base_color
+        text[NORMAL]    	= @text_color
+}
+widget "*Gimp*" style "Gimp-default"
+
+
+style "pscc-gimp-tool-dialog-style" 
+{
+    GtkDialog::action-area-border  = 6
+}
+class "GimpToolDialog" style "pscc-gimp-tool-dialog-style"
+
+
+style "pscc-gimp-grid-view-style" 
+{
+    bg[NORMAL] = { 1.0, 1.0, 1.0 }
+}
+widget "*GimpContainerGridView*GtkViewport*" style "pscc-gimp-grid-view-style"
+
+
+style "gimp-dockable"
+{
+    GimpFrame::label-bold = 0
+	GtkEntry::progress-border = { 0,0,0,0 }
+
+    xthickness = 6
+    ythickness = 3
+
+        bg_pixmap[NORMAL] = "Assets/bg.svg"
+
+    fg[NORMAL] 		  = @fg_color
+    fg[PRELIGHT]      = @text-prelight
+
+    bg[NORMAL]        = @bg_color
+    bg[PRELIGHT]      = @bg_color
+    bg[INSENSITIVE]   = @bg_color
+
+    text[NORMAL]      = @fg_color   # Border & Text = Spin-Progressbars & Comboboxes
+}
+widget "*GimpDockable.*"        style "gimp-dockable"
+
+
+style "gimp-display"
+{
+    GimpRuler::font-scale          = 0.6444
+    GimpUnitComboBox::label-scale  = 0.8333
+    GimpScaleComboBox::label-scale = 0.8333
+    GtkButton::focus-line-width    = 0
+    GtkButton::focus-padding       = 0
+
+	xthickness = 1
+	ythickness = 1
+
+        bg_pixmap[NORMAL]   = "Assets/bg.svg"
+        bg[NORMAL]          = @bg_color
+        fg[NORMAL] 		    = @fg_color
+}
+widget "*GimpDisplayShell.*"        style "gimp-display"
+
+
+style "gimp-overlay" = "gimp-display"
+{
+    GtkButton::focus-line-width    = 0
+    GtkButton::focus-padding       = 0
+
+	ythickness        = 0
+	xthickness        = 0
+}
+widget_class "*<GimpOverlayFrame>*" style "gimp-overlay"
+
+
+style "gimp_spin_scale"
+{
+	xthickness	= 4
+	ythickness 	= 3
+
+			# Normal:
+            base[NORMAL] 		= @bg_color
+            text[NORMAL]    	= @text_color
+
+			# Selected:
+            base[SELECTED]	    = @selected_fg_color
+            text[SELECTED]	    = "black"
+
+			# Active:
+			base[ACTIVE]	    = "black"
+			text[ACTIVE]	    = @text_color
+
+			# insensitive:
+			base[INSENSITIVE]   = @bg_color
+            text[INSENSITIVE] 	= "#8A8A8A"
+
+
+			# Progressbar:
+            bg[ACTIVE]	    = @base_color			# Trough
+			fg[NORMAL] 		= @text_color
+            bg[SELECTED]	= @selected_bg_color    # Progress-Bar
+			fg[PRELIGHT] 	= @text_color
+			fg[SELECTED] 	= @text_color
+
+
+	engine "pixmap"
+	{
+		image { function = ARROW }
+
+		image {
+		function 			= BOX
+		state 				= NORMAL
+		detail 				= "spinbutton_up"
+		file				= "SpinButton/spin_up.svg"
+		border				= { 1,1,1,1 }
+		stretch 			= TRUE
+        overlay_file		= "SpinButton/arrow-up.svg"
+		overlay_stretch 	= FALSE
+		}
+
+		image {
+		function 			= BOX
+		state 				= PRELIGHT
+		detail 				= "spinbutton_up"
+		file				= "SpinButton/spin_up.svg"
+		border				= { 1,1,1,1 }
+		stretch 			= TRUE
+        overlay_file		= "SpinButton/arrow-up-prelight.svg"
+		overlay_stretch 	= FALSE
+		}
+
+		image {
+		function 			= BOX
+		state 				= INSENSITIVE
+		detail 				= "spinbutton_up"
+		file				= "SpinButton/spin_up.svg"
+		border				= { 1,1,1,1 }
+		stretch 			= TRUE
+        overlay_file		= "SpinButton/arrow-up-insensitive.svg"
+		overlay_stretch 	= FALSE
+		}
+
+		image {
+		function 			= BOX
+		state 				= ACTIVE
+		detail 				= "spinbutton_up"
+		file				= "SpinButton/spin_up.svg"
+		border				= { 1,1,1,1 }
+		stretch				= TRUE
+        overlay_file		= "SpinButton/arrow-up-active.svg"
+		overlay_stretch		= FALSE
+		}
+
+
+
+		image {
+		function 			= BOX
+		state 				= NORMAL
+		detail 				= "spinbutton_down"
+		file				= "SpinButton/spin_down.svg"
+		border				= { 1,2,1,2 }
+		stretch 			= TRUE
+        overlay_file		= "SpinButton/arrow-down.svg"
+		overlay_stretch 	= FALSE
+		}
+
+		image {
+		function 			= BOX
+		state 				= PRELIGHT
+		detail 				= "spinbutton_down"
+		file				= "SpinButton/spin_down.svg"
+		border				= { 1,2,1,2 }
+		stretch 			= TRUE
+        overlay_file		= "SpinButton/arrow-down-prelight.svg"
+		overlay_stretch 	= FALSE
+		}
+
+		image {
+		function 			= BOX
+		state 				= INSENSITIVE
+		detail 				= "spinbutton_down"
+		file				= "SpinButton/spin_down.svg"
+		border				= { 1,2,1,2 }
+		stretch 			= TRUE
+        overlay_file		= "SpinButton/arrow-down-insensitive.svg"
+		overlay_stretch 	= FALSE
+		}
+
+		image {
+		function 			= BOX
+		state 				= ACTIVE
+		detail 				= "spinbutton_down"
+		file				= "SpinButton/spin_down.svg"
+		border				= { 1,2,1,2 }
+		stretch 			= TRUE
+        overlay_file		= "SpinButton/arrow-down-active.svg"
+		overlay_stretch 	= FALSE
+		}
+
+
+	# SPIN ENTRY ##############
+        image {
+        function 			= SHADOW
+        detail   			= "entry"
+        state    			= NORMAL
+		file				= "SpinButton/spin-entry.svg"
+		border				= { 4,4,3,3 }
+        stretch  			= TRUE
+        }
+        image {
+        function 			= SHADOW
+        detail   			= "entry"
+        state    			= INSENSITIVE
+		file				= "SpinButton/spin-entry-insensitive.svg"
+		border				= { 4,4,3,3 }
+        stretch  			= TRUE
+        }
+        image {
+        function 			= SHADOW
+        detail   			= "entry"
+        state    			= ACTIVE
+		file				= "SpinButton/spin-entry-active.svg"
+		border				= { 4,4,3,3 }
+        stretch  			= TRUE
+        }
+        
+            image {
+            function        = FLAT_BOX
+            detail          = "entry_bg"
+            state           = NORMAL
+            overlay_file    = "Entry/bg_entry.png"
+            overlay_border  = { 0,0,0,0 }
+            overlay_stretch = TRUE
+            }
+            image {
+            function        = FLAT_BOX
+            detail          = "entry_bg"
+            state           = INSENSITIVE
+            overlay_file    = "Entry/bg_entry_insensitive.png"
+            overlay_border  = { 0,0,0,0 }
+            overlay_stretch = TRUE
+            }
+            image {
+            function        = FLAT_BOX
+            detail          = "entry_bg"
+            state           = ACTIVE
+            overlay_file    = "Entry/bg_entry_active.png"
+            overlay_border  = { 0,0,0,0 }
+            overlay_stretch = TRUE
+            }
+    }
+}
+class "GimpSpinScale" 			style "gimp_spin_scale"
+widget "*Gimp*SpinButton*"      style "gimp_spin_scale"
+widget "*Gimp*Entry*"      		style "gimp_spin_scale"
+
+
+style "gimp-button"
+{
+	GtkButtonBox::child-min-height 		= 34
+	GtkButton::inner-border	            = { 0,0,0,0 }
+	GtkButton::icon-spacing          	= 10
+
+	xthickness	= 6
+	ythickness	= 3
+
+		# button
+        fg[NORMAL] 			= @text_color
+        fg[PRELIGHT] 	    = @text_color
+        fg[ACTIVE]          = @text_color
+		fg[INSENSITIVE]     = "#8A8A8A"
+}
+class "GtkItem"                                style "gimp-button"
+widget_class "*Gimp*Button*"                   style "gimp-button"
+
+
+style "Gimp-Tool-Palette"
+{
+    GtkButton::focus-line-width    		= 0
+	GtkButtonBox::child-min-height 		= 24
+	GtkButton::inner-border	            = { 2,2,2,2 }
+
+	ythickness        = 3
+	xthickness        = 3
+
+	bg_pixmap[NORMAL]   = "Assets/bg.svg"
+
+		# button
+        fg[NORMAL] 			= @text_color
+        fg[PRELIGHT] 	    = @text_color
+        fg[ACTIVE]          = @text_color
+		fg[INSENSITIVE]     = "#8A8A8A"
+}
+widget "*GimpToolPalette*"                     style "Gimp-Tool-Palette"
+
+
+style "GimpStatusBar"
+{
+    GimpDock::font-scale = 1.0
+
+	xthickness = 3
+	ythickness = 3
+
+
+			# Progressbar:
+            bg[ACTIVE]	    = @base_color			# Trough
+			fg[NORMAL] 		= @text_color
+            bg[SELECTED]	= @selected_bg_color    # Progress-Bar
+			fg[PRELIGHT] 	= @text_color
+			fg[SELECTED] 	= @text_color
+
+
+			# Normal:
+            base[NORMAL] 		= @bg_color
+            text[NORMAL]    	= @text_color
+
+			# Selected:
+            base[SELECTED]	    = @selected_fg_color
+            text[SELECTED]	    = "black"
+
+			# Active:
+			base[ACTIVE]	    = "black"
+			text[ACTIVE]	    = @text_color
+
+			# insensitive:
+			base[INSENSITIVE]   = @bg_color
+            text[INSENSITIVE] 	= "#8A8A8A"
+
+
+        text[PRELIGHT]      = @text_color
+        text[ACTIVE]        = @text_color
+        text[SELECTED]      = @text_color
+
+
+        # when the cursor is outside the object = RED_color
+        fg[INSENSITIVE]     = "#FF6666"
+}
+widget "*GimpStatusbar.*"   style "GimpStatusBar"
+###############################################################################
+style "fix_ugly_text"
+{
+        engine "murrine"
+        {
+            textstyle   = 0
+            text_shade  = 1.0
+        }
+}
+class "GtkImage" 											style "fix_ugly_text"
+class "GtkLabel" 											style "fix_ugly_text"
+class "GtkComboBox" 										style "fix_ugly_text"
+class "GtkCellView" 										style "fix_ugly_text"
+class "GtkTextView" 										style "fix_ugly_text"
+class "GtkTreeView" 										style "fix_ugly_text"
+widget_class "*.<GtkButton>.<GtkLabel>" 					style "fix_ugly_text"
+widget_class "*.<GtkComboBox>.<GtkCellView>" 				style "fix_ugly_text"
+widget_class "*<GtkImage>*" 								style "fix_ugly_text"
+widget_class "*.<GtkLabel>" 								style:highest "fix_ugly_text"
+widget_class "*.<GtkMenuItem>.*" 							style:highest "fix_ugly_text"
+widget_class "*<GtkMenuBar>*<GtkLabel>*" 					style:highest "fix_ugly_text"
+widget_class "*CPUFreqApplet*" 								style:highest "fix_ugly_text"
+widget_class "*<GtkToolbar>*<GtkButton>*<GtkLabel>*" 		style:highest "fix_ugly_text"
+widget_class "*<GtkToolbar>*<GtkLabel>*" 					style:highest "fix_ugly_text"
+widget_class "*<GtkButton>*<GtkLabel>*" 					style:highest "fix_ugly_text"
+###############################################################################

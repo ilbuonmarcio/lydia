@@ -8,6 +8,12 @@ mkdir ../../.config/compton/  2> /dev/null
 mkdir ../../.config/Code\ -\ OSS/ 2> /dev/null
 mkdir ../../.config/Code\ -\ OSS/User/ 2> /dev/null
 mkdir ../../.config/alacritty 2> /dev/null
+mkdir ../../.config/lxpanel/  2> /dev/null
+mkdir ../../.config/lxpanel/LXDE/ 2> /dev/null
+mkdir ../../.config/lxpanel/LXDE/panels/ 2> /dev/null
+mkdir ../../.config/lxsession/ 2> /dev/null
+mkdir ../../.config/lxsession/LXDE/ 2> /dev/null
+
 cp -rf ./configs/i3/*         ../../.config/i3/
 cp -rf ./configs/kitty/*  ../../.config/kitty/
 cp -rf ./configs/polybar/*    ../../.config/polybar/
@@ -19,6 +25,10 @@ cp -rf ./configs/gtk3/settings.ini ../../.config/gtk-3.0/
 cp -rf ./scripts/* ../../.scripts/
 cp -rf ./configs/code/settings.json ../../.config/Code\ -\ OSS/User/
 cp -rf ./configs/alacritty/* ../../.config/alacritty/
+cp -f ./configs/lxde/panel ../../.config/lxpanel/KDE/panels/
+cp -f ./configs/lxde/desktop.conf ../../.config/lxsession/LXDE/
+cp -rf ./configs/lxde/Nightmare /usr/share/themes/
+cp -rf ./configs/lxde/Stylish /usr/share/themes/
 
 # installing python spotify plugin interface for polybar module
 git clone https://github.com/Jvanrhijn/polybar-spotify &> /dev/null
