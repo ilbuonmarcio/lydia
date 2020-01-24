@@ -1,4 +1,6 @@
 #!/bin/sh
+mkdir ../../.themes/          2> /dev/null
+
 mkdir ../../.scripts          2> /dev/null
 mkdir ../../.config/i3        2> /dev/null
 mkdir ../../.config/kitty 2> /dev/null
@@ -25,10 +27,10 @@ cp -rf ./configs/gtk3/settings.ini ../../.config/gtk-3.0/
 cp -rf ./scripts/* ../../.scripts/
 cp -rf ./configs/code/settings.json ../../.config/Code\ -\ OSS/User/
 cp -rf ./configs/alacritty/* ../../.config/alacritty/
-cp -f ./configs/lxde/panel ../../.config/lxpanel/KDE/panels/
+cp -f ./configs/lxde/panel ../../.config/lxpanel/LXDE/panels/
 cp -f ./configs/lxde/desktop.conf ../../.config/lxsession/LXDE/
-cp -rf ./configs/lxde/Nightmare /usr/share/themes/
-cp -rf ./configs/lxde/Stylish /usr/share/themes/
+cp -rf ./configs/lxde/Nightmare ../../.themes/
+cp -rf ./configs/lxde/Stylish ../../.themes/
 
 # installing python spotify plugin interface for polybar module
 git clone https://github.com/Jvanrhijn/polybar-spotify &> /dev/null
