@@ -4,9 +4,15 @@
 
 `mrczlnks` is a featureful, yet simple linux distribution (as the subtitle suggests), more specifically it's an Arch Linux installation script that is free to fork, modify to fit your own purposes and use!
 
-Due that's software needed for me personally and has no other purpose other than mine, at least for me, I will not **_fuggin'_** provide any dedicated support for this script because that's *my* script, and not directly *yours*, so you're advised! :beers: :kiss:
+# Features
+- Easy to configure, install and use
+- UEFI boot only
+- Automatic disk partitioning
+- Customized i3/LXDE for all your needs
+- Preconfigured `firewalld` on 22/80/443
+- Targeted at development & productivity tasks
 
-# WAIT A SINGLE F*****G SECOND
+# Oh... really?
 
 "Have you really made an Arch Linux installation script? Are you a n00b dude?" 
 
@@ -25,13 +31,17 @@ Due that's software needed for me personally and has no other purpose other than
 
 ...that's why, mate. Still lovin' ya, don't worry :heart:
 
+# Support
+
+Due that's software needed for me personally and has no other purpose other than mine, at least for me, I will not **_fuggin'_** provide any dedicated support for this script because that's *my* script, and not directly *yours*, so you're advised! :beers: :kiss:
+
 ## So, here is a fun Disclaimer
 
 THIS PIECE OF SOFTWARE IS PROVIDED AS IS, WITHOUT WARRANTIES OF ANY KIND. I AM NOT RESPONSIBLE FOR ANY USAGE OF THIS SCRIPT, OR ANY IMPORTANT DISK ACCIDENTALLY FORMATTED BY THIS INSTALL SCRIPT, OR YOUR ENTIRE SYSTEM EXPLODING, OR WHATEVER.
 
 REALLY. USE AT YOUR OWN RISK. xoxo
 
-## Usage
+# Configuration & Installation Procedure
 
 - Download the official Arch Linux .iso file from the [official site download section](https://www.archlinux.org/download/)
 
@@ -65,7 +75,7 @@ chmod 700 ./install.sh
 
 Once the script prompts you that it finished, you can just `reboot`, remove the USB drive previously inserted and finally start using your new distribution!
 
-### License
+## License
 
 This software is released under MIT License.
 Read LICENSE for more information.
