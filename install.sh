@@ -118,12 +118,12 @@ arch-chroot /mnt locale-gen
 arch-chroot /mnt echo "LANG=en_US.UTF-8" >> /mnt/etc/locale.conf
 
 # setting machine name
-arch-chroot /mnt echo "lenooks" >> /mnt/etc/hostname
+arch-chroot /mnt echo "mrczlnks" >> /mnt/etc/hostname
 
 # setting hosts file
 arch-chroot /mnt echo "127.0.0.1 localhost" >> /mnt/etc/hosts
 arch-chroot /mnt echo "::1 localhost" >> /mnt/etc/hosts
-arch-chroot /mnt echo "127.0.1.1 lenooks.localdomain lenooks" >> /mnt/etc/hosts
+arch-chroot /mnt echo "127.0.1.1 mrczlnks.localdomain mrczlnks" >> /mnt/etc/hosts
 
 # making sudoers do sudo stuff without requiring password typing
 arch-chroot /mnt sed -ie 's/# %wheel ALL=(ALL) NOPASSWD: ALL/%wheel ALL=(ALL) NOPASSWD: ALL/g' /etc/sudoers
