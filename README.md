@@ -2,7 +2,7 @@
 
 # What is mrczlnks?
 
-`mrczlnks` is a featureful, yet simple linux distribution (as the subtitle suggests), more specifically it's an Arch Linux installation script that is free to fork, modify to fit your own purposes and use!
+`mrczlnks` is a featureful, yet simple Arch Linux install script that is free to fork, modify to fit your own purposes and use!
 
 # Features
 - Easy to configure, install and use
