@@ -143,7 +143,7 @@ arch-chroot /mnt sudo -u root /bin/zsh -c 'echo "Insert mrcz password: " && read
 # installing grub bootloader
 arch-chroot /mnt grub-install --target=x86_64-efi --efi-directory=/boot  --bootloader-id=GRUB --removable
 
-# adding proper resolution to grub to make it full screen and properly visible
+# adding proper resolution to grub to make it full screen and properly visible, still with fallback to auto detected resolution
 arch-chroot /mnt sed -ie 's/GRUB_GFXMODE=auto/GRUB_GFXMODE=2560x1440x32,auto/g' /etc/default/grub
 arch-chroot /mnt sed -ie 's/GRUB_TIMEOUT=5/GRUB_TIMEOUT=15/g' /etc/default/grub
 
@@ -178,11 +178,10 @@ arch-chroot /mnt sudo -u mrcz git clone https://aur.archlinux.org/yay.git /home/
 arch-chroot /mnt sudo -u mrcz /bin/zsh -c "cd /home/mrcz/yay_tmp_install && yes | makepkg -si"
 arch-chroot /mnt rm -rf /home/mrcz/yay_tmp_install
 
-# installing i3-gaps, polybar, spotify, iotop, i3lock-fancy, downgrade
+# installing i3-gaps, polybar, spotify, i3lock-fancy, downgrade
 arch-chroot /mnt sudo -u mrcz yay -S i3-gaps --noconfirm
 arch-chroot /mnt sudo -u mrcz yay -S polybar --noconfirm
 arch-chroot /mnt sudo -u mrcz yay -S spotify --noconfirm
-arch-chroot /mnt sudo -u mrcz yay -S iotop --noconfirm
 arch-chroot /mnt sudo -u mrcz yay -S i3lock-fancy --noconfirm
 arch-chroot /mnt sudo -u mrcz yay -S downgrade --noconfirm
 
@@ -225,13 +224,12 @@ arch-chroot /mnt sudo -u mrcz /bin/zsh -c "cd /home/mrcz/GitHub/mrczlnks && ./in
 arch-chroot /mnt sudo -u mrcz mkdir /home/mrcz/Screenshots
 
 # create pictures folder, secrets folder and moving default wallpaper
-arch-chroot /mnt sudo -u mrcz mkdir /home/mrcz/Pictures
-arch-chroot /mnt sudo -u mrcz mkdir /home/mrcz/.secrets
+arch-chroot /mnt sudo -u mrcz mkdir /home/mrcz/Pictures/
+arch-chroot /mnt sudo -u mrcz mkdir /home/mrcz/.secrets/
 arch-chroot /mnt sudo -u mrcz cp -r /home/mrcz/GitHub/mrczlnks/wallpapers/ /home/mrcz/Pictures/
 
-# adding tty personalized header and after-login banner
+# adding tty personalized header
 arch-chroot /mnt cp /home/mrcz/GitHub/mrczlnks/misc/issue /etc/issue
-arch-chroot /mnt cp /home/mrcz/GitHub/mrczlnks/misc/motd /etc/motd
 
 # unmounting all mounted partitions
 umount -R /mnt
