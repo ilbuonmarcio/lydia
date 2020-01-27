@@ -88,7 +88,7 @@ ttf-roboto playerctl papirus-icon-theme hwloc p7zip picom hsetroot docker-compos
 nemo linux-firmware firewalld tree man glances ttf-cascadia-code darktable fzf \
 mesa lib32-mesa vulkan-radeon lib32-vulkan-radeon libva-mesa-driver lib32-libva-mesa-driver \
 mesa-vdpau lib32-mesa-vdpau zsh-syntax-highlighting xdotool cronie dunst entr \
-xf86-video-nouveau xf86-video-vmware lxde
+xf86-video-nouveau xf86-video-vmware
 
 # generating fstab
 genfstab -U /mnt >> /mnt/etc/fstab
