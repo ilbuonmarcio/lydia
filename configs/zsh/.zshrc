@@ -14,9 +14,13 @@ export EDITOR=vim
 export VISUAL=vim
 export BROWSER=firefox
 
+export GPG_TTY=$(tty)
+
 autoload -Uz compinit promptinit
 compinit
 promptinit
+
+alias l='ls -lah --color=auto --group-directories-first'
 
 # docker aliases and functions
 alias dockertop='sudo docker stats --format "table {{.Name}}\t{{.CPUPerc}}\t{{.MemUsage}}\t{{.NetIO}}"'
