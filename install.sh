@@ -228,9 +228,6 @@ arch-chroot /mnt sudo -u mrcz mkdir /home/mrcz/Pictures/
 arch-chroot /mnt sudo -u mrcz mkdir /home/mrcz/.secrets/
 arch-chroot /mnt sudo -u mrcz cp -r /home/mrcz/GitHub/mrczlnks/wallpapers/ /home/mrcz/Pictures/
 
-# adding tty personalized header
-arch-chroot /mnt cp /home/mrcz/GitHub/mrczlnks/misc/issue /etc/issue
-
 # unmounting all mounted partitions
 umount -R /mnt
 
