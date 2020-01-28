@@ -12,25 +12,6 @@
 - Preconfigured `firewalld` on 22/80/443 ports
 - Specifically targeted at development & productivity tasks
 
-# Oh... really?
-
-"Have you really made an Arch Linux installation script? Are you a n00b dude?" 
-
-"Didn't you read the documentation and the [Holy Installation Guide](https://wiki.archlinux.org/index.php/Installation_guide)?" 
-
-"Did you actually read that people online are complaining that these install scripts are for n00bs and people that dOn'T kNoW hOw To InStAlL aRcH lInUx?!1! Are you ONE OF THOSE PPL? RLY?!?! SCREW YOU, IMMA DO IT "THE RIGHT WAY"!!!!1"
-
-
-***> You now, but with a friend because you know you need mental support in doing it:***
-
-![](also_you.jpg)
-
-***> You after you friend left bored right after you fucked up the installation for the 19th time:***
-
-![](you.jpg)
-
-...that's why, mate. Still lovin' ya, don't worry :heart:
-
 # Support
 
 Due that's software needed for me personally and has no other purpose other than mine, at least for me, I will not **_fuggin'_** provide any dedicated support for this script because that's *my* script, and not directly *yours*, so you're advised! :beers: :kiss:
