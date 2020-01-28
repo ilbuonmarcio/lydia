@@ -225,6 +225,10 @@ arch-chroot /mnt sudo -u mrcz mkdir /home/mrcz/Pictures/
 arch-chroot /mnt sudo -u mrcz mkdir /home/mrcz/.secrets/
 arch-chroot /mnt sudo -u mrcz cp -r /home/mrcz/GitHub/mrczlnks/wallpapers/ /home/mrcz/Pictures/
 
+# enabled []multilib] repo on installed system
+arch-chroot /mnt echo "[multilib]" >> /etc/pacman.conf
+arch-chroot /mnt echo "Include = /etc/pacman.d/mirrorlist" >> /etc/pacman.conf
+
 # unmounting all mounted partitions
 umount -R /mnt
 
