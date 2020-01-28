@@ -97,6 +97,21 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
+# Set workspace for specific monitors
+set $center_monitor DisplayPort-2
+set $left_monitor DisplayPort-1
+
+workspace $ws1 output $center_monitor
+workspace $ws2 output $left_monitor
+workspace $ws3 output $left_monitor
+workspace $ws4 output $left_monitor
+workspace $ws5 output $left_monitor
+workspace $ws6 output $left_monitor
+workspace $ws7 output $left_monitor
+workspace $ws8 output $left_monitor
+workspace $ws9 output $left_monitor
+workspace $ws10 output $left_monitor
+
 # switch to workspace
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
@@ -165,6 +180,9 @@ exec --no-startup-id feh --bg-fill ~/Pictures/wallpapers/wallpaper.jpg
 # add lockscreen
 bindsym Shift+$mod+l exec i3lock-fancy
 
+# add firefox shortcut
+bindsym $mod+b exec firefox
+
 # add audio handlers on razer keyboard audio management device
 bindsym XF86AudioRaiseVolume exec pamixer --increase 2
 bindsym XF86AudioLowerVolume exec pamixer --decrease 2
@@ -189,8 +207,8 @@ bindsym Control+$mod+p exec maim -m 1 ~/Screenshots/$(date +%s).png
 # add screenshots on area to clipboard
 bindsym Control+$mod+o exec maim -s -o | xclip -selection clipboard -t image/png
 
-# change screen off to 30 minutes
-exec --no-startup-id xset dpms 0 0 1800
+# change screen off to 10 minutes
+exec --no-startup-id xset dpms 0 0 600
 
 # enable polybars
 exec --no-startup-id $HOME/.scripts/toggle_polybar.sh
