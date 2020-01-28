@@ -88,7 +88,7 @@ ttf-roboto playerctl papirus-icon-theme hwloc p7zip picom hsetroot docker-compos
 nemo linux-firmware firewalld tree man glances ttf-cascadia-code darktable fzf \
 mesa lib32-mesa vulkan-radeon lib32-vulkan-radeon libva-mesa-driver lib32-libva-mesa-driver \
 mesa-vdpau lib32-mesa-vdpau zsh-syntax-highlighting xdotool cronie dunst entr \
-xf86-video-nouveau xf86-video-vmware
+xf86-video-nouveau xf86-video-vmware python-dbus
 
 # generating fstab
 genfstab -U /mnt >> /mnt/etc/fstab
@@ -210,9 +210,6 @@ arch-chroot /mnt sudo -u mrcz /bin/zsh -c "cd /home/mrcz/fonts_tmp_folder && wge
 arch-chroot /mnt sudo -u mrcz /bin/zsh -c "sudo cp /home/mrcz/fonts_tmp_folder/material-design-icons-3.0.1/iconfont/MaterialIcons-Regular.ttf /usr/share/fonts/TTF/"
 # removing fonts tmp folder
 arch-chroot /mnt sudo -u mrcz rm -rf /home/mrcz/fonts_tmp_folder
-
-# install dbus-python pip package
-arch-chroot /mnt sudo -u mrcz sudo pip3 install dbus-python
 
 # installing config files
 arch-chroot /mnt sudo -u mrcz mkdir /home/mrcz/GitHub
