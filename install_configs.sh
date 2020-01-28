@@ -14,6 +14,7 @@ cp -rf ./configs/i3/*         ../../.config/i3/
 cp -rf ./configs/alacritty/*  ../../.config/alacritty/
 cp -rf ./configs/polybar/*    ../../.config/polybar/
 cp -rf ./configs/zsh/.zshrc   ../../
+cp -rf ./configs/zsh/mrczlnks.zsh-theme ../../.oh-my-zsh/themes/
 cp -rf ./configs/compton/* ../../.config/compton/
 cp -rf ./configs/Xresources/.Xresources ../../
 cp -rf ./configs/vim/.vimrc ../../
