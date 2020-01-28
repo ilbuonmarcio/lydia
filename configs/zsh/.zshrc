@@ -9,7 +9,7 @@ source $ZSH/oh-my-zsh.sh
 export SHELL=zsh
 export PAGER=less
 export FILE=ranger
-export TERMINAL=kitty
+export TERMINAL=alacritty
 export EDITOR=vim
 export VISUAL=vim
 export BROWSER=firefox
