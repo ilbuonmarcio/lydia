@@ -1,12 +1,12 @@
 ! ------------------------------------------------------------------------------
 ! rofi mrczlnks color theme
 ! ------------------------------------------------------------------------------
-rofi.location:          7
+rofi.location:          0
 rofi.color-enabled:     true
 !                       'background', 'border'
-rofi.color-window:      argb:ff101010, argb:ff101010
+rofi.color-window:      argb:bb101010, argb:00101010
 ! State:                'bg',          'fg',   'bgalt',       'hlbg',        'hlfg'
-rofi.color-normal:      argb:ff101010, #ffffff, argb:cc101010, argb:ff191919, argb:ffffffff
+rofi.color-normal:      argb:ff101010, #ffffff, argb:cc101010, argb:aafa00fa, argb:ffffffff
 rofi.color-urgent:      argb:99ffffff, #ffffff, argb:99333333, argb:ff393939, argb:ffffffff
 rofi.separator-style:   solid
 rofi.fullscreen:        false
@@ -15,12 +15,11 @@ rofi.hide-scrollbar:    true
 rofi.line-margin:       4
 rofi.line-padding:      3
 rofi.fake-transparency: false
-rofi.yoffset:           -64
-rofi.xoffset:           20
-rofi.width:             360
-rofi.lines:		4
-rofi.opacity:           1
-rofi.font:              Roboto Regular 12
+rofi.yoffset:           0
+rofi.xoffset:           0
+rofi.width:             320
+rofi.lines:		5
+rofi.font:              Cascadia Code 14
 
 Xft.antialias:  1
 Xft.autohint:   0
