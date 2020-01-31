@@ -177,8 +177,8 @@ client.focused #505050 #505050 #505050 #505050 #505050
 exec --no-startup-id feh --bg-fill ~/Pictures/wallpapers/wallpaper.jpg
 # exec --no-startup-id hsetroot -solid "#090909"
 
-# add lockscreen
-bindsym Shift+$mod+l exec i3lock-fancy
+# add lockscreen shortcut
+bindsym $mod+l exec i3lock-fancy
 
 # add firefox shortcut
 bindsym $mod+b exec firefox
@@ -207,9 +207,9 @@ bindsym Control+$mod+p exec maim -m 1 ~/Screenshots/$(date +%s).png
 # add screenshots on area to clipboard
 bindsym Control+$mod+o exec maim -s -o | xclip -selection clipboard -t image/png
 
-# change screen off to 10 minutes
+# change screen off after 10 minutes of inactivity
 exec --no-startup-id xset dpms 0 0 600
 
-# enable polybars
+# enable polybars & compton/picom after whole i3-gaps wm bootstrap & configuration process
 exec --no-startup-id $HOME/.scripts/toggle_polybar.sh
 exec --no-startup-id compton
