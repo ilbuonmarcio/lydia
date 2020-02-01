@@ -109,7 +109,7 @@ bindsym $mod+Shift+r restart
 # restart polybar inplace
 bindsym $mod+Shift+p exec pkill -USR1 polybar
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec exit i3
+bindsym $mod+Shift+e exec i3-msg exit
 
 # resizing window, with arrows
 bindsym $mod+Control+Left resize shrink width 64 px or 64 ppt
