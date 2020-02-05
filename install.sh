@@ -12,6 +12,12 @@ echo "        for maximum comfort and minimum hassles ";
 echo "";
 echo "";
 
+# boot partition size, in MB
+boot_partition_size=500
+
+# home partition size, in GB
+home_partition_size=40
+
 # checks wheter there is multilib repo enabled properly or not
 IS_MULTILIB_REPO_DISABLED=$(cat /etc/pacman.conf | grep "#\[multilib\]" | wc -l)
 if [ "$IS_MULTILIB_REPO_DISABLED" == "1" ]
@@ -49,12 +55,12 @@ if [ "${install_type}" == "UEFI" ]; then
       n # new partition
         # default: primary partition
         # default: partition 1
-      +500M # 500 mb on boot partition
+      +${boot_partition_size}M # mb on boot partition
         # default: yes if asked
       n # new partition
         # default: primary partition
         # default: partition 2
-      +40G # 40 gb for home partition
+      +${home_partition_size}G # gb for home partition
         # default: yes if asked
       n # new partition
         # default: primary partition
@@ -75,13 +81,13 @@ else
         # default: primary partition
         # default: partition 1
         # default: select first default sector value
-      +500M # 500 mb on boot partition
+      +${boot_partition_size}M # mb on boot partition
         # default: yes if asked
       n # new partition
         # default: primary partition
         # default: partition 2
         # default: select second default sector value
-      +40G # 40 gb for home partition
+      +${home_partition_size}G # gb for home partition
         # default: yes if asked
       n # new partition
         # default: primary partition
