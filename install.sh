@@ -71,7 +71,7 @@ if [ "${install_type}" == "UEFI" ]; then
       1 # selecting partition 1
       1 # selecting EFI partition type
       w # writing changes to disk
-    EOF
+EOF
 else
     # formatting disk for BIOS install type
     echo "Formatting disk for BIOS install type"
@@ -95,7 +95,7 @@ else
         # default: all space left of for root partition
         # default: yes if asked
       w # writing changes to disk
-    EOF
+EOF
 fi
 
 # outputting partition changes
