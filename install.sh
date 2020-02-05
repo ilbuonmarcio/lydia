@@ -35,32 +35,62 @@ pacman -Syyy
 # adding fzf for making disk selection easier
 pacman -S fzf --noconfirm
 
+# open dialog for installation type
+install_type=$(print 'UEFI installation (recommended)\nBIOS installation' | fzf | awk '{print $1}')
+
 # open dialog for disk selection
 selected_disk=$(sudo fdisk -l | grep 'Disk /dev/' | awk '{print $2,$3,$4}' | sed 's/,$//' | fzf | sed -e 's/\/dev\/\(.*\):/\1/' | awk '{print $1}')  
 
-# formatting disk
-sed -e 's/\s*\([\+0-9a-zA-Z]*\).*/\1/' << EOF | fdisk /dev/${selected_disk}
-  g # gpt partitioning
-  n # new partition
-    # default: primary partition
-    # default: partition 1
-  +500M # 500 mb on boot partition
-    # default: yes if asked
-  n # new partition
-    # default: primary partition
-    # default: partition 2
-  +40G # 40 gb for home partition
-    # default: yes if asked
-  n # new partition
-    # default: primary partition
-    # default: partition 3
-    # default: all space left of for root partition
-    # default: yes if asked
-  t # change partition type
-  1 # selecting partition 1
-  1 # selecting EFI partition type
-  w # writing changes to disk
-EOF
+if [ "${install_type}" == "UEFI" ]; then
+    # formatting disk for UEFI install type
+    echo "Formatting disk for UEFI install type"
+    sed -e 's/\s*\([\+0-9a-zA-Z]*\).*/\1/' << EOF | fdisk /dev/${selected_disk}
+      g # gpt partitioning
+      n # new partition
+        # default: primary partition
+        # default: partition 1
+      +500M # 500 mb on boot partition
+        # default: yes if asked
+      n # new partition
+        # default: primary partition
+        # default: partition 2
+      +40G # 40 gb for home partition
+        # default: yes if asked
+      n # new partition
+        # default: primary partition
+        # default: partition 3
+        # default: all space left of for root partition
+        # default: yes if asked
+      t # change partition type
+      1 # selecting partition 1
+      1 # selecting EFI partition type
+      w # writing changes to disk
+    EOF
+else
+    # formatting disk for BIOS install type
+    echo "Formatting disk for BIOS install type"
+    sed -e 's/\s*\([\+0-9a-zA-Z]*\).*/\1/' << EOF | fdisk /dev/${selected_disk}
+      o # gpt partitioning
+      n # new partition
+        # default: primary partition
+        # default: partition 1
+        # default: select first default sector value
+      +500M # 500 mb on boot partition
+        # default: yes if asked
+      n # new partition
+        # default: primary partition
+        # default: partition 2
+        # default: select second default sector value
+      +40G # 40 gb for home partition
+        # default: yes if asked
+      n # new partition
+        # default: primary partition
+        # default: partition 3
+        # default: all space left of for root partition
+        # default: yes if asked
+      w # writing changes to disk
+    EOF
+fi
 
 # outputting partition changes
 fdisk -l /dev/${selected_disk}
@@ -141,7 +171,11 @@ arch-chroot /mnt useradd -m -G wheel -s /bin/zsh mrcz
 arch-chroot /mnt sudo -u root /bin/zsh -c 'echo "Insert mrcz password: " && read mrcz_password && echo -e "$mrcz_password\n$mrcz_password" | passwd mrcz'
 
 # installing grub bootloader
-arch-chroot /mnt grub-install --target=x86_64-efi --efi-directory=/boot  --bootloader-id=GRUB --removable
+if [ "${install_type}" == "UEFI" ]; then
+    arch-chroot /mnt grub-install --target=x86_64-efi --efi-directory=/boot --removable
+else
+    arch-chroot /mnt grub-install --target=i386-pc /dev/${selected_disk}
+fi
 
 # adding proper resolution to grub to make it full screen and properly visible, still with fallback to auto detected resolution
 arch-chroot /mnt sed -ie 's/GRUB_GFXMODE=auto/GRUB_GFXMODE=2560x1440x32,auto/g' /etc/default/grub
