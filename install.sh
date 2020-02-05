@@ -42,7 +42,7 @@ pacman -Syyy
 pacman -S fzf --noconfirm
 
 # open dialog for installation type
-install_type=$(print 'UEFI installation (recommended)\nBIOS installation' | fzf | awk '{print $1}')
+install_type=$(printf 'UEFI installation (recommended)\nBIOS installation' | fzf | awk '{print $1}')
 
 # open dialog for disk selection
 selected_disk=$(sudo fdisk -l | grep 'Disk /dev/' | awk '{print $2,$3,$4}' | sed 's/,$//' | fzf | sed -e 's/\/dev\/\(.*\):/\1/' | awk '{print $1}')  
