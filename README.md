@@ -6,7 +6,7 @@
 
 # Features
 - Easy to configure, install and use
-- UEFI boot
+- UEFI & classic BIOS boot support
 - Automatic disk partitioning
 - Customized i3-gaps window manager to fit all your needs
 - Preconfigured `firewalld` on 22/80/443 ports
