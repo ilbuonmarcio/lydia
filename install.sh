@@ -265,9 +265,13 @@ arch-chroot /mnt sudo -u mrcz mkdir /home/mrcz/Pictures/
 arch-chroot /mnt sudo -u mrcz mkdir /home/mrcz/.secrets/
 arch-chroot /mnt sudo -u mrcz cp -r /home/mrcz/GitHub/mrczlnks/wallpapers/ /home/mrcz/Pictures/
 
-# enabled []multilib] repo on installed system
+# enabled [multilib] repo on installed system
 arch-chroot /mnt echo "[multilib]" >> /etc/pacman.conf
 arch-chroot /mnt echo "Include = /etc/pacman.d/mirrorlist" >> /etc/pacman.conf
+
+# enable firefox accelerated/webrender mode for quantum engine use
+arch-chroot /mnt echo "MOZ_ACCELERATED=1" >> /etc/environment
+arch-chroot /mnt echo "MOZ_WEBRENDER=1" >> /etc/environment
 
 # unmounting all mounted partitions
 umount -R /mnt
