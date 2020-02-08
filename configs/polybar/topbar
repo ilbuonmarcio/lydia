@@ -31,7 +31,7 @@ tray-position = left
 tray-padding = 4
 tray-background = ${colors.background-alt}
 
-modules-left = i3 username date uptime
+modules-left = mediacontrol i3 username date uptime
 modules-center = currentapptitle spotify
 modules-right = updatesavailable dockerrc mountedpartitions cpu memory interfaces firewalld-up
 
@@ -171,6 +171,15 @@ label-foreground = ${colors.foreground}
 exec = systemctl is-active firewalld.service | cat 
 label-padding = 5
 click-left = ~/.scripts/toggle_firewalld_service.sh
+
+[module/mediacontrol]
+type = custom/script
+format = <label>
+label-padding = 5
+label-background = #3300ff00
+label-foreground = #ee00ff00
+exec = echo ""
+click-left = mate-volume-control
 
 [module/currentapptitle]
 type = custom/script
