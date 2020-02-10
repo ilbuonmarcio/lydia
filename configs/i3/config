@@ -120,6 +120,9 @@ bindsym $mod+Control+Right resize grow width 64 px or 64 ppt
 # remove title bars everywhere
 for_window [class=".*"] border pixel 1
 
+# hide borders when single window is present on screen
+hide_edge_borders both
+
 # changing focused window colours
 client.focused          #000000 #000000 #000000 #000000 #bf00bf
 client.focused_inactive #000000 #000000 #000000 #000000 #000000
