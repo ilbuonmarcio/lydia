@@ -273,6 +273,12 @@ arch-chroot /mnt echo "Include = /etc/pacman.d/mirrorlist" >> /etc/pacman.conf
 arch-chroot /mnt echo "MOZ_ACCELERATED=1" >> /etc/environment
 arch-chroot /mnt echo "MOZ_WEBRENDER=1" >> /etc/environment
 
+# run firefox in headless mode and kill it instantly so it generates config files
+arch-chroot /mnt firefox --headless &; ffh_pid=$!; sleep(5); kill -KILL $ffh_pid
+
+# set ui default to dark mode for generated default firefox profile
+arch-chroot /mnt echo 'user_pref("ui.systemUsesDarkTheme", 1);' >> $HOME/.mozilla/firefox/$(cat $HOME/.mozilla/firefox/profiles.ini | sed -n 2p | sed -e 's/Default=//')/prefs.js
+
 # unmounting all mounted partitions
 umount -R /mnt
 
