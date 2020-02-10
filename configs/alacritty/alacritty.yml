@@ -295,7 +295,7 @@ colors:
 #
 # Window opacity as a floating point number from `0.0` to `1.0`.
 # The value `0.0` is completely transparent and `1.0` is opaque.
-#background_opacity: 1.0
+background_opacity: 0.885
 
 #selection:
   #semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
@@ -313,11 +313,11 @@ cursor:
   #   - ▇ Block
   #   - _ Underline
   #   - | Beam
-  style: Beam
+  style: Underline
 
   # If this is `true`, the cursor will be rendered as a hollow box when the
   # window is not focused.
-  #unfocused_hollow: true
+  # unfocused_hollow: true
 
 # Live config reload (changes require restart)
 live_config_reload: true
