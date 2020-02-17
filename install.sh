@@ -269,6 +269,12 @@ arch-chroot /mnt sudo -u mrcz cp -r /home/mrcz/GitHub/mrczlnks/wallpapers/ /home
 arch-chroot /mnt echo "[multilib]" >> /etc/pacman.conf
 arch-chroot /mnt echo "Include = /etc/pacman.d/mirrorlist" >> /etc/pacman.conf
 
+# enable features on /etc/pacman.conf file
+arch-chroot /mnt sed -ie 's/#UseSyslog/UseSyslog/g' /etc/pacman.conf
+arch-chroot /mnt sed -ie 's/#Color/Color/g' /etc/pacman.conf
+arch-chroot /mnt sed -ie 's/#TotalDownload/TotalDownload/g' /etc/pacman.conf
+arch-chroot /mnt sed -ie 's/#VerbosePkgLists/VerbosePkgLists/g' /etc/pacman.conf
+
 # enable firefox accelerated/webrender mode for quantum engine use
 arch-chroot /mnt echo "MOZ_ACCELERATED=1" >> /etc/environment
 arch-chroot /mnt echo "MOZ_WEBRENDER=1" >> /etc/environment
