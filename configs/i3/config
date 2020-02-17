@@ -132,7 +132,7 @@ client.placeholder      #000000 #000000 #000000 #000000 #000000
 client.background       #000000 #000000 #000000 #000000 #000000
 
 # add wallpaper to desktops
-exec --no-startup-id feh --bg-fill ~/Pictures/wallpapers/wallpaper.jpg
+# exec --no-startup-id feh --bg-fill ~/Pictures/wallpapers/wallpaper.jpg
 
 # add lockscreen shortcut
 bindsym $mod+l exec i3lock-fancy
@@ -169,3 +169,7 @@ exec --no-startup-id xset dpms 0 0 600
 # enable polybars & compton/picom after whole i3-gaps wm bootstrap & configuration process
 exec --no-startup-id $HOME/.scripts/toggle_polybar.sh
 exec --no-startup-id compton
+
+# change current wallpaper at i3 startup
+exec --no-startup-id $HOME/.scripts/change_current_wallpaper.sh
+exec --no-startup-id sleep 0.25 && $HOME/.scripts/apply_wallpaper_theme.sh
