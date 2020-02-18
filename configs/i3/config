@@ -176,3 +176,6 @@ exec --no-startup-id sleep 0.25 && $HOME/.scripts/apply_wallpaper_theme.sh
 
 # add shortcut for wallpaper change
 bindsym $mod+Shift+w exec change_current_wallpaper.sh && apply_wallpaper_theme.sh
+
+# set keyboard to us intl
+exec --no-startup-id exec setxkbmap us intl
