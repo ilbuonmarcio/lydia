@@ -31,9 +31,9 @@ tray-position = left
 tray-padding = 4
 tray-background = ${colors.background-alt}
 
-modules-left = mediacontrol i3 username date uptime
+modules-left = mediacontrol i3 date uptime
 modules-center = currentapptitle spotify
-modules-right = updatesavailable mountedpartitions cpu memory interfaces firewalld-up
+modules-right = mountedpartitions cpu memory interfaces firewalld-up
 
 radius-bottom = 0
 
@@ -106,27 +106,12 @@ date = "%d/%m/%Y"
 time = %H:%M:%S
 label = %date% %time%
 
-[module/username]
-type = custom/script
-exec = whoami
-label = %output%
-
 [module/mountedpartitions]
 type = custom/script
 exec = df -h | sed 1d | awk '{ if (substr($1,1,1) ~ /^\//) print "["$6" "$4"]"}' | sort | xargs | sed 's/\]\ \[/\]\ \ \[/g'
 interval = 30
 label =  %output%
 label-underline = #FFB700
-label-background = ${colors.background}
-label-padding-left = 2
-label-padding-right = 2
-
-[module/updatesavailable]
-type = custom/script
-exec = yay -Sy 1>/dev/null && yay -Qu | wc -l
-interval = 7200
-label =  %output%
-label-underline = #1793d1
 label-background = ${colors.background}
 label-padding-left = 2
 label-padding-right = 2
@@ -156,10 +141,11 @@ exec = ip addr | grep "inet " | grep "scope global" | awk '{print $2}' | xargs |
 type = custom/script
 format = <label>
 interval = 2
+label =  %output%
 label-background = #aaef0707
 label-foreground = ${colors.foreground}
 exec = systemctl is-active firewalld.service | cat 
-label-padding = 5
+label-padding = 4
 click-left = ~/.scripts/toggle_firewalld_service.sh
 
 [module/mediacontrol]
