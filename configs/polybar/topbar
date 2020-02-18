@@ -124,7 +124,7 @@ label-padding-right = 2
 [module/updatesavailable]
 type = custom/script
 exec = yay -Sy 1>/dev/null && yay -Qu | wc -l
-interval = 300
+interval = 7200
 label =  %output%
 label-underline = #1793d1
 label-background = ${colors.background}
