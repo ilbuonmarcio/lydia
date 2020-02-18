@@ -33,7 +33,7 @@ tray-background = ${colors.background-alt}
 
 modules-left = mediacontrol i3 username date uptime
 modules-center = currentapptitle spotify
-modules-right = updatesavailable dockerrc mountedpartitions cpu memory interfaces firewalld-up
+modules-right = updatesavailable mountedpartitions cpu memory interfaces firewalld-up
 
 radius-bottom = 0
 
@@ -97,7 +97,7 @@ interval = 1
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground}
 format-underline = #CCFACC
-label = %gb_used%/%gb_total% (%percentage_used%%)
+label = %percentage_used%% (%gb_total%)
 
 [module/date]
 type = internal/date
@@ -117,16 +117,6 @@ exec = df -h | sed 1d | awk '{ if (substr($1,1,1) ~ /^\//) print "["$6" "$4"]"}'
 interval = 30
 label =  %output%
 label-underline = #FFB700
-label-background = ${colors.background}
-label-padding-left = 2
-label-padding-right = 2
-
-[module/dockerrc]
-type = custom/script
-exec = sudo docker ps -q | wc -l
-interval = 2
-label =  %output%
-label-underline = #0db7ed
 label-background = ${colors.background}
 label-padding-left = 2
 label-padding-right = 2
