@@ -124,10 +124,10 @@ for_window [class=".*"] border pixel 1
 hide_edge_borders both
 
 # changing focused window colours
-client.focused          #000000 #000000 #000000 #000000 #bf00bf
+client.focused          #000000 #000000 #000000 #000000 #b0b0b0
 client.focused_inactive #000000 #000000 #000000 #000000 #000000
 client.unfocused        #000000 #000000 #000000 #000000 #000000
-client.urgent           #000000 #000000 #000000 #000000 #00ff00
+client.urgent           #000000 #000000 #000000 #000000 #ff0000
 client.placeholder      #000000 #000000 #000000 #000000 #000000
 client.background       #000000 #000000 #000000 #000000 #000000
 
