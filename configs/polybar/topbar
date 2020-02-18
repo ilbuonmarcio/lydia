@@ -2,13 +2,13 @@
 foreground = #ffffff
 foreground-alt = #f0f0f0
 background = #77191919
-background-alt = #77393939
+background-alt = #aa393939
 
 [bar/topbar]
 dpi = -1
 
 width = 100%
-height = 40
+height = 42
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -19,8 +19,8 @@ line-color = ${colors.background}
 padding-left = 0
 padding-right = 0
 
-module-margin-left = 3
-module-margin-right = 3
+module-margin-left = 0
+module-margin-right = 0
 
 font-0 = Roboto:style=Regular:fontformat=truetype:size=10:antialias=true;2
 font-1 = Material Icons:size=12:antialias=true;4
@@ -31,16 +31,15 @@ tray-position = left
 tray-padding = 4
 tray-background = ${colors.background-alt}
 
-modules-left = mediacontrol i3 date uptime
+modules-left = i3 
 modules-center = currentapptitle spotify
-modules-right = mountedpartitions cpu memory interfaces firewalld-up
-
-radius-bottom = 0
+modules-right = mountedpartitions cpu memory interfaces date mediacontrol firewalld
 
 cursor-click = pointer
 cursor-scroll = ns-resize
 
-separator = |
+radius = 3
+; separator = |
 
 [module/i3]
 type = internal/i3
@@ -54,13 +53,14 @@ label-mode-background = ${colors.foreground}
 
 ; ; focused = Active workspace on focused monitor
 label-focused = %index%
-label-focused-background = ${colors.background-alt}
-label-focused-underline = ${colors.foreground}
-label-focused-padding = 3
+label-focused-background = ${colors.foreground-alt}
+label-focused-underline = ${colors.background-alt}
+label-focused-foreground = ${colors.background-alt}
+label-focused-padding = 4
 
 ; ; unfocused = Inactive workspace on any monitor
 label-unfocused = %index%
-label-unfocused-padding = 3
+label-unfocused-padding = 4
 
 ; ; visible = Active workspace on unfocused monitor
 label-visible = %index%
@@ -72,7 +72,7 @@ label-visible-padding = ${self.label-focused-padding}
 label-urgent = %index%
 label-urgent-foreground = ${colors.foreground-alt}
 label-urgent-background = ${colors.background-alt}
-label-urgent-padding = 3
+label-urgent-padding = 4
 
 [module/cpu]
 type = internal/cpu
@@ -88,16 +88,15 @@ ramp-coreload-4 = ▅
 ramp-coreload-5 = ▆
 ramp-coreload-6 = ▇
 ramp-coreload-7 = █
-
 label-active-font = 3
+format-padding = 4
 
 [module/memory]
 type = internal/memory
 interval = 1
-format-prefix = " "
-format-prefix-foreground = ${colors.foreground}
 format-underline = #CCFACC
 label = %percentage_used%% (%gb_total%)
+label-padding = 4
 
 [module/date]
 type = internal/date
@@ -105,39 +104,37 @@ interval = 1
 date = "%d/%m/%Y"
 time = %H:%M:%S
 label = %date% %time%
+label-padding = 4
+label-underline = #FFFFFF
+label-background = #333333
+label-foreground = #FFFFFF
 
 [module/mountedpartitions]
 type = custom/script
 exec = df -h | sed 1d | awk '{ if (substr($1,1,1) ~ /^\//) print "["$6" "$4"]"}' | sort | xargs | sed 's/\]\ \[/\]\ \ \[/g'
 interval = 30
-label =  %output%
+label = %output%
 label-underline = #FFB700
 label-background = ${colors.background}
-label-padding-left = 2
-label-padding-right = 2
+label-padding = 4
 
 [module/spotify]
 type = custom/script
 interval = 1
-format-prefix = "  "
-format = <label>
+label =  %output%
 exec = python ~/.scripts/spotify_status.py -f '{artist}: {song}'
-format-underline = #1db954
-
-[module/uptime]
-type = custom/script
-format = <label>
-interval = 30
-exec = uptime --pretty
+label-underline = #1db954
+label-padding = 4
 
 [module/interfaces]
 type = custom/script
 format = <label>
 interval = 120
 format-underline = #CCFAFA
+label-padding = 4
 exec = ip addr | grep "inet " | grep "scope global" | awk '{print $2}' | xargs | sed -e 's/ / - /g'
 
-[module/firewalld-up]
+[module/firewalld]
 type = custom/script
 format = <label>
 interval = 2
@@ -162,4 +159,5 @@ type = custom/script
 format = <label>
 interval = 0.5
 format-underline = #cc99ee
+format-padding = 4
 exec = xdotool getactivewindow getwindowname 2>/dev/null
