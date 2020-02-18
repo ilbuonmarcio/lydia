@@ -208,6 +208,7 @@ arch-chroot /mnt systemctl start systemd-resolved.service
 # enabling https, http as per default configuration for public zone for firewalld
 arch-chroot /mnt firewall-cmd --add-service=http --permanent
 arch-chroot /mnt firewall-cmd --add-service=https --permanent
+arch-chroot /mnt firewall-cmd --change-interface=docker0 --zone=trusted --permanent
 
 # making i3 default for startx for both root and mrcz
 arch-chroot /mnt echo "exec i3" >> /mnt/root/.xinitrc
