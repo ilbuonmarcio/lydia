@@ -16,7 +16,8 @@ cp -rf ./configs/polybar/*    ../../.config/polybar/
 cp -rf ./configs/zsh/.zshrc   ../../
 cp -rf ./configs/zsh/mrczlnks.zsh-theme ../../.oh-my-zsh/themes/
 cp -rf ./configs/compton/* ../../.config/compton/
-cp -rf ./configs/Xresources/.Xresources ../../
+cp -rf ./configs/Xfiles/.Xresources ../../
+cp -rf ./configs/Xfiles/.xinitrc ../../
 cp -rf ./configs/vim/.vimrc ../../
 cp -rf ./configs/gtk3/settings.ini ../../.config/gtk-3.0/
 cp -rf ./scripts/* ../../.scripts/
