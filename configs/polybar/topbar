@@ -31,7 +31,7 @@ tray-position = left
 tray-padding = 4
 
 modules-left = i3 
-modules-center = currentapptitle spotify
+modules-center = currentapptitle
 modules-right = mountedpartitions cpu memory interfaces date mediacontrol firewalld
 
 cursor-click = pointer
