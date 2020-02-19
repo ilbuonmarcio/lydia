@@ -5,7 +5,7 @@ background = #77191919
 background-alt = #aa393939
 
 [bar/topbar]
-dpi = -1
+dpi = ${xrdb:Xft.dpi:-1}
 
 width = 100%
 height = 42
