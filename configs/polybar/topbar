@@ -29,7 +29,6 @@ font-3 = Cascadia Code:style=Regular:fontformat=truetype:size=10:antialias=true;
 
 tray-position = left
 tray-padding = 4
-tray-background = ${colors.background-alt}
 
 modules-left = i3 
 modules-center = currentapptitle spotify
@@ -106,8 +105,6 @@ time = %H:%M:%S
 label = %date% %time%
 label-padding = 4
 label-underline = #FFFFFF
-label-background = #333333
-label-foreground = #FFFFFF
 
 [module/mountedpartitions]
 type = custom/script
@@ -137,10 +134,8 @@ exec = ip addr | grep "inet " | grep "scope global" | awk '{print $2}' | xargs |
 [module/firewalld]
 type = custom/script
 format = <label>
-interval = 2
+interval = 10
 label =  %output%
-label-background = #aaef0707
-label-foreground = ${colors.foreground}
 exec = systemctl is-active firewalld.service | cat 
 label-padding = 4
 click-left = ~/.scripts/toggle_firewalld_service.sh
@@ -149,8 +144,6 @@ click-left = ~/.scripts/toggle_firewalld_service.sh
 type = custom/script
 format = <label>
 label-padding = 5
-label-background = #3300ff00
-label-foreground = #ee00ff00
 exec = echo ""
 click-left = mate-volume-control
 
