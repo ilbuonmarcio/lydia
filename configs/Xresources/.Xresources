@@ -16,6 +16,7 @@ rofi.line-margin:       12
 rofi.line-padding:      12
 rofi.fake-transparency: false
 rofi.font:              Cascadia Code 18
+rofi.dpi:	96
 
 Xft.antialias:  1
 Xft.autohint:   0
