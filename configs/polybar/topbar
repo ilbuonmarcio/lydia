@@ -27,17 +27,17 @@ font-1 = Material Icons:size=12:antialias=true;4
 font-2 = Font Awesome 5 Brands:size=12:antialias=true;3
 font-3 = Cascadia Code:style=Regular:fontformat=truetype:size=10:antialias=true;2
 
-tray-position = left
+tray-position = right
 tray-padding = 4
 
-modules-left = i3 
-modules-center = currentapptitle
+modules-left = i3 currentapptitle 
+modules-center = 
 modules-right = mountedpartitions cpu memory interfaces date mediacontrol firewalld
 
 cursor-click = pointer
 cursor-scroll = ns-resize
 
-radius = 3
+radius = 0
 ; separator = |
 
 [module/i3]
