@@ -11,6 +11,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tpope/vim-fugitive'
+Plugin 'preservim/nerdtree'
 
 call vundle#end()
 filetype plugin indent on
