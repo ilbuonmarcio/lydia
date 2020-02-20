@@ -2,7 +2,7 @@
 
 # What is mrczlnks?
 
-`mrczlnks` is a featureful, yet simple Arch Linux install script that is free to fork, modify to fit your own purposes and use!
+`mrczlnks` is a featureful, yet simple Arch Linux install script
 
 # Features
 - Easy to configure, install and use
