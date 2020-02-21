@@ -23,6 +23,7 @@ compinit
 promptinit
 
 alias l='ls -lah --color=auto --group-directories-first'
+alias updateall='yay -Syyu --needed --devel'
 
 # docker aliases and functions
 alias dockertop='sudo docker stats --format "table {{.Name}}\t{{.CPUPerc}}\t{{.MemUsage}}\t{{.NetIO}}"'
