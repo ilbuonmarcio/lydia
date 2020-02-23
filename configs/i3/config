@@ -154,6 +154,9 @@ bindsym XF86AudioPrev exec playerctl previous
 bindsym XF86MonBrightnessUp exec sudo light -A 5
 bindsym XF86MonBrightnessDown exec sudo light -U 5
 
+# add ncspot macro
+bindsym $mod+m exec alacritty -e ncspot
+
 # toggle polybar
 bindsym $mod+Shift+h exec ~/.scripts/toggle_polybar.sh
 
