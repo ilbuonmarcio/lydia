@@ -54,8 +54,6 @@ chmod +x ./install.sh
 ./install.sh
 ```
 
-Once the script prompts you that it finished, you can just `reboot`, remove the USB drive previously inserted and finally start using your new distribution!
-
 ## License
 
 This software is released under MIT License.
