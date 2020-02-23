@@ -43,7 +43,7 @@ vim ./install.sh
 - Change file permissions to make it executable, of course!
 
 ```bash
-chmod 700 ./install.sh
+chmod +x ./install.sh
 ```
 
 - Edit `/etc/pacman.conf` file, making sure `[multilib]` repository is enabled or it won't work!
