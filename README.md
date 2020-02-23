@@ -14,13 +14,13 @@
 
 # Support
 
-Due that's software needed for me personally and has no other purpose other than mine, at least for me, I will not **_fuggin'_** provide any dedicated support for this script because that's *my* script, and not directly *yours*, so you're advised! :beers: :kiss:
+This software is semi-frequently updated as per necessity, but I will not provide any dedicated support to users using this piece of software.
 
 ## So, here is a fun Disclaimer
 
 THIS PIECE OF SOFTWARE IS PROVIDED AS IS, WITHOUT WARRANTIES OF ANY KIND. I AM NOT RESPONSIBLE FOR ANY USAGE OF THIS SCRIPT, OR ANY IMPORTANT DISK ACCIDENTALLY FORMATTED BY THIS INSTALL SCRIPT, OR YOUR ENTIRE SYSTEM EXPLODING, OR WHATEVER.
 
-REALLY. USE AT YOUR OWN RISK. xoxo
+REALLY. USE AT YOUR OWN RISK.
 
 # Configuration & Installation Procedure
 
