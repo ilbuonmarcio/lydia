@@ -115,7 +115,7 @@ mount /dev/${selected_disk}2 /mnt/home
 
 # pacstrap-ping desired disk
 pacstrap /mnt base base-devel vim grub networkmanager rofi feh linux linux-headers \
-os-prober efibootmgr ntfs-3g alacritty git zsh intel-ucode cpupower xf86-video-amdgpu vlc \
+os-prober efibootmgr ntfs-3g alacritty git zsh intel-ucode amd-ucode cpupower xf86-video-amdgpu vlc \
 xorg-server xorg-xinit ttf-dejavu ttf-liberation ttf-inconsolata noto-fonts \
 chromium firefox code xf86-video-intel zip unzip unrar obs-studio docker \
 pulseaudio mate-media pamixer telegram-desktop go python python-pip wget \
