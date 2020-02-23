@@ -30,7 +30,7 @@ font-3 = Cascadia Code:style=Regular:fontformat=truetype:size=10:antialias=true;
 tray-position = right
 tray-padding = 4
 
-modules-left = i3 currentapptitle 
+modules-left = logo i3 currentapptitle 
 modules-center = 
 modules-right = mountedpartitions cpu memory interfaces date mediacontrol firewalld
 
@@ -154,3 +154,8 @@ interval = 0.5
 format-underline = #cc99ee
 format-padding = 4
 exec = xdotool getactivewindow getwindowname 2>/dev/null
+
+[module/logo]
+type = custom/script
+exec = echo ""
+label-padding = 6
