@@ -238,9 +238,6 @@ arch-chroot /mnt sudo -u mrcz git clone https://github.com/VundleVim/Vundle.vim.
 # installing fonts
 arch-chroot /mnt sudo -u mrcz mkdir /home/mrcz/fonts_tmp_folder
 arch-chroot /mnt sudo -u mrcz sudo mkdir /usr/share/fonts/OTF/
-# font awesome 5 brands
-arch-chroot /mnt sudo -u mrcz /bin/zsh -c "cd /home/mrcz/fonts_tmp_folder && wget -O fontawesome.zip https://github.com/FortAwesome/Font-Awesome/releases/download/5.9.0/fontawesome-free-5.9.0-desktop.zip && unzip fontawesome.zip"
-arch-chroot /mnt sudo -u mrcz /bin/zsh -c "sudo cp /home/mrcz/fonts_tmp_folder/fontawesome-free-5.9.0-desktop/otfs/Font\ Awesome\ 5\ Brands-Regular-400.otf /usr/share/fonts/OTF/"
 # material icons
 arch-chroot /mnt sudo -u mrcz /bin/zsh -c "cd /home/mrcz/fonts_tmp_folder && wget -O materialicons.zip https://github.com/google/material-design-icons/releases/download/3.0.1/material-design-icons-3.0.1.zip && unzip materialicons.zip"
 arch-chroot /mnt sudo -u mrcz /bin/zsh -c "sudo cp /home/mrcz/fonts_tmp_folder/material-design-icons-3.0.1/iconfont/MaterialIcons-Regular.ttf /usr/share/fonts/TTF/"
