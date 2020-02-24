@@ -23,7 +23,7 @@ module-margin-left = 0
 module-margin-right = 0
 
 font-0 = Roboto:style=Regular:fontformat=truetype:size=9:antialias=true;2
-font-1 = Material Icons:size=12:antialias=true;4
+font-1 = Material Icons:size=12:antialias=true;7
 font-2 = Cascadia Code:style=Regular:fontformat=truetype:size=10:antialias=true;2
 
 tray-position = right
@@ -132,17 +132,14 @@ exec = ip addr | grep "inet " | grep "scope global" | awk '{print $2}' | xargs |
 
 [module/firewalld]
 type = custom/script
-format = <label>
-interval = 10
-label =  %output%
-exec = systemctl is-active firewalld.service | cat 
+exec = echo " "
 label-padding = 4
 click-left = ~/.scripts/toggle_firewalld_service.sh
 
 [module/mediacontrol]
 type = custom/script
 format = <label>
-label-padding = 5
+label-padding = 4
 exec = echo ""
 click-left = mate-volume-control
 

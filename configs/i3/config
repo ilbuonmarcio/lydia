@@ -182,3 +182,6 @@ bindsym $mod+Shift+w exec change_current_wallpaper.sh && apply_wallpaper_theme.s
 
 # set keyboard to us intl
 exec --no-startup-id exec setxkbmap us intl
+
+# start dunst
+exec --no-startup-id dunst
