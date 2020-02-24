@@ -1,5 +1,5 @@
 [global]
-  corner_radius = 3
+  corner_radius = 0
   follow = mouse
   font = "Roboto Regular 9"
   format = "<b>%s</b>\n<span font='9'>%b</span>"
