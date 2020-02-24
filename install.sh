@@ -205,11 +205,6 @@ arch-chroot /mnt systemctl enable sshd.service
 arch-chroot /mnt systemctl enable systemd-resolved.service
 arch-chroot /mnt systemctl start systemd-resolved.service
 
-# enabling https, http as per default configuration for public zone for firewalld
-arch-chroot /mnt firewall-cmd --add-service=http --permanent
-arch-chroot /mnt firewall-cmd --add-service=https --permanent
-arch-chroot /mnt firewall-cmd --change-interface=docker0 --zone=trusted --permanent
-
 # making i3 default for startx for both root and mrcz
 arch-chroot /mnt echo "exec i3" >> /mnt/root/.xinitrc
 arch-chroot /mnt echo "exec i3" >> /mnt/home/mrcz/.xinitrc
@@ -275,6 +270,12 @@ arch-chroot /mnt sed -ie 's/#UseSyslog/UseSyslog/g' /etc/pacman.conf
 arch-chroot /mnt sed -ie 's/#Color/Color/g' /etc/pacman.conf
 arch-chroot /mnt sed -ie 's/#TotalDownload/TotalDownload/g' /etc/pacman.conf
 arch-chroot /mnt sed -ie 's/#VerbosePkgLists/VerbosePkgLists/g' /etc/pacman.conf
+
+# enabling https, http as per default configuration for public zone for firewalld
+arch-chroot /mnt systemctl start firewalld.service
+arch-chroot /mnt firewall-cmd --add-service=http --permanent
+arch-chroot /mnt firewall-cmd --add-service=https --permanent
+arch-chroot /mnt firewall-cmd --change-interface=docker0 --zone=trusted --permanent
 
 # enable firefox accelerated/webrender mode for quantum engine use
 arch-chroot /mnt echo "MOZ_ACCELERATED=1" >> /etc/environment
