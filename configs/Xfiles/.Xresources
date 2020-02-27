@@ -16,11 +16,11 @@ rofi.line-margin:       12
 rofi.line-padding:      12
 rofi.fake-transparency: false
 rofi.font:              Cascadia Code 18
-rofi.dpi:	144
+rofi.dpi:	102
 
 Xft.antialias:  1
 Xft.autohint:   0
-Xft.dpi:        144
+Xft.dpi:        102
 Xft.hinting:    1
 Xft.hintstyle:  hintslight
 Xft.lcdfilter:  lcddefault
