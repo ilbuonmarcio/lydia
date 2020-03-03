@@ -223,6 +223,8 @@ arch-chroot /mnt sudo -u mrcz yay -S corrupter-bin --noconfirm
 arch-chroot /mnt sudo -u mrcz yay -S mdcat --noconfirm
 arch-chroot /mnt sudo -u mrcz yay -S whatsapp-nativefier --noconfirm
 arch-chroot /mnt sudo -u mrcz yay -S xflux --noconfirm
+arch-chroot /mnt sudo -u mrcz yay -S gamemode --noconfirm
+arch-chroot /mnt sudo -u mrcz yay -S cemu --noconfirm
 
 # installing better font rendering packages
 arch-chroot /mnt sudo -u mrcz /bin/zsh -c "yes | yay -S freetype2-infinality-remix fontconfig-infinality-remix cairo-infinality-remix"
