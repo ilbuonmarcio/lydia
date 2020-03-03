@@ -135,7 +135,7 @@ client.background       #000000 #000000 #000000 #000000 #000000
 # exec --no-startup-id feh --bg-fill ~/Pictures/wallpapers/wallpaper.jpg
 
 # add lockscreen shortcut
-bindsym $mod+l exec i3lock-fancy -f Cascadia-Code-Regular
+bindsym $mod+l exec --no-startup-id $HOME/.scripts/lockscreen_corrupted.sh
 
 # added shortcuts for common programs
 bindsym $mod+b exec firefox

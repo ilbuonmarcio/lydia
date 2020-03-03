@@ -214,12 +214,12 @@ arch-chroot /mnt sudo -u mrcz git clone https://aur.archlinux.org/yay.git /home/
 arch-chroot /mnt sudo -u mrcz /bin/zsh -c "cd /home/mrcz/yay_tmp_install && yes | makepkg -si"
 arch-chroot /mnt rm -rf /home/mrcz/yay_tmp_install
 
-# installing i3-gaps, polybar, i3lock-fancy, downgrade, ncspot
+# installing i3-gaps, polybar, downgrade, ncspot, corrupter-bin
 arch-chroot /mnt sudo -u mrcz yay -S i3-gaps --noconfirm
 arch-chroot /mnt sudo -u mrcz yay -S polybar --noconfirm
-arch-chroot /mnt sudo -u mrcz yay -S i3lock-fancy --noconfirm
 arch-chroot /mnt sudo -u mrcz yay -S downgrade --noconfirm
 arch-chroot /mnt sudo -u mrcz yay -S ncspot --noconfirm
+arch-chroot /mnt sudo -u mrcz yay -S corrupter-bin --noconfirm
 
 # installing better font rendering packages
 arch-chroot /mnt sudo -u mrcz /bin/zsh -c "yes | yay -S freetype2-infinality-remix fontconfig-infinality-remix cairo-infinality-remix"
