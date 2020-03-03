@@ -146,7 +146,7 @@ click-left = mate-volume-control
 [module/currentapptitle]
 type = custom/script
 format = <label>
-interval = 0.5
+interval = 0.1
 format-underline = #cc99ee
 format-padding = 4
 exec = xdotool getactivewindow getwindowname 2>/dev/null
