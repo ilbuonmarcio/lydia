@@ -129,6 +129,10 @@ xf86-video-nouveau xf86-video-vmware python-dbus httpie discord bind-tools pytho
 # generating fstab
 genfstab -U /mnt >> /mnt/etc/fstab
 
+# adding multilib repo inside chroot install environment
+arch-chroot /mnt echo "[multilib]" >> /etc/pacman.conf
+arch-chroot /mnt echo "Include = /etc/pacman.d/mirrorlist" >> /etc/pacman.conf
+
 # updating repo status
 arch-chroot /mnt pacman -Syyy
 
