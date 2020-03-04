@@ -74,7 +74,7 @@ label-urgent-padding = 4
 
 [module/cpu]
 type = internal/cpu
-interval = 0.5
+interval = 0.115
 format-underline = #ef0707
 format = <ramp-coreload>
 ramp-coreload-spacing = 1
