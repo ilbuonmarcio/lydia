@@ -183,8 +183,7 @@ else
     arch-chroot /mnt grub-install --target=i386-pc /dev/${selected_disk}
 fi
 
-# adding proper resolution to grub to make it full screen and properly visible, still with fallback to auto detected resolution
-arch-chroot /mnt sed -ie 's/GRUB_GFXMODE=auto/GRUB_GFXMODE=2560x1440x32,auto/g' /etc/default/grub
+# adding more timeout time for grub
 arch-chroot /mnt sed -ie 's/GRUB_TIMEOUT=5/GRUB_TIMEOUT=15/g' /etc/default/grub
 
 # making grub auto config
