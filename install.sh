@@ -263,7 +263,7 @@ arch-chroot /mnt sudo -u mrcz mkdir /home/mrcz/Screenshots
 # create pictures folder, secrets folder and moving default wallpaper
 arch-chroot /mnt sudo -u mrcz mkdir /home/mrcz/Pictures/
 arch-chroot /mnt sudo -u mrcz mkdir /home/mrcz/.secrets/
-arch-chroot /mnt sudo -u mrcz cp -r /home/mrcz/GitHub/mrczlnks/wallpapers/ /home/mrcz/Pictures/
+arch-chroot /mnt sudo -u mrcz mkdir /home/mrcz/Pictures/wallpapers/
 
 # enabled [multilib] repo on installed system
 arch-chroot /mnt echo "[multilib]" >> /etc/pacman.conf
