@@ -158,3 +158,4 @@ exec = xdotool getactivewindow getwindowname 2>/dev/null
 type = custom/script
 exec = echo ""
 label-padding = 6
+click-left = ~/.scripts/lockscreen_corrupted.sh
