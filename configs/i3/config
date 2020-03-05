@@ -185,7 +185,7 @@ bindsym $mod+t exec --no-startup-id telegram-desktop
 bindsym $mod+w exec --no-startup-id whatsapp-nativefier
 
 # run xflux with current latitude and longitude 
-exec --no-startup-id $HOME/.scripts/screen_protection.sh
+# exec --no-startup-id $HOME/.scripts/screen_protection.sh
 
 # set keyboard to us intl
 exec --no-startup-id exec setxkbmap us intl

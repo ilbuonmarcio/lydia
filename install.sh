@@ -124,7 +124,7 @@ ttf-roboto playerctl papirus-icon-theme hwloc p7zip picom hsetroot docker-compos
 nemo linux-firmware firewalld tree man glances ttf-cascadia-code darktable fzf \
 mesa mesa-demos lib32-mesa vulkan-radeon lib32-vulkan-radeon libva-mesa-driver lib32-libva-mesa-driver \
 mesa-vdpau lib32-mesa-vdpau zsh-syntax-highlighting xdotool cronie dunst entr \
-xf86-video-nouveau xf86-video-vmware python-dbus httpie discord bind-tools python-pywal
+xf86-video-nouveau xf86-video-vmware python-dbus httpie discord bind-tools python-pywal lutris
 
 # generating fstab
 genfstab -U /mnt >> /mnt/etc/fstab
@@ -225,9 +225,8 @@ arch-chroot /mnt sudo -u mrcz yay -S ncspot --noconfirm
 arch-chroot /mnt sudo -u mrcz yay -S corrupter-bin --noconfirm
 arch-chroot /mnt sudo -u mrcz yay -S mdcat --noconfirm
 arch-chroot /mnt sudo -u mrcz yay -S whatsapp-nativefier --noconfirm
+arch-chroot /mnt sudo -u mrcz yay -S ctop-bin --noconfirm
 arch-chroot /mnt sudo -u mrcz yay -S xflux --noconfirm
-arch-chroot /mnt sudo -u mrcz yay -S gamemode --noconfirm
-arch-chroot /mnt sudo -u mrcz yay -S cemu --noconfirm
 
 # installing better font rendering packages
 arch-chroot /mnt sudo -u mrcz /bin/zsh -c "yes | yay -S freetype2-infinality-remix fontconfig-infinality-remix cairo-infinality-remix"
