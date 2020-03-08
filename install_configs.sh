@@ -25,6 +25,7 @@ cp -rf ./configs/vim/.vimrc ../../
 cp -rf ./configs/gtk3/settings.ini ../../.config/gtk-3.0/
 cp -rf ./scripts/* ../../.scripts/
 cp -rf ./configs/code/settings.json ../../.config/Code\ -\ OSS/User/
+cp -rf ./configs/gtk2/.gtkrc-2.0 ../../
 
 # installing python spotify plugin interface for polybar module
 git clone https://github.com/Jvanrhijn/polybar-spotify &> /dev/null
