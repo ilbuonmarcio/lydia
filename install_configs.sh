@@ -1,5 +1,6 @@
 #!/bin/sh
 mkdir ../../.themes/          2> /dev/null
+cp -r ./themes/*	      ../../.themes/
 
 mkdir ../../.scripts          2> /dev/null
 mkdir ../../.config/i3        2> /dev/null
