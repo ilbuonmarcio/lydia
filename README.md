@@ -4,6 +4,8 @@
 
 `mrczlnks` is a featureful, yet simple Arch Linux install script
 
+![](screenshot.png)
+
 # Features
 - Easy to configure, install and use
 - UEFI & classic BIOS boot support
