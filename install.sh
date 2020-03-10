@@ -124,7 +124,7 @@ ttf-roboto playerctl papirus-icon-theme hwloc p7zip picom hsetroot docker-compos
 nemo linux-firmware firewalld tree man glances ttf-cascadia-code darktable fzf \
 mesa mesa-demos lib32-mesa vulkan-radeon lib32-vulkan-radeon libva-mesa-driver lib32-libva-mesa-driver \
 mesa-vdpau lib32-mesa-vdpau zsh-syntax-highlighting xdotool cronie dunst entr \
-xf86-video-nouveau xf86-video-vmware python-dbus httpie discord bind-tools python-pywal lutris i3lock dbeaver
+xf86-video-nouveau xf86-video-vmware python-dbus httpie discord bind-tools python-pywal lutris i3lock dbeaver ccache
 
 # generating fstab
 genfstab -U /mnt >> /mnt/etc/fstab
@@ -216,6 +216,10 @@ arch-chroot /mnt echo "exec i3" >> /mnt/home/mrcz/.xinitrc
 arch-chroot /mnt sudo -u mrcz git clone https://aur.archlinux.org/yay.git /home/mrcz/yay_tmp_install
 arch-chroot /mnt sudo -u mrcz /bin/zsh -c "cd /home/mrcz/yay_tmp_install && yes | makepkg -si"
 arch-chroot /mnt rm -rf /home/mrcz/yay_tmp_install
+
+# adding makepkg optimizations
+arch-chroot /mnt sed -i -e 's/#MAKEFLAGS="-j2"/MAKEFLAGS=-j'$(nproc --ignore 1)'/' -e 's/-march=x86-64 -mtune=generic/-march=native/' -e 's/xz -c -z/xz -c -z -T '$(nproc --ignore 1)'/' /etc/makepkg.conf
+arch-chroot /mnt sed -ie 's/!ccache/ccache/g' /etc/makepkg.conf
 
 # installing various packages from AUR
 arch-chroot /mnt sudo -u mrcz yay -S i3-gaps --noconfirm
