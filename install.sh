@@ -41,62 +41,33 @@ pacman -Syyy
 # adding fzf for making disk selection easier
 pacman -S fzf --noconfirm
 
-# open dialog for installation type
-install_type=$(printf 'UEFI installation (recommended)\nBIOS installation' | fzf | awk '{print $1}')
-
 # open dialog for disk selection
 selected_disk=$(sudo fdisk -l | grep 'Disk /dev/' | awk '{print $2,$3,$4}' | sed 's/,$//' | fzf | sed -e 's/\/dev\/\(.*\):/\1/' | awk '{print $1}')  
 
-if [ "${install_type}" == "UEFI" ]; then
-    # formatting disk for UEFI install type
-    echo "Formatting disk for UEFI install type"
-    sed -e 's/\s*\([\+0-9a-zA-Z]*\).*/\1/' << EOF | fdisk /dev/${selected_disk}
-      g # gpt partitioning
-      n # new partition
-        # default: primary partition
-        # default: partition 1
-      +${boot_partition_size}M # mb on boot partition
-        # default: yes if asked
-      n # new partition
-        # default: primary partition
-        # default: partition 2
-      +${home_partition_size}G # gb for home partition
-        # default: yes if asked
-      n # new partition
-        # default: primary partition
-        # default: partition 3
-        # default: all space left of for root partition
-        # default: yes if asked
-      t # change partition type
-      1 # selecting partition 1
-      1 # selecting EFI partition type
-      w # writing changes to disk
+# formatting disk for UEFI install
+echo "Formatting disk for UEFI install"
+sed -e 's/\s*\([\+0-9a-zA-Z]*\).*/\1/' << EOF | fdisk /dev/${selected_disk}
+  g # gpt partitioning
+  n # new partition
+    # default: primary partition
+    # default: partition 1
+  +${boot_partition_size}M # mb on boot partition
+    # default: yes if asked
+  n # new partition
+    # default: primary partition
+    # default: partition 2
+  +${home_partition_size}G # gb for home partition
+    # default: yes if asked
+  n # new partition
+    # default: primary partition
+    # default: partition 3
+    # default: all space left of for root partition
+    # default: yes if asked
+  t # change partition type
+  1 # selecting partition 1
+  1 # selecting EFI partition type
+  w # writing changes to disk
 EOF
-else
-    # formatting disk for BIOS install type
-    echo "Formatting disk for BIOS install type"
-    sed -e 's/\s*\([\+0-9a-zA-Z]*\).*/\1/' << EOF | fdisk /dev/${selected_disk}
-      o # gpt partitioning
-      n # new partition
-        # default: primary partition
-        # default: partition 1
-        # default: select first default sector value
-      +${boot_partition_size}M # mb on boot partition
-        # default: yes if asked
-      n # new partition
-        # default: primary partition
-        # default: partition 2
-        # default: select second default sector value
-      +${home_partition_size}G # gb for home partition
-        # default: yes if asked
-      n # new partition
-        # default: primary partition
-        # default: partition 3
-        # default: all space left of for root partition
-        # default: yes if asked
-      w # writing changes to disk
-EOF
-fi
 
 # outputting partition changes
 fdisk -l /dev/${selected_disk}
@@ -114,7 +85,7 @@ mount /dev/${selected_disk}1 /mnt/boot
 mount /dev/${selected_disk}2 /mnt/home
 
 # pacstrap-ping desired disk
-pacstrap /mnt base base-devel vim grub networkmanager rofi feh linux linux-headers \
+pacstrap /mnt base base-devel vim networkmanager rofi feh linux linux-headers \
 os-prober efibootmgr ntfs-3g alacritty git zsh intel-ucode amd-ucode cpupower xf86-video-amdgpu vlc \
 xorg-server xorg-xinit ttf-dejavu ttf-liberation ttf-inconsolata noto-fonts \
 chromium firefox code xf86-video-intel zip unzip unrar obs-studio docker \
@@ -180,18 +151,19 @@ arch-chroot /mnt useradd -m -G wheel -s /bin/zsh mrcz
 # setting mrcz password
 arch-chroot /mnt sudo -u root /bin/zsh -c 'echo "Insert mrcz password: " && read mrcz_password && echo -e "$mrcz_password\n$mrcz_password" | passwd mrcz'
 
-# installing grub bootloader
-if [ "${install_type}" == "UEFI" ]; then
-    arch-chroot /mnt grub-install --target=x86_64-efi --efi-directory=/boot --removable
-else
-    arch-chroot /mnt grub-install --target=i386-pc /dev/${selected_disk}
-fi
+# installing systemd-boot
+bootctl --path=/boot install
 
-# adding more timeout time for grub
-arch-chroot /mnt sed -ie 's/GRUB_TIMEOUT=5/GRUB_TIMEOUT=15/g' /etc/default/grub
-
-# making grub auto config
-arch-chroot /mnt grub-mkconfig -o /boot/grub/grub.cfg
+# configuring mrczlnks boot entry
+arch-chroot /mnt grep "UUID=" /etc/fstab | grep '/ ' | awk '{ print $1 }' | sed -e 's/UUID=//' > .root_disk_uuid
+arch-chroot /mnt touch /boot/loader/entries/mrczlnks.conf
+arch-chroot /mnt echo "title mrczlnks" >> /boot/loader/entries/mrczlnks.conf
+arch-chroot /mnt echo "linux /vmlinuz-linux" >> /boot/loader/entries/mrczlnks.conf
+arch-chroot /mnt echo "initrd /amd-ucode.img" >> /boot/loader/entries/mrczlnks.conf
+arch-chroot /mnt echo "initrd /initramfs-linux.img" >> /boot/loader/entries/mrczlnks.conf
+arch-chroot /mnt echo 'options root="UUID=root_disk_uuid" rw' >> /boot/loader/entries/mrczlnks.conf
+arch-chroot /mnt sed -ie "s/root_disk_uuid/$(cat .root_disk_uuid)/g" /boot/loader/entries/mrczlnks.conf
+arch-chroot /mnt rm .root_disk_uuid
 
 # changing governor to performance
 arch-chroot /mnt echo "governor='performance'" >> /mnt/etc/default/cpupower
