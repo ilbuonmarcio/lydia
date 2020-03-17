@@ -91,7 +91,7 @@ xorg-server xorg-xinit ttf-dejavu ttf-liberation ttf-inconsolata noto-fonts \
 chromium firefox code xf86-video-intel zip unzip unrar obs-studio docker \
 pulseaudio mate-media pamixer telegram-desktop go python python-pip wget nginx mariadb \
 openssh xorg-xrandr noto-fonts-emoji maim imagemagick xclip pinta light ranger \
-ttf-roboto playerctl papirus-icon-theme hwloc p7zip picom hsetroot docker-compose \
+ttf-roboto playerctl papirus-icon-theme hwloc p7zip hsetroot docker-compose \
 nemo linux-firmware firewalld tree man glances ttf-cascadia-code darktable fzf \
 mesa mesa-demos lib32-mesa vulkan-radeon lib32-vulkan-radeon libva-mesa-driver lib32-libva-mesa-driver \
 mesa-vdpau lib32-mesa-vdpau zsh-syntax-highlighting xdotool cronie dunst entr \
@@ -202,6 +202,7 @@ arch-chroot /mnt sudo -u mrcz yay -S corrupter-bin --noconfirm
 arch-chroot /mnt sudo -u mrcz yay -S ctop-bin --noconfirm
 arch-chroot /mnt sudo -u mrcz yay -S whatsapp-nativefier --noconfirm
 arch-chroot /mnt sudo -u mrcz yay -S simplenote-electron-bin --noconfirm
+arch-chroot /mnt sudo -u mrcz yay -S picom-tryone-git --noconfirm
 
 # installing better font rendering packages
 arch-chroot /mnt sudo -u mrcz /bin/zsh -c "yes | yay -S freetype2-infinality-remix fontconfig-infinality-remix cairo-infinality-remix"

@@ -6,7 +6,7 @@ mkdir ../../.config/i3        2> /dev/null
 mkdir ../../.config/alacritty 2> /dev/null
 mkdir ../../.config/polybar   2> /dev/null
 mkdir ../../.config/gtk-3.0/  2> /dev/null
-mkdir ../../.config/compton/  2> /dev/null
+mkdir ../../.config/picom/  2> /dev/null
 mkdir ../../.config/dunst/  2> /dev/null
 mkdir ../../.config/Code\ -\ OSS/ 2> /dev/null
 mkdir ../../.config/Code\ -\ OSS/User/ 2> /dev/null
@@ -17,7 +17,7 @@ cp -rf ./configs/polybar/*    ../../.config/polybar/
 cp -rf ./configs/dunst/*    ../../.config/dunst/
 cp -rf ./configs/zsh/.zshrc   ../../
 cp -rf ./configs/zsh/mrczlnks.zsh-theme ../../.oh-my-zsh/themes/
-cp -rf ./configs/compton/* ../../.config/compton/
+cp -rf ./configs/picom/* ../../.config/picom/
 cp -rf ./configs/Xfiles/.Xresources ../../
 cp -rf ./configs/Xfiles/.xinitrc ../../
 cp -rf ./configs/vim/.vimrc ../../

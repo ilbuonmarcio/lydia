@@ -169,9 +169,9 @@ bindsym Control+$mod+o exec maim -s -o | xclip -selection clipboard -t image/png
 # change screen off after 10 minutes of inactivity
 exec --no-startup-id xset dpms 0 0 600
 
-# enable polybars & compton/picom after whole i3-gaps wm bootstrap & configuration process
+# enable polybars & picom-tryone after whole i3-gaps wm bootstrap & configuration process
 exec --no-startup-id $HOME/.scripts/toggle_polybar.sh
-exec --no-startup-id compton
+exec --no-startup-id picom --experimental-backends --blur-method dual_kawase
 
 # change current wallpaper at i3 startup
 exec --no-startup-id $HOME/.scripts/change_current_wallpaper.sh
