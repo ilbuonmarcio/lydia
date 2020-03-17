@@ -100,13 +100,12 @@ label = %percentage_used%% (%gb_total%)
 label-padding = 4
 
 [module/date]
-type = internal/date
+type = custom/script
 interval = 1
-date = "%d/%m/%Y"
-time = %H:%M:%S
-label = %date% %time%
+exec = date +"%d/%m/%y %H:%M:%S"
 label-padding = 4
 label-underline = #FFFFFF
+click-left = sudo timedatectl set-ntp true
 
 [module/mountedpartitions]
 type = custom/script
