@@ -258,8 +258,8 @@ arch-chroot /mnt firewall-cmd --add-service=https --permanent
 arch-chroot /mnt firewall-cmd --change-interface=docker0 --zone=trusted --permanent
 
 # enable firefox accelerated/webrender mode for quantum engine use
-arch-chroot /mnt echo "MOZ_ACCELERATED=1" >> /etc/environment
-arch-chroot /mnt echo "MOZ_WEBRENDER=1" >> /etc/environment
+arch-chroot /mnt zsh -c 'echo "MOZ_ACCELERATED=1" >> /etc/environment'
+arch-chroot /mnt zsh -c 'echo "MOZ_WEBRENDER=1" >> /etc/environment'
 
 # unmounting all mounted partitions
 umount -R /mnt
