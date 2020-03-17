@@ -189,3 +189,6 @@ exec --no-startup-id exec setxkbmap us intl
 
 # start dunst
 exec --no-startup-id dunst
+
+# run update packages notification
+exec --no-startup-id sleep 15 && dunstify --timeout=10000 "$($HOME/.scripts/list_updates_available.sh)"
