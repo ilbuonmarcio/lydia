@@ -95,7 +95,8 @@ ttf-roboto playerctl papirus-icon-theme hwloc p7zip hsetroot docker-compose \
 nemo linux-firmware firewalld tree man glances ttf-cascadia-code darktable fzf \
 mesa mesa-demos lib32-mesa vulkan-radeon lib32-vulkan-radeon libva-mesa-driver lib32-libva-mesa-driver \
 mesa-vdpau lib32-mesa-vdpau zsh-syntax-highlighting xdotool cronie dunst entr \
-xf86-video-nouveau xf86-video-vmware python-dbus httpie discord bind-tools python-pywal lutris i3lock dbeaver ccache
+xf86-video-nouveau xf86-video-vmware python-dbus httpie discord bind-tools \ 
+virtualbox python-pywal lutris i3lock dbeaver ccache
 
 # generating fstab
 genfstab -U /mnt >> /mnt/etc/fstab
