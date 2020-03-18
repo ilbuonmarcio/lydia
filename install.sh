@@ -204,7 +204,6 @@ arch-chroot /mnt sudo -u mrcz yay -S ctop-bin --noconfirm
 arch-chroot /mnt sudo -u mrcz yay -S whatsapp-nativefier --noconfirm
 arch-chroot /mnt sudo -u mrcz yay -S simplenote-electron-bin --noconfirm
 arch-chroot /mnt sudo -u mrcz yay -S picom-tryone-git --noconfirm
-arch-chroot /mnt sudo -u mrcz yay -S droidcam-dkms-git v4l2loopback-dkms-git --noconfirm
 
 # installing better font rendering packages
 arch-chroot /mnt sudo -u mrcz /bin/zsh -c "yes | yay -S freetype2-infinality-remix fontconfig-infinality-remix cairo-infinality-remix"
