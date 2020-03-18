@@ -15,7 +15,7 @@ smart_gaps on
 floating_modifier $mod
 
 # opens i3 help
-bindsym $mod+i exec --no-startup-id alacritty -e zsh -c 'i3help | column && sleep infinity'
+bindsym $mod+i exec --no-startup-id alacritty -e zsh -c 'i3help | column && sleep infinity' # opens i3help
 
 # start a terminal
 bindsym $mod+Return exec alacritty # opens terminal
