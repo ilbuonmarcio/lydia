@@ -82,16 +82,16 @@ workspace $ws9 output $left_monitor
 workspace $ws10 output $left_monitor
 
 # switch to workspace
-bindsym $mod+1 exec i3-msg workspace $ws1 # goto workspace 1
-bindsym $mod+2 exec i3-msg workspace $ws2 # goto workspace 2
-bindsym $mod+3 exec i3-msg workspace $ws3 # goto workspace 3
-bindsym $mod+4 exec i3-msg workspace $ws4 # goto workspace 4
-bindsym $mod+5 exec i3-msg workspace $ws5 # goto workspace 5
-bindsym $mod+6 exec i3-msg workspace $ws6 # goto workspace 6
-bindsym $mod+7 exec i3-msg workspace $ws7 # goto workspace 7
-bindsym $mod+8 exec i3-msg workspace $ws8 # goto workspace 8
-bindsym $mod+9 exec i3-msg workspace $ws9 # goto workspace 9
-bindsym $mod+0 exec i3-msg workspace $ws10 # goto workspace 10
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
 
 # move focused container to workspace
 bindsym $mod+Shift+1 exec i3-msg move container to workspace $ws1 # move focused window to workspace 1
