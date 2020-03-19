@@ -23,15 +23,16 @@ module-margin-left = 0
 module-margin-right = 0
 
 font-0 = Roboto:style=Regular:fontformat=truetype:size=9:antialias=true;2
-font-1 = Material Icons:size=12:antialias=true;6
+font-1 = Material Icons:size=13:antialias=true;6
 font-2 = Cascadia Code:style=Regular:fontformat=truetype:size=10:antialias=true;2
 
 tray-position = right
-tray-padding = 4
+tray-padding = 6
+tray-maxsize = 22
 
-modules-left = logo i3 currentapptitle 
-modules-center = 
-modules-right = mountedpartitions cpu memory interfaces date mediacontrol firewalld
+modules-left = i3 currentapptitle 
+modules-center = date
+modules-right = mediacontrol firewalld search lockscreen
 
 cursor-click = pointer
 cursor-scroll = ns-resize
@@ -47,38 +48,37 @@ wrapping-scroll = true
 
 label-mode-padding = 3
 label-mode-foreground = #fff
-label-mode-background = ${colors.foreground}
 
 ; ; focused = Active workspace on focused monitor
 label-focused = %index%
 label-focused-background = ${colors.foreground-alt}
-label-focused-underline = ${colors.foreground-alt}
+; label-focused-underline = ${colors.foreground-alt}
 label-focused-foreground = ${colors.background-alt}
-label-focused-padding = 4
+label-focused-padding = 3
 
 ; ; unfocused = Inactive workspace on any monitor
 label-unfocused = %index%
-label-unfocused-padding = 4
-label-unfocused-foreground = #00ee00
-label-unfocused-background = #99333333
+label-unfocused-padding = 3
+label-unfocused-foreground = ${colors.foreground}
+;label-unfocused-background = #99333333
 
 ; ; visible = Active workspace on unfocused monitor
 label-visible = %index%
 label-visible-background = ${self.label-focused-background}
 label-visible-foreground = #ee00ee
-label-visible-underline = ${self.label-focused-underline}
+;label-visible-underline = ${self.label-focused-underline}
 label-visible-padding = ${self.label-focused-padding}
 
 ; ; urgent = Workspace with urgency hint set
 label-urgent = %index%
 label-urgent-foreground = ${colors.foreground-alt}
 label-urgent-background = ${colors.background-alt}
-label-urgent-padding = 4
+label-urgent-padding = 3
 
 [module/cpu]
 type = internal/cpu
 interval = 0.115
-format-underline = #ef0707
+; format-underline = #ef0707
 format = <ramp-coreload>
 ramp-coreload-spacing = 1
 ramp-coreload-0 = ▁
@@ -95,7 +95,7 @@ format-padding = 4
 [module/memory]
 type = internal/memory
 interval = 1
-format-underline = #CCFACC
+; format-underline = #CCFACC
 label = %percentage_used%% (%gb_total%)
 label-padding = 4
 
@@ -104,7 +104,7 @@ type = custom/script
 interval = 1
 exec = date +"%d/%m/%y %H:%M:%S"
 label-padding = 4
-label-underline = #FFFFFF
+; label-underline = #FFFFFF
 click-left = sudo timedatectl set-ntp true
 
 [module/mountedpartitions]
@@ -112,7 +112,7 @@ type = custom/script
 exec = df -h | sed 1d | awk '{ if (substr($1,1,1) ~ /^\//) print "["$6" "$4"]"}' | sort | xargs | sed 's/\]\ \[/\]\ \ \[/g'
 interval = 30
 label = %output%
-label-underline = #FFB700
+; label-underline = #FFB700
 label-background = ${colors.background}
 label-padding = 4
 
@@ -121,27 +121,27 @@ type = custom/script
 interval = 1
 label =  %output%
 exec = python ~/.scripts/spotify_status.py -f '{artist}: {song}'
-label-underline = #1db954
+; label-underline = #1db954
 label-padding = 4
 
 [module/interfaces]
 type = custom/script
 format = <label>
 interval = 120
-format-underline = #CCFAFA
+; format-underline = #CCFAFA
 label-padding = 4
 exec = ip addr | grep "inet " | grep "scope global" | awk '{print $2}' | xargs | sed -e 's/ / - /g'
 
 [module/firewalld]
 type = custom/script
-exec = echo " "
-label-padding = 4
+exec = echo ""
+label-padding = 3
 click-left = ~/.scripts/toggle_firewalld_service.sh
 
 [module/mediacontrol]
 type = custom/script
 format = <label>
-label-padding = 4
+label-padding = 3
 exec = echo ""
 click-left = mate-volume-control
 
@@ -149,12 +149,18 @@ click-left = mate-volume-control
 type = custom/script
 format = <label>
 interval = 0.1
-format-underline = #cc99ee
+; format-underline = #cc99ee
 format-padding = 4
 exec = xdotool getactivewindow getwindowname 2>/dev/null
 
-[module/logo]
+[module/lockscreen]
 type = custom/script
-exec = echo ""
-label-padding = 6
+exec = echo ""
+label-padding = 3
 click-left = ~/.scripts/lockscreen_corrupted.sh
+
+[module/search]
+type = custom/script
+exec = echo ""
+label-padding = 3
+click-left = rofi -show run

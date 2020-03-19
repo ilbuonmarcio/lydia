@@ -207,8 +207,8 @@ colors:
   # Colors which should be used to draw the terminal cursor. If these are unset,
   # the cursor color will be the inverse of the cell color.
   cursor:
-     text:   '0xcccccc'
-     cursor: '0xcccccc'
+     text:   '0x333333'
+     cursor: '0xffffff'
 
   # Selection colors
   #
@@ -313,7 +313,7 @@ cursor:
   #   - ▇ Block
   #   - _ Underline
   #   - | Beam
-  style: Underline
+  style: Block
 
   # If this is `true`, the cursor will be rendered as a hollow box when the
   # window is not focused.
