@@ -4,14 +4,14 @@ export ZSH="/home/mrcz/.oh-my-zsh"
 
 ZSH_THEME="mrczlnks"
 
-plugins=(git docker docker-compose encode64 urltools extract pip python sudo)
+plugins=(git extract pip python sudo)
 
 source $ZSH/oh-my-zsh.sh
 
 export SHELL=zsh
 export PAGER=less
 export FILE=ranger
-export TERMINAL=alacritty
+export TERMINAL=kitty
 export EDITOR=vim
 export VISUAL=vim
 export BROWSER=firefox
