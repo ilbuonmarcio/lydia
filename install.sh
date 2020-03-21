@@ -101,9 +101,9 @@ virtualbox python-pywal lutris i3lock dbeaver ccache
 # generating fstab
 genfstab -U /mnt >> /mnt/etc/fstab
 
-# adding multilib repo inside chroot install environment
-arch-chroot /mnt echo "[multilib]" >> /etc/pacman.conf
-arch-chroot /mnt echo "Include = /etc/pacman.d/mirrorlist" >> /etc/pacman.conf
+# enabled [multilib] repo on installed system
+arch-chroot /mnt zsh -c 'echo "[multilib]" >> /etc/pacman.conf'
+arch-chroot /mnt zsh -c 'echo "Include = /etc/pacman.d/mirrorlist" >> /etc/pacman.conf'
 
 # updating repo status
 arch-chroot /mnt pacman -Syyy
@@ -241,10 +241,6 @@ arch-chroot /mnt sudo -u mrcz mkdir /home/mrcz/Screenshots
 arch-chroot /mnt sudo -u mrcz mkdir /home/mrcz/Pictures/
 arch-chroot /mnt sudo -u mrcz mkdir /home/mrcz/.secrets/
 arch-chroot /mnt sudo -u mrcz mkdir /home/mrcz/Pictures/wallpapers/
-
-# enabled [multilib] repo on installed system
-arch-chroot /mnt zsh -c 'echo "[multilib]" >> /etc/pacman.conf'
-arch-chroot /mnt zsh -c 'echo "Include = /etc/pacman.d/mirrorlist" >> /etc/pacman.conf'
 
 # enable features on /etc/pacman.conf file
 arch-chroot /mnt sed -ie 's/#UseSyslog/UseSyslog/g' /etc/pacman.conf
