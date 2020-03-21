@@ -243,8 +243,8 @@ arch-chroot /mnt sudo -u mrcz mkdir /home/mrcz/.secrets/
 arch-chroot /mnt sudo -u mrcz mkdir /home/mrcz/Pictures/wallpapers/
 
 # enabled [multilib] repo on installed system
-arch-chroot /mnt echo "[multilib]" >> /etc/pacman.conf
-arch-chroot /mnt echo "Include = /etc/pacman.d/mirrorlist" >> /etc/pacman.conf
+arch-chroot /mnt zsh -c 'echo "[multilib]" >> /etc/pacman.conf'
+arch-chroot /mnt zsh -c 'echo "Include = /etc/pacman.d/mirrorlist" >> /etc/pacman.conf'
 
 # enable features on /etc/pacman.conf file
 arch-chroot /mnt sed -ie 's/#UseSyslog/UseSyslog/g' /etc/pacman.conf
