@@ -44,8 +44,7 @@ radius = 0
 [module/wired-network]
 type = internal/network
 interface = eno1
-format-connected = "<label-connected>"
-format-packetloss = <animation-packetloss>
+label = "<label-connected>"
 label-connected = %downspeed:2% %upspeed:2%
 
 [module/i3]
