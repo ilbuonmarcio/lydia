@@ -141,8 +141,9 @@ exec = ip addr | grep "inet " | grep "scope global" | awk '{print $2}' | xargs |
 
 [module/firewalld]
 type = custom/script
-exec = echo ""
+exec = ~/.scripts/get_firewalld_status_icon.sh
 label-padding = 3
+tail = true
 click-left = ~/.scripts/toggle_firewalld_service.sh
 
 [module/currentapptitle]
