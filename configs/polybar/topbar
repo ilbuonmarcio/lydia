@@ -112,7 +112,7 @@ interval = 1
 exec = date +"%d/%m/%y %H:%M:%S"
 label-padding = 4
 ; label-underline = #FFFFFF
-click-left = sudo timedatectl set-ntp true
+click-left = sudo timedatectl set-ntp true && firefox --new-window https://www.timeanddate.com/calendar/
 
 [module/mountedpartitions]
 type = custom/script
