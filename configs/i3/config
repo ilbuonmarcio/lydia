@@ -182,7 +182,7 @@ bindsym $mod+Shift+w exec change_current_wallpaper.sh && apply_wallpaper_theme.s
 
 # add shortcut for telegram & whatsapp
 bindsym $mod+t exec --no-startup-id telegram-desktop # opens telegram
-bindsym $mod+w exec --no-startup-id whatsapp-nativefier # opens whatsapp
+bindsym $mod+w exec --no-startup-id whatsapp-nativefier-dark # opens whatsapp
 bindsym $mod+n exec --no-startup-id simplenote # opens simplenote
 
 # set keyboard to us intl

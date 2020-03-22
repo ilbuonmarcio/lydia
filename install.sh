@@ -201,7 +201,7 @@ arch-chroot /mnt sudo -u mrcz yay -S downgrade --noconfirm
 arch-chroot /mnt sudo -u mrcz yay -S ncspot --noconfirm
 arch-chroot /mnt sudo -u mrcz yay -S corrupter-bin --noconfirm
 arch-chroot /mnt sudo -u mrcz yay -S ctop-bin --noconfirm
-arch-chroot /mnt sudo -u mrcz yay -S whatsapp-nativefier --noconfirm
+arch-chroot /mnt sudo -u mrcz yay -S whatsapp-nativefier-dark --noconfirm
 arch-chroot /mnt sudo -u mrcz yay -S simplenote-electron-bin --noconfirm
 arch-chroot /mnt sudo -u mrcz yay -S picom-tryone-git --noconfirm
 
