@@ -6,6 +6,7 @@ background-alt = #aa393939
 
 [bar/topbar]
 dpi = ${xrdb:Xft.dpi:-1}
+monitor = ${env:MONITOR:}
 
 width = 100%
 height = 42
