@@ -26,7 +26,7 @@ alias l='ls -lah --color=auto --group-directories-first'
 alias updateall='yay -Syyu --needed --devel'
 alias tpkgl="pacman -Sl | grep '^testing' | grep '\[installed\]$' | awk '{print \$2,\$3}'"
 alias glog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
-alias showpalette="msgcat --color=test"
+alias showpalette="msgcat --color=test | head -n 11 | tail -n 10"
 
 # docker aliases and functions
 alias dockertop='sudo docker stats --format "table {{.Name}}\t{{.CPUPerc}}\t{{.MemUsage}}\t{{.NetIO}}"'
