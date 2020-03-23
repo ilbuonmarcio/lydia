@@ -15,7 +15,7 @@ rofi.hide-scrollbar:    true
 rofi.line-margin:       12
 rofi.line-padding:      12
 rofi.fake-transparency: false
-rofi.font:              Cascadia Code 18
+rofi.font:              Brass Mono 18
 rofi.dpi:	108
 
 Xft.antialias:  1

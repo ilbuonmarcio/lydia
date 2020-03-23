@@ -5,7 +5,7 @@
 set $mod Mod4
 
 # font for window titles
-font pango: Cascadia Code 11
+font pango: Brass Mono 11
 
 gaps inner 16
 gaps outer 0

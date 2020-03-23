@@ -23,9 +23,8 @@ padding-right = 0
 module-margin-left = 0
 module-margin-right = 0
 
-font-0 = Roboto:style=Regular:fontformat=truetype:size=9:antialias=true;2
+font-0 = Brass Mono:size=11:antialias=true;5
 font-1 = Material Icons:size=13:antialias=true;6
-font-2 = Cascadia Code:style=Regular:fontformat=truetype:size=10:antialias=true;2
 
 tray-position = right
 tray-padding = 6
@@ -46,6 +45,7 @@ type = internal/network
 interface = eno1
 label = "<label-connected>"
 label-connected = %downspeed:2% %upspeed:2%
+label-padding = 3
 
 [module/i3]
 type = internal/i3
@@ -53,7 +53,7 @@ format = <label-state> <label-mode>
 index-sort = false
 wrapping-scroll = true
 
-label-mode-padding = 3
+label-mode-padding = 1
 label-mode-foreground = #fff
 
 ; ; focused = Active workspace on focused monitor
@@ -61,11 +61,11 @@ label-focused = %index%
 label-focused-background = ${colors.foreground-alt}
 ; label-focused-underline = ${colors.foreground-alt}
 label-focused-foreground = ${colors.background-alt}
-label-focused-padding = 3
+label-focused-padding = 1
 
 ; ; unfocused = Inactive workspace on any monitor
 label-unfocused = %index%
-label-unfocused-padding = 3
+label-unfocused-padding = 1
 label-unfocused-foreground = ${colors.foreground}
 ;label-unfocused-background = #99333333
 
@@ -80,31 +80,7 @@ label-visible-padding = ${self.label-focused-padding}
 label-urgent = %index%
 label-urgent-foreground = ${colors.foreground-alt}
 label-urgent-background = ${colors.background-alt}
-label-urgent-padding = 3
-
-[module/cpu]
-type = internal/cpu
-interval = 0.115
-; format-underline = #ef0707
-format = <ramp-coreload>
-ramp-coreload-spacing = 1
-ramp-coreload-0 = ▁
-ramp-coreload-1 = ▂
-ramp-coreload-2 = ▃
-ramp-coreload-3 = ▄
-ramp-coreload-4 = ▅
-ramp-coreload-5 = ▆
-ramp-coreload-6 = ▇
-ramp-coreload-7 = █
-label-active-font = 3
-format-padding = 4
-
-[module/memory]
-type = internal/memory
-interval = 1
-; format-underline = #CCFACC
-label = %percentage_used%% (%gb_total%)
-label-padding = 4
+label-urgent-padding = 1
 
 [module/date]
 type = custom/script
@@ -114,35 +90,10 @@ label-padding = 4
 ; label-underline = #FFFFFF
 click-left = sudo timedatectl set-ntp true && firefox --new-window https://www.timeanddate.com/calendar/
 
-[module/mountedpartitions]
-type = custom/script
-exec = df -h | sed 1d | awk '{ if (substr($1,1,1) ~ /^\//) print "["$6" "$4"]"}' | sort | xargs | sed 's/\]\ \[/\]\ \ \[/g'
-interval = 30
-label = %output%
-; label-underline = #FFB700
-label-background = ${colors.background}
-label-padding = 4
-
-[module/spotify]
-type = custom/script
-interval = 1
-label =  %output%
-exec = python ~/.scripts/spotify_status.py -f '{artist}: {song}'
-; label-underline = #1db954
-label-padding = 4
-
-[module/interfaces]
-type = custom/script
-format = <label>
-interval = 120
-; format-underline = #CCFAFA
-label-padding = 4
-exec = ip addr | grep "inet " | grep "scope global" | awk '{print $2}' | xargs | sed -e 's/ / - /g'
-
 [module/firewalld]
 type = custom/script
 exec = ~/.scripts/get_firewalld_status_icon.sh
-label-padding = 3
+label-padding = 2
 tail = true
 click-left = ~/.scripts/toggle_firewalld_service.sh
 
@@ -151,17 +102,17 @@ type = custom/script
 format = <label>
 interval = 0.1
 ; format-underline = #cc99ee
-format-padding = 4
+format-padding = 2
 exec = xdotool getactivewindow getwindowname 2>/dev/null
 
 [module/lockscreen]
 type = custom/script
 exec = echo ""
-label-padding = 3
+label-padding = 2
 click-left = ~/.scripts/lockscreen_corrupted.sh
 
 [module/search]
 type = custom/script
 exec = echo ""
-label-padding = 3
+label-padding = 2
 click-left = rofi -show run

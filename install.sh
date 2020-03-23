@@ -92,7 +92,7 @@ chromium firefox geckodriver code xf86-video-intel zip unzip unrar obs-studio do
 pulseaudio pasystray pamixer telegram-desktop go python python-pip wget nginx mariadb \
 openssh xorg-xrandr noto-fonts-emoji maim imagemagick xclip pinta light ranger \
 ttf-roboto playerctl papirus-icon-theme hwloc p7zip hsetroot docker-compose \
-nemo linux-firmware firewalld tree man glances ttf-cascadia-code darktable fzf \
+nemo linux-firmware firewalld tree man glances otf-brass-mono darktable fzf \
 mesa mesa-demos lib32-mesa vulkan-radeon lib32-vulkan-radeon libva-mesa-driver lib32-libva-mesa-driver \
 mesa-vdpau lib32-mesa-vdpau zsh-syntax-highlighting xdotool cronie dunst entr \
 xf86-video-nouveau xf86-video-vmware python-dbus httpie discord bind-tools \ 
