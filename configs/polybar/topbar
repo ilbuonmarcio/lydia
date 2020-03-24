@@ -1,7 +1,7 @@
 [colors]
 foreground = #ffffff
 foreground-alt = #f0f0f0
-background = #77191919
+background = #33191919
 background-alt = #aa393939
 
 [bar/topbar]
@@ -23,8 +23,9 @@ padding-right = 0
 module-margin-left = 0
 module-margin-right = 0
 
-font-0 = Brass Mono:size=11:antialias=true;5
-font-1 = Material Icons:size=13:antialias=true;6
+font-0 = Brass Mono:style=Regular:size=11:antialias=true;4
+font-1 = Material Icons:style=Regular:size=14:antialias=true;6
+font-2 = Noto Color Emoji:style=Regular:scale=9;4
 
 tray-position = right
 tray-padding = 6
