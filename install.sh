@@ -205,9 +205,6 @@ arch-chroot /mnt sudo -u mrcz yay -S whatsapp-nativefier-dark --noconfirm
 arch-chroot /mnt sudo -u mrcz yay -S simplenote-electron-bin --noconfirm
 arch-chroot /mnt sudo -u mrcz yay -S picom-tryone-git --noconfirm
 
-# installing better font rendering packages
-arch-chroot /mnt sudo -u mrcz /bin/zsh -c "yes | yay -S freetype2-infinality-remix fontconfig-infinality-remix cairo-infinality-remix"
-
 # installing oh-my-zsh
 arch-chroot /mnt sudo -u mrcz curl -O https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh && chmod +x install.sh && RUNZSH=no ./install.sh && rm ./install.sh
 
