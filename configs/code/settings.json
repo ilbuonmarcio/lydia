@@ -1,10 +1,10 @@
 {
-    "window.zoomLevel": 1,
+    "window.zoomLevel": 2,
     "workbench.startupEditor": "newUntitledFile",
     "workbench.colorTheme": "Tomorrow Night Blue",
     "editor.minimap.enabled": true,
     "editor.renderControlCharacters": true,
-    "editor.fontFamily": "Brass Mono",
+    "editor.fontFamily": "Cascadia Code",
     "editor.fontSize": 14,
     "editor.cursorStyle": "line-thin",
     "editor.autoClosingBrackets": "always",
