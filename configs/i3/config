@@ -5,7 +5,7 @@
 set $mod Mod4
 
 # font for window titles
-font pango: Brass Mono 11
+font pango: Inter 11
 
 gaps inner 16
 gaps outer 0

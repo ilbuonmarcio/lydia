@@ -23,8 +23,8 @@ padding-right = 0
 module-margin-left = 0
 module-margin-right = 0
 
-font-0 = Cascadia Code:style=Regular:size=11:antialias=true;4
-font-1 = Material Icons:style=Regular:size=14:antialias=true;6
+font-0 = Inter:style=Regular:size=10:antialias=true;4
+font-1 = Material Icons:style=Regular:size=14:antialias=true;7
 font-2 = Noto Color Emoji:style=Regular:scale=9;4
 
 tray-position = right
@@ -44,9 +44,9 @@ radius = 0
 [module/wired-network]
 type = internal/network
 interface = eno1
-label = "<label-connected>"
+label = <label-connected>
 label-connected = %downspeed:2% %upspeed:2%
-label-padding = 3
+label-connected-padding = 4
 
 [module/i3]
 type = internal/i3
@@ -54,7 +54,7 @@ format = <label-state> <label-mode>
 index-sort = false
 wrapping-scroll = true
 
-label-mode-padding = 1
+label-mode-padding = 2
 label-mode-foreground = #fff
 
 ; ; focused = Active workspace on focused monitor
@@ -62,11 +62,11 @@ label-focused = %index%
 label-focused-background = ${colors.foreground-alt}
 ; label-focused-underline = ${colors.foreground-alt}
 label-focused-foreground = ${colors.background-alt}
-label-focused-padding = 1
+label-focused-padding = 2
 
 ; ; unfocused = Inactive workspace on any monitor
 label-unfocused = %index%
-label-unfocused-padding = 1
+label-unfocused-padding = 2
 label-unfocused-foreground = ${colors.foreground}
 ;label-unfocused-background = #99333333
 
@@ -81,7 +81,7 @@ label-visible-padding = ${self.label-focused-padding}
 label-urgent = %index%
 label-urgent-foreground = ${colors.foreground-alt}
 label-urgent-background = ${colors.background-alt}
-label-urgent-padding = 1
+label-urgent-padding = 2
 
 [module/date]
 type = custom/script
@@ -94,7 +94,7 @@ click-left = sudo timedatectl set-ntp true && firefox --new-window https://www.t
 [module/firewalld]
 type = custom/script
 exec = ~/.scripts/get_firewalld_status_icon.sh
-label-padding = 2
+label-padding = 3
 tail = true
 click-left = ~/.scripts/toggle_firewalld_service.sh
 
@@ -103,17 +103,17 @@ type = custom/script
 format = <label>
 interval = 0.1
 ; format-underline = #cc99ee
-format-padding = 2
+format-padding = 3
 exec = xdotool getactivewindow getwindowname 2>/dev/null
 
 [module/lockscreen]
 type = custom/script
 exec = echo ""
-label-padding = 2
+label-padding = 3
 click-left = ~/.scripts/lockscreen_corrupted.sh
 
 [module/search]
 type = custom/script
 exec = echo ""
-label-padding = 2
+label-padding = 3
 click-left = rofi -show run
