@@ -1,42 +1,42 @@
 [global]
-  corner_radius = 8
+  corner_radius = 3
   follow = mouse
-  font = "Roboto Condensed 12"
-  format = "<b>%s</b>\n<span font='9'>%b</span>"
-  frame_color = "#ffffff"
-  frame_width = 0
-  geometry = "320x140-28-28"
+  font = "Inter 10"
+  format = "<b>%s</b>\n<span font='10'>%b</span>"
+  frame_color = "#101010"
+  frame_width = 1
+  geometry = "220x360-32+72"
   history = ctrl+grave
   history_length = 10
-  horizontal_padding = 8
+  horizontal_padding = 5
   icon_position = left
-  max_icon_size = 80
+  max_icon_size = 32
   idle_threshold = 120
   ignore_newline = no
   indicate_hidden = yes
-  line_height = 0
+  line_height = -3
   markup = full
-  padding = 6
-  separator_color = "#000000"
-  separator_height = 9
+  padding = 5
+  separator_color = "#101010"
+  separator_height = 11
   show_age_threshold = 30
-  sort = yes
+  sort = no
   stack_duplicates = false
   transparency = 0
   word_wrap = yes
 
 [urgency_low]
-  background = "#181818"
-  foreground = "#f9f9f9"
+  background = "#293333"
+  foreground = "#fcfcfc"
   timeout = 5
 
 [urgency_normal]
-  background = "#337777"
-  foreground = "#f9f9f9"
+  background = "#f3f322"
+  foreground = "#494949"
   timeout = 20
 
 [urgency_critical]
-  background = "#993333"
-  foreground = "#f9f9f9"
+  background = "#f32222"
+  foreground = "#fcfcfc"
   timeout = 0
 
