@@ -10,8 +10,9 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'terryma/vim-multiple-cursors'
-Plugin 'tpope/vim-fugitive'
-Plugin 'preservim/nerdtree'
+Plugin 'vim-airline/vim-airline'
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
 
 call vundle#end()
 filetype plugin indent on
