@@ -98,7 +98,7 @@ ttf-roboto playerctl papirus-icon-theme hwloc p7zip hsetroot docker-compose \
 nemo linux-firmware firewalld tree man glances inter-font darktable fzf \
 mesa mesa-demos lib32-mesa vulkan-radeon lib32-vulkan-radeon libva-mesa-driver lib32-libva-mesa-driver \
 mesa-vdpau lib32-mesa-vdpau zsh-syntax-highlighting xdotool cronie dunst entr \
-xf86-video-nouveau xf86-video-vmware python-dbus httpie discord bind-tools \ 
+xf86-video-nouveau xf86-video-vmware python-dbus httpie discord bind-tools \
 virtualbox python-pywal lutris i3lock dbeaver ccache ttf-cascadia-code
 
 # generating fstab
