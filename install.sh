@@ -180,6 +180,7 @@ arch-chroot /mnt systemctl enable docker.service
 arch-chroot /mnt systemctl enable firewalld.service
 arch-chroot /mnt systemctl enable cronie.service
 arch-chroot /mnt systemctl enable sshd.service
+arch-chroot /mnt systemctl enable fstrim.timer
 
 # enabling and starting DNS resolver via systemd-resolved
 arch-chroot /mnt systemctl enable systemd-resolved.service
