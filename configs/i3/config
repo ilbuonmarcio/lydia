@@ -109,10 +109,10 @@ bindsym $mod+Shift+p exec pkill -USR1 polybar # restart polybar inplace
 bindsym $mod+Shift+e exec i3-msg exit # exit i3 window manager
 
 # resizing window, with arrows
-bindsym $mod+Control+Left exec i3-msg resize shrink width 64 px or 64 ppt # shrink window width
-bindsym $mod+Control+Down exec i3-msg resize grow height 64 px or 64 ppt # enlarge window height
-bindsym $mod+Control+Up exec i3-msg resize shrink height 64 px or 64 ppt # shrink window height
-bindsym $mod+Control+Right exec i3-msg resize grow width 64 px or 64 ppt # enlarge window width
+bindsym $mod+Control+Left exec i3-msg resize shrink width 64 px # shrink window width
+bindsym $mod+Control+Down exec i3-msg resize grow height 64 px # enlarge window height
+bindsym $mod+Control+Up exec i3-msg resize shrink height 64 px # shrink window height
+bindsym $mod+Control+Right exec i3-msg resize grow width 64 px # enlarge window width
 
 # remove title bars everywhere
 for_window [class=".*"] border pixel 1
