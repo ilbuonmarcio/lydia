@@ -10,6 +10,7 @@ mkdir ../../.config/picom/  2> /dev/null
 mkdir ../../.config/dunst/  2> /dev/null
 mkdir ../../.config/Code\ -\ OSS/ 2> /dev/null
 mkdir ../../.config/Code\ -\ OSS/User/ 2> /dev/null
+mkdir ../../.config/rofi/ 2> /dev/null
 
 cp -rf ./configs/i3/*         ../../.config/i3/
 cp -rf ./configs/kitty/*  ../../.config/kitty/
@@ -25,6 +26,7 @@ cp -rf ./configs/gtk3/settings.ini ../../.config/gtk-3.0/
 cp -rf ./scripts/* ../../.scripts/
 cp -rf ./configs/code/settings.json ../../.config/Code\ -\ OSS/User/
 cp -rf ./configs/gtk2/.gtkrc-2.0 ../../
+cp -rf ./configs/rofi/* ../../.config/rofi/
 
 # installing Breeze-Gently theme directly from source
 wget -O $HOME/Downloads/Breeze-Gently.zip https://dllb2.pling.com/api/files/download/j/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjE1ODM2MDYzMzkiLCJ1IjpudWxsLCJsdCI6ImRvd25sb2FkIiwicyI6IjFkNzdmYzJhZTc3OWM4YjdkOGZlYTFmMmRjOTE2OTc5YmM3NmE1MTQzMTZkMzA5MmMyOTYxODU0MTkyN2MxMTM5ZjMxNTRiMDllZDRhODI3MzExNzJiNTcxM2FkYWYxZGY3OTI2YjE2YWQ5NWQ0MjdiYjNjOWZjOGM2ZmU5NjAyIiwidCI6MTU4NDQyNTE4Nywic3RmcCI6IjQ5ZWQ1ZWEyOGYxYTU4ZWI2YzRjYzJjNjg0YzUxZDM5Iiwic3RpcCI6IjIuNDIuMC4yMTMifQ.l2eYFLYDSiiscZY7PGpGyPX4TTZEd4384AeaG9LswqU/Breeze-Gently.zip 2> /dev/null

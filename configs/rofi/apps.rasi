@@ -1,0 +1,72 @@
+configuration {
+  fullscreen:                     true;
+  show-icons:                     true;
+  icon-theme:                     "Zafiro";
+  font:                           "Font Inter 10";
+  drun-display-format:            "{name}";
+}
+
+* {
+  background-color:               transparent;
+  background:                     #000000cc;
+  background-alt:                 #191919df;
+  text-color:                     #f9f9f9;
+  selected-text-color:            #ffffff;
+  primary:                        #ffffff;
+  urgent:                         #ffffff;
+}
+
+window {
+  transparency:                   "real";
+  background-color:               @background;
+  location:                       northwest;
+  anchor:                         northwest;
+  border-radius:                  0;
+  padding:                        48px 192px 128px 192px;
+}
+
+prompt {
+  enabled: false;
+}
+
+mainbox {
+  children: [ inputbar, listview ];
+  padding: 24px 12px 24px 12px;
+}
+
+
+inputbar {
+  expand:                         false;
+  background-color:               #292929df;
+  border-radius:                  16;
+  margin:                         4% 30% 2% 30%;
+  padding:                        12px;
+  position:                       north;
+  width:                          1px;
+}
+
+entry {
+  horizontal-align:               0.5;
+  placeholder:                    "Buscar";
+  placeholder-color:              @text-color;
+  blink:                          true;
+}
+
+
+listview {
+  columns: 8;
+  spacing: 1;
+  dynamic: true;
+}
+
+element {
+  border-radius: 2;
+  orientation: vertical;
+  padding: 16 24 16 24;
+}
+
+element selected {
+    background-color:               @background-alt;
+    color:                          @selected-text-color;
+    border-radius:                  8;
+}

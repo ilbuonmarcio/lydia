@@ -47,9 +47,6 @@ bindsym $mod+e exec i3-msg layout toggle split # toggle entire container layout
 # toggle tiling / floating
 bindsym $mod+space exec i3-msg floating toggle # toggle tiling / floating layout
 
-# focus the parent container
-bindsym $mod+a exec i3-msg focus parent # focus parent container
-
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1"
@@ -141,6 +138,7 @@ bindsym $mod+l exec --no-startup-id $HOME/.scripts/lockscreen_corrupted.sh # loc
 bindsym $mod+b exec firefox # open firefox
 bindsym $mod+c exec code # open vscode
 bindsym $mod+d exec rofi -show run # open search menu
+bindsym $mod+a exec rofi -modi "drun" -show drun -theme apps # open app list
 
 # add audio handlers on razer keyboard audio management device
 bindsym XF86AudioRaiseVolume exec pamixer --increase 2 # increase volume
