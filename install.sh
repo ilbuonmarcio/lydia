@@ -88,18 +88,16 @@ mount /dev/${selected_disk}1 /mnt/boot
 mount /dev/${selected_disk}2 /mnt/home
 
 # pacstrap-ping desired disk
-pacstrap /mnt base base-devel vim networkmanager rofi feh linux linux-headers \
-os-prober efibootmgr ntfs-3g kitty git zsh intel-ucode amd-ucode cpupower xf86-video-amdgpu vlc \
+pacstrap /mnt base base-devel vim networkmanager rofi feh linux linux-headers linux-firmware \
+os-prober efibootmgr ntfs-3g kitty git zsh amd-ucode cpupower xf86-video-amdgpu \
 xorg-server xorg-xinit ttf-dejavu ttf-liberation ttf-inconsolata noto-fonts gucharmap \
-chromium firefox geckodriver code xf86-video-intel zip unzip unrar obs-studio docker \
-pulseaudio pasystray pamixer telegram-desktop go python python-pip wget nginx mariadb \
-openssh xorg-xrandr noto-fonts-emoji maim imagemagick xclip pinta light ranger \
-ttf-roboto playerctl papirus-icon-theme hwloc p7zip hsetroot docker-compose \
-nemo linux-firmware firewalld tree man glances inter-font darktable fzf \
-mesa mesa-demos lib32-mesa vulkan-radeon lib32-vulkan-radeon libva-mesa-driver lib32-libva-mesa-driver \
-mesa-vdpau lib32-mesa-vdpau zsh-syntax-highlighting xdotool cronie dunst entr \
-xf86-video-nouveau xf86-video-vmware python-dbus httpie discord bind-tools \
-virtualbox python-pywal lutris i3lock dbeaver ccache ttf-cascadia-code
+firefox geckodriver code zip unzip unrar obs-studio \
+pulseaudio pasystray pamixer telegram-desktop python python-pip wget nginx \
+openssh xorg-xrandr noto-fonts-emoji maim imagemagick xclip pinta light \
+ttf-roboto playerctl papirus-icon-theme hwloc p7zip hsetroot \
+nemo firewalld tree man inter-font fzf mesa vulkan-radeon libva-mesa-driver \
+mesa-vdpau zsh-syntax-highlighting xdotool cronie dunst entr xf86-video-vmware python-dbus discord bind-tools \
+python-pywal i3lock dbeaver ccache ttf-cascadia-code
 
 # generating fstab
 genfstab -U /mnt >> /mnt/etc/fstab
@@ -176,7 +174,6 @@ arch-chroot /mnt echo "governor='performance'" >> /mnt/etc/default/cpupower
 # making services start at boot
 arch-chroot /mnt systemctl enable cpupower.service
 arch-chroot /mnt systemctl enable NetworkManager.service
-arch-chroot /mnt systemctl enable docker.service
 arch-chroot /mnt systemctl enable firewalld.service
 arch-chroot /mnt systemctl enable cronie.service
 arch-chroot /mnt systemctl enable sshd.service
@@ -203,9 +200,8 @@ arch-chroot /mnt sed -ie 's/!ccache/ccache/g' /etc/makepkg.conf
 arch-chroot /mnt sudo -u mrcz yay -S i3-gaps --noconfirm
 arch-chroot /mnt sudo -u mrcz yay -S polybar --noconfirm
 arch-chroot /mnt sudo -u mrcz yay -S downgrade --noconfirm
-arch-chroot /mnt sudo -u mrcz yay -S ncspot --noconfirm
+arch-chroot /mnt sudo -u mrcz yay -S spotify --noconfirm
 arch-chroot /mnt sudo -u mrcz yay -S corrupter-bin --noconfirm
-arch-chroot /mnt sudo -u mrcz yay -S ctop-bin --noconfirm
 arch-chroot /mnt sudo -u mrcz yay -S whatsapp-nativefier-dark --noconfirm
 arch-chroot /mnt sudo -u mrcz yay -S simplenote-electron-bin --noconfirm
 arch-chroot /mnt sudo -u mrcz yay -S picom-tryone-git --noconfirm
@@ -249,12 +245,6 @@ arch-chroot /mnt sed -ie 's/#UseSyslog/UseSyslog/g' /etc/pacman.conf
 arch-chroot /mnt sed -ie 's/#Color/Color/g' /etc/pacman.conf
 arch-chroot /mnt sed -ie 's/#TotalDownload/TotalDownload/g' /etc/pacman.conf
 arch-chroot /mnt sed -ie 's/#VerbosePkgLists/VerbosePkgLists/g' /etc/pacman.conf
-
-# enabling https, http as per default configuration for public zone for firewalld
-arch-chroot /mnt systemctl start firewalld.service
-arch-chroot /mnt firewall-cmd --add-service=http --permanent
-arch-chroot /mnt firewall-cmd --add-service=https --permanent
-arch-chroot /mnt firewall-cmd --change-interface=docker0 --zone=trusted --permanent
 
 # enable firefox accelerated/webrender mode for quantum engine use
 arch-chroot /mnt zsh -c 'echo "MOZ_ACCELERATED=1" >> /etc/environment'
