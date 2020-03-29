@@ -35,7 +35,7 @@ timedatectl set-ntp true
 
 # getting latest mirrors for italy and germany
 wget -O mirrorlist "https://www.archlinux.org/mirrorlist/?country=DE&country=IT&protocol=https&ip_version=4"
-sed -ie 's/^.//g' ./mirrorlist
+sed -i -e 's/^.//g' ./mirrorlist
 mv ./mirrorlist /etc/pacman.d/mirrorlist
 
 # updating mirrors
@@ -122,8 +122,8 @@ arch-chroot /mnt zsh -c `echo 'export FREETYPE_PROPERTIES="truetype:interpreter-
 arch-chroot /mnt hwclock --systohc
 
 # localizing system
-arch-chroot /mnt sed -ie 's/#en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/g' /etc/locale.gen
-arch-chroot /mnt sed -ie 's/#en_US ISO-8859-1/en_US ISO-8859-1/g' /etc/locale.gen
+arch-chroot /mnt sed -i -e 's/#en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/g' /etc/locale.gen
+arch-chroot /mnt sed -i -e 's/#en_US ISO-8859-1/en_US ISO-8859-1/g' /etc/locale.gen
 
 # generating locale
 arch-chroot /mnt locale-gen
@@ -140,7 +140,7 @@ arch-chroot /mnt echo "::1 localhost" >> /mnt/etc/hosts
 arch-chroot /mnt echo "127.0.1.1 mrczlnks.localdomain mrczlnks" >> /mnt/etc/hosts
 
 # making sudoers do sudo stuff without requiring password typing
-arch-chroot /mnt sed -ie 's/# %wheel ALL=(ALL) NOPASSWD: ALL/%wheel ALL=(ALL) NOPASSWD: ALL/g' /etc/sudoers
+arch-chroot /mnt sed -i -e 's/# %wheel ALL=(ALL) NOPASSWD: ALL/%wheel ALL=(ALL) NOPASSWD: ALL/g' /etc/sudoers
 
 # make initframs
 arch-chroot /mnt mkinitcpio -p linux
@@ -155,18 +155,18 @@ arch-chroot /mnt useradd -m -G wheel -s /bin/zsh mrcz
 arch-chroot /mnt /bin/zsh -c 'echo "mrcz:$user_password" | chpasswd'
 
 # installing systemd-boot
-bootctl --path=/boot install
+arch-chroot /mnt bootctl --path=/boot install
 
 # configuring mrczlnks boot entry
-arch-chroot /mnt grep "UUID=" /etc/fstab | grep '/ ' | awk '{ print $1 }' | sed -e 's/UUID=//' > .root_disk_uuid
-arch-chroot /mnt touch /boot/loader/entries/mrczlnks.conf
-arch-chroot /mnt echo "title mrczlnks" >> /boot/loader/entries/mrczlnks.conf
-arch-chroot /mnt echo "linux /vmlinuz-linux" >> /boot/loader/entries/mrczlnks.conf
-arch-chroot /mnt echo "initrd /amd-ucode.img" >> /boot/loader/entries/mrczlnks.conf
-arch-chroot /mnt echo "initrd /initramfs-linux.img" >> /boot/loader/entries/mrczlnks.conf
-arch-chroot /mnt echo 'options root="UUID=root_disk_uuid" rw' >> /boot/loader/entries/mrczlnks.conf
-arch-chroot /mnt sed -ie "s/root_disk_uuid/$(cat .root_disk_uuid)/g" /boot/loader/entries/mrczlnks.conf
-arch-chroot /mnt rm .root_disk_uuid
+arch-chroot /mnt /bin/zsh -c "grep \"UUID=\" /etc/fstab | grep '/ ' | awk '{ print \$1 }' | sed -e 's/UUID=//' > .root_disk_uuid"
+arch-chroot /mnt /bin/zsh -c 'touch /boot/loader/entries/mrczlnks.conf'
+arch-chroot /mnt /bin/zsh -c 'echo "title mrczlnks" >> /boot/loader/entries/mrczlnks.conf'
+arch-chroot /mnt /bin/zsh -c 'echo "linux /vmlinuz-linux" >> /boot/loader/entries/mrczlnks.conf'
+arch-chroot /mnt /bin/zsh -c 'echo "initrd /amd-ucode.img" >> /boot/loader/entries/mrczlnks.conf'
+arch-chroot /mnt /bin/zsh -c 'echo "initrd /initramfs-linux.img" >> /boot/loader/entries/mrczlnks.conf'
+arch-chroot /mnt /bin/zsh -c 'echo options root=\"UUID=root_disk_uuid\" rw >> /boot/loader/entries/mrczlnks.conf'
+arch-chroot /mnt /bin/zsh -c 'sed -i -e "s/root_disk_uuid/$(cat .root_disk_uuid)/g" /boot/loader/entries/mrczlnks.conf'
+arch-chroot /mnt /bin/zsh -c 'rm .root_disk_uuid'
 
 # changing governor to performance
 arch-chroot /mnt echo "governor='performance'" >> /mnt/etc/default/cpupower
@@ -194,7 +194,7 @@ arch-chroot /mnt rm -rf /home/mrcz/yay_tmp_install
 
 # adding makepkg optimizations
 arch-chroot /mnt sed -i -e 's/#MAKEFLAGS="-j2"/MAKEFLAGS=-j'$(nproc --ignore 1)'/' -e 's/-march=x86-64 -mtune=generic/-march=native/' -e 's/xz -c -z/xz -c -z -T '$(nproc --ignore 1)'/' /etc/makepkg.conf
-arch-chroot /mnt sed -ie 's/!ccache/ccache/g' /etc/makepkg.conf
+arch-chroot /mnt sed -i -e 's/!ccache/ccache/g' /etc/makepkg.conf
 
 # installing various packages from AUR
 arch-chroot /mnt sudo -u mrcz yay -S i3-gaps --noconfirm
@@ -241,10 +241,10 @@ arch-chroot /mnt sudo -u mrcz mkdir /home/mrcz/.secrets/
 arch-chroot /mnt sudo -u mrcz mkdir /home/mrcz/Pictures/wallpapers/
 
 # enable features on /etc/pacman.conf file
-arch-chroot /mnt sed -ie 's/#UseSyslog/UseSyslog/g' /etc/pacman.conf
-arch-chroot /mnt sed -ie 's/#Color/Color/g' /etc/pacman.conf
-arch-chroot /mnt sed -ie 's/#TotalDownload/TotalDownload/g' /etc/pacman.conf
-arch-chroot /mnt sed -ie 's/#VerbosePkgLists/VerbosePkgLists/g' /etc/pacman.conf
+arch-chroot /mnt sed -i -e 's/#UseSyslog/UseSyslog/g' /etc/pacman.conf
+arch-chroot /mnt sed -i -e 's/#Color/Color/g' /etc/pacman.conf
+arch-chroot /mnt sed -i -e 's/#TotalDownload/TotalDownload/g' /etc/pacman.conf
+arch-chroot /mnt sed -i -e 's/#VerbosePkgLists/VerbosePkgLists/g' /etc/pacman.conf
 
 # enable firefox accelerated/webrender mode for quantum engine use
 arch-chroot /mnt zsh -c 'echo "MOZ_ACCELERATED=1" >> /etc/environment'
