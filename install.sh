@@ -146,13 +146,13 @@ arch-chroot /mnt sed -i -e 's/# %wheel ALL=(ALL) NOPASSWD: ALL/%wheel ALL=(ALL) 
 arch-chroot /mnt mkinitcpio -p linux
 
 # setting root password
-arch-chroot /mnt /bin/zsh -c 'echo "root:$root_password" | chpasswd'
+arch-chroot /mnt echo "root:$root_password" | chpasswd
 
 # making user mrcz
 arch-chroot /mnt useradd -m -G wheel -s /bin/zsh mrcz
 
 # setting mrcz password
-arch-chroot /mnt /bin/zsh -c 'echo "mrcz:$user_password" | chpasswd'
+arch-chroot /mnt echo "mrcz:$user_password" | chpasswd
 
 # installing systemd-boot
 arch-chroot /mnt bootctl --path=/boot install
