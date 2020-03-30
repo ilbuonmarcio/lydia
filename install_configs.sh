@@ -11,6 +11,7 @@ mkdir ../../.config/dunst/  2> /dev/null
 mkdir ../../.config/Code\ -\ OSS/ 2> /dev/null
 mkdir ../../.config/Code\ -\ OSS/User/ 2> /dev/null
 mkdir ../../.config/rofi/ 2> /dev/null
+mkdir ../../.config/nvim/ 2> /dev/null
 
 cp -rf ./configs/i3/*         ../../.config/i3/
 cp -rf ./configs/kitty/*  ../../.config/kitty/
@@ -21,7 +22,7 @@ cp -rf ./configs/zsh/mrczlnks.zsh-theme ../../.oh-my-zsh/themes/
 cp -rf ./configs/picom/* ../../.config/picom/
 cp -rf ./configs/Xfiles/.Xresources ../../
 cp -rf ./configs/Xfiles/.xinitrc ../../
-cp -rf ./configs/vim/.vimrc ../../
+cp -rf ./configs/nvim/init.vim ../../.config/nvim/
 cp -rf ./configs/gtk3/settings.ini ../../.config/gtk-3.0/
 cp -rf ./scripts/* ../../.scripts/
 cp -rf ./configs/code/settings.json ../../.config/Code\ -\ OSS/User/

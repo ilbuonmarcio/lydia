@@ -12,8 +12,8 @@ export SHELL=zsh
 export PAGER=less
 export FILE=ranger
 export TERMINAL=kitty
-export EDITOR=vim
-export VISUAL=vim
+export EDITOR=nvim
+export VISUAL=nvim
 export BROWSER=firefox
 
 export GPG_TTY=$(tty)

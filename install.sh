@@ -88,7 +88,7 @@ mount /dev/${selected_disk}1 /mnt/boot
 mount /dev/${selected_disk}2 /mnt/home
 
 # pacstrap-ping desired disk
-pacstrap /mnt base base-devel vim networkmanager rofi feh linux linux-headers linux-firmware \
+pacstrap /mnt base base-devel neovim networkmanager rofi feh linux linux-headers linux-firmware \
 os-prober efibootmgr ntfs-3g kitty git zsh amd-ucode cpupower xf86-video-amdgpu \
 xorg-server xorg-xinit ttf-dejavu ttf-liberation ttf-inconsolata noto-fonts gucharmap \
 firefox geckodriver code zip unzip unrar obs-studio adapta-gtk-theme \
@@ -213,9 +213,8 @@ arch-chroot /mnt sudo -u mrcz /bin/zsh -c 'cd ~ && curl -O https://raw.githubuse
 arch-chroot /mnt sudo -u mrcz /bin/zsh -c "wget -O /home/mrcz/.oh-my-zsh/themes/pi.zsh-theme https://raw.githubusercontent.com/tobyjamesthomas/pi/master/pi.zsh-theme"
 
 # installing vundle
-arch-chroot /mnt sudo -u mrcz mkdir /home/mrcz/.vim
-arch-chroot /mnt sudo -u mrcz mkdir /home/mrcz/.vim/bundle
-arch-chroot /mnt sudo -u mrcz git clone https://github.com/VundleVim/Vundle.vim.git /home/mrcz/.vim/bundle/Vundle.vim
+arch-chroot /mnt sudo -u mrcz mkdir -p /home/mrcz/.config/nvim/bundle
+arch-chroot /mnt sudo -u mrcz git clone https://github.com/VundleVim/Vundle.vim.git /home/mrcz/.config/nvim/bundle/Vundle.vim
 
 # installing fonts
 arch-chroot /mnt sudo -u mrcz mkdir /home/mrcz/fonts_tmp_folder
