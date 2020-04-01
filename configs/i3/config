@@ -7,9 +7,9 @@ set $mod Mod4
 # font for window titles
 font pango: Inter 11
 
-gaps inner 16
-gaps outer 0
 smart_gaps on
+gaps inner 32
+gaps outer 0
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -169,7 +169,7 @@ exec --no-startup-id xset dpms 0 0 600
 
 # enable polybars & picom-tryone after whole i3-gaps wm bootstrap & configuration process
 exec --no-startup-id $HOME/.scripts/toggle_polybar.sh
-exec --no-startup-id picom --experimental-backends --blur-method dual_kawase
+exec --no-startup-id picom --experimental-backends
 
 # change current wallpaper at i3 startup
 exec --no-startup-id $HOME/.scripts/change_current_wallpaper.sh
