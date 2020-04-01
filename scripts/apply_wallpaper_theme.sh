@@ -1,4 +1,4 @@
 #!/bin/zsh
 
-wal -i $(cat $HOME/.currwall) --saturate 0.65 -q -e
+wal -i $(cat $HOME/.currwall) --saturate 0.85 -q -e
 
