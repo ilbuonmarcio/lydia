@@ -1,8 +1,8 @@
 [colors]
 foreground = #ffffff
 foreground-alt = #f0f0f0
-background = #33191919
-background-alt = #aa393939
+background = #00000000
+background-alt = #000000
 
 [bar/topbar]
 dpi = ${xrdb:Xft.dpi:-1}
