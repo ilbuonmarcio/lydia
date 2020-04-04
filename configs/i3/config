@@ -61,19 +61,19 @@ set $ws9 "9"
 set $ws10 "10"
 
 # Set workspace for specific monitors
-set $center_monitor DisplayPort-1
-set $left_monitor DisplayPort-2
+set $center_monitor DisplayPort-0
+set $right_monitor DisplayPort-1
 
 workspace $ws1 output $center_monitor
-workspace $ws2 output $left_monitor
-workspace $ws3 output $left_monitor
-workspace $ws4 output $left_monitor
-workspace $ws5 output $left_monitor
-workspace $ws6 output $left_monitor
-workspace $ws7 output $left_monitor
-workspace $ws8 output $left_monitor
-workspace $ws9 output $left_monitor
-workspace $ws10 output $left_monitor
+workspace $ws2 output $right_monitor
+workspace $ws3 output $right_monitor
+workspace $ws4 output $right_monitor
+workspace $ws5 output $right_monitor
+workspace $ws6 output $right_monitor
+workspace $ws7 output $right_monitor
+workspace $ws8 output $right_monitor
+workspace $ws9 output $right_monitor
+workspace $ws10 output $right_monitor
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
