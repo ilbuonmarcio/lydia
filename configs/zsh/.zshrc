@@ -22,6 +22,7 @@ autoload -Uz compinit promptinit
 compinit
 promptinit
 
+alias vim='nvim'
 alias l='ls -lah --color=auto --group-directories-first'
 alias updateall='yay -Syyu --needed --devel'
 alias tpkgl="pacman -Sl | grep '^testing' | grep '\[installed\]$' | awk '{print \$2,\$3}'"
