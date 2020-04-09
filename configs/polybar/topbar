@@ -32,7 +32,7 @@ tray-padding = 6
 tray-maxsize = 22
 
 modules-left = i3 currentapptitle 
-modules-center = date
+modules-center = date spotify
 modules-right = wired-network firewalld lockscreen volume
 
 cursor-click = pointer
@@ -117,3 +117,11 @@ type = custom/script
 exec = echo " $(pamixer --get-volume)%"
 label-padding = 4
 interval = 0.2
+
+[module/spotify]
+type = custom/script
+interval = 1
+label = %output%
+exec = python ~/.scripts/spotify_status.py -f '{artist}: {song}'
+label-underline = #1db954
+label-padding = 4
