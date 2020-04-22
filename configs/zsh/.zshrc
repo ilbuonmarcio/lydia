@@ -18,6 +18,9 @@ export BROWSER=firefox
 
 export GPG_TTY=$(tty)
 
+export ANDROID_HOME=~/Android/Sdk/
+export ANDROID_SDK_ROOT=~/Android/Sdk/
+
 autoload -Uz compinit promptinit
 compinit
 promptinit
@@ -52,4 +55,5 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 source $HOME/.secrets
 
 path+=("$HOME/.scripts")
+path+=("$HOME/Android/Sdk/cmdline-tools/latest/bin/")
 export PATH
