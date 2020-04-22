@@ -97,7 +97,7 @@ openssh xorg-xrandr noto-fonts-emoji maim imagemagick xclip pinta light \
 ttf-roboto playerctl papirus-icon-theme hwloc p7zip hsetroot \
 nemo firewalld tree man inter-font fzf mesa vulkan-radeon libva-mesa-driver \
 mesa-vdpau zsh-syntax-highlighting xdotool cronie dunst entr xf86-video-vmware python-dbus discord bind-tools \
-python-pywal i3lock dbeaver ccache ttf-cascadia-code ttf-opensans httpie
+python-pywal i3lock dbeaver ccache ttf-cascadia-code ttf-opensans httpie pavucontrol
 
 # generating fstab
 genfstab -U /mnt >> /mnt/etc/fstab
