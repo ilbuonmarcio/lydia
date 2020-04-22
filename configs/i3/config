@@ -11,6 +11,9 @@ smart_gaps on
 gaps inner 32
 gaps outer 0
 
+# remove mouse focus on hover
+focus_follows_mouse no
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
