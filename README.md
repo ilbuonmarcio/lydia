@@ -1,8 +1,8 @@
 ![](logo.png)
 
-# What is mrczlnks?
+# What is jacklnx?
 
-`mrczlnks` is a featureful, yet simple Arch Linux install script
+`jacklnx` is a featureful, yet simple Arch Linux install script
 
 ![](screenshot.png)
 
@@ -33,7 +33,7 @@ REALLY. USE AT YOUR OWN RISK.
 - Inside this live environment you should now connect to the internet using either ethernet or wifi as you like (use `wifi-menu` or `nmcli` or as your preference), then download the latest script from this repository with the following command:
 
 ```bash
-wget https://raw.githubusercontent.com/ilbuonmarcio/mrczlnks/master/install.sh
+wget https://raw.githubusercontent.com/GiacomoTezza/jacklnx/master/install.sh
 ```
 
 - Modify it to fit your own purposes (I suggest you to edit the partition mounts, change hostname, username, purge packages and features you don't need and so on, or do like [zetaemme](https://github.com/zetaemme/zls) and fork this repository as a base for your own Arch Linux install script!)
