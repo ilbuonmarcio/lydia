@@ -1,8 +1,8 @@
 $HOME/.scripts/apply_wallpaper_theme.sh
 
-export ZSH="/home/mrcz/.oh-my-zsh"
+export ZSH="/home/jack/.oh-my-zsh"
 
-ZSH_THEME="mrczlnks"
+ZSH_THEME="jacklnx"
 
 plugins=(git extract pip python sudo)
 
