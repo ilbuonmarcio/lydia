@@ -64,8 +64,8 @@ set $ws9 "9"
 set $ws10 "10"
 
 # Set workspace for specific monitors
-set $center_monitor DisplayPort-0
-set $right_monitor DisplayPort-1
+set $center_monitor DP-4
+set $right_monitor DP-4
 
 workspace $ws1 output $center_monitor
 workspace $ws2 output $right_monitor
