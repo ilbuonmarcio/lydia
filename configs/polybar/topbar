@@ -1,15 +1,15 @@
 [colors]
 foreground = #ffffff
 foreground-alt = #f0f0f0
-background = #00000000
-background-alt = #000000
+background = #29303030
+background-alt = #29555555
 
 [bar/topbar]
 dpi = ${xrdb:Xft.dpi:-1}
 monitor = ${env:MONITOR:}
 
 width = 100%
-height = 48
+height = 34
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -54,7 +54,7 @@ format = <label-state> <label-mode>
 index-sort = false
 wrapping-scroll = true
 
-label-mode-padding = 3
+label-mode-padding = 2
 label-mode-foreground = #fff
 
 ; ; focused = Active workspace on focused monitor
@@ -62,11 +62,11 @@ label-focused = %index%
 label-focused-background = #22ffffff
 ; label-focused-underline = ${colors.foreground-alt}
 label-focused-foreground = ${colors.foreground}
-label-focused-padding = 3
+label-focused-padding = 2
 
 ; ; unfocused = Inactive workspace on any monitor
 label-unfocused = %index%
-label-unfocused-padding = 3
+label-unfocused-padding = 2
 label-unfocused-foreground = ${colors.foreground}
 ;label-unfocused-background = #99333333
 
@@ -81,7 +81,7 @@ label-visible-padding = ${self.label-focused-padding}
 label-urgent = %index%
 label-urgent-foreground = ${colors.foreground-alt}
 label-urgent-background = ${colors.background-alt}
-label-urgent-padding = 3
+label-urgent-padding = 2
 
 [module/date]
 type = custom/script
