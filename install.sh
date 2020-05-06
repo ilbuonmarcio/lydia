@@ -97,7 +97,7 @@ openssh xorg-xrandr noto-fonts-emoji maim imagemagick xclip light \
 ttf-roboto playerctl papirus-icon-theme hwloc p7zip hsetroot \
 nemo firewalld tree man inter-font fzf mesa vulkan-radeon libva-mesa-driver \
 mesa-vdpau zsh-syntax-highlighting xdotool cronie dunst entr xf86-video-vmware python-dbus discord bind-tools \
-python-pywal i3lock dbeaver ccache ttf-cascadia-code ttf-opensans httpie pavucontrol
+python-pywal i3lock dbeaver ccache ttf-cascadia-code ttf-opensans httpie pavucontrol docker docker-compose
 
 # generating fstab
 genfstab -U /mnt >> /mnt/etc/fstab
@@ -178,6 +178,7 @@ arch-chroot /mnt systemctl enable firewalld.service
 arch-chroot /mnt systemctl enable cronie.service
 arch-chroot /mnt systemctl enable sshd.service
 arch-chroot /mnt systemctl enable fstrim.timer
+arch-chroot /mnt systemctl enable docker.service
 
 # enabling and starting DNS resolver via systemd-resolved
 arch-chroot /mnt systemctl enable systemd-resolved.service

@@ -4,7 +4,7 @@ export ZSH="/home/mrcz/.oh-my-zsh"
 
 ZSH_THEME="mrczlnks"
 
-plugins=(git extract pip python sudo)
+plugins=(git extract pip python sudo docker docker-compose)
 
 source $ZSH/oh-my-zsh.sh
 
