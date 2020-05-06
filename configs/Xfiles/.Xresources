@@ -9,8 +9,8 @@ rofi.color-window:      argb:aa000000, argb:aa000000
 rofi.color-normal:      argb:00000000, #ffffff, argb:00000000, argb:29ffffff, argb:ffffffff
 rofi.color-urgent:      argb:ccffffff, #ffffff, argb:99333333, argb:ff393939, argb:ffffffff
 rofi.separator-style:   solid
-rofi.fullscreen:        true
-rofi.padding:           64
+rofi.fullscreen:        false
+rofi.padding:           8
 rofi.hide-scrollbar:    true
 rofi.line-margin:       6
 rofi.line-padding:      8
