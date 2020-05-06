@@ -10,12 +10,12 @@ rofi.color-normal:      argb:00000000, #ffffff, argb:00000000, argb:29ffffff, ar
 rofi.color-urgent:      argb:ccffffff, #ffffff, argb:99333333, argb:ff393939, argb:ffffffff
 rofi.separator-style:   solid
 rofi.fullscreen:        true
-rofi.padding:           128
+rofi.padding:           64
 rofi.hide-scrollbar:    true
-rofi.line-margin:       12
-rofi.line-padding:      12
+rofi.line-margin:       6
+rofi.line-padding:      8
 rofi.fake-transparency: false
-rofi.font:              Inter 18
+rofi.font:              Inter 12
 rofi.dpi:	108
 
 Xft.antialias:  1
