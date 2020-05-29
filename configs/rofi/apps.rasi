@@ -8,8 +8,8 @@ configuration {
 
 * {
   background-color:               transparent;
-  background:                     #00000000;
-  background-alt:                 #19191929;
+  background:                     #00000099;
+  background-alt:                 #49494939;
   text-color:                     #f9f9f9;
   selected-text-color:            #ffffff;
   primary:                        #ffffff;
@@ -39,7 +39,7 @@ mainbox {
 
 inputbar {
   expand:                         false;
-  background-color:               #29292929;
+  background-color:               #49494949;
   border-radius:                  12;
   margin:                         0px 0px 32px 12px;
   padding:                        12px;
