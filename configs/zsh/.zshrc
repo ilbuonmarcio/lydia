@@ -1,5 +1,3 @@
-$HOME/.scripts/apply_wallpaper_theme.sh
-
 export ZSH="/home/mrcz/.oh-my-zsh"
 
 ZSH_THEME="mrczlnks"
