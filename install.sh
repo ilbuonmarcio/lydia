@@ -12,9 +12,6 @@ echo "        for maximum comfort and minimum hassles ";
 echo "";
 echo "";
 
-root_password="123"
-user_password="123"
-
 # boot partition size, in MB
 boot_partition_size=500
 
@@ -146,13 +143,13 @@ arch-chroot /mnt sed -i -e 's/# %wheel ALL=(ALL) NOPASSWD: ALL/%wheel ALL=(ALL) 
 arch-chroot /mnt mkinitcpio -p linux
 
 # setting root password
-arch-chroot /mnt echo "root:$root_password" | chpasswd
+arch-chroot /mnt sudo -u root /bin/zsh -c 'echo "Insert root password: " && read root_password && echo -e "$root_password\n$root_password" | passwd root'
 
 # making user mrcz
 arch-chroot /mnt useradd -m -G wheel -s /bin/zsh mrcz
 
 # setting mrcz password
-arch-chroot /mnt echo "mrcz:$user_password" | chpasswd
+arch-chroot /mnt sudo -u root /bin/zsh -c 'echo "Insert mrcz password: " && read mrcz_password && echo -e "$mrcz_password\n$mrcz_password" | passwd mrcz'
 
 # installing systemd-boot
 arch-chroot /mnt bootctl --path=/boot install
