@@ -1,4 +1,4 @@
-PROMPT=' ${return_status} %{$fg[white][$(whoami)]%} %{$fg[blue]%}($(get_pwd))%{$reset_color%} $(git_prompt_info)${prompt_suffix}'
+PROMPT=' ${return_status} %{$fg[white]$(whoami)%}@$(hostname) %{$fg[blue]%}($(get_pwd))%{$reset_color%} $(git_prompt_info)${prompt_suffix}'
 
 local return_status="%(?:%{$fg_bold[green]%}μ:%{$fg_bold[red]%}μ)"
 
