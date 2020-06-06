@@ -73,7 +73,7 @@ label-unfocused-foreground = ${colors.foreground}
 ; ; visible = Active workspace on unfocused monitor
 label-visible = %index%
 label-visible-background = ${self.label-focused-background}
-label-visible-foreground = #ee00ee
+label-visible-foreground = #8baf8b
 ;label-visible-underline = ${self.label-focused-underline}
 label-visible-padding = ${self.label-focused-padding}
 
