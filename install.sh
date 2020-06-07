@@ -90,10 +90,10 @@ os-prober efibootmgr ntfs-3g kitty git zsh amd-ucode cpupower xf86-video-amdgpu 
 xorg-server xorg-xinit ttf-dejavu ttf-liberation ttf-inconsolata noto-fonts gucharmap \
 firefox geckodriver zip unzip unrar obs-studio adapta-gtk-theme \
 pulseaudio pasystray pamixer telegram-desktop python python-pip wget nginx \
-openssh xorg-xrandr noto-fonts-emoji maim imagemagick xclip light \
+openssh xorg-xrandr noto-fonts-emoji maim imagemagick xclip \
 ttf-roboto playerctl papirus-icon-theme hwloc p7zip hsetroot \
-nemo firewalld tree man inter-font fzf mesa vulkan-radeon libva-mesa-driver \
-mesa-vdpau zsh-syntax-highlighting xdotool cronie dunst entr xf86-video-vmware python-dbus discord bind-tools \
+nemo tree man inter-font fzf mesa vulkan-radeon libva-mesa-driver \
+mesa-vdpau zsh-syntax-highlighting xdotool cronie dunst entr python-dbus discord bind-tools \
 i3lock dbeaver ccache ttf-cascadia-code ttf-opensans httpie pavucontrol docker docker-compose picom
 
 # generating fstab
@@ -171,7 +171,6 @@ arch-chroot /mnt echo "governor='performance'" >> /mnt/etc/default/cpupower
 # making services start at boot
 arch-chroot /mnt systemctl enable cpupower.service
 arch-chroot /mnt systemctl enable NetworkManager.service
-arch-chroot /mnt systemctl enable firewalld.service
 arch-chroot /mnt systemctl enable cronie.service
 arch-chroot /mnt systemctl enable sshd.service
 arch-chroot /mnt systemctl enable fstrim.timer
