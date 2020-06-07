@@ -88,7 +88,7 @@ mount /dev/${selected_disk}2 /mnt/home
 pacstrap /mnt base base-devel neovim networkmanager rofi feh linux linux-headers linux-firmware \
 os-prober efibootmgr ntfs-3g kitty git zsh amd-ucode cpupower xf86-video-amdgpu \
 xorg-server xorg-xinit ttf-dejavu ttf-liberation ttf-inconsolata noto-fonts gucharmap \
-firefox geckodriver code zip unzip unrar obs-studio adapta-gtk-theme \
+firefox geckodriver zip unzip unrar obs-studio adapta-gtk-theme \
 pulseaudio pasystray pamixer telegram-desktop python python-pip wget nginx \
 openssh xorg-xrandr noto-fonts-emoji maim imagemagick xclip light \
 ttf-roboto playerctl papirus-icon-theme hwloc p7zip hsetroot \
@@ -202,6 +202,7 @@ arch-chroot /mnt sudo -u mrcz yay -S spotify --noconfirm
 arch-chroot /mnt sudo -u mrcz yay -S corrupter-bin --noconfirm
 arch-chroot /mnt sudo -u mrcz yay -S whatsapp-nativefier-dark --noconfirm
 arch-chroot /mnt sudo -u mrcz yay -S simplenote-electron-bin --noconfirm
+arch-chroot /mnt sudo -u mrcz yay -S visual-studio-code-bin --noconfirm
 
 # installing oh-my-zsh
 arch-chroot /mnt sudo -u mrcz /bin/zsh -c 'cd ~ && curl -O https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh && chmod +x install.sh && RUNZSH=no ./install.sh && rm ./install.sh'
