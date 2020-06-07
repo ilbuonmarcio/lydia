@@ -9,7 +9,7 @@ dpi = ${xrdb:Xft.dpi:-1}
 monitor = ${env:MONITOR:}
 
 width = 100%
-height = 34
+height = 36
 
 background = ${colors.background}
 foreground = ${colors.foreground}
