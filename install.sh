@@ -94,7 +94,7 @@ openssh xorg-xrandr noto-fonts-emoji maim imagemagick xclip light \
 ttf-roboto playerctl papirus-icon-theme hwloc p7zip hsetroot \
 nemo firewalld tree man inter-font fzf mesa vulkan-radeon libva-mesa-driver \
 mesa-vdpau zsh-syntax-highlighting xdotool cronie dunst entr xf86-video-vmware python-dbus discord bind-tools \
-i3lock dbeaver ccache ttf-cascadia-code ttf-opensans httpie pavucontrol docker docker-compose
+i3lock dbeaver ccache ttf-cascadia-code ttf-opensans httpie pavucontrol docker docker-compose picom
 
 # generating fstab
 genfstab -U /mnt >> /mnt/etc/fstab
@@ -202,7 +202,6 @@ arch-chroot /mnt sudo -u mrcz yay -S spotify --noconfirm
 arch-chroot /mnt sudo -u mrcz yay -S corrupter-bin --noconfirm
 arch-chroot /mnt sudo -u mrcz yay -S whatsapp-nativefier-dark --noconfirm
 arch-chroot /mnt sudo -u mrcz yay -S simplenote-electron-bin --noconfirm
-arch-chroot /mnt sudo -u mrcz yay -S picom-tryone-git --noconfirm
 
 # installing oh-my-zsh
 arch-chroot /mnt sudo -u mrcz /bin/zsh -c 'cd ~ && curl -O https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh && chmod +x install.sh && RUNZSH=no ./install.sh && rm ./install.sh'
