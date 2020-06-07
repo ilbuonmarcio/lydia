@@ -25,7 +25,7 @@ cp -rf ./configs/Xfiles/.xinitrc ../../
 cp -rf ./configs/nvim/init.vim ../../.config/nvim/
 cp -rf ./configs/gtk3/settings.ini ../../.config/gtk-3.0/
 cp -rf ./scripts/* ../../.scripts/
-cp -rf ./configs/code/settings.json ../../.config/Code\ -\ OSS/User/
+cp -rf ./configs/code/settings.json ../../.config/Code/User/
 cp -rf ./configs/gtk2/.gtkrc-2.0 ../../
 cp -rf ./configs/rofi/* ../../.config/rofi/
 
