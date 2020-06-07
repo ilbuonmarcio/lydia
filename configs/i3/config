@@ -169,10 +169,11 @@ exec --no-startup-id xset dpms 0 0 600
 
 # enable polybars & picom-tryone after whole i3-gaps wm bootstrap & configuration process
 exec --no-startup-id $HOME/.scripts/toggle_polybar.sh
-exec --no-startup-id picom --experimental-backends
+exec --no-startup-id picom
 
 # change current wallpaper at i3 startup
 exec --no-startup-id feh --bg-fill --randomize ~/Pictures/wallpapers/
+bindsym $mod+r exec --no-startup-id feh --bg-fill --randomize ~/Pictures/wallpapers/
 
 # add shortcut for telegram & whatsapp
 bindsym $mod+t exec --no-startup-id telegram-desktop # opens telegram
