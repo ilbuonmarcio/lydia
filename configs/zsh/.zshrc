@@ -25,7 +25,7 @@ promptinit
 
 alias vim='nvim'
 alias l='ls -lah --color=auto --group-directories-first'
-alias updateall='yay -Syu --needed --devel'
+alias updateall="day=$((($(date +%s) - $(date -d $(sed -n '/upgrade$/x;${x;s/.\([0-9-]*\).*/\1/p}' /var/log/pacman.log) +%s)) / 86400)); printf 'last update was %d days ago\n' $day; yay -Syu --needed --devel"
 alias tpkgl="pacman -Sl | grep '^testing' | grep '\[installed\]$' | awk '{print \$2,\$3}'"
 alias glog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 alias showpalette="msgcat --color=test | head -n 11 | tail -n 10"
