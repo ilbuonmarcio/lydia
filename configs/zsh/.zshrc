@@ -14,6 +14,8 @@ export EDITOR=nvim
 export VISUAL=nvim
 export BROWSER=firefox
 
+export WEATHER_PLACE=Verona
+
 export GPG_TTY=$(tty)
 
 export ANDROID_HOME=~/Android/Sdk/
