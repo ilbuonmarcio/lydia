@@ -3,11 +3,15 @@
 import json
 import requests
 import os
+import sys
 
-try:
-    WEATHER_PLACE = os.environ['WEATHER_PLACE']
-except:
-    WEATHER_PLACE = ''
+if len(sys.argv) > 1:
+    WEATHER_PLACE = sys.argv[1]
+else:
+    try:
+        WEATHER_PLACE = os.environ['WEATHER_PLACE']
+    except:
+        WEATHER_PLACE = ''
 
 page = requests.get(f'http://wttr.in/{WEATHER_PLACE}?format=j1')
 weather_content = str(page.content, encoding='utf-8')
