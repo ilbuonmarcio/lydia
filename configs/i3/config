@@ -175,7 +175,6 @@ bindsym $mod+r exec --no-startup-id feh --bg-fill --randomize ~/Pictures/wallpap
 # add shortcut for telegram & whatsapp
 bindsym $mod+t exec --no-startup-id telegram-desktop # opens telegram
 bindsym $mod+w exec --no-startup-id whatsapp-nativefier-dark # opens whatsapp
-bindsym $mod+n exec --no-startup-id simplenote # opens simplenote
 
 # set keyboard to us intl
 exec --no-startup-id exec setxkbmap us intl

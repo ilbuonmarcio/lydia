@@ -200,7 +200,6 @@ arch-chroot /mnt sudo -u mrcz yay -S downgrade --noconfirm
 arch-chroot /mnt sudo -u mrcz yay -S spotify --noconfirm
 arch-chroot /mnt sudo -u mrcz yay -S corrupter-bin --noconfirm
 arch-chroot /mnt sudo -u mrcz yay -S whatsapp-nativefier-dark --noconfirm
-arch-chroot /mnt sudo -u mrcz yay -S simplenote-electron-bin --noconfirm
 arch-chroot /mnt sudo -u mrcz yay -S visual-studio-code-bin --noconfirm
 
 # installing oh-my-zsh
