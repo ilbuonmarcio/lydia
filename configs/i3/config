@@ -61,8 +61,8 @@ set $ws9 "9"
 set $ws10 "10"
 
 # Set workspace for specific monitors
-set $center_monitor DisplayPort-0
-set $right_monitor DisplayPort-1
+set $center_monitor DisplayPort-2
+set $right_monitor DisplayPort-2
 
 workspace $ws1 output $center_monitor
 workspace $ws2 output $right_monitor
@@ -175,6 +175,7 @@ bindsym $mod+r exec --no-startup-id feh --bg-fill --randomize ~/Pictures/wallpap
 # add shortcut for telegram & whatsapp
 bindsym $mod+t exec --no-startup-id telegram-desktop # opens telegram
 bindsym $mod+w exec --no-startup-id whatsapp-nativefier-dark # opens whatsapp
+bindsym $mod+n exec --no-startup-id simplenote # opens simplenote
 
 # set keyboard to us intl
 exec --no-startup-id exec setxkbmap us intl
@@ -183,7 +184,7 @@ exec --no-startup-id exec setxkbmap us intl
 exec --no-startup-id dunst
 
 # run update packages notification
-exec --no-startup-id sleep 15 && dunstify --timeout=10000 "$($HOME/.scripts/list_updates_available.sh)"
+exec --no-startup-id sleep 15 && dunstify --timeout=10000 "Checking for updates..." "$($HOME/.scripts/list_updates_available.sh)"
 
 # run pasystray audio management tray application
 exec --no-startup-id pasystray
