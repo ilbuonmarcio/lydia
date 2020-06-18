@@ -18,7 +18,6 @@ cp -rf ./configs/kitty/*  ../../.config/kitty/
 cp -rf ./configs/polybar/*    ../../.config/polybar/
 cp -rf ./configs/dunst/*    ../../.config/dunst/
 cp -rf ./configs/zsh/.zshrc   ../../
-cp -rf ./configs/zsh/mrczlnks.zsh-theme ../../.oh-my-zsh/themes/
 cp -rf ./configs/picom/* ../../.config/picom/
 cp -rf ./configs/Xfiles/.Xresources ../../
 cp -rf ./configs/Xfiles/.xinitrc ../../

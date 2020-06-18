@@ -1,6 +1,6 @@
 export ZSH="/home/mrcz/.oh-my-zsh"
 
-ZSH_THEME="mrczlnks"
+ZSH_THEME="half-life"
 
 plugins=(git extract pip python sudo docker docker-compose)
 
