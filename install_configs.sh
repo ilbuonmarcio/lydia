@@ -2,7 +2,8 @@
 mkdir ../../.themes/          2> /dev/null
 
 mkdir ../../.scripts          2> /dev/null
-mkdir ../../.config/i3        2> /dev/null
+mkdir ../../.config/bspwm        2> /dev/null
+mkdir ../../.config/sxhkd	2> /dev/null
 mkdir ../../.config/kitty 2> /dev/null
 mkdir ../../.config/polybar   2> /dev/null
 mkdir ../../.config/gtk-3.0/  2> /dev/null
@@ -13,7 +14,8 @@ mkdir ../../.config/Code\ -\ OSS/User/ 2> /dev/null
 mkdir ../../.config/rofi/ 2> /dev/null
 mkdir ../../.config/nvim/ 2> /dev/null
 
-cp -rf ./configs/i3/*         ../../.config/i3/
+cp -rf ./configs/bspwm/*         ../../.config/bspwm/
+cp -rf ./configs/sxhkd/*	../../.config/sxhkd/
 cp -rf ./configs/kitty/*  ../../.config/kitty/
 cp -rf ./configs/polybar/*    ../../.config/polybar/
 cp -rf ./configs/dunst/*    ../../.config/dunst/

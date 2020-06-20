@@ -7,7 +7,7 @@ echo "      |_| |_| |_|_|  \___/___|_|_| |_|_|\_\___/";
 echo "                                        ";
 echo "                                                       ";
 
-echo "     Easy-to-configure archlinux+i3 install script ";
+echo "     Easy-to-configure archlinux+bspwm install script ";
 echo "        for maximum comfort and minimum hassles ";
 echo "";
 echo "";
@@ -94,7 +94,7 @@ openssh xorg-xrandr noto-fonts-emoji maim imagemagick xclip \
 ttf-roboto playerctl papirus-icon-theme hwloc p7zip hsetroot \
 nemo tree man inter-font fzf mesa vulkan-radeon libva-mesa-driver \
 mesa-vdpau zsh-syntax-highlighting xdotool cronie dunst entr python-dbus discord bind-tools \
-i3lock dbeaver ccache ttf-cascadia-code ttf-opensans httpie pavucontrol docker docker-compose picom mpv iotop
+i3lock dbeaver ccache ttf-cascadia-code ttf-opensans httpie pavucontrol docker docker-compose picom mpv iotop bspwm sxhkd 
 
 # generating fstab
 genfstab -U /mnt >> /mnt/etc/fstab
@@ -180,9 +180,9 @@ arch-chroot /mnt systemctl enable docker.service
 arch-chroot /mnt systemctl enable systemd-resolved.service
 arch-chroot /mnt systemctl start systemd-resolved.service
 
-# making i3 default for startx for both root and mrcz
-arch-chroot /mnt echo "exec i3" >> /mnt/root/.xinitrc
-arch-chroot /mnt echo "exec i3" >> /mnt/home/mrcz/.xinitrc
+# making bspwm default for startx for both root and mrcz
+arch-chroot /mnt echo "exec bspwm" >> /mnt/root/.xinitrc
+arch-chroot /mnt echo "exec bspwm" >> /mnt/home/mrcz/.xinitrc
 
 # installing yay
 arch-chroot /mnt sudo -u mrcz git clone https://aur.archlinux.org/yay.git /home/mrcz/yay_tmp_install
@@ -194,7 +194,6 @@ arch-chroot /mnt sed -i -e 's/#MAKEFLAGS="-j2"/MAKEFLAGS=-j'$(nproc --ignore 1)'
 arch-chroot /mnt sed -i -e 's/!ccache/ccache/g' /etc/makepkg.conf
 
 # installing various packages from AUR
-arch-chroot /mnt sudo -u mrcz yay -S i3-gaps --noconfirm
 arch-chroot /mnt sudo -u mrcz yay -S polybar --noconfirm
 arch-chroot /mnt sudo -u mrcz yay -S downgrade --noconfirm
 arch-chroot /mnt sudo -u mrcz yay -S spotify --noconfirm
