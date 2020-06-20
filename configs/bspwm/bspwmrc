@@ -17,7 +17,6 @@ setxkbmap us intl
 feh --bg-fill --randomize $HOME/Pictures/wallpapers/
 $HOME/.scripts/toggle_polybar.sh
 picom &
-pasystray &
 dunst &
 
 # Put monitor to sleep automatically after 10 minutes of inactivity

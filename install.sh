@@ -89,7 +89,7 @@ pacstrap /mnt base base-devel neovim networkmanager rofi feh linux linux-headers
 os-prober efibootmgr ntfs-3g kitty git zsh amd-ucode cpupower xf86-video-amdgpu \
 xorg-server xorg-xinit ttf-dejavu ttf-liberation ttf-inconsolata noto-fonts gucharmap \
 firefox geckodriver zip unzip unrar obs-studio adapta-gtk-theme \
-pulseaudio pasystray pamixer telegram-desktop python python-pip wget nginx \
+pulseaudio pamixer telegram-desktop python python-pip wget nginx \
 openssh xorg-xrandr noto-fonts-emoji maim imagemagick xclip \
 ttf-roboto playerctl papirus-icon-theme hwloc p7zip hsetroot \
 nemo tree man inter-font fzf mesa vulkan-radeon libva-mesa-driver \
