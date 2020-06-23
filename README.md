@@ -1,34 +1,20 @@
-![](logo.png)
+# mrczlnks
 
-# What is mrczlnks?
+![](0.png)
 
-`mrczlnks` is a featureful, yet simple Arch Linux install script
+`mrczlnks` is a simple Arch Linux installation script.
 
-![](screenshot.png)
+It's easy to configure, install and use, has UEFI-only boot support and provides automatic disk partitioning.
 
-# Features
-- Easy to configure, install and use
-- UEFI-only boot support
-- Automatic disk partitioning
-- Customized bspwm window manager to fit all your needs
-- Preconfigured `firewalld` on 22/80/443 ports
-- Specifically targeted at development & productivity tasks
+It's build upon a very minimal set of useful packages, and features `bspwm` as the window manager of choice.
 
-# Support
-
-This software is semi-frequently updated as per necessity, but I will not provide any dedicated support to users using this piece of software.
-
-## So, here is a fun Disclaimer
-
-THIS PIECE OF SOFTWARE IS PROVIDED AS IS, WITHOUT WARRANTIES OF ANY KIND. I AM NOT RESPONSIBLE FOR ANY USAGE OF THIS SCRIPT, OR ANY IMPORTANT DISK ACCIDENTALLY FORMATTED BY THIS INSTALL SCRIPT, OR YOUR ENTIRE SYSTEM EXPLODING, OR WHATEVER.
-
-REALLY. USE AT YOUR OWN RISK.
+It's specifically targeted at development & productivity tasks but it's still very easy to customize to fit your own needs!
 
 # Configuration & Installation Procedure
 
 - Download the official Arch Linux .iso file from the [official site download section](https://www.archlinux.org/download/)
 
-- Flash it onto an USB drive with softwares like `dd`, Rufus, balenaEtcher or whatever, stick it in the desired PC and boot the provided live environment, as per the ArchWiki installation page
+- Flash it onto an USB drive, insert it in the desired PC and boot the provided live environment, as per the ArchWiki installation page
 
 - Inside this live environment you should now connect to the internet using either ethernet or wifi as you like (use `wifi-menu` or `nmcli` or as your preference), then download the latest script from this repository with the following command:
 
@@ -36,7 +22,7 @@ REALLY. USE AT YOUR OWN RISK.
 wget https://raw.githubusercontent.com/ilbuonmarcio/mrczlnks/master/install.sh
 ```
 
-- Modify it to fit your own purposes (I suggest you to edit the partition mounts, change hostname, username, purge packages and features you don't need and so on, or do like [zetaemme](https://github.com/zetaemme/zls) and fork this repository as a base for your own Arch Linux install script!)
+- Modify it to fit your own purposes (I suggest you to edit the partition mounts, change hostname, username, purge packages and features you don't need and so on, or do like [all these people](https://github.com/ilbuonmarcio/mrczlnks/network/members) and fork this repository as a base for your own Arch Linux install script!
 
 ```bash
 vim ./install.sh
@@ -55,6 +41,16 @@ chmod +x ./install.sh
 ```bash
 ./install.sh
 ```
+
+## Support
+
+This software is semi-frequently updated as per necessity, but I will not provide any dedicated support to users using this piece of software. Still, feel free to open an Issue or submit a Pull Request!
+
+## Here is a fun Disclaimer
+
+THIS PIECE OF SOFTWARE IS PROVIDED AS IS, WITHOUT WARRANTIES OF ANY KIND. I AM NOT RESPONSIBLE FOR ANY USAGE OF THIS SCRIPT, OR ANY IMPORTANT DISK ACCIDENTALLY FORMATTED BY THIS INSTALL SCRIPT, OR YOUR ENTIRE SYSTEM EXPLODING, OR WHATEVER.
+
+REALLY. USE AT YOUR OWN RISK.
 
 ## License
 
