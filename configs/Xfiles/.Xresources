@@ -9,19 +9,19 @@ rofi.color-window:      argb:aa000000, argb:aa000000
 rofi.color-normal:      argb:00000000, #ffffff, argb:00000000, argb:29ffffff, argb:ffffffff
 rofi.color-urgent:      argb:ccffffff, #ffffff, argb:99333333, argb:ff393939, argb:ffffffff
 rofi.separator-style:   solid
-rofi.fullscreen:        true
-rofi.padding:           128
+rofi.fullscreen:        false
+rofi.padding:           8
 rofi.hide-scrollbar:    true
-rofi.line-margin:       12
-rofi.line-padding:      12
+rofi.line-margin:       6
+rofi.line-padding:      8
 rofi.fake-transparency: false
-rofi.font:              Inter 18
-rofi.dpi:	108
+rofi.font:              Inter 12
+rofi.dpi:	112
 
 Xft.antialias:  1
 Xft.autohint:   0
-Xft.dpi:        108
 Xft.hinting:    1
+Xft.dpi:	112
 Xft.hintstyle:  hintslight
 Xft.lcdfilter:  lcddefault
 Xft.rgba:       rgb

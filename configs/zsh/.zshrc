@@ -1,10 +1,16 @@
+<<<<<<< HEAD
 $HOME/.scripts/apply_wallpaper_theme.sh
 
 export ZSH="/home/jack/.oh-my-zsh"
 
 ZSH_THEME="jacklnx"
+=======
+export ZSH="/home/mrcz/.oh-my-zsh"
 
-plugins=(git extract pip python sudo)
+ZSH_THEME="half-life"
+>>>>>>> 6d380c39818fa18545b544f7fe7b74d4fa838657
+
+plugins=(git extract pip python sudo docker docker-compose)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -15,6 +21,8 @@ export TERMINAL=kitty
 export EDITOR=nvim
 export VISUAL=nvim
 export BROWSER=firefox
+
+export WEATHER_PLACE=Verona
 
 export GPG_TTY=$(tty)
 
@@ -27,7 +35,7 @@ promptinit
 
 alias vim='nvim'
 alias l='ls -lah --color=auto --group-directories-first'
-alias updateall='yay -Syyu --needed --devel'
+alias updateall="day=$((($(date +%s) - $(date -d $(sed -n '/upgrade$/x;${x;s/.\([0-9-]*\).*/\1/p}' /var/log/pacman.log) +%s)) / 86400)); printf 'Last system update was %d days ago\n' $day; yay -Syu --needed --devel"
 alias tpkgl="pacman -Sl | grep '^testing' | grep '\[installed\]$' | awk '{print \$2,\$3}'"
 alias glog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 alias showpalette="msgcat --color=test | head -n 11 | tail -n 10"

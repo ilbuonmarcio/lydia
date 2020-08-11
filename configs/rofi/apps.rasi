@@ -1,15 +1,15 @@
 configuration {
-  fullscreen:                     true;
+  fullscreen:                     false;
   show-icons:                     true;
-  icon-theme:                     "Zafiro";
+  icon-theme:                     "Papirus";
   font:                           "Font Inter 10";
   drun-display-format:            "{name}";
 }
 
 * {
   background-color:               transparent;
-  background:                     #000000cc;
-  background-alt:                 #191919df;
+  background:                     #00000099;
+  background-alt:                 #49494939;
   text-color:                     #f9f9f9;
   selected-text-color:            #ffffff;
   primary:                        #ffffff;
@@ -19,10 +19,12 @@ configuration {
 window {
   transparency:                   "real";
   background-color:               @background;
-  location:                       northwest;
-  anchor:                         northwest;
+  location:                       center;
+  anchor:                         center;
   border-radius:                  0;
-  padding:                        48px 192px 128px 192px;
+  padding:                        8px 8px 8px 8px;
+  width:			  960px;
+  height:			  840px;
 }
 
 prompt {
@@ -37,11 +39,11 @@ mainbox {
 
 inputbar {
   expand:                         false;
-  background-color:               #292929df;
-  border-radius:                  16;
-  margin:                         4% 30% 2% 30%;
+  background-color:               #49494949;
+  border-radius:                  12;
+  margin:                         0px 0px 32px 12px;
   padding:                        12px;
-  position:                       north;
+  position:                       center;
   width:                          1px;
 }
 
