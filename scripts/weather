@@ -1,0 +1,24 @@
+#!/usr/bin/python
+
+import json
+import requests
+import os
+import sys
+
+if len(sys.argv) > 1:
+    WEATHER_PLACE = sys.argv[1]
+else:
+    try:
+        WEATHER_PLACE = os.environ['WEATHER_PLACE']
+    except:
+        WEATHER_PLACE = ''
+
+page = requests.get(f'http://wttr.in/{WEATHER_PLACE}?format=j1')
+weather_content = str(page.content, encoding='utf-8')
+weather_content = json.loads(weather_content)
+
+current = weather_content['current_condition'][0]
+render_string = f"{current['weatherDesc'][0]['value']} | {current['temp_C']}C🌡️ {current['humidity']}%💧 {current['cloudcover']}% ☁️"
+
+print(render_string)
+

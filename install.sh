@@ -1,6 +1,3 @@
-root_password="123"
-user_password="123"
-
 # boot partition size, in MB
 boot_partition_size=500
 
@@ -20,7 +17,7 @@ echo "[multilib] repo correctly enabled, continuing"
 timedatectl set-ntp true
 
 # getting latest mirrors for italy and germany
-wget -O mirrorlist "https://www.archlinux.org/mirrorlist/?country=DE&country=IT&protocol=https&ip_version=4"
+curl -o mirrorlist "https://www.archlinux.org/mirrorlist/?country=DE&country=IT&protocol=https&ip_version=4"
 sed -i -e 's/^.//g' ./mirrorlist
 mv ./mirrorlist /etc/pacman.d/mirrorlist
 
@@ -77,13 +74,13 @@ mount /dev/${selected_disk}2 /mnt/home
 pacstrap /mnt base base-devel neovim networkmanager rofi feh linux linux-headers linux-firmware \
 os-prober efibootmgr ntfs-3g kitty git zsh amd-ucode cpupower xf86-video-amdgpu \
 xorg-server xorg-xinit ttf-dejavu ttf-liberation ttf-inconsolata noto-fonts gucharmap \
-firefox geckodriver code zip unzip unrar obs-studio adapta-gtk-theme \
-pulseaudio pasystray pamixer telegram-desktop python python-pip wget nginx \
-openssh xorg-xrandr noto-fonts-emoji maim imagemagick xclip light \
+firefox geckodriver zip unzip unrar obs-studio adapta-gtk-theme \
+pulseaudio pamixer telegram-desktop python python-pip wget nginx \
+openssh xorg-xrandr noto-fonts-emoji maim imagemagick xclip \
 ttf-roboto playerctl papirus-icon-theme hwloc p7zip hsetroot \
-nemo firewalld tree man inter-font fzf mesa vulkan-radeon libva-mesa-driver \
-mesa-vdpau zsh-syntax-highlighting xdotool cronie dunst entr xf86-video-vmware python-dbus discord bind-tools \
-python-pywal i3lock dbeaver ccache ttf-cascadia-code ttf-opensans httpie pavucontrol nvidia nvidia-config
+nemo tree man inter-font fzf mesa vulkan-radeon libva-mesa-driver \
+mesa-vdpau zsh-syntax-highlighting xdotool cronie dunst entr python-dbus discord bind-tools \
+i3lock dbeaver ccache ttf-cascadia-code ttf-opensans httpie pavucontrol docker docker-compose picom mpv iotop bspwm sxhkd gitg
 
 # generating fstab
 genfstab -U /mnt >> /mnt/etc/fstab
@@ -132,13 +129,13 @@ arch-chroot /mnt sed -i -e 's/# %wheel ALL=(ALL) NOPASSWD: ALL/%wheel ALL=(ALL) 
 arch-chroot /mnt mkinitcpio -p linux
 
 # setting root password
-arch-chroot /mnt echo "root:$root_password" | chpasswd
+arch-chroot /mnt sudo -u root /bin/zsh -c 'echo "Insert root password: " && read root_password && echo -e "$root_password\n$root_password" | passwd root'
 
 # making user jack
 arch-chroot /mnt useradd -m -G wheel -s /bin/zsh jack
 
 # setting jack password
-arch-chroot /mnt echo "jack:$user_password" | chpasswd
+arch-chroot /mnt sudo -u root /bin/zsh -c 'echo "Insert jack password: " && read jack_password && echo -e "$jack_password\n$jack_password" | passwd jack'
 
 # installing systemd-boot
 arch-chroot /mnt bootctl --path=/boot install
@@ -160,18 +157,18 @@ arch-chroot /mnt echo "governor='performance'" >> /mnt/etc/default/cpupower
 # making services start at boot
 arch-chroot /mnt systemctl enable cpupower.service
 arch-chroot /mnt systemctl enable NetworkManager.service
-arch-chroot /mnt systemctl enable firewalld.service
 arch-chroot /mnt systemctl enable cronie.service
 arch-chroot /mnt systemctl enable sshd.service
 arch-chroot /mnt systemctl enable fstrim.timer
+arch-chroot /mnt systemctl enable docker.service
 
 # enabling and starting DNS resolver via systemd-resolved
 arch-chroot /mnt systemctl enable systemd-resolved.service
 arch-chroot /mnt systemctl start systemd-resolved.service
 
-# making i3 default for startx for both root and jack
-arch-chroot /mnt echo "exec i3" >> /mnt/root/.xinitrc
-arch-chroot /mnt echo "exec i3" >> /mnt/home/jack/.xinitrc
+# making bspwm default for startx for both root and jack
+arch-chroot /mnt echo "exec bspwm" >> /mnt/root/.xinitrc
+arch-chroot /mnt echo "exec bspwm" >> /mnt/home/jack/.xinitrc
 
 # installing yay
 arch-chroot /mnt sudo -u jack git clone https://aur.archlinux.org/yay.git /home/jack/yay_tmp_install
@@ -183,20 +180,18 @@ arch-chroot /mnt sed -i -e 's/#MAKEFLAGS="-j2"/MAKEFLAGS=-j'$(nproc --ignore 1)'
 arch-chroot /mnt sed -i -e 's/!ccache/ccache/g' /etc/makepkg.conf
 
 # installing various packages from AUR
-arch-chroot /mnt sudo -u jack yay -S i3-gaps --noconfirm
 arch-chroot /mnt sudo -u jack yay -S polybar --noconfirm
 arch-chroot /mnt sudo -u jack yay -S downgrade --noconfirm
 arch-chroot /mnt sudo -u jack yay -S spotify --noconfirm
 arch-chroot /mnt sudo -u jack yay -S corrupter-bin --noconfirm
 arch-chroot /mnt sudo -u jack yay -S whatsapp-nativefier-dark --noconfirm
-arch-chroot /mnt sudo -u jack yay -S simplenote-electron-bin --noconfirm
-arch-chroot /mnt sudo -u jack yay -S picom-tryone-git --noconfirm
+arch-chroot /mnt sudo -u jack yay -S visual-studio-code-bin --noconfirm
 
 # installing oh-my-zsh
 arch-chroot /mnt sudo -u jack /bin/zsh -c 'cd ~ && curl -O https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh && chmod +x install.sh && RUNZSH=no ./install.sh && rm ./install.sh'
 
 # installing pi theme for zsh
-arch-chroot /mnt sudo -u jack /bin/zsh -c "wget -O /home/jack/.oh-my-zsh/themes/pi.zsh-theme https://raw.githubusercontent.com/tobyjamesthomas/pi/master/pi.zsh-theme"
+arch-chroot /mnt sudo -u jack /bin/zsh -c "curl -o /home/jack/.oh-my-zsh/themes/pi.zsh-theme https://raw.githubusercontent.com/tobyjamesthomas/pi/master/pi.zsh-theme"
 
 # installing vundle
 arch-chroot /mnt sudo -u jack mkdir -p /home/jack/.config/nvim/bundle
@@ -206,7 +201,7 @@ arch-chroot /mnt sudo -u jack git clone https://github.com/VundleVim/Vundle.vim.
 arch-chroot /mnt sudo -u jack mkdir /home/jack/fonts_tmp_folder
 arch-chroot /mnt sudo -u jack sudo mkdir /usr/share/fonts/OTF/
 # material icons
-arch-chroot /mnt sudo -u jack /bin/zsh -c "cd /home/jack/fonts_tmp_folder && wget -O materialicons.zip https://github.com/google/material-design-icons/releases/download/3.0.1/material-design-icons-3.0.1.zip && unzip materialicons.zip"
+arch-chroot /mnt sudo -u jack /bin/zsh -c "cd /home/jack/fonts_tmp_folder && curl -o materialicons.zip https://github.com/google/material-design-icons/releases/download/3.0.1/material-design-icons-3.0.1.zip && unzip materialicons.zip"
 arch-chroot /mnt sudo -u jack /bin/zsh -c "sudo cp /home/jack/fonts_tmp_folder/material-design-icons-3.0.1/iconfont/MaterialIcons-Regular.ttf /usr/share/fonts/TTF/"
 # removing fonts tmp folder
 arch-chroot /mnt sudo -u jack rm -rf /home/jack/fonts_tmp_folder

@@ -1,15 +1,15 @@
 [colors]
 foreground = #ffffff
 foreground-alt = #f0f0f0
-background = #00000000
-background-alt = #000000
+background = #29303030
+background-alt = #29555555
 
 [bar/topbar]
 dpi = ${xrdb:Xft.dpi:-1}
 monitor = ${env:MONITOR:}
 
 width = 100%
-height = 48
+height = 36
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -33,7 +33,7 @@ tray-maxsize = 22
 
 modules-left = i3 currentapptitle 
 modules-center = date spotify
-modules-right = wired-network firewalld lockscreen volume
+modules-right = weather wired-network lockscreen volume
 
 cursor-click = pointer
 cursor-scroll = ns-resize
@@ -49,39 +49,34 @@ label-connected = %downspeed:2% %upspeed:2%
 label-connected-padding = 4
 
 [module/i3]
-type = internal/i3
+type = internal/bspwm
 format = <label-state> <label-mode>
-index-sort = false
-wrapping-scroll = true
 
-label-mode-padding = 3
-label-mode-foreground = #fff
+label-separator = |
+label-separator-padding = 0
+label-separator-foreground = #70ffffff
 
-; ; focused = Active workspace on focused monitor
-label-focused = %index%
-label-focused-background = #22ffffff
-; label-focused-underline = ${colors.foreground-alt}
-label-focused-foreground = ${colors.foreground}
-label-focused-padding = 3
+label-focused = %name%
+label-focused-foreground = #202020
+label-focused-background = #f9f9f9
+label-focused-underline = #fba922
 
-; ; unfocused = Inactive workspace on any monitor
-label-unfocused = %index%
-label-unfocused-padding = 3
-label-unfocused-foreground = ${colors.foreground}
-;label-unfocused-background = #99333333
+label-empty-foreground = #50ffffff
 
-; ; visible = Active workspace on unfocused monitor
-label-visible = %index%
-label-visible-background = ${self.label-focused-background}
-label-visible-foreground = #ee00ee
-;label-visible-underline = ${self.label-focused-underline}
-label-visible-padding = ${self.label-focused-padding}
+label-occupied = %name%
+label-urgent = %name%
+label-empty = %name%
+label-tiled = 
+label-fullscreen = 
+label-floating = 
 
-; ; urgent = Workspace with urgency hint set
-label-urgent = %index%
-label-urgent-foreground = ${colors.foreground-alt}
-label-urgent-background = ${colors.background-alt}
-label-urgent-padding = 3
+label-focused-padding = 2
+label-occupied-padding = 2
+label-urgent-padding = 2
+label-empty-padding = 2
+label-tiled-padding = 2
+label-fullscreen-padding = 2
+label-floating-padding = 2
 
 [module/date]
 type = custom/script
@@ -90,13 +85,6 @@ exec = date +"%d/%m/%y %H:%M:%S"
 label-padding = 4
 ; label-underline = #FFFFFF
 click-left = sudo timedatectl set-ntp true
-
-[module/firewalld]
-type = custom/script
-exec = ~/.scripts/get_firewalld_status_icon.sh
-label-padding = 4
-tail = true
-click-left = ~/.scripts/toggle_firewalld_service.sh
 
 [module/currentapptitle]
 type = custom/script
@@ -124,4 +112,11 @@ interval = 1
 label = %output%
 exec = python ~/.scripts/spotify_status.py -f '{artist}: {song}'
 label-underline = #1db954
+label-padding = 4
+
+[module/weather]
+type = custom/script
+interval = 3600
+label = %output%
+exec = weather Verona
 label-padding = 4
