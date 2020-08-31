@@ -31,7 +31,7 @@ echo "[multilib] repo correctly enabled, continuing"
 timedatectl set-ntp true
 
 # getting latest mirrors for italy and germany
-wget -O mirrorlist "https://www.archlinux.org/mirrorlist/?country=DE&country=IT&protocol=https&ip_version=4"
+curl -o mirrorlist "https://www.archlinux.org/mirrorlist/?country=DE&country=IT&protocol=https&ip_version=4"
 sed -i -e 's/^.//g' ./mirrorlist
 mv ./mirrorlist /etc/pacman.d/mirrorlist
 
@@ -94,7 +94,7 @@ openssh xorg-xrandr noto-fonts-emoji maim imagemagick xclip \
 ttf-roboto playerctl papirus-icon-theme hwloc p7zip hsetroot \
 nemo tree man inter-font fzf mesa vulkan-radeon libva-mesa-driver \
 mesa-vdpau zsh-syntax-highlighting xdotool cronie dunst entr python-dbus discord bind-tools \
-i3lock dbeaver ccache ttf-cascadia-code ttf-opensans httpie pavucontrol docker docker-compose picom mpv iotop bspwm sxhkd 
+i3lock dbeaver ccache ttf-cascadia-code ttf-opensans httpie pavucontrol docker docker-compose picom mpv iotop bspwm sxhkd gitg
 
 # generating fstab
 genfstab -U /mnt >> /mnt/etc/fstab
@@ -205,7 +205,7 @@ arch-chroot /mnt sudo -u mrcz yay -S visual-studio-code-bin --noconfirm
 arch-chroot /mnt sudo -u mrcz /bin/zsh -c 'cd ~ && curl -O https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh && chmod +x install.sh && RUNZSH=no ./install.sh && rm ./install.sh'
 
 # installing pi theme for zsh
-arch-chroot /mnt sudo -u mrcz /bin/zsh -c "wget -O /home/mrcz/.oh-my-zsh/themes/pi.zsh-theme https://raw.githubusercontent.com/tobyjamesthomas/pi/master/pi.zsh-theme"
+arch-chroot /mnt sudo -u mrcz /bin/zsh -c "curl -o /home/mrcz/.oh-my-zsh/themes/pi.zsh-theme https://raw.githubusercontent.com/tobyjamesthomas/pi/master/pi.zsh-theme"
 
 # installing vundle
 arch-chroot /mnt sudo -u mrcz mkdir -p /home/mrcz/.config/nvim/bundle
@@ -215,7 +215,7 @@ arch-chroot /mnt sudo -u mrcz git clone https://github.com/VundleVim/Vundle.vim.
 arch-chroot /mnt sudo -u mrcz mkdir /home/mrcz/fonts_tmp_folder
 arch-chroot /mnt sudo -u mrcz sudo mkdir /usr/share/fonts/OTF/
 # material icons
-arch-chroot /mnt sudo -u mrcz /bin/zsh -c "cd /home/mrcz/fonts_tmp_folder && wget -O materialicons.zip https://github.com/google/material-design-icons/releases/download/3.0.1/material-design-icons-3.0.1.zip && unzip materialicons.zip"
+arch-chroot /mnt sudo -u mrcz /bin/zsh -c "cd /home/mrcz/fonts_tmp_folder && curl -o materialicons.zip https://github.com/google/material-design-icons/releases/download/3.0.1/material-design-icons-3.0.1.zip && unzip materialicons.zip"
 arch-chroot /mnt sudo -u mrcz /bin/zsh -c "sudo cp /home/mrcz/fonts_tmp_folder/material-design-icons-3.0.1/iconfont/MaterialIcons-Regular.ttf /usr/share/fonts/TTF/"
 # removing fonts tmp folder
 arch-chroot /mnt sudo -u mrcz rm -rf /home/mrcz/fonts_tmp_folder
