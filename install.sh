@@ -13,10 +13,10 @@ echo "";
 echo "";
 
 # boot partition size, in MB
-boot_partition_size=500
+boot_partition_size=250
 
 # home partition size, in GB
-home_partition_size=40
+home_partition_size=20
 
 # checks wheter there is multilib repo enabled properly or not
 IS_MULTILIB_REPO_DISABLED=$(cat /etc/pacman.conf | grep "#\[multilib\]" | wc -l)
