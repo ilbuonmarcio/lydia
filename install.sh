@@ -206,9 +206,6 @@ arch-chroot /mnt sudo -u mrcz yay -S archtorify-git --noconfirm
 # installing oh-my-zsh
 arch-chroot /mnt sudo -u mrcz /bin/zsh -c 'cd ~ && curl -O https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh && chmod +x install.sh && RUNZSH=no ./install.sh && rm ./install.sh'
 
-# installing pi theme for zsh
-arch-chroot /mnt sudo -u mrcz /bin/zsh -c "curl -o /home/mrcz/.oh-my-zsh/themes/pi.zsh-theme https://raw.githubusercontent.com/tobyjamesthomas/pi/master/pi.zsh-theme"
-
 # installing vundle
 arch-chroot /mnt sudo -u mrcz mkdir -p /home/mrcz/.config/nvim/bundle
 arch-chroot /mnt sudo -u mrcz git clone https://github.com/VundleVim/Vundle.vim.git /home/mrcz/.config/nvim/bundle/Vundle.vim
