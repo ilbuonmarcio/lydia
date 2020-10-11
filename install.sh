@@ -86,7 +86,7 @@ mount /dev/${selected_disk}2 /mnt/home
 
 # pacstrap-ping desired disk
 pacstrap /mnt base base-devel neovim networkmanager rofi feh linux linux-headers linux-firmware \
-os-prober efibootmgr ntfs-3g kitty git zsh amd-ucode cpupower xf86-video-amdgpu \
+os-prober efibootmgr ntfs-3g kitty git zsh amd-ucode intel-ucode cpupower xf86-video-amdgpu xf86-video-nouveau \
 xorg-server xorg-xinit ttf-dejavu ttf-liberation ttf-inconsolata noto-fonts gucharmap \
 firefox geckodriver zip unzip unrar obs-studio adapta-gtk-theme \
 pulseaudio pamixer telegram-desktop python python-pip wget nginx \
