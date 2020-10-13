@@ -33,7 +33,7 @@ tray-maxsize = 22
 
 modules-left = i3 currentapptitle 
 modules-center = date spotify
-modules-right = weather wired-network wireless-network lockscreen volume battery
+modules-right = weather wired-network volume
 
 cursor-click = pointer
 cursor-scroll = ns-resize
@@ -45,7 +45,7 @@ radius = 0
 type = internal/network
 interface = eno1
 label = <label-connected>
-label-connected = ⬇️ %downspeed:2%  🔌 %upspeed:2% ⬆️
+label-connected = d:%downspeed% u:%upspeed%
 label-connected-padding = 4
 
 [module/wireless-network]
@@ -101,15 +101,9 @@ interval = 0.1
 format-padding = 3
 exec = xdotool getactivewindow getwindowname 2>/dev/null
 
-[module/lockscreen]
-type = custom/script
-exec = echo ""
-label-padding = 4
-click-left = ~/.scripts/lockscreen_corrupted.sh
-
 [module/volume]
 type = custom/script
-exec = echo " 🔉 $(pamixer --get-volume)%"
+exec = echo "vol:$(pamixer --get-volume)%"
 label-padding = 4
 interval = 0.2
 

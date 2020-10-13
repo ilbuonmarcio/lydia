@@ -41,6 +41,7 @@ drac() { sudo docker rm $(sudo docker ps -a -q); }
 drai() { sudo docker rmi $(sudo docker images -a -q); }
 
 alias tree='tree -a -I .git'
+alias genpass='openssl rand -base64 24'
 
 findtext() {
     grep -Rn "$1" $2
