@@ -1,0 +1,18 @@
+#!/usr/bin/python3
+import json
+import os
+from pprint import pprint
+
+if __name__ == "__main__":
+	# obtaining the current status of tor connection
+	current_status = json.loads(os.popen('archtorify -i | sed "s,\\x1B\\[[0-9;]*[a-zA-Z],,g" | awk "NR > 2 { print }"').read())
+
+	proxy = current_status['proxy']
+
+	if proxy:
+		os.system('sudo archtorify -c > /dev/null')
+	else:
+		os.system('sudo archtorify -t > /dev/null')
+
+
+

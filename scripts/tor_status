@@ -1,0 +1,32 @@
+#!/usr/bin/python3
+import json
+import os
+from time import sleep
+
+if __name__ == "__main__":
+	latest_str = 'Gathering Tor connection info...'
+	while True:
+		try: 
+			# obtaining the current status of tor connection
+			current_status = os.popen('archtorify -i | sed "s,\\x1B\\[[0-9;]*[a-zA-Z],,g" | awk "NR > 2 { print }"').read()
+
+			current_status = json.loads(current_status)
+
+			proxy = current_status['proxy']
+			ip = current_status['query']
+			country = current_status['country']
+
+			tor_active_icon = '🧅'
+			tor_inactive_icon = '📹'
+
+			latest_str = tor_active_icon if proxy else tor_inactive_icon, ip, country
+
+			print(latest_str)
+		except Exception as e:
+			print('🔥', latest_str)
+			pass
+
+		sleep(30)
+
+
+
