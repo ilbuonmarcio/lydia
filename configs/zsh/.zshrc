@@ -6,10 +6,11 @@ plugins=(git extract pip python sudo docker docker-compose)
 
 source $ZSH/oh-my-zsh.sh
 
-export SHELL=zsh
+export SHELL=/bin/zsh
 export PAGER=less
 export FILE=ranger
-export TERMINAL=kitty
+export TERM=xterm-256color
+export TERMINAL=xterm-256color
 export EDITOR=nvim
 export VISUAL=nvim
 export BROWSER=firefox
@@ -27,7 +28,7 @@ promptinit
 
 alias vim='nvim'
 alias l='ls -lah --color=auto --group-directories-first'
-alias updateall="day=$((($(date +%s) - $(date -d $(sed -n '/upgrade$/x;${x;s/.\([0-9-]*\).*/\1/p}' /var/log/pacman.log) +%s)) / 86400)); printf 'Last system update was %d days ago\n' $day; yay -Syu --needed --devel"
+alias updateall="yay -Syu --needed --devel"
 alias tpkgl="pacman -Sl | grep '^testing' | grep '\[installed\]$' | awk '{print \$2,\$3}'"
 alias glog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 alias showpalette="msgcat --color=test | head -n 11 | tail -n 10"
