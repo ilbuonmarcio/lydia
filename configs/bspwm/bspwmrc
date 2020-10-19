@@ -15,8 +15,8 @@ bspc config focus_follows_pointer true
 
 setxkbmap us intl
 
-# feh --bg-fill --randomize $HOME/Pictures/wallpapers/
-hsetroot -solid "#2e3440"
+feh --bg-fill --randomize $HOME/Pictures/wallpapers/
+# hsetroot -solid "#2e3440"
 $HOME/.scripts/toggle_polybar.sh
 picom &
 dunst &
