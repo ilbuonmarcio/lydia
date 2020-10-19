@@ -68,7 +68,7 @@ label-focused-foreground = #202020
 label-focused-background = #f9f9f9
 label-focused-underline = #fba922
 
-label-empty-foreground = #50ffffff
+label-empty-foreground = #30ffffff
 
 label-occupied = %name%
 label-urgent = %name%
@@ -77,13 +77,13 @@ label-tiled = 
 label-fullscreen = 
 label-floating = 
 
-label-focused-padding = 2
-label-occupied-padding = 2
-label-urgent-padding = 2
-label-empty-padding = 2
-label-tiled-padding = 2
-label-fullscreen-padding = 2
-label-floating-padding = 2
+label-focused-padding = 1
+label-occupied-padding = 1
+label-urgent-padding = 1
+label-empty-padding = 1
+label-tiled-padding = 1
+label-fullscreen-padding = 1
+label-floating-padding = 1
 
 [module/date]
 type = custom/script
