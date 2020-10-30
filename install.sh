@@ -94,7 +94,7 @@ openssh xorg-xrandr noto-fonts-emoji maim imagemagick xclip \
 ttf-roboto playerctl papirus-icon-theme hwloc p7zip hsetroot \
 nemo tree man inter-font fzf mesa vulkan-radeon libva-mesa-driver mumble \
 mesa-vdpau zsh-syntax-highlighting xdotool cronie dunst entr python-dbus discord bind-tools gnome-keyring \
-i3lock dbeaver ccache ttf-cascadia-code ttf-opensans httpie pavucontrol docker docker-compose picom mpv iotop bspwm sxhkd gitg filelight networkmanager-openvpn libreoffice sassc lxde sshfs ufw
+i3lock dbeaver ccache ttf-cascadia-code ttf-opensans httpie pavucontrol docker docker-compose picom mpv iotop bspwm sxhkd gitg filelight networkmanager-openvpn libreoffice sassc lxde sshfs ufw rclone
 
 # generating fstab
 genfstab -U /mnt >> /mnt/etc/fstab
