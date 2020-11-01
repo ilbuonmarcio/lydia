@@ -200,7 +200,6 @@ arch-chroot /mnt sudo -u mrcz yay -S polybar --noconfirm
 arch-chroot /mnt sudo -u mrcz yay -S downgrade --noconfirm
 arch-chroot /mnt sudo -u mrcz yay -S spotifyd ncspot --noconfirm
 arch-chroot /mnt sudo -u mrcz yay -S corrupter-bin --noconfirm
-arch-chroot /mnt sudo -u mrcz yay -S whatsapp-nativefier-dark --noconfirm
 arch-chroot /mnt sudo -u mrcz yay -S visual-studio-code-bin --noconfirm
 arch-chroot /mnt sudo -u mrcz yay -S archtorify-git --noconfirm
 arch-chroot /mnt sudo -u mrcz yay -S tuned --noconfirm
