@@ -129,12 +129,12 @@ arch-chroot /mnt locale-gen
 arch-chroot /mnt echo "LANG=en_US.UTF-8" >> /mnt/etc/locale.conf
 
 # setting machine name
-arch-chroot /mnt echo "mrczlnks" >> /mnt/etc/hostname
+arch-chroot /mnt echo "lydia" >> /mnt/etc/hostname
 
 # setting hosts file
 arch-chroot /mnt echo "127.0.0.1 localhost" >> /mnt/etc/hosts
 arch-chroot /mnt echo "::1 localhost" >> /mnt/etc/hosts
-arch-chroot /mnt echo "127.0.1.1 mrczlnks.localdomain mrczlnks" >> /mnt/etc/hosts
+arch-chroot /mnt echo "127.0.1.1 lydia.localdomain lydia" >> /mnt/etc/hosts
 
 # making sudoers do sudo stuff without requiring password typing
 arch-chroot /mnt sed -i -e 's/# %wheel ALL=(ALL) NOPASSWD: ALL/%wheel ALL=(ALL) NOPASSWD: ALL/g' /etc/sudoers
@@ -154,16 +154,16 @@ arch-chroot /mnt sudo -u root /bin/zsh -c 'echo "Insert mrcz password: " && read
 # installing systemd-boot
 arch-chroot /mnt bootctl --path=/boot install
 
-# configuring mrczlnks boot entry
+# configuring lydia boot entry
 arch-chroot /mnt /bin/zsh -c "grep \"UUID=\" /etc/fstab | grep '/ ' | awk '{ print \$1 }' | sed -e 's/UUID=//' > .root_disk_uuid"
-arch-chroot /mnt /bin/zsh -c 'touch /boot/loader/entries/mrczlnks.conf'
-arch-chroot /mnt /bin/zsh -c 'echo "title mrczlnks" >> /boot/loader/entries/mrczlnks.conf'
-arch-chroot /mnt /bin/zsh -c 'echo "linux /vmlinuz-linux" >> /boot/loader/entries/mrczlnks.conf'
-arch-chroot /mnt /bin/zsh -c 'echo "initrd /amd-ucode.img" >> /boot/loader/entries/mrczlnks.conf'
-arch-chroot /mnt /bin/zsh -c 'echo "initrd /intel-ucode.img" >> /boot/loader/entries/mrczlnks.conf'
-arch-chroot /mnt /bin/zsh -c 'echo "initrd /initramfs-linux.img" >> /boot/loader/entries/mrczlnks.conf'
-arch-chroot /mnt /bin/zsh -c 'echo options root=\"UUID=root_disk_uuid\" rw >> /boot/loader/entries/mrczlnks.conf'
-arch-chroot /mnt /bin/zsh -c 'sed -i -e "s/root_disk_uuid/$(cat .root_disk_uuid)/g" /boot/loader/entries/mrczlnks.conf'
+arch-chroot /mnt /bin/zsh -c 'touch /boot/loader/entries/lydia.conf'
+arch-chroot /mnt /bin/zsh -c 'echo "title lydia" >> /boot/loader/entries/lydia.conf'
+arch-chroot /mnt /bin/zsh -c 'echo "linux /vmlinuz-linux" >> /boot/loader/entries/lydia.conf'
+arch-chroot /mnt /bin/zsh -c 'echo "initrd /amd-ucode.img" >> /boot/loader/entries/lydia.conf'
+arch-chroot /mnt /bin/zsh -c 'echo "initrd /intel-ucode.img" >> /boot/loader/entries/lydia.conf'
+arch-chroot /mnt /bin/zsh -c 'echo "initrd /initramfs-linux.img" >> /boot/loader/entries/lydia.conf'
+arch-chroot /mnt /bin/zsh -c 'echo options root=\"UUID=root_disk_uuid\" rw >> /boot/loader/entries/lydia.conf'
+arch-chroot /mnt /bin/zsh -c 'sed -i -e "s/root_disk_uuid/$(cat .root_disk_uuid)/g" /boot/loader/entries/lydia.conf'
 arch-chroot /mnt /bin/zsh -c 'rm .root_disk_uuid'
 
 # changing governor to performance
@@ -226,9 +226,9 @@ arch-chroot /mnt sudo -u mrcz rm -rf /home/mrcz/fonts_tmp_folder
 
 # installing config files
 arch-chroot /mnt sudo -u mrcz mkdir /home/mrcz/GitHub
-arch-chroot /mnt sudo -u mrcz git clone https://github.com/ilbuonmarcio/mrczlnks /home/mrcz/GitHub/mrczlnks
-arch-chroot /mnt sudo -u mrcz /bin/zsh -c "chmod 700 /home/mrcz/GitHub/mrczlnks/install_configs.sh"
-arch-chroot /mnt sudo -u mrcz /bin/zsh -c "cd /home/mrcz/GitHub/mrczlnks && ./install_configs.sh"
+arch-chroot /mnt sudo -u mrcz git clone https://github.com/ilbuonmarcio/lydia /home/mrcz/GitHub/lydia
+arch-chroot /mnt sudo -u mrcz /bin/zsh -c "chmod 700 /home/mrcz/GitHub/lydia/install_configs.sh"
+arch-chroot /mnt sudo -u mrcz /bin/zsh -c "cd /home/mrcz/GitHub/lydia && ./install_configs.sh"
 
 # create folder for screenshots
 arch-chroot /mnt sudo -u mrcz mkdir /home/mrcz/Screenshots
