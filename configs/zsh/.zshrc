@@ -61,5 +61,7 @@ path+=("$HOME/Android/Sdk/cmdline-tools/latest/bin/")
 export PATH
 
 # loading ssh-keys
-eval $(ssh-agent) > /dev/null
-ls /home/mrcz/.ssh/ | sed -e 's/ /\n/g' | grep -v '.pub' | grep -v '^known_hosts$' | xargs -I privkey ssh-add $HOME/.ssh/privkey 2> /dev/null
+if [ -d "$HOME/.ssh/" ]; then
+    eval $(ssh-agent) > /dev/null
+    ls $HOME/.ssh/ | sed -e 's/ /\n/g' | grep -v '.pub' | grep -v '^known_hosts$' | xargs -I privkey ssh-add $HOME/.ssh/privkey 2> /dev/null
+fi
