@@ -1,20 +1,26 @@
 # lydia
 
-![](0.png)
+`lydia` is *my* simple Arch Linux installation script.
 
-`lydia` is a simple Arch Linux installation script.
+It's easy to edit, configure and use, has UEFI-only boot support and provides automatic disk partitioning and a sane set of tools to work with.
 
-It's easy to configure, install and use, has UEFI-only boot support and provides automatic disk partitioning.
+It's build upon (my conception of) a minimal set of useful packages, and features `bspwm` as the window manager of choice.
 
-It's build upon a very minimal set of useful packages, and features `bspwm` as the window manager of choice.
+# Should I use this?
 
-It's specifically targeted at development & productivity tasks but it's still very easy to customize to fit your own needs!
+To be honest, no. You should follow the Arch Linux official guide.
+
+You can learn SO MUCH STUFF by going that way, just because being on the easy route is never a good idea.
+
+If you think you're already skilled enough, then, go on with the installaton with this script.
+
+But you're advised. :)
 
 # Configuration & Installation Procedure
 
 - Download the official Arch Linux .iso file from the [official site download section](https://www.archlinux.org/download/)
 
-- Flash it onto an USB drive, insert it in the desired PC and boot the provided live environment, as per the ArchWiki installation page
+- Flash the `.iso` file onto USB drive, insert it in the desired PC and boot the provided live environment, as per the ArchWiki installation page
 
 - Inside this live environment you should now connect to the internet using either ethernet or wifi as you like (use `wifi-menu` or `nmcli` or as your preference), then download the latest script from this repository with the following command:
 
