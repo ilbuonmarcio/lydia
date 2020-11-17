@@ -4,7 +4,7 @@
 
 It's easy to edit, configure and use, has UEFI-only boot support and provides automatic disk partitioning and a sane set of tools to work with.
 
-It's build upon (my conception of) a minimal set of useful packages, and features `bspwm` as the window manager of choice.
+It's build upon (my conception of) a minimal set of useful packages, and features `bspwm` as the window manager of choice, cuz that's what really matters to you, right?
 
 # Should I use this?
 
