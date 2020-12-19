@@ -47,7 +47,7 @@ super + b
 super + c
 	code
 super + m
-	kitty ncspot
+	spotify
 super + shift + h
 	$HOME/.scripts/toggle_polybar.sh
 super + ctrl + p
