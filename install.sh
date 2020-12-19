@@ -12,11 +12,9 @@ echo "        for maximum comfort and minimum hassles ";
 echo "";
 echo "";
 
-# boot partition size, in MB
-boot_partition_size=250
 
-# home partition size, in GB
-home_partition_size=20
+root_size="80GB"
+
 
 # checks wheter there is multilib repo enabled properly or not
 IS_MULTILIB_REPO_DISABLED=$(cat /etc/pacman.conf | grep "#\[multilib\]" | wc -l)
@@ -51,38 +49,47 @@ sed -e 's/\s*\([\+0-9a-zA-Z]*\).*/\1/' << EOF | fdisk /dev/${selected_disk}
   n # new partition
     # default: primary partition
     # default: partition 1
-  +${boot_partition_size}M # mb on boot partition
+  +500M # mb on boot partition
     # default: yes if asked
   n # new partition
     # default: primary partition
     # default: partition 2
-  +${home_partition_size}G # gb for home partition
-    # default: yes if asked
-  n # new partition
-    # default: primary partition
-    # default: partition 3
-    # default: all space left of for root partition
+    # default: all space left for lvm partition
     # default: yes if asked
   t # change partition type
   1 # selecting partition 1
   1 # selecting EFI partition type
+  t # change partition type
+  2 # selecting partition 2
+  30 # selecting LVM partition type
   w # writing changes to disk
 EOF
 
 # outputting partition changes
 fdisk -l /dev/${selected_disk}
 
-# partition filesystem formatting
+# partition bootloader EFI partition
 yes | mkfs.fat -F32 /dev/${selected_disk}1
-yes | mkfs.ext4 /dev/${selected_disk}2
-yes | mkfs.ext4 /dev/${selected_disk}3
+
+# creating lvm volumes and groups
+pvcreate --dataalignment 1m /dev/${selected_disk}2
+vgcreate volgroup0 /dev/${selected_disk}2
+lvcreate -L ${root_size} volgroup0 -n lv_root
+lvcreate -l 100%FREE volgroup0 -n lv_home
+modprobe dm_mod
+vgscan
+vgchange -ay
+
+# partition filesystem formatting
+yes | mkfs.ext4 /dev/volgroup0/lv_root
+yes | mkfs.ext4 /dev/volgroup0/lv_home
 
 # disk mount
-mount /dev/${selected_disk}3 /mnt
+mount /dev/volgroup0/lv_root /mnt
 mkdir /mnt/boot
 mkdir /mnt/home
 mount /dev/${selected_disk}1 /mnt/boot
-mount /dev/${selected_disk}2 /mnt/home
+mount /dev/volgroup0/lv_home /mnt/home
 
 # pacstrap-ping desired disk
 pacstrap /mnt base base-devel neovim networkmanager rofi feh linux linux-headers linux-firmware \
