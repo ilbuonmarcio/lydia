@@ -28,11 +28,6 @@ echo "[multilib] repo correctly enabled, continuing"
 # syncing system datetime
 timedatectl set-ntp true
 
-# getting latest mirrors for italy and germany
-curl -o mirrorlist "https://www.archlinux.org/mirrorlist/?country=DE&country=IT&protocol=https&ip_version=4"
-sed -i -e 's/^.//g' ./mirrorlist
-mv ./mirrorlist /etc/pacman.d/mirrorlist
-
 # updating mirrors
 pacman -Syyy
 
