@@ -13,9 +13,6 @@ echo "";
 echo "";
 
 
-root_size="80GB"
-
-
 # checks wheter there is multilib repo enabled properly or not
 IS_MULTILIB_REPO_DISABLED=$(cat /etc/pacman.conf | grep "#\[multilib\]" | wc -l)
 if [ "$IS_MULTILIB_REPO_DISABLED" == "1" ]
@@ -69,7 +66,7 @@ yes | mkfs.fat -F32 /dev/${selected_disk}1
 # creating lvm volumes and groups
 pvcreate --dataalignment 1m /dev/${selected_disk}2
 vgcreate volgroup0 /dev/${selected_disk}2
-lvcreate -L ${root_size} volgroup0 -n lv_root
+lvcreate -L 80GB volgroup0 -n lv_root
 lvcreate -l 100%FREE volgroup0 -n lv_home
 modprobe dm_mod
 vgscan
