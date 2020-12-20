@@ -91,7 +91,7 @@ firefox geckodriver zip unzip unrar obs-studio adapta-gtk-theme \
 pulseaudio pamixer telegram-desktop python python-pip wget nginx \
 openssh xorg-xrandr noto-fonts-emoji maim imagemagick xclip \
 ttf-roboto playerctl papirus-icon-theme hwloc p7zip hsetroot pdfarranger inkscape \
-nemo tree man inter-font fzf mesa vulkan-radeon libva-mesa-driver mumble \
+nemo tree man inter-font fzf mesa vulkan-radeon libva-mesa-driver mumble lvm2 \
 mesa-vdpau zsh-syntax-highlighting xdotool cronie dunst entr python-dbus discord bind-tools gnome-keyring \
 i3lock dbeaver ccache ttf-cascadia-code ttf-opensans httpie pavucontrol docker docker-compose picom mpv iotop bspwm sxhkd gitg filelight networkmanager-openvpn libreoffice sassc lxde sshfs ufw rclone
 
