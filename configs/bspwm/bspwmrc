@@ -25,4 +25,4 @@ dunst &
 xset dpms 0 0 600
 
 # Checking for updates at window manager startup
-dunstify --timeout=5000 "Checking for updates..." "$($HOME/.scripts/list_updates_available.sh)"
+# dunstify --timeout=5000 "Checking for updates..." "$($HOME/.scripts/list_updates_available.sh)"
