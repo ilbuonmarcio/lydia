@@ -202,6 +202,10 @@ arch-chroot /mnt sudo -u mrcz yay -S corrupter-bin --noconfirm
 arch-chroot /mnt sudo -u mrcz yay -S visual-studio-code-bin --noconfirm
 arch-chroot /mnt sudo -u mrcz yay -S archtorify-git --noconfirm
 arch-chroot /mnt sudo -u mrcz yay -S tuned --noconfirm
+arch-chroot /mnt sudo -u mrcz yay -S greetd greetd-tuigreet --noconfirm
+
+# adding tuigreet to boot
+arch-chroot /mnt systemctl enable greetd.service
 
 # adding tuned to boot
 arch-chroot /mnt systemctl enable tuned.service
@@ -228,6 +232,7 @@ arch-chroot /mnt sudo -u mrcz mkdir /home/mrcz/GitHub
 arch-chroot /mnt sudo -u mrcz git clone https://github.com/ilbuonmarcio/lydia /home/mrcz/GitHub/lydia
 arch-chroot /mnt sudo -u mrcz /bin/zsh -c "chmod 700 /home/mrcz/GitHub/lydia/install_configs.sh"
 arch-chroot /mnt sudo -u mrcz /bin/zsh -c "cd /home/mrcz/GitHub/lydia && ./install_configs.sh"
+arch-chroot /mnt cp /home/mrcz/GitHub/lydia/greetd.config.toml /etc/greetd/config.toml
 
 # create folder for screenshots
 arch-chroot /mnt sudo -u mrcz mkdir /home/mrcz/Screenshots
