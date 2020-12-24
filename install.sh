@@ -196,7 +196,6 @@ arch-chroot /mnt sed -i -e 's/!ccache/ccache/g' /etc/makepkg.conf
 
 # installing various packages from AUR
 arch-chroot /mnt sudo -u mrcz yay -S polybar --noconfirm
-arch-chroot /mnt sudo -u mrcz yay -S downgrade --noconfirm
 arch-chroot /mnt sudo -u mrcz yay -S spotifyd spotify --noconfirm
 arch-chroot /mnt sudo -u mrcz yay -S corrupter-bin --noconfirm
 arch-chroot /mnt sudo -u mrcz yay -S visual-studio-code-bin --noconfirm
