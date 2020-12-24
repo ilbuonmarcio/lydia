@@ -94,7 +94,7 @@ ttf-roboto playerctl papirus-icon-theme hwloc p7zip hsetroot pdfarranger inkscap
 nemo tree man inter-font fzf mesa vulkan-radeon libva-mesa-driver mumble lvm2 \
 mesa-vdpau zsh-syntax-highlighting xdotool cronie dunst entr python-dbus bind-tools gnome-keyring \
 i3lock dbeaver ccache ttf-cascadia-code ttf-opensans httpie pavucontrol docker docker-compose picom \
-mpv iotop bspwm sxhkd gitg filelight networkmanager-openvpn libreoffice sassc sshfs ufw rclone
+mpv iotop bspwm sxhkd gitg filelight networkmanager-openvpn libreoffice sassc sshfs ufw lxde rclone
 
 # generating fstab
 genfstab -U /mnt >> /mnt/etc/fstab
