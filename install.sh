@@ -201,15 +201,10 @@ arch-chroot /mnt sudo -u mrcz yay -S spotifyd spotify --noconfirm
 arch-chroot /mnt sudo -u mrcz yay -S corrupter-bin --noconfirm
 arch-chroot /mnt sudo -u mrcz yay -S visual-studio-code-bin --noconfirm
 arch-chroot /mnt sudo -u mrcz yay -S archtorify-git --noconfirm
-arch-chroot /mnt sudo -u mrcz yay -S tuned --noconfirm
 arch-chroot /mnt sudo -u mrcz yay -S greetd greetd-tuigreet --noconfirm
 
 # adding tuigreet to boot
 arch-chroot /mnt systemctl enable greetd.service
-
-# adding tuned to boot
-arch-chroot /mnt systemctl enable tuned.service
-arch-chroot /mnt tuned-adm profile desktop
 
 # installing oh-my-zsh
 arch-chroot /mnt sudo -u mrcz /bin/zsh -c 'cd ~ && curl -O https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh && chmod +x install.sh && RUNZSH=no ./install.sh && rm ./install.sh'
