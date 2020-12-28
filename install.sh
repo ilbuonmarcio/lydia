@@ -161,7 +161,7 @@ arch-chroot /mnt /bin/zsh -c 'echo "title lydia" >> /boot/loader/entries/lydia.c
 arch-chroot /mnt /bin/zsh -c 'echo "linux /vmlinuz-linux" >> /boot/loader/entries/lydia.conf'
 arch-chroot /mnt /bin/zsh -c 'echo "initrd /amd-ucode.img" >> /boot/loader/entries/lydia.conf'
 arch-chroot /mnt /bin/zsh -c 'echo "initrd /intel-ucode.img" >> /boot/loader/entries/lydia.conf'
-arch-chroot /mnt /bin/zsh -c 'echo "initrd /initramfs-linux.img" >> /boot/loader/entries/lydia.conf'
+arch-chroot /mnt /bin/zsh -c 'echo "initrd /initramfs-linux.img quiet loglevel=3 vga=current" >> /boot/loader/entries/lydia.conf'
 arch-chroot /mnt /bin/zsh -c 'echo options root=\"UUID=root_disk_uuid\" rw >> /boot/loader/entries/lydia.conf'
 arch-chroot /mnt /bin/zsh -c 'sed -i -e "s/root_disk_uuid/$(cat .root_disk_uuid)/g" /boot/loader/entries/lydia.conf'
 arch-chroot /mnt /bin/zsh -c 'rm .root_disk_uuid'
