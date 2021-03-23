@@ -1,7 +1,7 @@
 [global]
   corner_radius = 12
   follow = mouse
-  font = "Inter 10"
+  font = "SF Pro 10"
   format = "<b>%s</b>\n<span font='10'>%b</span>"
   frame_color = "#101010"
   frame_width = 1
