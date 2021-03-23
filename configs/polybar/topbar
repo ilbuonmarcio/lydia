@@ -118,7 +118,7 @@ label-padding = 4
 type = custom/script
 interval = 3600
 label = %output%
-exec = weather Verona
+exec = $HOME/.scripts/weather Verona
 label-padding = 4
 
 [module/battery]
