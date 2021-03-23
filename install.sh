@@ -139,7 +139,9 @@ arch-chroot /mnt echo "127.0.1.1 lydia.localdomain lydia" >> /mnt/etc/hosts
 # making sudoers do sudo stuff without requiring password typing
 arch-chroot /mnt sed -i -e 's/# %wheel ALL=(ALL) NOPASSWD: ALL/%wheel ALL=(ALL) NOPASSWD: ALL/g' /etc/sudoers
 
-# make initframs
+# add support for root lvm2 boot and make initframs for proper boot
+arch-chroot /mnt sed -i -e 's/base udev/base systemd udev/g' /etc/mkinitcpio.conf
+arch-chroot /mnt sed -i -e 's/block filesystems/block lvm2 filesystems/g' /etc/mkinitcpio.conf
 arch-chroot /mnt mkinitcpio -p linux
 
 # setting root password
