@@ -2,7 +2,7 @@ configuration {
   fullscreen:                     false;
   show-icons:                     true;
   icon-theme:                     "Papirus";
-  font:                           "Font Inter 10";
+  font:                           "Font SF Pro 10";
   drun-display-format:            "{name}";
 }
 
