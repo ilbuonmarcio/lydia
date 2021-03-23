@@ -15,7 +15,7 @@ rofi.hide-scrollbar:    true
 rofi.line-margin:       6
 rofi.line-padding:      8
 rofi.fake-transparency: false
-rofi.font:              Inter 12
+rofi.font:              SF Pro 12
 rofi.dpi:	94
 
 Xft.antialias:  1
