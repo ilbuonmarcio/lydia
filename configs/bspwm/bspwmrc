@@ -18,7 +18,7 @@ setxkbmap us intl
 feh --bg-fill --randomize $HOME/Pictures/wallpapers/
 # hsetroot -solid "#2e3440"
 $HOME/.scripts/toggle_polybar.sh
-picom &
+picom --experimental-backends --backend glx --blur-method dual_kawase --blur-strength 3 &
 dunst &
 
 # Put monitor to sleep automatically after 10 minutes of inactivity

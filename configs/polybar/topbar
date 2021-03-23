@@ -23,9 +23,8 @@ padding-right = 0
 module-margin-left = 0
 module-margin-right = 0
 
-font-0 = Inter:style=Regular:size=10:antialias=true;3
-font-1 = Material Icons:style=Regular:size=14:antialias=true;7
-font-2 = Noto Color Emoji:style=Regular:scale=9;4
+font-0 = SF Pro:style=Regular:size=11:antialias=true;4
+font-1 = Noto Color Emoji:style=Regular:scale=9;4
 
 tray-position = right
 tray-padding = 6

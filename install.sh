@@ -93,7 +93,7 @@ openssh xorg-xrandr noto-fonts-emoji maim imagemagick xclip \
 ttf-roboto playerctl papirus-icon-theme hwloc p7zip hsetroot pdfarranger inkscape \
 nemo tree man inter-font fzf mesa vulkan-radeon libva-mesa-driver mumble lvm2 \
 mesa-vdpau zsh-syntax-highlighting xdotool cronie dunst entr python-dbus bind-tools gnome-keyring \
-i3lock dbeaver ccache ttf-cascadia-code ttf-opensans httpie pavucontrol docker docker-compose picom \
+i3lock dbeaver ccache ttf-cascadia-code ttf-opensans httpie pavucontrol docker docker-compose \
 mpv iotop bspwm sxhkd gitg filelight networkmanager-openvpn libreoffice sassc sshfs ufw lxde rclone
 
 # generating fstab
@@ -202,6 +202,8 @@ arch-chroot /mnt sudo -u mrcz yay -S corrupter-bin --noconfirm
 arch-chroot /mnt sudo -u mrcz yay -S visual-studio-code-bin --noconfirm
 arch-chroot /mnt sudo -u mrcz yay -S archtorify-git --noconfirm
 arch-chroot /mnt sudo -u mrcz yay -S greetd greetd-tuigreet --noconfirm
+arch-chroot /mnt sudo -u mrcz yay -S apple-fonts --noconfirm
+arch-chroot /mnt sudo -u mrcz yay -S picom-ibhagwan-git --noconfirm
 
 # adding tuigreet to boot
 arch-chroot /mnt systemctl enable greetd.service
