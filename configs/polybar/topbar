@@ -32,7 +32,7 @@ tray-maxsize = 22
 
 modules-left = i3 currentapptitle 
 modules-center = date spotify
-modules-right = weather wired-network tor-status volume
+modules-right = wired-network volume
 
 cursor-click = pointer
 cursor-scroll = ns-resize
@@ -114,24 +114,3 @@ exec = python ~/.scripts/spotify_status.py -f '{artist}: {song}'
 label-underline = #1db954
 label-padding = 4
 
-[module/weather]
-type = custom/script
-interval = 3600
-label = %output%
-exec = $HOME/.scripts/weather Verona
-label-padding = 4
-
-[module/battery]
-type = custom/script
-interval = 5
-label = %output%
-exec = battery
-label-padding = 4
-
-[module/tor-status]
-type = custom/script
-label = %output%
-exec = python ~/.scripts/tor_status
-label-padding = 4
-tail = true
-click-left = python ~/.scripts/tor_toggle
